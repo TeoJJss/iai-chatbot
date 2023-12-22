@@ -145,7 +145,8 @@ def get_qa():
             "bus LRT APU",
             "trip LRT APU",
             "trips from LRT to APU",
-            "LRT APU bus"
+            "LRT APU bus",
+            "LRT to APU"
         ],
         bus_schedule("APU", "LRT") : [
             "What time is the next bus from APU to LRT",
@@ -160,7 +161,8 @@ def get_qa():
             "bus APU LRT",
             "trip APU LRT",
             "trips from APU to LRT",
-            "APU LRT bus"
+            "APU LRT bus",
+            "APU to LRT"
         ],
         bus_schedule("LRT", "APIIT") : [
             "What time is the next bus from LRT to APIIT",
@@ -174,7 +176,8 @@ def get_qa():
             "bus LRT APIIT",
             "trip LRT APIIT",
             "trips from LRT to APIIT",
-            "LRT APIIT bus"
+            "LRT APIIT bus",
+            "LRT to APIIT"
         ],
         bus_schedule("APIIT", "LRT") : [
             "What time is the next bus from APIIT to LRT",
@@ -188,7 +191,8 @@ def get_qa():
             "bus APIIT LRT",
             "trip APIIT LRT",
             "trips from APIIT to LRT",
-            "APIIT LRT bus"
+            "APIIT LRT bus",
+            "APIIT to LRT"
         ],
         bus_schedule("APU", "APIIT") : [
             "What time is the next bus from APU to APIIT",
@@ -202,7 +206,8 @@ def get_qa():
             "bus APU APIIT",
             "trip APU APIIT",
             "trips from APU to APIIT",
-            "APU APIIT bus"
+            "APU APIIT bus",
+            "APU to APIIT"
         ],
         bus_schedule("APIIT", "APU") : [
             "What time is the next bus from APIIT to APU",
@@ -216,7 +221,8 @@ def get_qa():
             "bus APIIT APU",
             "trip APIIT APU",
             "trips from APIIT to APU",
-            "APIIT APU bus"
+            "APIIT APU bus",
+            "APIIT to APU"
         ],
     }
     return qa

@@ -2,14 +2,15 @@ import string, os
 import spacy
 from autocorrect import Speller
 
-if os.path.isfile("config_sensitive.py"):
-    from config_sensitive import qa
-else:
-    from config import qa
-
 nlp = spacy.load("en_core_web_md")
 
 def reply(usr_inp):
+    if os.path.isfile("config_sensitive.py"):
+        from config_sensitive import get_qa
+    else:
+        from config import get_qa
+    
+    qa=get_qa()
     response = ""
     possible_answers = set()
 
@@ -39,6 +40,9 @@ def reply(usr_inp):
                     if ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                         print("question",quest)
+                    elif ele[2] == tmp_similarity or int(ele[2]) >= 1:
+                        if ele[1] not in response:
+                            response += "\n"+ele[1]
             else:
                 response = "Sorry, I don't understand your question. I am still learning."
 

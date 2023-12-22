@@ -4,9 +4,9 @@ import os
 import speech_recognition as sr
 
 if os.path.isfile("config_sensitive.py"):
-    from config_sensitive import *
+    from config_sensitive import TOKEN, ID
 else:
-    from config import *
+    from config import TOKEN, ID
 
 async def send_msg(msg: str, user_msg: str, is_private: bool):
     try:

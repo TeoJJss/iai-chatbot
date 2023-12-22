@@ -40,7 +40,7 @@ def reply(usr_inp):
                     if ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                         print("question",quest)
-                    elif ele[2] == tmp_similarity or int(ele[2]) >= 1:
+                    elif round(ele[2], 4) == round(tmp_similarity, 4) or int(ele[2]) >= 1:
                         if ele[1] not in response:
                             response += "\n"+ele[1]
             else:

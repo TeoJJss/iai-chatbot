@@ -21,13 +21,35 @@ def bus_schedule(start, end):
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
                     return f"Next bus {bus} will depart from {start} to {end} at **{time}**"
         else:
-            return "No bus schedule available for this moment"
+            return f"No bus schedule available at this moment for {start}-{end}"
     except:
-        return "Sorry, the bus schedule is unavailable at the moment. Please refer to webspace or "
+        return "Sorry, the bus schedule is unavailable at the moment. Please refer to webspace or https://www.apu.edu.my/CampusConnect"
 
+# Holidays Schedule
+holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
+def holidays():
+    holiday_ls = holiday_res[0]['holidays']
+    upcoming_ls = []
+    today = datetime.datetime.utcnow()
+    res=""
+    for holiday in holiday_ls:
+        holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
+        holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
+        if holiday_startdate < today and holiday_enddate > today:
+            res += "We are in " + holiday["holiday_description"] + "now.\n\n"
+        if holiday_startdate > today:
+            if "Upcoming holidays" not in res:
+                res += "**Upcoming holidays**\n"
+            holiday_startdate = holiday_startdate.strftime('%a, %d %b %Y')
+            holiday_enddate = holiday_enddate.strftime("%a, %d %b %Y")
+            res += holiday["holiday_description"] + " : " + f"from {holiday_startdate} to {holiday_enddate}" + "\n"
+    if not res:
+        res = "No Upcoming Holidays"
+    return res
+
+# convo list
 def get_qa():
     print("get qa")
-    # convo list
     qa = {
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
@@ -46,6 +68,19 @@ def get_qa():
             "give me the location of the campus",
             "go APU",
             "give me the location of the APU",
+        ],
+        holidays() : [
+            "When is the next holiday",
+            "holidays", 
+            "holiday",
+            "holiday schedule",
+            "do we have holiday",
+            "APU holiday",
+            "upcoming holidays",
+            "next holiday",
+            "when no class",
+            "malaysia holiday",
+            "school holidays"
         ],
         # Library
         "You can go to the library by taking the stairs or elevator to Level 4, APU": [

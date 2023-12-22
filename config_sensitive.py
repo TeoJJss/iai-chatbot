@@ -7,20 +7,23 @@ ID = ["1185519671873638501", "1185517094385745962"]
 schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
 schedules = schedules.json()
 def bus_schedule(start, end):
-    print("time again")
-    for schedule in schedules['trips']:
-        if start in schedule["trip_from"]["name"]:
-            if end in schedule["trip_to"]["name"]:
-                bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
-                time = schedule["time"]
-                print("Time scheduled", datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z'))
-                print("now",datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'))
-                if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
-                    continue
-                time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
-                return f"Next bus {bus} will depart from {start} to {end} at **{time}**"
-    else:
-        return "No bus schedule available for this moment"
+    try:
+        print("time again")
+        for schedule in schedules['trips']:
+            if start in schedule["trip_from"]["name"]:
+                if end in schedule["trip_to"]["name"]:
+                    bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
+                    time = schedule["time"]
+                    print("Time scheduled", datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z'))
+                    print("now",datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'))
+                    if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
+                        continue
+                    time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
+                    return f"Next bus {bus} will depart from {start} to {end} at **{time}**"
+        else:
+            return "No bus schedule available for this moment"
+    except:
+        return "Sorry, the bus schedule is unavailable at the moment. Please refer to webspace or "
 
 def get_qa():
     print("get qa")

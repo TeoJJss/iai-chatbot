@@ -1,4 +1,4 @@
-import requests, datetime
+import requests, datetime, asyncio
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
@@ -6,28 +6,27 @@ ID = ["1185519671873638501", "1185517094385745962"]
 # Bus Schedule
 schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
 schedules = schedules.json()
-def bus_schedule(start, end):
+async def bus_schedule(start, end):
     try:
-        print("time again")
         for schedule in schedules['trips']:
+            if datetime.datetime.now().weekday() > 4:
+                break
             if start in schedule["trip_from"]["name"]:
                 if end in schedule["trip_to"]["name"]:
                     bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
                     time = schedule["time"]
-                    print("Time scheduled", datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z'))
-                    print("now",datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'))
                     if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
                         continue
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
                     return f"Next bus {bus} will depart from {start} to {end} at **{time}**"
-        else:
-            return f"No bus schedule available at this moment for {start}-{end}"
+        
+        return f"No bus schedule available at this moment for {start}-{end}. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
     except:
-        return "Sorry, the bus schedule is unavailable at the moment. Please refer to webspace or https://www.apu.edu.my/CampusConnect"
+        return "Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
 
 # Holidays Schedule
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
-def holidays():
+async def holidays():
     holiday_ls = holiday_res[0]['holidays']
     upcoming_ls = []
     today = datetime.datetime.utcnow()
@@ -48,8 +47,16 @@ def holidays():
     return res
 
 # convo list
-def get_qa():
-    print("get qa")
+async def get_qa():
+    holidays_str, lrt_apu, apu_lrt, lrt_apiit, apiit_lrt, apu_apiit, apiit_apu = await asyncio.gather(
+                                                                                                        holidays(), 
+                                                                                                        bus_schedule("LRT", "APU"),
+                                                                                                        bus_schedule("APU", "LRT"),
+                                                                                                        bus_schedule("LRT", "APIIT"),
+                                                                                                        bus_schedule("APIIT", "LRT"),
+                                                                                                        bus_schedule("APU", "APIIT"),
+                                                                                                        bus_schedule("APIIT", "APU")
+                                                                                                    )
     qa = {
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
@@ -69,7 +76,7 @@ def get_qa():
             "go APU",
             "give me the location of the APU",
         ],
-        holidays() : [
+        holidays_str : [
             "When is the next holiday",
             "holidays", 
             "holiday",
@@ -170,7 +177,7 @@ def get_qa():
         ],
 
         # Transportation
-        bus_schedule("LRT", "APU") : [
+        lrt_apu : [
             "What time is the next bus from LRT to APU",
             "What time next bus from LRT to APU", 
             "What time bus LRT to APU",
@@ -186,7 +193,7 @@ def get_qa():
             "LRT APU bus",
             "LRT to APU"
         ],
-        bus_schedule("APU", "LRT") : [
+        apu_lrt : [
             "What time is the next bus from APU to LRT",
             "What time next bus from APU to LRT", 
             "What time bus APU to LRT",
@@ -202,7 +209,7 @@ def get_qa():
             "APU LRT bus",
             "APU to LRT"
         ],
-        bus_schedule("LRT", "APIIT") : [
+        lrt_apiit : [
             "What time is the next bus from LRT to APIIT",
             "What time next bus from LRT to APIIT", 
             "What time bus LRT to APIIT",
@@ -217,7 +224,7 @@ def get_qa():
             "LRT APIIT bus",
             "LRT to APIIT"
         ],
-        bus_schedule("APIIT", "LRT") : [
+        apiit_lrt : [
             "What time is the next bus from APIIT to LRT",
             "What time next bus from APIIT to LRT", 
             "What time bus APIIT to LRT",
@@ -232,7 +239,7 @@ def get_qa():
             "APIIT LRT bus",
             "APIIT to LRT"
         ],
-        bus_schedule("APU", "APIIT") : [
+        apu_apiit : [
             "What time is the next bus from APU to APIIT",
             "What time next bus from APU to APIIT", 
             "What time bus APU to APIIT",
@@ -247,7 +254,7 @@ def get_qa():
             "APU APIIT bus",
             "APU to APIIT"
         ],
-        bus_schedule("APIIT", "APU") : [
+        apiit_apu : [
             "What time is the next bus from APIIT to APU",
             "What time next bus from APIIT to APU", 
             "What time bus APIIT to APU",

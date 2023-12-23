@@ -10,7 +10,7 @@ else:
 
 async def send_msg(msg: str, user_msg: str, is_private: bool):
     try:
-        resp = responses.reply(user_msg)
+        resp = await responses.reply(user_msg)
         await msg.author.send(resp) if is_private else await msg.channel.send(resp)
         if user_msg == "hi":
             await msg.channel.send(file=discord.File("images/hi.gif"))

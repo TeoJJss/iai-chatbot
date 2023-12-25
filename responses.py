@@ -37,6 +37,9 @@ async def reply(usr_inp):
             super_high = False
             if possible_answers:
                 for ele in possible_answers:
+                    if not response.endswith("\n"):
+                        response+="\n"
+
                     if (int(ele[2]) >= 1):
                         if not super_high:
                             super_high=True
@@ -44,10 +47,11 @@ async def reply(usr_inp):
                         tmp_similarity = ele[2]
                         if ele[1] not in response:
                             quest = ele[0]
-                            response += ele[1]+"\n"
+                            response += ele[1] + "\n"
                     elif abs(ele[2]-tmp_similarity) < 0.01:
                         tmp_similarity = ele[2]
-                        response += ele[1] + "\n"
+                        if ele[1] not in response:
+                            response += ele[1] + "\n"
                     elif ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
             else:

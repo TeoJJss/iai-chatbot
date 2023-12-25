@@ -18,9 +18,9 @@ async def bus_schedule(start, end):
                     if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
                         continue
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
-                    return f"Next bus {bus} will depart from {start} to {end} at **{time}**"
+                    return f"Next bus {bus} will depart **from {start} to {end}** at **{time}**"
         
-        return f"No bus schedule available at this moment for {start}-{end}. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
+        return f"NO BUS SCHEDULE available at this moment for **{start}-{end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
     except:
         return "Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
 
@@ -29,19 +29,19 @@ holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active")
 async def holidays():
     holiday_ls = holiday_res[0]['holidays']
     upcoming_ls = []
-    today = datetime.datetime.utcnow()
+    today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
     for holiday in holiday_ls:
         holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
         holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
-        if holiday_startdate < today and holiday_enddate > today:
-            res += "We are in " + holiday["holiday_description"] + "now.\n\n"
+        holiday_startdate_str = holiday_startdate.strftime('%a, %d %b %Y')
+        holiday_enddate_str = holiday_enddate.strftime("%a, %d %b %Y")
+        if holiday_startdate <= today and holiday_enddate >= today:
+            res += "We are in **" + holiday["holiday_description"] + f"** now, from {holiday_startdate_str} to {holiday_enddate_str}.\n"
         if holiday_startdate > today:
             if "Upcoming holidays" not in res:
-                res += "**Upcoming holidays**\n"
-            holiday_startdate = holiday_startdate.strftime('%a, %d %b %Y')
-            holiday_enddate = holiday_enddate.strftime("%a, %d %b %Y")
-            res += holiday["holiday_description"] + " : " + f"from {holiday_startdate} to {holiday_enddate}" + "\n"
+                res += "\n**Upcoming holidays**\n"
+            res += holiday["holiday_description"] + " : " + f"from {holiday_startdate_str} to {holiday_enddate_str}" + "\n"
     if not res:
         res = "No Upcoming Holidays"
     return res

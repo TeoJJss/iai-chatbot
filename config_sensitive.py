@@ -4,15 +4,16 @@ TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi
 ID = ["1185519671873638501", "1185517094385745962"]
 
 # Bus Schedule
-schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-schedules = schedules.json()
+# schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+# schedules = schedules.json()
+schedules = json.load(open('test-bus.json',))
 async def bus_schedule(start, end):
     try:
         for schedule in schedules['trips']:
             if datetime.datetime.now().weekday() > 4:
                 break
             if schedule['day'] == "friday only" and datetime.datetime.now().weekday() != 4:
-                break
+                continue
             if start in schedule["trip_from"]["name"]:
                 if end in schedule["trip_to"]["name"]:
                     bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
@@ -20,9 +21,9 @@ async def bus_schedule(start, end):
                     if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
                         continue
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
-                    return f"Next bus {bus} will depart **from {start} to {end}** at **{time}**"
+                    return f"Next bus `{bus}` will depart **from {start} to {end}** at **{time}**"
         
-        return f"NO BUS SCHEDULE available at this moment for **{start}-{end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
+        return f"NO BUS SCHEDULE available at this moment for **{start} to {end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
     except:
         return "Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect"
 
@@ -172,13 +173,14 @@ async def get_qa():
 
     added_set = set()
     for schedule in schedules['trips']:
-        start = str(schedule["trip_from"]["name"]).strip()
-        end = str(schedule["trip_to"]["name"]).strip()
+        start = str(schedule["trip_from"]["name"]).strip().split(" ", 1)[0]
+        end = str(schedule["trip_to"]["name"]).strip().split(" ", 1)[0]
         if (start, end) in added_set:
             continue
         else:
             added_set.add((start,end))
     for tuple_item in added_set:
+        print(tuple_item)
         s_str = await bus_schedule(*tuple_item)
         start = (str(tuple_item[0]).split(" ", 1))[0]
         end = (str(tuple_item[1]).split(" ", 1))[0]
@@ -199,5 +201,5 @@ async def get_qa():
         ]
         if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
             qa[s_str].extend(["bus schedule", "bus trip"])
-    print(json.dumps(qa, indent=4))
+    # print(json.dumps(qa, indent=4))
     return qa

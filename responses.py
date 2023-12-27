@@ -28,7 +28,7 @@ async def reply(usr_inp):
                 similarity = calculate_similarity(inp, spell(ques))
 
                 if similarity > 0.7:
-                    print(f"Debug - Question: {question}, Similarity: {similarity}")
+                    # print(f"Debug - Question: {question}, Similarity: {similarity}")
                     possible_answers.add((question, answer, similarity))
         
         else:

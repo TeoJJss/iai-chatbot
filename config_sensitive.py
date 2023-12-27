@@ -4,9 +4,9 @@ TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi
 ID = ["1185519671873638501", "1185517094385745962"]
 
 # Bus Schedule
-# schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-# schedules = schedules.json()
-schedules = json.load(open('test-bus.json',))
+schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+schedules = schedules.json()
+
 async def bus_schedule(start, end):
     try:
         for schedule in schedules['trips']:

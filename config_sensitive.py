@@ -173,8 +173,8 @@ async def get_qa():
 
     added_set = set()
     for schedule in schedules['trips']:
-        start = str(schedule["trip_from"]["name"]).strip().split(" ", 1)[0]
-        end = str(schedule["trip_to"]["name"]).strip().split(" ", 1)[0]
+        start = str(schedule["trip_from"]["name"]).strip()
+        end = str(schedule["trip_to"]["name"]).strip()
         if (start, end) in added_set:
             continue
         else:

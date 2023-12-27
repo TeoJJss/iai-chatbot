@@ -41,7 +41,7 @@ def bot_launch():
 
                 text = convert_voice_to_text(audio_data)
 
-                print(f"User {username} message to {client.user}:", text)
+                # print(f"User {username} message to {client.user}:", text)
                 user_msg = text
             else:
                 user_msg = str(message.content)

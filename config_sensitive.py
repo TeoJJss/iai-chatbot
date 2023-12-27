@@ -1,4 +1,4 @@
-import requests, datetime, asyncio
+import requests, datetime, json
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
@@ -10,6 +10,8 @@ async def bus_schedule(start, end):
     try:
         for schedule in schedules['trips']:
             if datetime.datetime.now().weekday() > 4:
+                break
+            if schedule['day'] == "friday only" and datetime.datetime.now().weekday() != 4:
                 break
             if start in schedule["trip_from"]["name"]:
                 if end in schedule["trip_to"]["name"]:
@@ -28,7 +30,6 @@ async def bus_schedule(start, end):
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
 async def holidays():
     holiday_ls = holiday_res[0]['holidays']
-    upcoming_ls = []
     today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
     for holiday in holiday_ls:
@@ -48,15 +49,7 @@ async def holidays():
 
 # convo list
 async def get_qa():
-    holidays_str, lrt_apu, apu_lrt, lrt_apiit, apiit_lrt, apu_apiit, apiit_apu = await asyncio.gather(
-                                                                                                        holidays(), 
-                                                                                                        bus_schedule("LRT", "APU"),
-                                                                                                        bus_schedule("APU", "LRT"),
-                                                                                                        bus_schedule("LRT", "APIIT"),
-                                                                                                        bus_schedule("APIIT", "LRT"),
-                                                                                                        bus_schedule("APU", "APIIT"),
-                                                                                                        bus_schedule("APIIT", "APU")
-                                                                                                    )
+    holidays_str = await holidays()
     qa = {
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
@@ -92,7 +85,7 @@ async def get_qa():
         # Library
         "You can go to the library by taking the stairs or elevator to Level 4, APU": [
             "library",
-            "APU library"
+            "APU library",
             "How to go to the library",
             "How to go library",
             "How to go to library",
@@ -175,99 +168,36 @@ async def get_qa():
                 "Pay with CIMB",
                 "CIMB"
         ],
-
-        # Transportation
-        lrt_apu : [
-            "What time is the next bus from LRT to APU",
-            "What time next bus from LRT to APU", 
-            "What time bus LRT to APU",
-            "when next bus to APU from LRT",
-            "LRT to APU bus",
-            "I am at LRT, going APU, where bus",
-            "next bus to APU from LRT",
-            "bus schedule",
-            "where bus to APU",
-            "bus LRT APU",
-            "trip LRT APU",
-            "trips from LRT to APU",
-            "LRT APU bus",
-            "LRT to APU"
-        ],
-        apu_lrt : [
-            "What time is the next bus from APU to LRT",
-            "What time next bus from APU to LRT", 
-            "What time bus APU to LRT",
-            "when next bus to LRT from APU",
-            "APU to LRT bus",
-            "I am at APU, going LRT, where bus",
-            "next bus to LRT from APU",
-            "where bus to LRT",
-            "bus APU to LRT",
-            "bus APU LRT",
-            "trip APU LRT",
-            "trips from APU to LRT",
-            "APU LRT bus",
-            "APU to LRT"
-        ],
-        lrt_apiit : [
-            "What time is the next bus from LRT to APIIT",
-            "What time next bus from LRT to APIIT", 
-            "What time bus LRT to APIIT",
-            "when next bus to APIIT from LRT",
-            "LRT to APIIT bus",
-            "I am at LRT, going APIIT, where bus",
-            "next bus to APIIT from LRT",
-            "where bus to APIIT",
-            "bus LRT APIIT",
-            "trip LRT APIIT",
-            "trips from LRT to APIIT",
-            "LRT APIIT bus",
-            "LRT to APIIT"
-        ],
-        apiit_lrt : [
-            "What time is the next bus from APIIT to LRT",
-            "What time next bus from APIIT to LRT", 
-            "What time bus APIIT to LRT",
-            "when next bus to LRT from APIIT",
-            "APIIT to LRT bus",
-            "I am at APIIT, going LRT, where bus",
-            "next bus to LRT from APIIT",
-            "bus APIIT to LRT",
-            "bus APIIT LRT",
-            "trip APIIT LRT",
-            "trips from APIIT to LRT",
-            "APIIT LRT bus",
-            "APIIT to LRT"
-        ],
-        apu_apiit : [
-            "What time is the next bus from APU to APIIT",
-            "What time next bus from APU to APIIT", 
-            "What time bus APU to APIIT",
-            "when next bus to APIIT from APU",
-            "APU to APIIT bus",
-            "I am at APU, going APIIT, where bus",
-            "next bus to APIIT from APU",
-            "where bus to APIIT",
-            "bus APU APIIT",
-            "trip APU APIIT",
-            "trips from APU to APIIT",
-            "APU APIIT bus",
-            "APU to APIIT"
-        ],
-        apiit_apu : [
-            "What time is the next bus from APIIT to APU",
-            "What time next bus from APIIT to APU", 
-            "What time bus APIIT to APU",
-            "when next bus to APIIT to APU",
-            "APIIT to APU bus",
-            "I am at APIIT, going APU, where bus",
-            "next bus to APU from APIIT",
-            "where bus to APU",
-            "bus APIIT APU",
-            "trip APIIT APU",
-            "trips from APIIT to APU",
-            "APIIT APU bus",
-            "APIIT to APU"
-        ],
     }
+
+    added_set = set()
+    for schedule in schedules['trips']:
+        start = str(schedule["trip_from"]["name"]).strip()
+        end = str(schedule["trip_to"]["name"]).strip()
+        if (start, end) in added_set:
+            continue
+        else:
+            added_set.add((start,end))
+    for tuple_item in added_set:
+        s_str = await bus_schedule(*tuple_item)
+        start = (str(tuple_item[0]).split(" ", 1))[0]
+        end = (str(tuple_item[1]).split(" ", 1))[0]
+        qa[s_str] = [
+            f"What time is the next bus from {start} to {end}",
+            f"What time next bus from {start} to {end}", 
+            f"What time bus {start} to {end}",
+            f"when next bus to {start} to {end}",
+            f"{start} to {end} bus",
+            f"I am at {end}, going {start}, where bus",
+            f"next bus to {end} from {start}",
+            f"where bus to {end}",
+            f"bus {start} {end}",
+            f"trip {start} {end}",
+            f"trips from {start} to {end}",
+            f"{start} {end} bus",
+            f"{start} to {end}"
+        ]
+        if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
+            qa[s_str].extend(["bus schedule", "bus trip"])
+    print(json.dumps(qa, indent=4))
     return qa

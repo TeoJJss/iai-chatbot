@@ -38,14 +38,13 @@ async def bus_schedule(start, end):
         # API response error
         return "Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
 
-# Holidays Schedule
+# Holidays Schedule API
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
 holiday_ls = (holiday_res[0]['holidays']).copy()
 async def holidays():
     today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
     holiday_ind = 0
-    print(len(holiday_ls))
     while holiday_ind < len(holiday_ls):
         holiday = holiday_ls[holiday_ind]
         holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
@@ -177,7 +176,8 @@ async def get_qa():
                 "Maybank Acc of the school",
                 "Make payment with Maybank",
                 "Pay with Maybank",
-                "Maybank"
+                "Maybank",
+                "APU Maybank"
         ],
         "**CIMB Account of APU**\n(MYR) 8602647663  \nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\n\
             \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*":[
@@ -186,12 +186,14 @@ async def get_qa():
                 "CIMB Acc of the school",
                 "Make payment with CIMB",
                 "Pay with CIMB",
-                "CIMB"
+                "CIMB", 
+                "APU CIMB"
         ],
     }
 
     # Bus schedule algorithm
     added_set = set()
+    count = 0
     for schedule in schedules['trips']:
         start = str(schedule["trip_from"]["name"]).strip()
         end = str(schedule["trip_to"]["name"]).strip()
@@ -221,5 +223,8 @@ async def get_qa():
         ]
         if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
             qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
+            count += 1
+    if not count:
+        qa["Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]
     # print(json.dumps(qa, indent=4))
     return qa

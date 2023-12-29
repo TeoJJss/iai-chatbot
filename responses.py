@@ -58,16 +58,13 @@ async def reply(usr_inp):
                 response = "Sorry, I don't understand your question. I am still learning."
 
         # Sort if many bus times
-        if response.count("\n") > 2:
+        if response.count("\n") > 2 and inp in ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]:
             try:
                 bus_list = [(line, line[-7:-2]) for line in response.strip().split('\n')]
-                print("bus list", bus_list)
                 valid_times = [bus[1] for bus in bus_list if re.compile(r'\d{2}:\d{2}').match(bus[1])]
-                print("valid time", valid_times)
                 if len(valid_times) == len(bus_list):
                     response = ""
                     sorted_bus_list = sorted(bus_list, key=lambda x: x[1])
-                    print("sorted", sorted_bus_list)
 
                     for bus in sorted_bus_list:
                         response += bus[0] + "\n"

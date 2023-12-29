@@ -3,28 +3,34 @@ import requests, datetime, json
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
 
-# Bus Schedule
+# Bus Schedule API
 schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
 schedules = schedules.json()
+tmp_schedules = schedules['trips'].copy()
 
 async def bus_schedule(start, end):
+    now = datetime.datetime.now()
     try:
-        for schedule in schedules['trips']:
+        schedule_ind = 0
+        while schedule_ind in range(len(tmp_schedules)):
+            schedule = tmp_schedules[schedule_ind]
             # No bus on weekend
-            if datetime.datetime.now().weekday() > 4:
+            if now.weekday() > 4:
                 break
             # Skip the "friday only" schedules if it's not Friday
-            if schedule['day'] == "friday only" and datetime.datetime.now().weekday() != 4:
+            if schedule['day'] == "friday only" and now.weekday() != 4:
+                continue
+            time = schedule["time"]
+            if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(now.strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
+                tmp_schedules.remove(schedule)
                 continue
             # "Mon-Fri" schedule
             if start in schedule["trip_from"]["name"]:
                 if end in schedule["trip_to"]["name"]:
                     bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
-                    time = schedule["time"]
-                    if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
-                        continue
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
                     return f"Next bus `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
+            schedule_ind += 1
                 
         # No schedule found        
         return f"NO BUS SCHEDULE available at this moment for **{start} to {end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
@@ -34,21 +40,29 @@ async def bus_schedule(start, end):
 
 # Holidays Schedule
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
+holiday_ls = (holiday_res[0]['holidays']).copy()
 async def holidays():
-    holiday_ls = holiday_res[0]['holidays']
     today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
-    for holiday in holiday_ls:
+    holiday_ind = 0
+    print(len(holiday_ls))
+    while holiday_ind < len(holiday_ls):
+        holiday = holiday_ls[holiday_ind]
         holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
         holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
         holiday_startdate_str = holiday_startdate.strftime('%a, %d %b %Y')
         holiday_enddate_str = holiday_enddate.strftime("%a, %d %b %Y")
-        if holiday_startdate <= today and holiday_enddate >= today:
+        if today > holiday_enddate:
+            holiday_ls.remove(holiday)
+            continue
+
+        if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
             res += "We are in **" + holiday["holiday_description"] + f"** now, from {holiday_startdate_str} to {holiday_enddate_str}.\n"
-        if holiday_startdate > today:
+        elif today < holiday_startdate: # upcoming holiday
             if "Upcoming holidays" not in res:
                 res += "\n**Upcoming holidays**\n"
             res += holiday["holiday_description"] + " : " + f"from {holiday_startdate_str} to {holiday_enddate_str}" + "\n"
+        holiday_ind+=1
     if not res:
         res = "No Upcoming Holidays"
     return res
@@ -186,7 +200,7 @@ async def get_qa():
         else:
             added_set.add((start,end)) # trip has response although no schedule
     for tuple_item in added_set:
-        print(tuple_item)
+        print("tuple: ",tuple_item)
         s_str = await bus_schedule(*tuple_item)
         start = (str(tuple_item[0]).split(" ", 1))[0]
         end = (str(tuple_item[1]).split(" ", 1))[0]

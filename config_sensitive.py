@@ -1,4 +1,5 @@
-import requests, datetime, json
+import requests, datetime
+from copy import deepcopy
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
@@ -40,30 +41,39 @@ async def bus_schedule(start, end):
 
 # Holidays Schedule API
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
-holiday_ls = (holiday_res[0]['holidays']).copy()
+holidays_ls = deepcopy(holiday_res)
 async def holidays():
     today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
-    holiday_ind = 0
-    while holiday_ind < len(holiday_ls):
-        holiday = holiday_ls[holiday_ind]
-        holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
-        holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
-        holiday_startdate_str = holiday_startdate.strftime('%a, %d %b %Y')
-        holiday_enddate_str = holiday_enddate.strftime("%a, %d %b %Y")
-        if today > holiday_enddate:
-            holiday_ls.remove(holiday)
-            continue
+    count = 0
+    for holiday_list in holidays_ls:
+        holiday_ls = holiday_list['holidays']
+        holiday_ind = 0
+        while holiday_ind < len(holiday_ls):
+            if count > 2:
+                break
+            holiday = holiday_ls[holiday_ind]
+            holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
+            holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
+            holiday_startdate_str = holiday_startdate.strftime('%d %b %Y (%a)')
+            holiday_enddate_str = holiday_enddate.strftime("%d %b %Y (%a)")
+            if today > holiday_enddate:
+                holiday_ls.remove(holiday)
+                continue
 
-        if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
-            res += "We are in **" + holiday["holiday_description"] + f"** now, from {holiday_startdate_str} to {holiday_enddate_str}.\n"
-        elif today < holiday_startdate: # upcoming holiday
-            if "Upcoming holidays" not in res:
-                res += "\n**Upcoming holidays**\n"
-            res += holiday["holiday_description"] + " : " + f"from {holiday_startdate_str} to {holiday_enddate_str}" + "\n"
-        holiday_ind+=1
-    if not res:
-        res = "No Upcoming Holidays"
+            if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
+                res += "We are in **" + holiday["holiday_description"] + f"** now, from {holiday_startdate_str} to {holiday_enddate_str}.\n"
+            elif today < holiday_startdate: # upcoming holiday
+                if "Upcoming holidays" not in res:
+                    res += "\n**Upcoming holidays**\n"
+                if holiday_startdate_str != holiday_enddate_str:
+                    res += holiday["holiday_description"] + " - " + f"from {holiday_startdate_str} to {holiday_enddate_str}" + "\n"
+                else:
+                    res += holiday["holiday_description"] + " - " + f"{holiday_startdate_str}" + "\n"
+                count += 1
+            holiday_ind+=1
+        if not res:
+            res = "No Upcoming Holidays"
     return res
 
 # convo list
@@ -169,7 +179,7 @@ async def get_qa():
             "How do I pay fee",
         ],
         "**Maybank Account of APU**\n(MYR) 514413500658\n(USD) 714413000532\n A/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\n\
-            \nYou may also pay with JomPay\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
+            \nYou may also pay with **JomPay**\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
             \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*":[
                 "What is the Maybank account of APU",
                 "Maybank Acc of APU",

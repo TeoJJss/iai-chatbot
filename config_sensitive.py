@@ -30,14 +30,14 @@ async def bus_schedule(start, end):
                 if end in schedule["trip_to"]["name"]:
                     bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
-                    return f"Next bus `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
+                    return f"Next shuttle `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
             schedule_ind += 1
                 
         # No schedule found        
-        return f"NO BUS SCHEDULE available at this moment for **{start} to {end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
+        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
     except:
         # API response error
-        return "Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
+        return "Sorry, the shuttle schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
 
 # Holidays Schedule API
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
@@ -235,6 +235,6 @@ async def get_qa():
             qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
             count += 1
     if not count:
-        qa["Sorry, the bus schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]
+        qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]
     # print(json.dumps(qa, indent=4))
     return qa

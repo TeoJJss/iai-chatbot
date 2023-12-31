@@ -19,13 +19,13 @@ async def reply(usr_inp):
     inp = spell(tmp_inp)
     print("input",inp)
     if str(inp) in ["hi", "hello", "greetings", "hey"]:
-        response = "Hi, I am APU Virtual Bot. You may ask me anything about the facilities in APU. -"
+        response = "Hi, I am APU Virtual Bot. You may ask me anything about the facilities in APU. "
     else:        
         for answer, questions in qa.items():
             for question in questions:
-                ques = question.lower().strip()
-                # print(inp, ques)
-                similarity = calculate_similarity(inp, spell(ques))
+                ques = spell(question.lower().strip())
+                
+                similarity = calculate_similarity(inp, ques)
 
                 if similarity > 0.7:
                     # print(f"Debug - Question: {question}, Similarity: {similarity}")

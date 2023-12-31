@@ -5,9 +5,12 @@ TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi
 ID = ["1185519671873638501", "1185517094385745962"]
 
 # Bus Schedule API
-schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-schedules = schedules.json()
-tmp_schedules = schedules['trips'].copy()
+try:
+    schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+    schedules = schedules.json()
+    tmp_schedules = schedules['trips'].copy()
+except:
+    pass
 
 async def bus_schedule(start, end):
     now = datetime.datetime.now()
@@ -204,13 +207,14 @@ async def get_qa():
     # Bus schedule algorithm
     added_set = set()
     count = 0
-    for schedule in schedules['trips']:
-        start = str(schedule["trip_from"]["name"]).strip()
-        end = str(schedule["trip_to"]["name"]).strip()
-        if (start, end) in added_set:
-            continue
-        else:
-            added_set.add((start,end)) # trip has response although no schedule
+    if schedules: # If schedules from API not empty
+        for schedule in schedules['trips']:
+            start = str(schedule["trip_from"]["name"]).strip()
+            end = str(schedule["trip_to"]["name"]).strip()
+            if (start, end) in added_set:
+                continue
+            else:
+                added_set.add((start,end)) # trip has response although no schedule
     for tuple_item in added_set:
         print("tuple: ",tuple_item)
         s_str = await bus_schedule(*tuple_item)
@@ -235,6 +239,7 @@ async def get_qa():
             qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
             count += 1
     if not count:
-        qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]
-    # print(json.dumps(qa, indent=4))
+        qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
+            "bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule", "bus to", "bus from", "shuttle to", "shuttle from"]
+        
     return qa

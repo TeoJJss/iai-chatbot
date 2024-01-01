@@ -65,7 +65,11 @@ async def holidays():
                 continue
 
             if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
-                res += "We are in **" + holiday["holiday_description"] + f"** now, from {holiday_startdate_str} to {holiday_enddate_str}.\n"
+                res += "We are in **" + holiday["holiday_description"] + "** now, "
+                if holiday_startdate_str == holiday_enddate_str:
+                    res += f"on {holiday_startdate_str}.\n"
+                else:
+                    res += f"from {holiday_startdate_str} to {holiday_enddate_str}.\n"
             elif today < holiday_startdate: # upcoming holiday
                 if "Upcoming holidays" not in res:
                     res += "\n**Upcoming holidays**\n"

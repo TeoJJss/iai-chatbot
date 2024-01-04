@@ -23,6 +23,7 @@ async def bus_schedule(start, end):
                 break
             # Skip the "friday only" schedules if it's not Friday
             if schedule['day'] == "friday only" and now.weekday() != 4:
+                tmp_schedules.remove(schedule)
                 continue
             time = schedule["time"]
             if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(now.strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
@@ -219,6 +220,7 @@ async def get_qa():
                 continue
             else:
                 added_set.add((start,end)) # trip has response although no schedule
+        print("added", added_set)
     for tuple_item in added_set:
         print("tuple: ",tuple_item)
         s_str = await bus_schedule(*tuple_item)

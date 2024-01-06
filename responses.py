@@ -1,61 +1,61 @@
-import string, os, re
-import spacy
+import string, os, re, time
+import spacy, asyncio
 from autocorrect import Speller
+from concurrent.futures import ThreadPoolExecutor
 
 nlp = spacy.load("en_core_web_md")
+spell = Speller(lang='en')
 
-async def reply(usr_inp):
+async def gireply(usr_inp):
     if os.path.isfile("config_sensitive.py"):
         from config_sensitive import get_qa
     else:
         from config import get_qa
+    t=time.time()
     
-    qa=await get_qa()
     response = ""
     possible_answers = set()
 
     spell = Speller(lang='en')
     tmp_inp = str(usr_inp).lower().strip().translate(str.maketrans("", "", string.punctuation))
     inp = spell(tmp_inp)
-    print("input",inp)
+    qa=await get_qa(inp)
+    print("input",inp, time.time()-t)
     if str(inp) in ["hi", "hello", "greetings", "hey"]:
         response = "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU. "
-    else:        
-        for answer, questions in qa.items():
-            for question in questions:
-                ques = spell(question.lower().strip())
-                
-                similarity = calculate_similarity(inp, ques)
+    else:
+        # with ThreadPoolExecutor(max_workers=10) as executor:
+        #     questions_inp_pairs = [(question, answer, inp) for answer, questions in qa.items() for question in questions]
+        #     results = list(executor.map(similarity_worker, questions_inp_pairs))     
+        questions_inp_pairs = [(question, answer, inp) for answer, questions in qa.items() for question in questions]
+        tasks = [similarity_worker(qip) for qip in questions_inp_pairs]
+        results = await asyncio.gather(*tasks)
+        possible_answers = {(q, a, s) for (q, a, s) in results if s > 0.7}
 
-                if similarity > 0.7:
-                    # print(f"Debug - Question: {question}, Similarity: {similarity}")
-                    possible_answers.add((question, answer, similarity))
-        
+        print(time.time()-t)
+        tmp_similarity = 0
+        super_high = False
+        if possible_answers:
+            for ele in possible_answers:
+                if not response.endswith("\n"):
+                    response+="\n"
+
+                if (int(ele[2]) >= 1):
+                    if not super_high:
+                        super_high=True
+                        response = ""
+                    tmp_similarity = ele[2]
+                    if ele[1] not in response:
+                        quest = ele[0]
+                        response += ele[1] + "\n"
+                elif abs(ele[2]-tmp_similarity) < 0.01:
+                    tmp_similarity = ele[2]
+                    if ele[1] not in response:
+                        response += ele[1] + "\n"
+                elif ele[2] > tmp_similarity:
+                    quest, response, tmp_similarity = ele[0], ele[1], ele[2]
         else:
-            # Find the highest similarity ans among possible ans
-            tmp_similarity = 0
-            super_high = False
-            if possible_answers:
-                for ele in possible_answers:
-                    if not response.endswith("\n"):
-                        response+="\n"
-
-                    if (int(ele[2]) >= 1):
-                        if not super_high:
-                            super_high=True
-                            response = ""
-                        tmp_similarity = ele[2]
-                        if ele[1] not in response:
-                            quest = ele[0]
-                            response += ele[1] + "\n"
-                    elif abs(ele[2]-tmp_similarity) < 0.01:
-                        tmp_similarity = ele[2]
-                        if ele[1] not in response:
-                            response += ele[1] + "\n"
-                    elif ele[2] > tmp_similarity:
-                        quest, response, tmp_similarity = ele[0], ele[1], ele[2]
-            else:
-                response = "Sorry, I don't understand your question. I am still learning.\nPlease try another way to ask or refer to https://apiit.atlassian.net/wiki/spaces/KB/overview?mode=global."
+            response = "Sorry, I don't understand your question. I am still learning.\nPlease try another way to ask or refer to https://apiit.atlassian.net/wiki/spaces/KB/overview?mode=global."
 
         # Sort if many bus times
         if response.count("\n") > 2 and inp in ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]:
@@ -73,7 +73,7 @@ async def reply(usr_inp):
         if not response.startswith("Sorry"):
             if quest != inp or inp != tmp_inp:
                 response = f"> Guess you are asking: \"{quest}\"\n\n{response}" 
-    print(f"bot: {response}")
+    print(f"bot: {response}", time.time()-t)
     return response
 
 def calculate_similarity(query, response):
@@ -81,3 +81,8 @@ def calculate_similarity(query, response):
     response_doc = nlp(response)
     similarity = query_doc.similarity(response_doc)
     return similarity
+
+async def similarity_worker(args):
+    question, ans, inp = args
+    ques = spell(question.lower().strip())
+    return ques, ans, calculate_similarity(inp, ques)

@@ -32,7 +32,7 @@ async def bus_schedule(start, end):
             # "Mon-Fri" schedule
             if start in schedule["trip_from"]["name"]:
                 if end in schedule["trip_to"]["name"]:
-                    bus = schedule["bus_assigned"] if schedule["bus_assigned"] != None else "Unknown"
+                    bus = schedule["bus_assigned"] if schedule["bus_assigned"] else "Unknown"
                     time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
                     return f"Next shuttle `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
             schedule_ind += 1
@@ -142,6 +142,11 @@ async def get_qa():
             "What is the operating hours of library",
             "Operation hour of library",
             "Operation hour of APU library",
+            "what time library open",
+            "what time library close",
+            "library operating",
+            "library operating time",
+            "library time"
         ],
         "Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)":[
             "How to contact library",

@@ -173,8 +173,9 @@ async def get_qa(inp):
             "How much is my course fees",
             "How much I need to pay"
         ],
-            #Bursary (Payment details)
-    "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \
+        
+        #Bursary (Payment details)
+        "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \
         \nRemember to email the payment receipt with student name and ID to __bursary@apu.edu.my__": [
         "How to make payment",
         "How to pay course fee",
@@ -183,13 +184,13 @@ async def get_qa(inp):
         "I need to pay",
         "I need to make payment",
         "Payment Method"
-    ],
+        ],
 
-    #Bursary (How to check fee payment on APspace)
-    "**Step 1** - Open your APSpace app or web browser.\
-     \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
-     \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
-     \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.":[
+        #Bursary (How to check fee payment on APspace)
+        "**Step 1** - Open your APSpace app or web browser.\
+        \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
+        \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
+        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.":[
         "Fee payment details",
         "How to check my fee payment details?",
         "What are the steps to view my fee payment details?",
@@ -211,17 +212,17 @@ async def get_qa(inp):
         "How can I check my Overdue fee details?",
         "Where can I find information about my Overdue fees?",
         "What steps should I follow to check my Overdue fee details?",
-    ],
+        ],
 
-    #Bursary (Bank details-Maybank APU & APIIT)
-    "**Maybank Account of APU**\nBank: MALAYAN BANKING BERHAD\nAddress: Lot No. G-1 & G-2, Ground Floor, Support Service Building, Technology Park Malaysia, Bukit Jalil, Kuala Lumpur, 57000, Malaysia\
-    \nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 514413500658\nAccount number in USD: 714413000532\nSwift Code: MBBEMYKL\n\
-    \nYou may also pay with JomPay\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
-    \n`******************************************************************************************************************************`\n\
-    \n**Maybank Account of APIIT**\nBank: MALAYAN BANKING BERHAD\nAddress: Lot No. G-1 & G-2, Ground Floor, Support Service Building, Technology Park Malaysia, Bukit Jalil, Kuala Lumpur, 57000, Malaysia\
-    \nA/C Name: APIIT SDN BHD\nAccount number in MYR: 514413500575\nAccount number in USD: 714413000518\nSwift Code: MBBEMYKL\n\
-    \nYou may also pay with JomPay\nBiller Code: 26070\nRef 1: Student ID or NRIC or Passport No\n\
-    \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
+        #Bursary (Bank details-Maybank APU & APIIT)
+        "**Maybank Account of APU**\nBank: MALAYAN BANKING BERHAD\nAddress: Lot No. G-1 & G-2, Ground Floor, Support Service Building, Technology Park Malaysia, Bukit Jalil, Kuala Lumpur, 57000, Malaysia\
+        \nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 514413500658\nAccount number in USD: 714413000532\nSwift Code: MBBEMYKL\n\
+        \nYou may also pay with JomPay\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
+        \n`******************************************************************************************************************************`\n\
+        \n**Maybank Account of APIIT**\nBank: MALAYAN BANKING BERHAD\nAddress: Lot No. G-1 & G-2, Ground Floor, Support Service Building, Technology Park Malaysia, Bukit Jalil, Kuala Lumpur, 57000, Malaysia\
+        \nA/C Name: APIIT SDN BHD\nAccount number in MYR: 514413500575\nAccount number in USD: 714413000518\nSwift Code: MBBEMYKL\n\
+        \nYou may also pay with JomPay\nBiller Code: 26070\nRef 1: Student ID or NRIC or Passport No\n\
+        \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
         "What is the Maybank account of APU",
         "What is the Maybank account of APIIT",
         "Maybank Acc of APU",
@@ -230,13 +231,13 @@ async def get_qa(inp):
         "Make payment with Maybank",
         "Pay with Maybank",
         "Maybank"
-    ],
+        ],
 
-    #Bursary (Bank details-CIMB APU & APIIT)
-    "**CIMB Account of APU**\nBank: CIMB BANK BERHAD\nAddress: 28, Jalan Radin Tengah, Bandar Baru Seri Petaling, 57000 Kuala Lumpur\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 8602647663\n\
-    \n`******************************************************************************************************************************`\n\
-    \n**CIMB Account of APIIT**\nBank: CIMB BANK BERHAD\nAddress: 28, Jalan Radin Tengah, Bandar Baru Seri Petaling, 57000 Kuala Lumpur\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 8603504063\n\
-    \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
+        #Bursary (Bank details-CIMB APU & APIIT)
+        "**CIMB Account of APU**\nBank: CIMB BANK BERHAD\nAddress: 28, Jalan Radin Tengah, Bandar Baru Seri Petaling, 57000 Kuala Lumpur\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 8602647663\n\
+        \n`******************************************************************************************************************************`\n\
+        \n**CIMB Account of APIIT**\nBank: CIMB BANK BERHAD\nAddress: 28, Jalan Radin Tengah, Bandar Baru Seri Petaling, 57000 Kuala Lumpur\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nAccount number in MYR: 8603504063\n\
+        \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
         "What is the CIMB account of APU",
         "What is the CIMB account of APIIT",
         "CIMB Acc of APU",
@@ -245,10 +246,10 @@ async def get_qa(inp):
         "Make payment with CIMB",
         "Pay with CIMB",
         "CIMB"
-    ],
+        ],
 
-    #Bursary (How does international students make payment)
-    "Payments can be made at apu-my.flywire.com. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to www.flywire.com/support.": [
+        #Bursary (How does international students make payment)
+        "Payments can be made at apu-my.flywire.com. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to www.flywire.com/support.": [
         "overseas payment",
         "How to pay from overseas?",
         "What are my options for international payments to Malaysia?",
@@ -256,11 +257,11 @@ async def get_qa(inp):
         "How to pay fees from abroad?",
         "How can I pay for my tuition from abroad?",
         "How do I pay my tuition from another country?",
-    ],
+        ],
 
-    #Bursary (How to make payment via Flywire?)
-    "1) Visit apu-my.flywire.com to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
-    \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
+        #Bursary (How to make payment via Flywire?)
+        "1) Visit apu-my.flywire.com to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
+        \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
         "How to make payment via Flywire?",
         "How to pay with Flywire?",
         "What are the steps to transfer money through Flywire?",
@@ -270,13 +271,13 @@ async def get_qa(inp):
         "How do I make a transfer with Flywire?",
         ],
     
-    #Bursary (APU/APIIT International Student Fees & Refund Policy)
-    "-International Students are required to pay all fees due prior to arrival by the respective due dates.\n-The International Student Application Fee and International Student Registration Fee will not be refunded.\
-     \n-Course fee payments made are NON-REFUNDABLE except if the student visa is refused by EMGS/ Immigration. All Fees paid are NON-REFUNDABLE under any circumstances once the visa is approved or after the student has\
-     commenced studies at any level, including Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes. This includes students who do not qualify for enrolment into the course\
-     approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
-     \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
-     \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
+        #Bursary (APU/APIIT International Student Fees & Refund Policy)
+        "-International Students are required to pay all fees due prior to arrival by the respective due dates.\n-The International Student Application Fee and International Student Registration Fee will not be refunded.\
+        \n-Course fee payments made are NON-REFUNDABLE except if the student visa is refused by EMGS/ Immigration. All Fees paid are NON-REFUNDABLE under any circumstances once the visa is approved or after the student has\
+        commenced studies at any level, including Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes. This includes students who do not qualify for enrolment into the course\
+        approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+        \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+        \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
         "What are the APU/APIIT International Student Fees & Refund Policy?",
         "Refund policy for International Student",
         "Student Fees for International Student",
@@ -284,22 +285,22 @@ async def get_qa(inp):
         "How does the fee payment and refund process work for international students?",
         ],
     
-    # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
-    "-APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
-    \n-A charge of 50% of the initial payment will apply for cancellation made 14 days or less before course commencement.\
-    \n-An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
-    \n-NO REFUND will be entertained after a course has commenced.\
-    \n-Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
-    \n-A late payment charge is imposed on all overdue fees.\
-    \n-Semester Payment is due at the commencement of each semester.\
-    ": [
+        # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
+        "-APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
+        \n-A charge of 50% of the initial payment will apply for cancellation made 14 days or less before course commencement.\
+        \n-An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
+        \n-NO REFUND will be entertained after a course has commenced.\
+        \n-Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
+        \n-A late payment charge is imposed on all overdue fees.\
+        \n-Semester Payment is due at the commencement of each semester.\
+        ": [
         "What are the APU/APIIT Malaysian Student Fees & Refund Policy? ",
         "Refund policy for Malaysian Student",
         "Student Fees for Malaysian Student",
         "Explain the fees and refund policy for Malaysian Student",
         "How does the fee payment and refund process work for Malaysian Student?",
         ],
-}
+        
         ######Logistics & Operations - APU Campus Connect Lounge
         "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nYou may access the APU Campus Connect Lounge via the lifts and stairs located at Block E. The Lounge is located on Level 1 (Ground) (below Block J2 / adjoining the car park). \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
             "Purpose Connect Lounge",

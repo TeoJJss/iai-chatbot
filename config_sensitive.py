@@ -85,7 +85,7 @@ async def holidays():
     return res
 
 # convo list
-async def get_qa():
+async def get_qa(inp):
     holidays_str = await holidays()
     qa = {
         # Campus
@@ -213,7 +213,7 @@ async def get_qa():
                 "APU CIMB"
         ],
         ######Logistics & Operations - APU Campus Connect Lounge
-        "The lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \n You may access the APU Campus Connect Lounge via the lifts and stairs located at Block E. The Lounge is located on Level 1 (Ground) (below Block J2 / adjoining the car park). \n Operational Hours: Monday – Friday: 8.00am – 10.00pm. \n As the lounge is a communal space for all staff and students, we would like to seek your cooperation to maintain the cleanliness of the lounge and use the lounge responsibly.":[
+        "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nYou may access the APU Campus Connect Lounge via the lifts and stairs located at Block E. The Lounge is located on Level 1 (Ground) (below Block J2 / adjoining the car park). \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
             "Purpose Connect Lounge",
             "purpose APU Shuttle Bus",
             "purpose Bus Shuttle ",
@@ -289,7 +289,7 @@ async def get_qa():
             "What is the purpose of the Bus Shuttle?",
             "Can you provide information about Arrival and Departure for Bus Shuttle.",
         ],
-        "Operational Hours: Monday – Friday: 8.00am – 10.00pm":[
+        "**Operational Hours of APU Campus Connect Lounge:**\n Monday – Friday: 8.00am – 10.00pm":[
             "Open time APU Campus Connect Lounge",
             "Open time APU bus shuttle",
             "Close time APU Campus Connect Lounge",
@@ -377,7 +377,7 @@ async def get_qa():
             "Help me with RapidKL journey planning.",
         ],
         ###### Logistics & Operations - APU and APIIT Car Parking Rates
-        "Parking Zone A (Category: Covered Parking): \n Daily Parking Rate: RM 5.60 \n\n Parking Zone B and Zone G (Category: Open Parking) \n Hourly Parking Rates \n 1st hour or part thereof: RM 1.82 \n Every subsequent hour or part thereof: RM 1.06 \n Maximum charge per day: RM 5.00 \n\n Parking rates are based on per entry basis. Should you exit and re-enter the parking, rates will be recalculated from the first hour. \n Rates will be calculated via the card reader upon exit to/from the car park. Please ensure that you have sufficient balance in your APCard before entering & exiting the car park.\n\n Daily Parking Rates will still be applied if you wish to park your vehicle at the Covered Parking (Zone A). \n\n The Open Space Parking (known as Parking Zone B and Zone G) will offer Hourly Parking Rates for students.\n All parking fees transactions will be made through APCard. NO CASH WILL BE ACCEPTED. \n\n Please be reminded to park in only one zone category per day to avoid being charged twice for parking fees. For example, if you leave from the Open Parking Category and then enter the Covered Parking Category, or vice versa, during the same day, you will be charged again. However, if you move between zones within the same category, such as from Zone B to Zone G or vice versa, no additional charges will be incurred. \n\n Park vehicle at your own risk. The management is not responsible for any injury or loss of property within the car park.":[
+        "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[
             "APU parking",
             "APU parking fees",
             "APU park",
@@ -437,7 +437,7 @@ async def get_qa():
             "What responsibility does the management take for injuries or loss of property within the car park?"
         ],
         ###### Logistics & Operations - parking FAQ
-        "In order to avoid “Invalid Status”, it is very important to not tailgate the vehicle that is trying to enter or exit the premise. Do ensure that the barricade is fully lowered before attempting to enter/exit and ensure that the card reader shows a valid message before proceeding.":[
+        "In order to avoid \"Invalid Status\", it is very important to not tailgate the vehicle that is trying to enter or exit the premise. Do ensure that the barricade is fully lowered before attempting to enter/exit and ensure that the card reader shows a valid message before proceeding.":[
             "Invalid parking"
             "parking error"
             "How do I avoid getting 'Invalid Status' upon exit or entry to the parking?",
@@ -468,7 +468,7 @@ async def get_qa():
             "Parking exit dilemma: 'Please Top Up' despite having funds",
         ],
         ###### Logistics & Operations - parking FAQ
-        "It means either the APCard is not active or there was an improper exit done by the driver before. An improper exit refers to exiting by tailgating too closely to the car in front, and as a result, failing to register the entry/exit on the reader.\n\n What should I do? \n Please visit APU cashier counter and report your issue.":[
+        "It means either the APCard is not active or there was an improper exit done by the driver before. An improper exit refers to exiting by tailgating too closely to the car in front, and as a result, failing to register the entry/exit on the reader.\n\nWhat should I do? \nPlease visit APU cashier counter and report your issue.":[
             "parking invalid status",
             "I am not able to enter/exit the parking. The reader shows “Invalid Status”. What does it mean and what should I do?",
             "Issue entering/exiting parking with 'Invalid Status' displayed",
@@ -482,71 +482,46 @@ async def get_qa():
             "Understanding and resolving 'Invalid Status' during parking access",
             "Parking entry/exit trouble: 'Invalid Status' explanation and solution",
         ],
-        ###### Logistics & Operations - Season (Monthly) Parking @ Open Space Parking – Zone B
-        "The availability of parking bays for Season Parking is on a first-come-first-served basis. \n Students under the Season Parking scheme will be entitled to unlimited entry & exit to/from Open Space Parking – Zone B within the designated month. \n A monthly rate of RM60.00 will be applied under this scheme. Payment can be done via the Finance Counter @ Level 3, Spine.\n Students may opt to purchase Season Parking for a duration of 1 month & more, and payment can be made in advance. However, Season Parking fees paid are strictly non-refundable.\n Students subscribed to this scheme are required to perform renewal & cancellations at the Finance Services counter, using your APCard.\n Renewal & cancellations can be done at the Finance Services Counter, Level 3.\n An expiry notification will be sent to Season Parking holders prior to the expiry date. You are required to renew/cancel your Season Parking at least ONE (1) day before the expiry date. Failure to do so will result in denial of entry at all parking lots in APU, including the Covered Parking – Zone A.\n Noted: Park vehicle at your own risk. The management is not responsible for any injury or loss of property within the car park.":[
-            "Season parking",
-            "monthly parking",
-            "Season (Monthly) Parking @ Open Space Parking – Zone B",
-            "How to apply for monthly parking in Open Space Parking – Zone B?",
-            "Procedure for obtaining season parking in Zone B's Open Space Parking",
-            "Applying for monthly parking at Open Space Parking in Zone B",
-            "Information on monthly parking subscriptions for Zone B's Open Space Parking",
-            "Process for securing season parking at Zone B's Open Space Parking",
-            "Zone B Open Space Parking: How to get monthly parking access",
-            "Guidelines for obtaining season parking in Zone B's Open Space Parking",
-            "Monthly parking subscription details for Zone B's Open Space Parking",
-            "Steps to apply for season parking at Open Space Parking in Zone B",
-            "Zone B's Open Space Parking: Monthly parking application process",
-            "How to apply for season parking?",
-            "Process for obtaining monthly parking access",
-            "Steps to secure season parking",
-            "Information on monthly parking subscriptions",
-            "Guidelines for applying for season parking",
-            "Getting monthly parking at the facility",
-            "Subscription details for monthly parking",
-            "Procedure for monthly parking applications",
-            "Securing monthly parking privileges",
-            "Applying for season parking access",
-        ],
     }
 
     # Bus schedule algorithm
-    added_set = set()
-    count = 0
-    if schedules: # If schedules from API not empty
-        for schedule in schedules['trips']:
-            start = str(schedule["trip_from"]["name"]).strip()
-            end = str(schedule["trip_to"]["name"]).strip()
-            if (start, end) in added_set:
-                continue
-            else:
-                added_set.add((start,end)) # trip has response although no schedule
-        print("added", added_set)
-    for tuple_item in added_set:
-        print("tuple: ",tuple_item)
-        s_str = await bus_schedule(*tuple_item)
-        start = (str(tuple_item[0]).split(" ", 1))[0]
-        end = (str(tuple_item[1]).split(" ", 1))[0]
-        qa[s_str] = [
-            f"What time is the next bus from {start} to {end}",
-            f"What time next bus from {start} to {end}", 
-            f"What time bus {start} to {end}",
-            f"when next bus to {start} to {end}",
-            f"{start} to {end} bus",
-            f"I am at {end}, going {start}, where bus",
-            f"next bus to {end} from {start}",
-            f"where bus to {end}",
-            f"bus {start} {end}",
-            f"trip {start} {end}",
-            f"trips from {start} to {end}",
-            f"{start} {end} bus",
-            f"{start} to {end}"
-        ]
-        if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
-            qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
-            count += 1
-    if not count:
-        qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
-            "bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule", "bus to", "bus from", "shuttle to", "shuttle from"]
+    if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses"] if i in str(inp).lower()]:
+        added_set = set()
+        count = 0
+        if schedules: # If schedules from API not empty
+            for schedule in schedules['trips']:
+                start = str(schedule["trip_from"]["name"]).strip()
+                end = str(schedule["trip_to"]["name"]).strip()
+                if (start, end) in added_set:
+                    continue
+                else:
+                    added_set.add((start,end)) # trip has response although no schedule
+            print("added", added_set)
+        for tuple_item in added_set:
+            print("tuple: ",tuple_item)
+            s_str = await bus_schedule(*tuple_item)
+            start = (str(tuple_item[0]).split(" ", 1))[0]
+            end = (str(tuple_item[1]).split(" ", 1))[0]
+            qa[s_str] = [
+                f"What time is the next bus from {start} to {end}",
+                f"What time next bus from {start} to {end}", 
+                f"What time bus {start} to {end}",
+                f"when next bus to {start} to {end}",
+                f"{start} to {end} bus",
+                f"I am at {end}, going {start}, where bus",
+                f"next bus to {end} from {start}",
+                f"where bus to {end}",
+                f"bus {start} {end}",
+                f"trip {start} {end}",
+                f"trips from {start} to {end}",
+                f"{start} {end} bus",
+                f"{start} to {end}"
+            ]
+            if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
+                qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
+                count += 1
+        if not count:
+            qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
+                "bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule", "bus to", "bus from", "shuttle to", "shuttle from"]
         
     return qa

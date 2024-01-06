@@ -120,7 +120,7 @@ async def get_qa(inp):
             "school holidays"
         ],
 
-        # General knowledge
+        # General knowledge(Course fees)
         "Please check your course fees at APSpace > More > Fees.\nYou may also access the page through https://apspace.apu.edu.my/fees.":[
             "How to check course fee",
             "How do I check course fees",

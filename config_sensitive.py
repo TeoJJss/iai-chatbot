@@ -280,11 +280,12 @@ async def get_qa(inp):
         approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
         \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
         \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
-        "What are the APU/APIIT International Student Fees & Refund Policy?",
+        "What are the International Student Fees & Refund Policy?",
         "Refund policy for International Student",
         "Student Fees for International Student",
-        "Explain the fees and refund policy for international students",
-        "How does the fee payment and refund process work for international students?",
+        "Explain the fees and refund policy for International Student",
+        "How does the fee payment and refund process work for International Student?",
+        "How does university refund policy and fees for Internatioanl Student?",
         ],
     
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -296,11 +297,12 @@ async def get_qa(inp):
         \n-A late payment charge is imposed on all overdue fees.\
         \n-Semester Payment is due at the commencement of each semester.\
         ": [
-        "What are the APU/APIIT Malaysian Student Fees & Refund Policy? ",
+        "What are the Malaysian Student Fees & Refund Policy? ",
         "Refund policy for Malaysian Student",
         "Student Fees for Malaysian Student",
         "Explain the fees and refund policy for Malaysian Student",
         "How does the fee payment and refund process work for Malaysian Student?",
+        "How does university refund policy and fees for Malaysian Student?",
         ],
         
         ######Logistics & Operations - APU Campus Connect Lounge

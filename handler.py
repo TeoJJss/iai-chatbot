@@ -16,6 +16,7 @@ async def send_msg(msg: str, user_msg: str, is_private: bool):
             await msg.channel.send(file=discord.File("images/hi.gif"))
     except Exception as error:
         print(error)
+        return "Something went wrong! Please try again. "
 
 def bot_launch():
     intents = discord.Intents.all()

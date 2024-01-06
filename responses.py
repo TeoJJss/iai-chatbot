@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 nlp = spacy.load("en_core_web_md")
 spell = Speller(lang='en')
 
-async def gireply(usr_inp):
+async def reply(usr_inp):
     if os.path.isfile("config_sensitive.py"):
         from config_sensitive import get_qa
     else:

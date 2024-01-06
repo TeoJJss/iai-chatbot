@@ -1,5 +1,5 @@
 import discord
-import responses
+from responses import reply
 import os
 import speech_recognition as sr
 
@@ -10,10 +10,12 @@ else:
 
 async def send_msg(msg: str, user_msg: str, is_private: bool):
     try:
-        resp = await responses.reply(user_msg)
+        resp = await reply(user_msg)
         await msg.author.send(resp) if is_private else await msg.channel.send(resp)
         if user_msg == "hi":
             await msg.channel.send(file=discord.File("images/hi.gif"))
+        if "parking" in resp:
+            await msg.channel.send(file=discord.File("images/apu_map.jpeg"))
     except Exception as error:
         print(error)
         return "Something went wrong! Please try again. "

@@ -14,7 +14,7 @@ async def send_msg(msg: str, user_msg: str, is_private: bool):
         await msg.author.send(resp) if is_private else await msg.channel.send(resp)
         if user_msg == "hi":
             await msg.channel.send(file=discord.File("images/hi.gif"))
-        if "parking" in resp:
+        if "parking rates" in resp.lower():
             await msg.channel.send(file=discord.File("images/apu_map.jpeg"))
     except Exception as error:
         print(error)

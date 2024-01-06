@@ -119,6 +119,15 @@ async def get_qa(inp):
             "malaysia holiday",
             "school holidays"
         ],
+
+        # General knowledge
+        "Please check your course fees at APSpace > More > Fees.\nYou may also access the page through https://apspace.apu.edu.my/fees.":[
+            "How to check course fee",
+            "How do I check course fees",
+            "How much is my course fees",
+            "How much I need to pay"
+        ],
+        
         # Library
         "You can go to the library by taking the stairs or elevator to Level 4, APU": [
             "library",
@@ -165,13 +174,6 @@ async def get_qa(inp):
             "I want to contact library",
             "I want to email library",
             "I want to call library"
-        ],
-        # Bursary
-        "Please check your course fees at APSpace > More > Fees.\nYou may also access the page through https://apspace.apu.edu.my/fees.":[
-            "How to check course fee",
-            "How do I check course fees",
-            "How much is my course fees",
-            "How much I need to pay"
         ],
         
         #Bursary (Payment details)

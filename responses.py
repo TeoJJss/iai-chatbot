@@ -85,4 +85,4 @@ def calculate_similarity(query, response):
 async def similarity_worker(args):
     question, ans, inp = args
     ques = spell(question.lower().strip())
-    return ques, ans, calculate_similarity(inp, ques)
+    return question, ans, calculate_similarity(inp, ques)

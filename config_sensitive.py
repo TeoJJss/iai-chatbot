@@ -348,10 +348,10 @@ async def get_qa(inp):
         ],
     
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
-        "-APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
-        \n-A charge of 50% of the initial payment will apply for cancellation made 14 days or less before course commencement.\
+        "-APU/APIIT will provide a refund to cancellations notified and received `more than 14 days` before the commencement of a course.\
+        \n-A charge of **50%** of the initial payment will apply for cancellation made `14 days or less` before course commencement.\
         \n-An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
-        \n-NO REFUND will be entertained after a course has commenced.\
+        \n-**NO REFUND** will be entertained after a course has commenced.\
         \n-Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
         \n-A late payment charge is imposed on all overdue fees.\
         \n-Semester Payment is due at the commencement of each semester.": [

@@ -255,6 +255,7 @@ async def get_qa(inp):
         "Maybank Acc of APIIT",
         "Maybank Acc of the school",
         "Make payment with Maybank",
+        "Maybank account detais",
         "Pay with Maybank",
         "Maybank"
         ],

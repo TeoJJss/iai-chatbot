@@ -187,14 +187,16 @@ async def get_qa(inp):
             "What is the bank account details of APU",
             "I need to pay",
             "I need to make payment",
-            "Payment Method"
+            "Payment Method",
+            "Payment"
         ],
 
         #Bursary (How to check fee payment on APspace)
         "**Step 1** - Open your APSpace app or web browser.\
         \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
         \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
-        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.":[
+        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.\
+        \nYou may also click this link to proceed: https://apspace.apu.edu.my/fees.":[
             "Fee payment",
             "Fee payment details",
             "Fee payment status",
@@ -287,8 +289,7 @@ async def get_qa(inp):
         ],
 
         #Bursary (How does international students make payment)
-        "Payments can be made at __apu-my.flywire.com__. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to __www.flywire.com/support__.": [
-            "overseas payment",
+        "Payments can be made at http://apu-my.flywire.com/. \nAPU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, visit https://www.flywire.com/support.": [
             "overseas payment",
             "How to pay from overseas?",
             "How do I make an international payment?",
@@ -310,7 +311,7 @@ async def get_qa(inp):
         ],
 
         #Bursary (How to make payment via Flywire?)
-        "1) Visit __apu-my.flywire.com__ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
+        "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
         \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
             "How to make payment with Flywire",
             "How to make payment using Flywire",
@@ -341,10 +342,12 @@ async def get_qa(inp):
         ],
     
         # Bursary (APU/APIIT International Student Fees & Refund Policy)
-        "-International Students are required to pay all fees due prior to arrival by the respective due dates.\n-The International Student Application Fee and International Student Registration Fee will not be refunded.\
-         \n-Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
-         \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
-         \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
+        "- International Students are required to pay all fees due prior to arrival by the respective due dates.\
+         \n- The International Student Application Fee and International Student Registration Fee will not be refunded.\
+         \n- Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+         \n- Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+         \n- A late payment charge is imposed on all overdue fees.\
+         \n- Semester Payment is due at the commencement of each semester.": [
             "What are the International Student Fees & Refund Policy?",
             "Refund policy for International Student",
             "Student Fees for International Student",
@@ -356,7 +359,6 @@ async def get_qa(inp):
             "What is the process for International Student to apply for a refund?",
             "How can International Student apply for a refund?,"
             "What are the penalties for late payment for International Students?",
-            "refund policy"
         ],
 
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -380,6 +382,7 @@ async def get_qa(inp):
             "What is the process for Malaysian Student to apply for a refund?",
             "How can Malaysian Student apply for a refund?",
             "What are the penalties for late payment for Malaysian Student?",
+            "refund policy"
         ],
         
         # Bursary Contact
@@ -399,7 +402,9 @@ async def get_qa(inp):
             "I need to contact bursary",
             "I want to contact bursary",
             "I want to email bursary",
-            "I want to call bursary"
+            "I want to call bursary",
+            "cashier contact",
+            "cashier email"
         ],
 
         ######Logistics & Operations - APU Campus Connect Lounge
@@ -419,7 +424,7 @@ async def get_qa(inp):
             "How do I access APU Connect Lounge?",
             "What is the purpose of Block E lounge?",
             "Where can I find the Level 1 lounge?",
-            "Cleanliness expectations for the lounge?",
+            # "Cleanliness expectations for the lounge?",
             "How do APU Shuttle Buses operate?",
             "What is the purpose of APU Shuttle Buses?",
             "Provide info about Arrival and Departure for APU Shuttle Buses.",
@@ -433,11 +438,11 @@ async def get_qa(inp):
             "Where to wait for shuttle bus APU?",
             "How to access APU Connect Lounge?",
             "What is the location of APU Connect Lounge?",
-            "How do I use APU Connect Lounge responsibly?",
-            "What are users' responsibilities in the lounge?",
-            "Guidelines for responsible lounge use?",
-            "How to maintain cleanliness of APU Campus Lounge?",
-            "What's expected in terms of cleanliness in the lounge?",
+            # "How do I use APU Connect Lounge responsibly?",
+            # "What are users' responsibilities in the lounge?",
+            # "Guidelines for responsible lounge use?",
+            # "How to maintain cleanliness of APU Campus Lounge?",
+            # "What's expected in terms of cleanliness in the lounge?",
             "How to responsibly use APU Campus Lounge?",
             "How is APU Connect Lounge accessed?",
             "What is the purpose of the lounge in Block E?",
@@ -620,6 +625,10 @@ async def get_qa(inp):
             "Is the daily parking rate applicable for Covered Parking?",
             "What type of parking rates does Open Space Parking (Zone B and Zone G) offer for students?",
             "How are parking fees transactions conducted?",
+            "parking fee",
+            "parking rate",
+            "car park fee",
+            'car park rate'
             # "Reminder:",
             # "How can I avoid being charged twice for parking fees?",
             # "Safety Notice of parking",

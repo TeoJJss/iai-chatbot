@@ -279,12 +279,24 @@ async def get_qa(inp):
         #Bursary (How does international students make payment)
         "Payments can be made at apu-my.flywire.com. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to www.flywire.com/support.": [
         "overseas payment",
+        "overseas payment",
         "How to pay from overseas?",
+        "How do I make an international payment?",
+        "Ways to make payment from overseas",
+        "How does international student make payment?",
+        "What are the payment methods for international students?",
+        "Are international payments via credit card accepted?",
+        "How can international students make payment?",
+        "Can international students pay online?",
+        "Can international students pay through bank transfer?",
+        "Can international students pay in their home currency?",
+        "Can international payments be made online?",
         "What are my options for international payments to Malaysia?",
         "Options for overseas payments?",
         "How to pay fees from abroad?",
         "How can I pay for my tuition from abroad?",
         "How do I pay my tuition from another country?",
+        "Is it possible for me to pay online from abroad?",
         ],
 
         #Bursary (How to make payment via Flywire?)

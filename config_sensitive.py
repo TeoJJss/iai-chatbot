@@ -333,7 +333,12 @@ async def get_qa(inp):
         "Student Fees for International Student",
         "Explain the fees and refund policy for International Student",
         "How does the fee payment and refund process work for International Student?",
-        "How does university refund policy and fees for Internatioanl Student?",
+        "How does university refund policy and fees for International Student?",
+        "Can International Student get a refund if they withdraw from the course?",
+        "What happens if International Student pay late?",
+        "What is the process for International Student to apply for a refund?",
+        "How can International Student apply for a refund?,"
+        "What are the penalties for late payment for International Students?",
         ],
     
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -345,12 +350,17 @@ async def get_qa(inp):
         \n-A late payment charge is imposed on all overdue fees.\
         \n-Semester Payment is due at the commencement of each semester.\
         ": [
-        "What are the Malaysian Student Fees & Refund Policy? ",
+        ""What are the Malaysian Student Fees & Refund Policy? ",
         "Refund policy for Malaysian Student",
         "Student Fees for Malaysian Student",
         "Explain the fees and refund policy for Malaysian Student",
         "How does the fee payment and refund process work for Malaysian Student?",
         "How does university refund policy and fees for Malaysian Student?",
+        "Can Malaysian Student get a refund if they withdraw from the course?"
+        "What happens if Malaysian Student pay late?",
+        "What is the process for Malaysian Student to apply for a refund?",
+        "How can Malaysian Student apply for a refund?",
+        "What are the penalties for late payment for Malaysian Student?",
         ],
         
         ######Logistics & Operations - APU Campus Connect Lounge

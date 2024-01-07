@@ -183,6 +183,7 @@ async def get_qa(inp):
             "How to make payment",
             "How to pay course fee",
             "How to pay resit fee",
+            "How to pay for accomodation fee",
             "What is the bank account details of APU",
             "I need to pay",
             "I need to make payment",
@@ -193,29 +194,51 @@ async def get_qa(inp):
         "**Step 1** - Open your APSpace app or web browser.\
         \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
         \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
-        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.\
-        \nYou may also click this link: https://apspace.apu.edu.my/fees.":[
+        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.":[
+            "Fee payment",
             "Fee payment details",
+            "Fee payment status",
+            "Fee payment history",
+            "Fee payment summary",
+            "How to check fee payment?",
             "How to check my fee payment details?",
             "What are the steps to view my fee payment details?",
+            "What are the steps to check my fee payment details?"
             "Can you guide me on how to find my fee payment details?",
+            "Where to check fee payment details?",
             "Where can I find details about my fee payment?",
             "How can I see my fee payment history ?",
+            "Where to check fee payment?",
+            "Steps to check fee payment",
+            "How can I view my fees on APspace?",
+            "How to check my fee pay payment status?",
+            "How to find payment information on APspace?",
             "Paid fee details",
+            "Paid fee history",
+            "Steps to check paid fee",
             "What are my paid fee?",
+            "How to check paid fee?",
             "How can I check my paid fee details?",
             "Where can I find information about my Paid fees?",
             "What are the steps to check my Paid fee details?",
+            "How to know if I have paid my fee successfully?",
             "Outstanding fee details",
+            "Steps to check outstanding fee",
             "What are my outstanding fee?",
+            "How to check outstanding fee?",
             "How can I check my Outstanding fee details?",
             "Where can I find information about my Outstanding fees?",
             "What steps should I follow to check my Outstanding fee details?",
+            "How much is my outstanding fee?",
             "Overdue fee details",
+            "Overdue fee sumary",
+            "Steps to check overdue fee",
             "What are my overdue fee?",
+            "How to check overdue fee",
             "How can I check my Overdue fee details?",
             "Where can I find information about my Overdue fees?",
             "What steps should I follow to check my Overdue fee details?",
+            "How much is my ovedue fee?",
         ],
 
         #Bursary (Bank details-Maybank APU & APIIT)
@@ -240,6 +263,9 @@ async def get_qa(inp):
             "Jompay",
             "APIIT Maybank",
             "APIIT JomPay"
+            "Maybank account detais",
+            "Pay with Maybank",
+            "Maybank",
         ],
 
         #Bursary (Bank details-CIMB APU & APIIT)
@@ -253,6 +279,7 @@ async def get_qa(inp):
             "CIMB Acc of APIIT",
             "CIMB Acc of the school",
             "Make payment with CIMB",
+            "CIMB account details",
             "Pay with CIMB",
             "CIMB",
             "APU CIMB",
@@ -260,46 +287,78 @@ async def get_qa(inp):
         ],
 
         #Bursary (How does international students make payment)
-        "Payments can be made at apu-my.flywire.com. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to www.flywire.com/support.": [
+        "Payments can be made at __apu-my.flywire.com__. APU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, go to __www.flywire.com/support__.": [
+            "overseas payment",
             "overseas payment",
             "How to pay from overseas?",
+            "How do I make an international payment?",
+            "Ways to make payment from overseas",
+            "How does international student make payment?",
+            "What are the payment methods for international students?",
+            "Are international payments via credit card accepted?",
+            "How can international students make payment?",
+            "Can international students pay online?",
+            "Can international students pay through bank transfer?",
+            "Can international students pay in their home currency?",
+            "Can international payments be made online?",
             "What are my options for international payments to Malaysia?",
             "Options for overseas payments?",
             "How to pay fees from abroad?",
             "How can I pay for my tuition from abroad?",
             "How do I pay my tuition from another country?",
+            "Is it possible for me to pay online from abroad?",
         ],
 
         #Bursary (How to make payment via Flywire?)
-        "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
+        "1) Visit __apu-my.flywire.com__ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
         \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
-            "How to make payment via Flywire?",
-            "How to pay with Flywire?",
-            "What are the steps to transfer money through Flywire?",
+            "How to make payment with Flywire",
+            "How to make payment using Flywire",
+            "How to make payment through Flywire",
+            "How to pay with Flywire",
+            "How to pay through Flywire"
+            "How to pay using FLywire",
+            "How to pay fees using Flywire",
+            "How to use Flywire to make payment?",
+            "How to transfer money through Flywire",
+            "How do I make a transaction using Flywire",
+            "Steps to transfer money through Flywire",
+            "Procedure to make payment with Flywire",
+            "Instructions to make payment with Flywire",
             "How do I use Flywire?",
-            "How can I send money through Flywire?",
+            "How to send money through Flywire?",
             "How does payment work on Flywire?",
             "How do I make a transfer with Flywire?",
+            "Steps to pay with Flywire",
+            "How can I make payment using FLywire",
+            "Guide me how to use Flywire to make payment",
+            "Explain how to use Flywire for payments",
+            "What are the instructions for Flywire payments",
+            "How to use Flywire to make payment",
             "Flywire",
             "APU Flywire",
             "pay flywire"
         ],
     
-        #Bursary (APU/APIIT International Student Fees & Refund Policy)
+        # Bursary (APU/APIIT International Student Fees & Refund Policy)
         "-International Students are required to pay all fees due prior to arrival by the respective due dates.\n-The International Student Application Fee and International Student Registration Fee will not be refunded.\
-        \n-Course fee payments made are NON-REFUNDABLE except if the student visa is refused by EMGS/ Immigration. All Fees paid are NON-REFUNDABLE under any circumstances once the visa is approved or after the student has\
-        commenced studies at any level, including Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes. This includes students who do not qualify for enrolment into the course\
-        approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
-        \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
-        \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
+         \n-Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+         \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+         \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
             "What are the International Student Fees & Refund Policy?",
             "Refund policy for International Student",
             "Student Fees for International Student",
             "Explain the fees and refund policy for International Student",
             "How does the fee payment and refund process work for International Student?",
-            "How does university refund policy and fees for Internatioanl Student?",
+            "How does university refund policy and fees for International Student?",
+            "Can International Student get a refund if they withdraw from the course?",
+            "What happens if International Student pay late?",
+            "What is the process for International Student to apply for a refund?",
+            "How can International Student apply for a refund?,"
+            "What are the penalties for late payment for International Students?",
+            "refund policy"
         ],
-    
+
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
         "**APU/APIIT Malaysian Student Fees & Refund Policy** \
         \n- APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
@@ -316,6 +375,11 @@ async def get_qa(inp):
             "Explain the fees and refund policy for Malaysian Student",
             "How does the fee payment and refund process work for Malaysian Student?",
             "How does university refund policy and fees for Malaysian Student?",
+            "Can Malaysian Student get a refund if they withdraw from the course?"
+            "What happens if Malaysian Student pay late?",
+            "What is the process for Malaysian Student to apply for a refund?",
+            "How can Malaysian Student apply for a refund?",
+            "What are the penalties for late payment for Malaysian Student?",
         ],
         
         # Bursary Contact

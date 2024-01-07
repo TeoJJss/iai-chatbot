@@ -271,6 +271,7 @@ async def get_qa(inp):
         "CIMB Acc of APIIT",
         "CIMB Acc of the school",
         "Make payment with CIMB",
+        "CIMB account details",
         "Pay with CIMB",
         "CIMB"
         ],

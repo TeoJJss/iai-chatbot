@@ -327,13 +327,11 @@ async def get_qa(inp):
             "How to use Flywire to make payment",
         ],
     
-        #Bursary (APU/APIIT International Student Fees & Refund Policy)
+        # Bursary (APU/APIIT International Student Fees & Refund Policy)
         "-International Students are required to pay all fees due prior to arrival by the respective due dates.\n-The International Student Application Fee and International Student Registration Fee will not be refunded.\
-        \n-Course fee payments made are NON-REFUNDABLE except if the student visa is refused by EMGS/ Immigration. All Fees paid are NON-REFUNDABLE under any circumstances once the visa is approved or after the student has\
-        commenced studies at any level, including Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes. This includes students who do not qualify for enrolment into the course\
-        approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
-        \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
-        \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
+         \n-Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+         \n-Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+         \n-A late payment charge is imposed on all overdue fees.\n-Semester Payment is due at the commencement of each semester.": [
             "What are the International Student Fees & Refund Policy?",
             "Refund policy for International Student",
             "Student Fees for International Student",
@@ -346,11 +344,11 @@ async def get_qa(inp):
             "How can International Student apply for a refund?,"
             "What are the penalties for late payment for International Students?",
         ],
-    
+
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
         "-APU/APIIT will provide a refund to cancellations notified and received `more than 14 days` before the commencement of a course.\
         \n-A charge of **50%** of the initial payment will apply for cancellation made `14 days or less` before course commencement.\
-        \n-An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
+        \n-An Administrative Fee of **RM 200.00** will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
         \n-**NO REFUND** will be entertained after a course has commenced.\
         \n-Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
         \n-A late payment charge is imposed on all overdue fees.\

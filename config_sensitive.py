@@ -182,6 +182,7 @@ async def get_qa(inp):
         "How to make payment",
         "How to pay course fee",
         "How to pay resit fee",
+        "How to pay for accomodation fee",
         "What is the bank account details of APU",
         "I need to pay",
         "I need to make payment",

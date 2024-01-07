@@ -303,12 +303,22 @@ async def get_qa(inp):
         "1) Visit apu-my.flywire.com to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
         \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
         "How to make payment via Flywire?",
+        "How to transfer money through Flywire",
         "How to pay with Flywire?",
+        "How can I pay through Flywire?",
+        "How do I make a transaction using Flywire?",
         "What are the steps to transfer money through Flywire?",
         "How do I use Flywire?",
         "How can I send money through Flywire?",
         "How does payment work on Flywire?",
         "How do I make a transfer with Flywire?",
+        "Steps to pay with Flywire",
+        "How do I use Flywire to make payment",
+        "How can I make payment using FLywire",
+        "Can you guide me hw to use Flywire to make payment",
+        "Can you explain how to use Flywire for payments?",
+        "What is the procedure for Flywire payments?",
+        "What are the instructions for Flywire payments?",
         ],
     
         #Bursary (APU/APIIT International Student Fees & Refund Policy)

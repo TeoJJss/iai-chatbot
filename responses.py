@@ -1,7 +1,6 @@
 import string, os, re, time
 import spacy, asyncio
 from autocorrect import Speller
-from concurrent.futures import ThreadPoolExecutor
 
 nlp = spacy.load("en_core_web_md")
 spell = Speller(lang='en')
@@ -24,9 +23,6 @@ async def reply(usr_inp):
     if str(inp) in ["hi", "hello", "greetings", "hey"]:
         response = "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU. "
     else:
-        # with ThreadPoolExecutor(max_workers=10) as executor:
-        #     questions_inp_pairs = [(question, answer, inp) for answer, questions in qa.items() for question in questions]
-        #     results = list(executor.map(similarity_worker, questions_inp_pairs))     
         questions_inp_pairs = [(question, answer, inp) for answer, questions in qa.items() for question in questions]
         tasks = [similarity_worker(qip) for qip in questions_inp_pairs]
         results = await asyncio.gather(*tasks)

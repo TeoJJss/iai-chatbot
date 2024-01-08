@@ -289,7 +289,7 @@ async def get_qa(inp):
         ],
 
         #Bursary (How does international students make payment)
-        "Payments can be made at http://apu-my.flywire.com/. \nAPU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, visit https://www.flywire.com/support.": [
+        "**Flywire**\nPayments can be made at http://apu-my.flywire.com/. \nAPU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, visit https://www.flywire.com/support.": [
             "overseas payment",
             "How to pay from overseas?",
             "How do I make an international payment?",
@@ -310,6 +310,20 @@ async def get_qa(inp):
             "Is it possible for me to pay online from abroad?",
         ],
 
+        # Bursary (pay with cheque)
+        "**Cheque or Banker's Draft Payment**\
+            \nPayable: ASIA PACIFIC UNIVERSITY SDN BHD \
+            \n*You may handover the document to the bursary counter at Level 3 Spine, APU Campus*":[
+                "How to pay cheque",
+                "How to pay banker's draft",
+                "How to pay fee with cheque",
+                "pay with cheque",
+                "pay with banker draft",
+                "pay cheque",
+                "payment cheque",
+                "pay fee cheque"
+        ],
+
         #Bursary (How to make payment via Flywire?)
         "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
         \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
@@ -317,7 +331,7 @@ async def get_qa(inp):
             "How to make payment using Flywire",
             "How to make payment through Flywire",
             "How to pay with Flywire",
-            "How to pay through Flywire"
+            "How to pay through Flywire",
             "How to pay using FLywire",
             "How to pay fees using Flywire",
             "How to use Flywire to make payment?",
@@ -407,8 +421,37 @@ async def get_qa(inp):
             "cashier email"
         ],
 
+        # Bursary Late Payment
+        "**Late Payment Penalties**\
+            \nStudents will cease to enjoy all rights and privileges of a student of APU, after 7 days from the payment due date.\
+            \nBesides, late charges will be applied to the student.\
+            \nYou are advised to check APSpace for outstanding payments and settle the payments at least 3 working days earlier.\
+            \nFor more details, please check the APU Student Handbook, https://apiit.atlassian.net/wiki/spaces/AA/pages/1199570953/Student+Handbook.":[
+                "late payment",
+                "late charges",
+                "late penalties",
+                "late penalty",
+                "late pay",
+                "late charge",
+                "late payments",
+        ],
+        
+        # Bursary location
+        "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
+            "Where is cahier",
+            "where cashier",
+            "where is bursary",
+            'where bursary',
+            "where to pay",
+            "how to go cashier",
+            "how to go bursary",
+            "where to pay cheque",
+            "cashier counter",
+            "payment counter"
+        ],  
+
         ######Logistics & Operations - APU Campus Connect Lounge
-        "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nYou may access the APU Campus Connect Lounge via the lifts and stairs located at Block E. The Lounge is located on Level 1 (Ground) (below Block J2 / adjoining the car park). \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
+        "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
             "Purpose Connect Lounge",
             "purpose APU Shuttle Bus",
             "purpose Bus Shuttle ",
@@ -681,6 +724,38 @@ async def get_qa(inp):
             "Understanding and resolving 'Invalid Status' during parking access",
             "Parking entry/exit trouble: 'Invalid Status' explanation and solution",
         ],
+
+        # Parking location
+        "You may enter the **Covered Parking** (Zone A) near Block E, APU Campus. \
+            \nThe **Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
+            \n\n*Hint: Send 'parking fee' to me, for parking rates.*":[
+                "Where parking",
+                "how to find parking",
+                "where is parking zone",
+                "Where is zone A",
+                "Where is Zone B"
+        ],
+
+        # Where to wait bus
+        "If you would like to take the shuttle service from APU to any location, please take the glass elevator to **APU Campus Connect Lounge** at **Level 1M**, near main entrance":[
+            "Where to wait bus at APU",
+            "wait bus at apu",
+            "wait shuttle at apu",
+            "take bus at APU",
+            "take shuttle at APU",
+            "bus depart at APU",
+            "bus arrive at APU"
+        ],
+
+        "If you are taking the shuttle service from LRT to APU, please wait the vehicle at **Grab A** point, **Bukit Jalil LRT station**.":[
+            "Where to wait bus at LRT",
+            "wait bus at LRT",
+            "wait shuttle at LRT",
+            "take bus at LRT",
+            "take shuttle at LRT",
+            "bus depart at LRT",
+            "bus arrive at LRT"
+        ]
     }
 
     # Bus schedule algorithm

@@ -129,36 +129,76 @@ async def get_qa(inp):
             "How much I need to pay"
         ],
         
-        # Library
-        "You can go to the library by taking the stairs or elevator to Level 4, APU": [
+        # Library (Location of APU and APIIT)
+        "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
+        \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
             "library",
+            "library location",
             "APU library",
+            "APIIT library",
+            "APU library location",
+            "APIIT library location",
             "How to go to the library",
             "How to go library",
             "How to go to library",
-            "go library",
             "Where is library",
+            "Where is APU library",
+            "Where is APIIT library",
+            "Where is the library located?",
             "How do I get to the library?",
             "What is the address of the library?",
             "How to go to the APU library",
+            "How to go to the APIIT library",
             "How to go APU library",
+            "How to go APIIT library",
             "How to go to library at APU",
+            "How to go to library at APIIT",
+            "go library",
             "go APU library",
-            "Where is APU library",
+            "go APIIT library",
             "How do I get to the APU library?",
-            "What is the address of the APU library?",
+            "How do I get to the APIIT library?",
         ],
-        "**Operating hour of library**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.,\nSaturday : 9:00 a.m. - 1:00 p.m.,\nSunday / Public Holidays: Closed":[
+
+        # Library(Operating hours)
+        "**Operating hour of APU library**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.,\nSaturday : 9:00 a.m. - 1:00 p.m.,\nSunday / Public Holidays: Closed\
+         \n\n**Operating hour of APIIT library**\nMonday – Friday: 8:30 a.m. – 6:00 p.m.,\nSaturday / Sunday / Public Holidays: Closed ": [
             "What is the operating hours of library",
+            "Operating hour of APU library",
+            "Operating hour of APIIT library",
             "Operation hour of library",
             "Operation hour of APU library",
-            "what time library open",
-            "what time library close",
-            "library operating",
-            "library operating time",
-            "library time"
+            "Operation hour of APIIT library",
+            "When does the library open?",
+            "When does the APU library open?",
+            "When does the APIIT library open?",
+            "What time does the library open",
+            "What time does the APU library open",
+            "What time does the APIIT library open",
+            "What time does the library open on weekdays?",
+            "What time does the APU library open on weekdays?",
+            "What time does the APIIT library open on weekdays?",
+            "Is the library open on weekends?"
+            "Is the APU library open on weekends?"
+            "Is the APIIT library open on weekends?"
+            "Is the library open on Saturdays?",
+            "Can I visit the library on public holidays?",
+            "Is the library closed on public holidays?",
+            "What is the schedule for the library?",
+            "Library open hours",
+            "APU Library open hours",
+            "APIIT Library open hours",
+            "Library open time",
+            "APU Library open time",
+            "APIIT Library open time",
+            "When does the library open and close?",
+            "When does the APU library open and close?",
+            "When does the APIIT library open and close?",
+            "When can I visit the library during the week?",
         ],
-        "Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)":[
+    
+        # Library(contact)
+        "Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
             "How to contact library",
             "What is the contacts of library",
             "What is the email of library",
@@ -169,12 +209,189 @@ async def get_qa(inp):
             "call library",
             "contact library",
             "talk to library",
-            "I need to email library", 
+            "I need to email library",
             "I need to call library",
             "I need to contact library",
             "I want to contact library",
             "I want to email library",
-            "I want to call library"
+            "I want to call library",
+        ],
+    
+        # Library(am I allowed to bring food/drinks)
+        "Food and canned drinks are strictly not allowed in the library. Drinking water in bottles and spill-proof containers are permitted. ": [
+            "Can I bring food to library?",
+            "Can I bring food into the library?",
+            "Can I bring drink to library?",
+            "Can I bring drink into the library?",
+            "Can I eat in the library?",
+            "Can I drink in the library?",
+            "Can I drink anything other than water in the library?",
+            "Can I bring my own water bottle to the library?",
+            "Library food rules?",
+            "Is food allowed in the library?",
+            "What is the policy on eating in the library?",
+            "What is the policy on drinking in the library?",
+            "Are bottled drinks allowed in the library?",
+            "Are outside beverages allowed in the library?",
+        ],
+
+        # Library(can I sleep)
+        "Sleeping is strictly not allowed in the library as we want to maintain a professional ambience and a pleasant environment of the library.\
+        \nHowever, you are welcome to relax by listening to music, chatting with friends, and doing other activities that don't disrupt the library's atmosphere.": [
+            "Can I sleep in the library?",
+            "What happens if I fall asleep in the library?",
+            "Can I take a nap in the library",
+            "Is it okay to sleep in the library?",
+            "Can I use the library for a short nap?",
+            "Is sleeping allowed in the library?",
+            "Can I lie down in the library?",
+            "Can I sleep in the library if I am tired?",
+            "Can I sleep on the couch in the library?",
+            "Is it ok to sleep in the library?",
+            "Is it fine to take a nap in the library?",
+            "Can I have a quick nap in the library?",
+        ],
+
+        # Library(How to apply for library job vacancies)
+        "You will have to submit the online job application form, which will be available once the recruitment advertisement is published on the APSpace and library website.The application form must be submitted along with: **`Cover Letter,Curriculum Vitae (CV),Passport-sized photograph.`**\
+        \nYou'll be interviewed if shortlisted. Applicants who were rejected would be contacted by email.": [
+            "How to apply for library job vacancies?"
+            "How can I apply for a job at the library?",
+            "What is the procedure to apply for a job in the library?",
+            "What is the process to apply for a library job?",
+            "What is the requirement to apply for a library job?",
+            "What are the steps to apply for a library job?",
+            "I am interested in working at the library",
+            "I would like to apply for a job in the library",
+            "I am thinking of working in the library",
+            "How to apply for a library position?",
+            "I want to work in the library",
+            "I want to apply for a library job",
+            "I wish to apply for a library position.",
+            "How to apply to be a librarian",
+            "How do I submit an application for a library job?",
+            "How can I work part time in a library?",
+            "How to get a part time job in a library",
+            "How to work as a part time in a library",
+            "How to work part-time in a library"
+            "I wish to work at the library",
+            "How to apply for a position in the library?",
+            "How do I apply for a position at the library?",
+            "I am interested in a library job",
+            "I am looking to work in the library.",
+            "Where can I find the application for library vacancies?",
+            "What steps do I need to take to apply for a job at the library?",
+            "Is there an online application portal for library job opportunities?",
+            "What documentation do I need to prepare for my library job application?",
+            "What should I include in my resume for a library job application?",
+            "What documents do I need to attach when submitting my library job application?",
+            "How to apply job in library?",
+        ],
+
+        # Library(how to search printed books?)
+        "1) Access the OPAC portal using this link: https://opac.apiit.edu.my/ \n2) Search for the book and click “Go“. Select keyword, ISSN, and Subject from the drop-down menu adjacent to the search bar to change search details.\
+            \n3) Choose the book that you want and click the title.\n4) Search for the book on the shelf using the call number and also take note of the library's location.\
+            \n5) Ensure the book is “Available”. You can reserve if the status is “Checkout”.": [
+            "find book",
+            "search book",
+            "search printed books",
+            "How to search for printed book?",
+            "How do I search for a specific book?",
+            "How do I find a book in the library?",
+            "How do I look a book in the library?",
+            "How to search for a library book?",
+            "How can I locate a book in the library?"
+            "What is the best way to search for a book?",
+            "Where do I go to find a physical book?",
+            "What should I do to get a book in the library?",
+            "Where can I search for a library book?",
+            "How can I quickly find a book by its title?",
+            "What is the fastest way to find a book?",
+            "How to locate a book in the library?",
+            "What is the easiest way to find a book?",
+            "Steps to find a book",
+            "What is the process to find a book?",
+            "I need help finding a book",
+            "What should I do to locate a book in the library?",
+        ],
+    
+        # Library(how to borrow items from the library?)
+        "You can either bring the items that you wish to borrow along with your ID to the counter or proceed to our Self-checkout kiosk for a quicker check-out process.": [
+            "Borrow book",
+            "How to borrow a book?",
+            "How do I borrow books from the library?",
+            "How to borrow items from the library?",
+            "How can I borrow book from the library?",
+            "What is the process to borrow a book from the library?",
+            "What steps should I follow to borrow a book from the library?",
+            "How can I borrow a book from the library?",
+            "What is the procedure to borrow items from the library?",
+            "What is the procedure to borrow a book from the library?",
+            "What do I need to do to borrow books from the library?",
+            "What should I do to borrow a book from the library?",
+            "Do I need a library card to borrow items?",
+            "Do I need my student card to borrow items?",
+            "Do I need my student card to borrow a book?",
+        ],
+
+        # Library(How many items can students and staff borrow?)
+        "Certificate, Foundation, Diploma and Degree Students- 4 items\nPostgraduate Students (Full-time)- 10 items\nPostgraduate Students (Part-time)- 6 items\
+        \nAcademic Staff (Full-time)- 20 items\nAcademic Staff (Part-time)-10 items\nAdministrative Staff- 2 items\nEnglish Language Course Students- 2 items\
+        \nEFREI Students-2 items": [
+            "Amount of borrowing item per time",
+            "How many item can a peson borrow?",
+            "How many items can a student borrow?",
+            "How many items can a staff borrow?",
+            "How many books can I borrow?",
+            "How many books can I borrow per time?",
+            "How many books can I borrow at once?",
+            "How many items can I borrow?",
+            "How many items can I borrow per time?",
+            "How many items can I borrow at once?"
+            "How many items am I allowed to borrow",
+            "borrowing limit",
+            "What is my borrowing limit?",
+            "Maximum amount of book to borrow per person",
+            "What is the maximum amount of books I can borrow?",
+            "How many books can I borrow as a Certificate student?",
+            "How many books can I borrow as a Foundation student?",
+            "How many books can I borrow as a Diploma student?",
+            "How many books can I borrow as a Degree student?",
+            "How many books can I borrow as a Full time Postgraduate student?",
+            "How many books can I borrow as a Part time Postgraduate student?",
+            "How many books can I borrow as a Full time Academic staff?",
+            "How many books can I borrow as a Part time Academic staff?",
+            "How many books can I borrow as a Administrative Staff?",
+            "How many books can I borrow as a English Language Course Students?",
+            "How many books can I borrow as a EFREI Students?",
+        ],
+
+        # Library(How to extend the borrowing book due date?)
+        "You can either renew the items over the counter or you can do an online renewal if you have not reached your renewal limits. If you have reached the renewal limit, you will have to bring the item to the library to see if it can be further extended. \
+        \nOnline renewal can be done by logging in to your “My Library Account”, https://library.apu.edu.my/": [
+            "renew book",
+            "extend book due date",
+            "How to extend the borrowing book due date?",
+            "How to extend the due date for the library books?",
+            "What is the process for renewing my borrowed books?",
+            "What are the steps to extend the due date of my library books?",
+            "What is the process for renewing books",
+            "Can I extend the due date of my books online?",
+            "Is there a way to extend the return date of my borrowed books?",
+            "How to renew my library books online?",
+            "How can I extend the due date for my borrowed books?",
+            "Is there an online option to extend the due date for library books?",
+            "Can I renew my borrowed books",
+            "Can I renew books at the counter",
+            "Can I renew books online?",
+            "Can I renew my books in person?"
+            "Can I request an extension for the due date of my borrowed books?",
+            "Steps to extend book due date",
+            "Online book renewal process",
+            "Procedure to extend book return date",
+            "How do I keep my books longer?",
+            "How do I renew my books online?",
+            "How to renew a book?",
         ],
         
         #Bursary (Payment details)

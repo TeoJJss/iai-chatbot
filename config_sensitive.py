@@ -944,10 +944,10 @@ async def get_qa(inp):
         ],
 
        # Parking location
-        "You may enter the **Covered Parking** (Zone A) near Block E, APU Campus. \
-            \nThe **Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
-            \nThe **Open Space Parking** (Zone G) is located beside of APPIT\
-            \n\n*Hint: Send 'parking fee' to me, for parking rates.*":[
+        "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus. \
+            \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
+            \nThe **APIIT Open Space Parking** (Zone G) is located next to the APPIT campus\
+            \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
                 "Where parking",
                 "how to find parking",
                 "where is parking zone",
@@ -1007,11 +1007,18 @@ async def get_qa(inp):
             "take shuttle at LRT",
             "bus depart at LRT",
             "bus arrive at LRT"
-        ]
+        ],
+
+        "Effective **8 January 2023**, the shuttle service from Endah to APU is discontinued. \
+            \nYou may take the free APU shuttle service from LRT Bukit Jalil or RapidKL T580 bus":[
+                "Endah",
+                "Endah Promenade",
+                "Endah to APU"
+        ],
     }
 
     # Bus schedule algorithm
-    if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses"] if i in str(inp).lower()]:
+    if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses", "travel"] if i in str(inp).lower()]:
         added_set = set()
         count = 0
         if schedules: # If schedules from API not empty
@@ -1049,5 +1056,28 @@ async def get_qa(inp):
         if not count:
             qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
                 "bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule", "bus to", "bus from", "shuttle to", "shuttle from"]
+            
+        qa[
+            "**Travel Pass from/to APU & APIIT**\
+                \nLRT : Free\
+                \nAPU ⇄ APIIT : Free \
+                \nMosque : Free \
+                \nFortune Park : RM50\
+                \nM Vertica : RM140 \
+                \n\n*Please make payment at the Bursary Office, Level 3 APU Campus.\
+                \nHint: You may ask me `bus schedule`.*"
+            ] = [
+                "Travel pass",
+                "Travel pass to APU",
+                "travel pass to apiit",
+                "how much is bus",
+                "pay bus",
+                "pay shuttle",
+                "how much to pay for shuttle",
+                "payment bus",
+                "payment shuttle",
+                "bus fee",
+                "bus fees"
+            ]
         
     return qa

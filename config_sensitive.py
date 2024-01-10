@@ -394,6 +394,323 @@ async def get_qa(inp):
             "How do I renew my books online?",
             "How to renew a book?",
         ],
+
+        # Library(How to reserve a book?)
+        "1) Log in to 'My Library Account', https://library.apu.edu.my/ to access the library catalog.\n2) Search and locate the book that you wish to reserve.\
+        \n3) Click on the `Place hold` button to reserve the book(s).\n4) Choose your `Pickup location` as APU  Library to collect the book(s).\
+        \n5) The librarians or automated email will notify you that the book(s) are ready for collection. Pick up the reserved books within three working days after notification. Your library account shows your reservation data and status.": [
+            "reserve a book",
+            "How do I reserve a book?",
+            "How to reserve a book?",
+            "Can I reserve a book online?",
+            "Can you guide me on reserving a book at APU Library?",
+            "How to use 'My Library Account' for reserving a book?",
+            "What are the steps to follow to reserve a book at APU Library?",
+            "What steps should I follow to hold a book in the library?",
+            "What are the steps to reserve a book from the library?",
+            "How can I reserve a book",
+            "Explain the process of book reservation.",
+            "How to pick up a reserved book from APU Library?",
+            "How will I know when my reserved book is ready?",
+            "How will I get notified about my book reservation?",
+            "How do I reserve a book through the library website?",
+            "What is the process for online book reservation?"
+        ],
+
+        # Library(Where do I return the borrowed book?)
+        "You can either return the borrowed items through the book return kiosk or at the library counter. Refer to the Book Return Kiosk Guide if you are returning the items using the kiosk. Alternatively, you can follow the on-screen instructions displayed in the kiosk screen.": [
+            "return book",
+            "Where do I return the borrowed book?",
+            "How do I return the book?",
+            "How can I give back borrowed books?",
+            "Do I return books at the counter or kiosk?",
+            "How do I use the return kiosk?",
+            "Where should I go to return the book I borrowed?",
+            "Where is the book return kiosk located?",
+            "Can I return the borrowed book at the library counter?",
+            "Is there a guide I can refer to for using the book return kiosk?",
+            "How do I use the book return kiosk to return my borrowed book?",
+            "What is the process for returning a borrowed book?",
+            "What is the procedure to return a book using the kiosk?",
+            "What are the steps for returning books through the kiosk?",
+            "Can you guide me on how to return a book at the library?",
+            "What are the instructions for returning a book through the kiosk?",
+            "What steps should I follow to return a borrowed book at the library?",
+            "Where should I return a book after borrowing it?",
+        ],
+
+        # Library(How do I collect my library deposit?)
+        "1)Login to APSpace.\n2) Go to `Collaboration & Information Resources` and select `e-Forms`. Your browser will open a new tab with the `Exit Application` form at the bottom.\
+        \n3) Complete the form by providing the required details and wait for confirmation. You can check the status in the E-forms.\n4) Collect the library deposit from the cashier.": [
+            "collect library deposit",
+            "collect my library deposit",
+            "How to get back my library deposit?",
+            "library deposit",
+            "How do I collect my library deposit?",
+            "What are the steps to retrieve my library deposit?",
+            "how to get back my library deposit?",
+            "How to get library deposit back?",
+            "claim library deposit",
+            "How to claim library deposit?",
+            "Method to retrieve library deposit?",
+            "What is the process to collect my library deposit?",
+            "How to collect my library deposit?",
+            "I want to collect my library deposit",
+            "How to retrieve library deposit?",
+            "How to retrieve my library deposit?",
+            "Steps to get library deposit back?",
+            "Procedure for library deposit collection?",
+            "Where and how can I collect my library deposit?",
+            "How do I withdraw my library deposit?",
+            "How can I reclaim my library deposit easily?",
+            "Method to receive my library deposit",
+            "How to retrieve my library deposit",
+        ],
+    
+        # Library(Can I borrow FYP/theses/dissertation?)
+        "The hard bound FYP / Theses / Dissertation belongs to the library's `Reference Collection`. Any materials belong to this category can only be used within the library and not available for borrowing. However, you may visit the APU’s Institutional Repository (APres) to access hundreds of selected copies of FYPs / Theses/ Dissertation.": [
+            "borrow FYP",
+            "borrow theses",
+            "borrow disseratation",
+            "Can I borrow FYP?",
+            "Can I borrow theses?",
+            "Can I borrow dissertation?",
+            "Can I borrow FYP from the library?",
+            "Can I borrow theses from the library?",
+            "Can I borrow disseratation from the library?",
+            "Is it possible to take home the library's FYP?",
+            "Is it possible to take home the library's theses?",
+            "Is it possible to take home the library's dissertation?",
+            "Are the FYP available for borrowing?",
+            "Are the theses available for borrowing?",
+            "Are the dissertation available for borrowing?",
+            "Can I take the FYP home?",
+            "Can I take the theses home?",
+            "Can I take the dissertation home?",
+            "Can FYP be borrowed?",
+            "Can theses be borrowed?",
+            "Can dissertation be borrowed?",
+            "Is it allowed to borrow FYP?",
+            "Is it allowed to borrow theses?",
+            "Is it allowed to borrow disseration?",
+            "Are fyp available for borrowing?",
+            "Are theses available for borrowing?",
+            "Are dissertation available for borrowing?",
+        ],
+    
+        # Library(How long can I borrow an item?)
+        "General circulation (no colored labels attached) – 7 days\n3 days loan (yellow-colored label) – 3 days\nOvernight loan (red-colored label) – 1 day\
+        \nStaff circulation (green colored label) – for academic staff only – 120 days (4 months)\nReferences, Current Periodicals, Bound Journals - Only to be used in the library as a reference\
+        \nFinal year projects and Theses - Only to be used in the library as a reference\nCD ROMs / DVDs - can be borrowed with the same privileges as the book.\
+        \nAPU Wacom Tablet – 1 day\nAPU Lightpad – 1 day": [
+            "How long can borrow an item?",
+            "How many days can I borrow an item?",
+            "What is the loan period for an item?",
+            "What is the borrowing period for items with a yellow-colored label?",
+            "What is the borrowing period for items with a red-colored label?",
+            "What is the borrowing period for items with a green-colored label?",
+            "Is there a specific duration for borrowing reference materials in the library?",
+            "What is the duration for borrowing an item?",
+            "How long can I borrow an APU Lightpad?",
+            "How long can I borrow an APU Wacom Tablet?",
+            "Can I borrow references?",
+            "Can I borrow current periodicals?",
+            "Can I borrow bound journals?",
+            "What is the borrowing time for final year projects?",
+            "What is the borrowing time for theses?",
+            "How long can academic staff borrow green-labeled items?",
+            "What is the borrowing policy for CD ROMs / DVDs?",
+            "What is the loan period for an item",
+            "Can I borrow reference materials or journals?",
+            "How long can I borrow a general circulation item?",
+            "Can academic staff renew green-labeled items?",
+            "Is there a time restriction for items with no colored label?",
+        ],
+    
+        # Library(How do I pay my library fines?)
+        "You need to come to the library counter and pay your fines by cash. Please ensure to login to your “My Library Account” to check your total outstanding fines and prepare the exact cash to make payment at the library counter.": [
+            "pay my library fines",
+            "How to pay library fines?",
+            "How do I pay my library fines?",
+            "Can I pay my library fines in cash?",
+            "What is the procedure to pay my library fines?",
+            "Where to pay my linrary fines",
+            "Methods to pay library fines",
+            "Can I use “My Library Account” to pay my fines online?",
+            "How to check my library fines?",
+            "Where do I need to go to pay my library fines?",
+            "Can I pay my fines with a credit card, or is cash the only option?",
+            "Can I pay my fines online, or is it only accepted at the library?",
+        ],
+    
+        # Library(What should I do if I lost a book?)
+        "Please report to us immediately once you realize the borrowed item(s)/book(s) is lost by providing the details of the lost item(s) / book(s) `(e.g., name of the item, book title, barcode, date that you borrow, etc.)`. If you fail to report to us, the fines will continue to accrue. Once reported, your library account will be suspended temporarily. The library will allow a grace period of two weeks for you to search for the book(s)/item(s).\
+        \n\nYou will not be charged with fines for **two weeks**. If the item is not found after the grace period, we will contact you to discuss one of the following possible options (but not limited to) to resolve the issue.\
+        \n`- Replace the lost book with a new copy of the same edition or the latest edition.`\n`- Pay the replacement costs, including the book price and overdue fines owing on the item.`\
+        \n\nLibrary staff will fill out the `Missing / Lost Book` form. You will receive the discussion's final verdict via email to guide your future steps. After you clean your account based on the final decision, we will reinstate your library account.": [
+            "lost a book",
+            "What should I do if I lost a book?",
+            "I lost a book",
+            "I lost a book I borrowed from the library."
+            "What if I lose a library book?",
+            "What are my responsibilities if I lose a library book?",
+            "What happens if I can't find a book I borrowed from the library?",
+            "What do I do if I lose a library book?",
+            "How can I report a lost library book?",
+            "Will I get fine if I lost a book?",
+            "Will fines continue if I don't report a lost book?",
+            "How long is the grace period for finding a lost book?",
+            "Will my account get suspended if I lost a book",
+            "What are my options if I can't find the lost book?",
+            "I can't find thr book I borrowed",
+            "How do I report a lost item to the library?",
+            "Is my account suspended for a lost library item?",
+            "How long do I have to find a lost book without fines?",
+            "Can I replace a lost book",
+            "Options if I can't find the lost book?",
+            "How do I report a lost item to the library?",
+            "I accidentally lost a book",
+            "What action I need to take if I lost a borrowed book?",
+        ],
+
+        # Library(Do I have to pay if damaged a book?)
+        "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
+        \nFor minor damages, the cost of repairing the book would be **RM 12** for soft-cover books and **RM 15** for hardcover titles.": [
+            "Do I have to pay if damaged a book?",
+            "Do I have to pay for damaging a library book?",
+            "What is the fee for damaging a library item?",
+            "What should I do if I damage a library book?",
+            "How much does it cost to repair a damaged soft-cover book?",
+            "How much does it cost to repair a damaged hard-cover book?",
+            "What is the cost of repairing a book if damaged",
+            "Will I be fined if I don't report a damaged item?",
+            "What happens if I damage a library book?",
+            "Do I need to report if I damage a library book?",
+            "Can I replace a damaged book instead of paying?",
+            "Will I be fined for damaging a library book?",
+            "Replace or pay for a damaged book?",
+        ],
+    
+        # Library(What is referencing?)
+        "A method used to demonstrate a thorough and appropriate literature search and reading. An acknowledgement of used ideas and written material belonging to other authors in their own work. Two parts are included in referencing: `Citation (in-text referencing)` and `Reference List (end-text referencing).`": [
+            "meaning of referencing?",
+            "What is referencing",
+            "What is include in referencing",
+            "What is the purpose of referencing?",
+            "What are the two main components of referencing?",
+            "Can you explain the difference between citation (in-text referencing) and reference list (end-text referencing)?",
+            "What is the difference between in-text referencing and end-text referencing?",
+            "Why is it necessary to include both citation and reference list in academic writing?",
+            "Why is referencing used in academic writing?",
+    
+        ],
+    
+        # Library(Which referencing style is used in APU?)
+        "At APU, we use `APA referencing style` in our academic writing. For more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
+        \nhttps://apastyle.apa.org/style-grammar-guidelines/references\
+        \nhttps://dif7uuh3zqcps.cloudfront.net/wp-content/uploads/sites/91/2021/07/12102004/Quick-APA-Referencing-Guide-2021.pdf.": [
+            "Which referencing style is used in APU?",
+            "What referencing style does APU use?",
+            "What referencing style is use in APU?",
+            "What is the preferred referencing style for academic writing at APU?",
+            "What resources does APU provide for learning the APA referencing style?",
+            "Guides of APU referencing",
+            "What referencing style does APU use?",
+            "Where can I learn APA referencing at APU?",
+            "What APA guides does APU library provide?",
+            "What is the standard referencing style at APU?",
+            "What are the recommended APA guides at APU?",
+            "Where can I find APA Style Guidelines?",
+            "Does APU recommend any specific APA guides for referencing?",
+        ],
+    
+        # Library(What is APA referencing style?)
+        "APA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association.": [
+            "APA style",
+            "What is APA?",
+            "What is APA style?",
+            "Why use APA style?",
+            "What does APA style format?",
+            "What is APA referencing style?",
+            "Definition of APA referencing style",
+            "What is the purpose of the APA referencing style?",
+            "Can you describe the APA referencing style?",
+            "How does APA style help in writing?",
+        ],
+    
+        # Library(What is the format of APA in-text citation?)
+        "There are two different formats of in-text citation, `parenthetical and narrative`. Both formats require two elements: `Author's name and Year of publication`\
+        \nParenthetical citations are the more commonly seen form of in-text citations for academic work. Both required reference elements are presented at the end of the sentence in parentheses. E.g. (Belafonte, 2008).\
+        \nIn narrative citations, the author's name will be separated from the date. The date must appear immediately after the author's name but in parenthesis. E.g. Belafonte (2008).": [
+            "format of APA in-text citation"
+            "What is the format of APA in-text citation?",
+            "APA in-text citation format",
+            "format of APA in-text citation",
+            "How many format of APA in-text citation are there?",
+            "What are the two different formats of in-text citation?",
+            "What are the two formats of in-text citation in APA style?",
+            "What is parenthetical citation?",
+            "What is narrative citation?",
+            "Can you provide an example of a parenthetical citation?",
+            "Can you provide an example of a narrative citation?"
+            "How does a narrative citation differ from a parenthetical citation?",
+            "Explain the difference between parenthetical and narrative citations in APA?",
+        ],
+    
+        # Library(How do I get help if I need to know more about APA referencing style?)
+        "- You may refer to the print copy of `'Publication manual of the American Psychological Association: the official guide to APA style - 7th ed'` which is available in the library.\
+        \n- Access the e-book of “The Concise APA Handbook: APA 7th ed.” via EBSCOHOST Academic Collection database.\
+        \n- Refer to APA's Style and Grammar Guidelines (References)\
+        \n- Visit Quick APA Referencing Guide for a quick glance at the mechanics of style used to create an accurate Reference list.\
+        \n- You may also request an in person consultation session or for a group workshop by sending a request through our Library Helpdesk.": [
+            "More information about APA referencing style",
+            "How do I get help if I need to know more about APA referencing style?",
+            "APA referencing style information",
+            "more about APA referencing style",
+            "Where can I find the APA manual?",
+            "How to access the APA e-book?",
+            "APA style and grammar guidelines",
+            "Quick APA referencing guide",
+            "How to contact the Library Helpdesk for APA help?",
+            "Can I request a group workshop on APA referencing through the Library Helpdesk?",
+        ],
+    
+        # Library(How to write the APA reference list?)
+        "1) Begin the reference list on a new page after the text.\n2) Place the section label `References` in bold at the top of the page, centered.\
+        \n3) Double-space the reference list, both within and between references. Do not add extra lines between references.\n4) Order references alphabetically, usually by the first letter of the first author's last name.\
+        \n5) Include the authors' first and middle initials (if they have them). Do not write out first or middle names.\n6)Write author names in the inverted format so that the last name comes first, followed by a comma and the initials. Place a period and a space after each initial.\
+        \n7) Apply a hanging indent for all references using the paragraph-formatting function of your word processing program: The first line is flush left, and all subsequent lines are indented 0.5 inches.": [
+            "How to write the APA reference list?",
+            "Ways to write APA reference list",
+            "How are author names ordered in APA?",
+            "How is the References section formatted in APA?",
+            "How are references ordered in APA?",
+            "How should the authors names be written in an APA reference list?",
+            "How is spacing applied in APA references?",
+            "What is the indentation style in APA references?",
+            "What is the author name format in APA references?",
+            "How to format the References section in APA?",
+            "What is the APA style for reference indentation?",
+            "How to apply spacing in APA references?",
+            "Where to start the reference list in APA?",
+            "What is the order of references in APA?",
+        ],
+    
+        # Library(How to write an end-text referencing using APA Style?)
+        "APA referencing style required four basic information: WHO: Author's name,WHEN: Date of publication,WHAT: Title of work and WHERE: Source data\
+        \nFor more information how to write an end-text referencing using APA style,please go to this link: https://apiit.atlassian.net/wiki/spaces/LIB/pages/1968767097/How+to+write+an+end-text+referencing+using+APA+Style\
+        \n\n__Important notes__\n-Primary title should be written in italic.\n-For the journal article, the journal title should be written in Italic while the article title will be written in a normal text.\nResources that are available online, please use the DOI or URL as their source of data.": [
+            "How to write an end-text referencing using APA Style?",
+            "end-text referencing using APA Style",
+            "Ways to write an end-text referencing using APA Style",
+            "What are the four components needed for APA referencing?",
+            "How should the primary title be presented in APA end-text referencing?",
+            "Where can I find more details on writing end-text referencing in APA style?",
+            "How should online resources be cited in APA",
+            "Which title is italicized in a journal article citation, and which one is in normal text?",
+            "How should the primary title be presented in APA end-text referencing?",
+            "How to cite online resources in APA style?",
+        ],
         
         #Bursary (Payment details)
         "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \

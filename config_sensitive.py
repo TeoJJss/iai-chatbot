@@ -158,6 +158,7 @@ async def get_qa(inp):
             "go APIIT library",
             "How do I get to the APU library?",
             "How do I get to the APIIT library?",
+            "where library"
         ],
 
         # Library(Operating hours)

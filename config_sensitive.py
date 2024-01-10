@@ -943,17 +943,51 @@ async def get_qa(inp):
             "Parking entry/exit trouble: 'Invalid Status' explanation and solution",
         ],
 
-        # Parking location
+       # Parking location
         "You may enter the **Covered Parking** (Zone A) near Block E, APU Campus. \
             \nThe **Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
+            \nThe **Open Space Parking** (Zone G) is located beside of APPIT\
             \n\n*Hint: Send 'parking fee' to me, for parking rates.*":[
                 "Where parking",
                 "how to find parking",
                 "where is parking zone",
                 "Where is zone A",
-                "Where is Zone B"
+                "Where is Zone B",
+                "Where is Zone G",
+                "Where is APIIT parking",
+                "Tell me about parking in Zone G at APIIT.",
+                "Guide to parking in Zone G at APIIT.",
+                "Parking location in Zone A at APIIT.",
+                "Parking location in Zone B at APIIT.",
+                "APU car location",
+                "APU parking location",
+                "APU motorcycle location",
+                "APIIT car space",
+                "APIIT car location",
+                "APIIT parking location",
+                "APIIT motorcycle location",
+                "APIIT car space",
+                "outdoor parking locstion",
+                "indoor parking location",
+                "parking location",
+                "How to find Covered Parking at APU Campus?",
+                "Tell me about the location of Zone A parking at APU.",
+                "Guide to finding parking at APU near Block E.",
+                "Where can I find Open Space Parking at APU Campus?",
+                "What is the location of Zone B parking at APU?",
+                "Where is Zone G located at APU Campus?",
+                "Guide to parking in Zone G at APU.",
+                "Where can I find parking at APIIT?",
+                "Tell me about parking locations at APU Campus.",
+                "Where is the APU car parking located?",
+                "Where is the APU motorcycle parking located?",
+                "Where can I find parking at APIIT for cars?",
+                "Where is the APIIT motorcycle parking located?",
+                "Where is the outdoor parking located at APU Campus?",
+                "Where is the indoor parking located at APU Campus?",
+                "Guide to parking locations at APU and APIIT.",
         ],
-
+        
         # Where to wait bus
         "If you would like to take the shuttle service from APU to any location, please take the glass elevator to **APU Campus Connect Lounge** at **Level 1M**, near main entrance":[
             "Where to wait bus at APU",

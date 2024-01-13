@@ -399,7 +399,7 @@ async def get_qa(inp):
         "1) Log in to 'My Library Account', https://library.apu.edu.my/ to access the library catalog.\n2) Search and locate the book that you wish to reserve.\
         \n3) Click on the `Place hold` button to reserve the book(s).\n4) Choose your `Pickup location` as APU  Library to collect the book(s).\
         \n5) The librarians or automated email will notify you that the book(s) are ready for collection. Pick up the reserved books within three working days after notification. Your library account shows your reservation data and status.": [
-            "reserve a book",
+            "reserve book",
             "How do I reserve a book?",
             "How to reserve a book?",
             "Can I reserve a book online?",
@@ -414,11 +414,12 @@ async def get_qa(inp):
             "How will I know when my reserved book is ready?",
             "How will I get notified about my book reservation?",
             "How do I reserve a book through the library website?",
-            "What is the process for online book reservation?"
+            "What is the process for online book reservation?",
+            "how to reserve book"
         ],
 
         # Library(Where do I return the borrowed book?)
-        "You can either return the borrowed items through the book return kiosk or at the library counter. Refer to the Book Return Kiosk Guide if you are returning the items using the kiosk. Alternatively, you can follow the on-screen instructions displayed in the kiosk screen.": [
+        "You can either return the borrowed items through the book return kiosk or at the library counter. Refer to the Book Return Kiosk Guide if you are returning the items using the kiosk. \nAlternatively, you can follow the on-screen instructions displayed in the kiosk screen.": [
             "return book",
             "Where do I return the borrowed book?",
             "How do I return the book?",
@@ -1330,7 +1331,9 @@ async def get_qa(inp):
             \nYou may take the free APU shuttle service from LRT Bukit Jalil or RapidKL T580 bus":[
                 "Endah",
                 "Endah Promenade",
-                "Endah to APU"
+                "Endah to APU",
+                "endah bus",
+                "endah shuttle"
         ],
     }
 
@@ -1378,10 +1381,10 @@ async def get_qa(inp):
             "**Travel Pass from/to APU & APIIT**\
                 \nLRT : Free\
                 \nAPU ⇄ APIIT : Free \
-                \nMosque : Free \
-                \nFortune Park : RM50\
-                \nM Vertica : RM140 \
-                \n\n*Please make payment at the Bursary Office, Level 3 APU Campus.\
+                \nMosque *(Friday only)*: Free \
+                \nFortune Park : RM50/month\
+                \nM Vertica : RM140/month \
+                \n\n*For paid travel pass, please make payment at the Bursary Office, Level 3 APU Campus.\
                 \nHint: You may ask me `bus schedule`.*"
             ] = [
                 "Travel pass",

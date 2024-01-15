@@ -1740,15 +1740,6 @@ async def get_qa(inp):
             "bus depart at LRT",
             "bus arrive at LRT"
         ],
-
-        "Effective **8 January 2023**, the shuttle service from Endah to APU is discontinued. \
-            \nYou may take the free APU shuttle service from LRT Bukit Jalil or RapidKL T580 bus":[
-                "Endah",
-                "Endah Promenade",
-                "Endah to APU",
-                "endah bus",
-                "endah shuttle"
-        ],
     }
 
     # Bus schedule algorithm

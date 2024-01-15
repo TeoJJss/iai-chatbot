@@ -592,8 +592,12 @@ async def get_qa(inp):
             "Replace or pay for a damaged book?",
         ],
     
-        # Library(What is referencing?)
-        "A method used to demonstrate a thorough and appropriate literature search and reading. An acknowledgement of used ideas and written material belonging to other authors in their own work. Two parts are included in referencing: `Citation (in-text referencing)` and `Reference List (end-text referencing).`": [
+        # Library(Which referencing style is used in APU?)
+        "At APU, we use `APA referencing style` in our academic writing. \
+        \nAPA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association. \
+        \nFor more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
+        \nhttps://apastyle.apa.org/style-grammar-guidelines/references\
+        \nhttps://dif7uuh3zqcps.cloudfront.net/wp-content/uploads/sites/91/2021/07/12102004/Quick-APA-Referencing-Guide-2021.pdf.": [
             "meaning of referencing?",
             "What is referencing",
             "What is include in referencing",
@@ -603,13 +607,6 @@ async def get_qa(inp):
             "What is the difference between in-text referencing and end-text referencing?",
             "Why is it necessary to include both citation and reference list in academic writing?",
             "Why is referencing used in academic writing?",
-    
-        ],
-    
-        # Library(Which referencing style is used in APU?)
-        "At APU, we use `APA referencing style` in our academic writing. For more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
-        \nhttps://apastyle.apa.org/style-grammar-guidelines/references\
-        \nhttps://dif7uuh3zqcps.cloudfront.net/wp-content/uploads/sites/91/2021/07/12102004/Quick-APA-Referencing-Guide-2021.pdf.": [
             "Which referencing style is used in APU?",
             "What referencing style does APU use?",
             "What referencing style is use in APU?",
@@ -623,10 +620,6 @@ async def get_qa(inp):
             "What are the recommended APA guides at APU?",
             "Where can I find APA Style Guidelines?",
             "Does APU recommend any specific APA guides for referencing?",
-        ],
-    
-        # Library(What is APA referencing style?)
-        "APA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association.": [
             "APA style",
             "What is APA?",
             "What is APA style?",
@@ -658,29 +651,12 @@ async def get_qa(inp):
             "Explain the difference between parenthetical and narrative citations in APA?",
         ],
     
-        # Library(How do I get help if I need to know more about APA referencing style?)
-        "- You may refer to the print copy of `'Publication manual of the American Psychological Association: the official guide to APA style - 7th ed'` which is available in the library.\
-        \n- Access the e-book of “The Concise APA Handbook: APA 7th ed.” via EBSCOHOST Academic Collection database.\
-        \n- Refer to APA's Style and Grammar Guidelines (References)\
-        \n- Visit Quick APA Referencing Guide for a quick glance at the mechanics of style used to create an accurate Reference list.\
-        \n- You may also request an in person consultation session or for a group workshop by sending a request through our Library Helpdesk.": [
-            "More information about APA referencing style",
-            "How do I get help if I need to know more about APA referencing style?",
-            "APA referencing style information",
-            "more about APA referencing style",
-            "Where can I find the APA manual?",
-            "How to access the APA e-book?",
-            "APA style and grammar guidelines",
-            "Quick APA referencing guide",
-            "How to contact the Library Helpdesk for APA help?",
-            "Can I request a group workshop on APA referencing through the Library Helpdesk?",
-        ],
-    
         # Library(How to write the APA reference list?)
         "1) Begin the reference list on a new page after the text.\n2) Place the section label `References` in bold at the top of the page, centered.\
         \n3) Double-space the reference list, both within and between references. Do not add extra lines between references.\n4) Order references alphabetically, usually by the first letter of the first author's last name.\
         \n5) Include the authors' first and middle initials (if they have them). Do not write out first or middle names.\n6)Write author names in the inverted format so that the last name comes first, followed by a comma and the initials. Place a period and a space after each initial.\
-        \n7) Apply a hanging indent for all references using the paragraph-formatting function of your word processing program: The first line is flush left, and all subsequent lines are indented 0.5 inches.": [
+        \n7) Apply a hanging indent for all references using the paragraph-formatting function of your word processing program: The first line is flush left, and all subsequent lines are indented 0.5 inches.\
+        \nYou may refer https://library.apiit.edu.my/apa-referencing/": [
             "How to write the APA reference list?",
             "Ways to write APA reference list",
             "How are author names ordered in APA?",
@@ -893,9 +869,10 @@ async def get_qa(inp):
             "How to view FYPs and theses online?",
             "APres login for accessing FYPs and theses?",
         ],
-
-        # Library(How do I access Turnitin?)
-        "Turnitin is integrated with Moodle, and therefore it must be ONLY accessed via Moodle.": [
+    
+        # Library(How to check Turnitin similarity report before the official module submission)
+        "1) From your Moodle Dashboard, search \"Turnitin\".\n2) Click on the \"Try view similarity…\" link.\n3) Click on Enrol Me.\
+        \n4) Click on the following link to open the submission portal.\n5) Click on Add Submission.\n\nOnce done, the status will be set to \"Queued\" wait a little while for your similarity report.": [
             "Access Turnitin",
             "How do I access Turnitin?",
             "How to access Turnitin?",
@@ -917,11 +894,6 @@ async def get_qa(inp):
             "How can I log into Turnitin?",
             "How do I open Turnitin?",
             "How can I start using Turnitin?",
-        ],
-    
-        # Library(How to check Turnitin similarity report before the official module submission)
-        "1) From your Moodle Dashboard, search “Turnitin”.\n2) Click on the “ Try view similarity…” link.\n3) Click on Enrol Me.\
-        \n4) Click on the following link to open the submission portal.\n5) Click on Add Submission.\n\nOnce done, the status will be set to “Queued” wait a little while for your similarity report.": [
             "How to check Turnitin similarity report before the official module submission",
             "I want to check Turnitin similarity report",
             "How to preview Turnitin similarity report before submitting?",
@@ -1388,7 +1360,7 @@ async def get_qa(inp):
         
         # Bursary location
         "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
-            "Where is cahier",
+            "Where is cashier",
             "where cashier",
             "where is bursary",
             'where bursary',
@@ -1397,94 +1369,47 @@ async def get_qa(inp):
             "how to go bursary",
             "where to pay cheque",
             "cashier counter",
-            "payment counter"
+            "payment counter",
+            "bursary location", 
+            "cashier location"
         ],  
 
         ######Logistics & Operations - APU Campus Connect Lounge
         "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
-            "Purpose Connect Lounge",
-            "purpose APU Shuttle Bus",
-            "purpose Bus Shuttle ",
-            "Purpose APU Connect Lounge",
-            "APU Connect Lounge purpose?",
+            "Connect Lounge",
             "Campus Connect Lounge purpose?",
-            "Connect Lounge purpose?",
-            "Shuttle Bus purpose?",
-            "APU Shuttle Bus purpose?",
-            "APU Bus Lounge purpose?",
-            "Arrival Lounge purpose for APU bus?",
-            "Departure Lounge purpose for APU bus?",
             "How do I access APU Connect Lounge?",
             "What is the purpose of Block E lounge?",
             "Where can I find the Level 1 lounge?",
-            # "Cleanliness expectations for the lounge?",
-            "How do APU Shuttle Buses operate?",
-            "What is the purpose of APU Shuttle Buses?",
-            "Provide info about Arrival and Departure for APU Shuttle Buses.",
             "How does APU Shuttle Bus service operate?",
             "What is the purpose of APU Shuttle Bus?",
             "Provide info about Arrival and Departure for APU Shuttle Bus.",
             "How does APU Campus Connect Lounge bus service operate?",
-            "What is the purpose of APU Campus Connect Lounge Bus?",
-            "Provide info about Arrival and Departure for APU Campus Connect Lounge Bus.",
             "Where's the departure lounge for APU bus?",
             "Where to wait for shuttle bus APU?",
             "How to access APU Connect Lounge?",
             "What is the location of APU Connect Lounge?",
-            # "How do I use APU Connect Lounge responsibly?",
-            # "What are users' responsibilities in the lounge?",
-            # "Guidelines for responsible lounge use?",
-            # "How to maintain cleanliness of APU Campus Lounge?",
-            # "What's expected in terms of cleanliness in the lounge?",
-            "How to responsibly use APU Campus Lounge?",
             "How is APU Connect Lounge accessed?",
             "What is the purpose of the lounge in Block E?",
             "Where is the Level 1 lounge located?",
-            "What are the cleanliness expectations for the lounge?",
             "How are APU Shuttle Buses operated?",
-            "What is the purpose of APU Shuttle Buses?",
-            "Information about Arrival and Departure for APU Shuttle Buses.",
             "How is the APU Shuttle Bus service operated?",
             "What is the purpose of APU Shuttle Bus?",
-            "Information about Arrival and Departure for APU Shuttle Bus.",
-            "How is the APU Campus Connect Lounge Bus service operated?",
-            "What is the purpose of APU Campus Connect Lounge Bus?",
-            "Information about Arrival and Departure for APU Campus Connect Lounge Bus.",
-            "Where's the departure lounge for APU bus?",
-            "Where should the shuttle bus be waited for at APU?",
             "How is APU Connect Lounge accessed?",
             "What is the location of APU Connect Lounge?",
-            "How should APU Connect Lounge be responsibly used?",
-            "What are the responsibilities of users in the lounge?",
-            "Guidelines for responsible use of the lounge?",
-            "How is the cleanliness of APU Campus Lounge maintained?",
-            "What's expected in terms of cleanliness in the lounge?",
-            "How is APU Campus Lounge responsibly used?",
             "Tell me about the APU Shuttle Buses.",
-            "How does the APU Shuttle Bus service work?",
-            "What is the purpose of the APU Shuttle Buses?",
-            "Can you provide information about Arrival and Departure for APU Shuttle Buses.",
             "Tell me about the APU Shuttle Bus.",
             "How does the APU Shuttle Buses service work?",
             "What is the purpose of the APU Shuttle Bus?",
-            "Can you provide information about Arrival and Departure for the APU Shuttle Bus.",
-            "Tell me about the APU Shuttle Buses.",
-            "How does the APU Shuttle Bus service work?",
-            "What is the purpose of the APU Shuttle Buses?",
-            "Can you provide information about Arrival and Departure for APU Shuttle Buses.",
-            "Tell me about the Bus Shuttle.",
             "How does the Bus Shuttle service work?",
-            "What is the purpose of the Bus Shuttle?",
             "Can you provide information about Arrival and Departure for Bus Shuttle.",
         ],
         "**Operational Hours of APU Campus Connect Lounge:**\n Monday – Friday: 8.00am – 10.00pm":[
             "Open time APU Campus Connect Lounge",
-            "Open time APU bus shuttle",
             "Close time APU Campus Connect Lounge",
-            "Close time APU bus shuttle",
             "When does APU Campus Connect Lounge operate?",
-            "What are the lounge's opening hours on weekdays?",
-            "When does the lounge close on weekdays?",
+            "What are the lounge's opening hours",
+            "When does the lounge close",
             "Tell me the operational hours of APU Campus Connect Lounge.",
             "When is APU Campus Connect Lounge open on weekdays?",
             "What time does the lounge close on weekdays?",
@@ -1504,7 +1429,6 @@ async def get_qa(inp):
             "What are the lounge's opening hours on the weekdays?",
             "When does the lounge closes on weekdays?",
             "Tell me the operational hours for APU Campus Connect Lounge.",
-            "When is APU Campus Connect Lounge opened on weekdays?",
             "What time does the lounge closes on weekdays?",
             "What are the operational hours for APU Campus Lounge?",
             "Operating hours for APU Campus Connect Lounge?",
@@ -1514,233 +1438,164 @@ async def get_qa(inp):
             "What are the hours of APU Campus Connect Lounge?",
             "When is APU Campus Lounge accessible on weekdays?",
             "Apu campus connect lounge hours?",
-            "When does APU Shuttle Bus operate?",
-            "What are the APU Shuttle Bus hours on weekdays?",
-            "When does the Shuttle Bus close on weekdays?",
-            "Tell me the operational hours of APU Shuttle Bus.",
-            "When is APU Shuttle Bus open on weekdays?",
-            "What time does the Shuttle Bus close on weekdays?",
-            "What are the operating hours of APU Shuttle Bus?",
-            "Operating hours of APU Shuttle Bus?",
-            "Apu shuttle bus operational hours?",
-            "When does Bus Shuttle operate?",
-            "What are the Bus Shuttle hours on weekdays?",
-            "When does the Bus Shuttle close on weekdays?",
-            "Tell me the operational hours of Bus Shuttle.",
-            "When is Bus Shuttle open on weekdays?",
-            "What time does the Bus Shuttle close on weekdays?",
-            "What are the operating hours of Bus Shuttle?",
-            "Operating hours of Bus Shuttle?",
-            "Bus shuttle operational hours?",
-        ],
-        ###### Logistics & Operations - RapidKL Bus & LRT
-        "Rapid KL Bus Route Information: \n https://myrapid.com.my/bus-train/rapid-kl/bus/":[
-            "Rapid KL Bus",
-            "Bus KL",    
-            "KL bus route",
-            "Tell me about Rapid KL bus routes.",
-            "What is the link for Rapid KL bus route information?",
-            "How can I find Rapid KL bus routes?",
-            "How do I find info on Rapid KL bus routes?",
-            "Explore Rapid KL bus routes.",
-            "Guide to Rapid KL bus routes.",
-            "Where can I see Rapid KL bus routes?",
-            "Where can I view Rapid KL bus routes?",
-            "Show me Rapid KL bus routes.",
-        ],
-        "RapidKL Journey Planning: \n https://www.myrapid.com.my/pulse-journey-planner ":[
-            "KL journey planner",
-            "journey planner",
-            "journey planner KL",
-            "How do I plan my journey with RapidKL?",
-            "How to plan a journey with RapidKL?",
-            "Tell me about RapidKL journey planner.",
-            "Tell me about RapidKL's journey planner.",
-            "What's the link for RapidKL journey planning?",
-            "Guide to plan my journey with RapidKL.",
-            "Guide for planning my journey with RapidKL.",
-            "Where can I access RapidKL's journey planner?",
-            "Where can I find RapidKL journey planner?",
-            "Help with planning my journey on RapidKL.",
-            "Help me with RapidKL journey planning.",
-        ],
-        ###### Logistics & Operations - APU and APIIT Car Parking Rates
-        "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[
-            "APU parking",
-            "APU parking fees",
-            "APU park",
-            "APU car",
-            "APU motorcycle",
-            "campus parking",
-            "campus parking fees",
-            "campus park",
-            "campus car",
-            "campus motorcycle",
-            "university parking",
-            "university parking fees",
-            "university park",
-            "university car",
-            "university motorcycle",
-            "college parking",
-            "college parking fees",
-            "college park",
-            "college car",
-            "college motorcycle",
-            "school parking",
-            "school parking fees",
-            "school park",
-            "school car",
-            "school motorcycle",
-            "Zone A and Zone B",
-            "Compare Zone A and Zone B",
-            "Distinguish between Zone A and Zone B",
-            "Tell me the distinctions of Zone A and Zone B",
-            "What sets Zone A apart from Zone B?",
-            "Contrast Zone A and Zone B",
-            "Explain the variations between Zone A and Zone B",
-            "Outline the differences of Zone A and Zone B",
-            "Elaborate on the disparities between Zone A and Zone B",
-            "What characteristics differentiate Zone A and Zone B?",
-            "Enumerate the dissimilarities between Zone A and Zone B",
-            "Underground parking",
-            "Covered parking",
-            "Tell me about Parking Zone A.",
-            "What is the category of Parking Zone A?",
-            "How much is the daily parking rate for Zone A?",
-            "Daily parking rate for Covered Parking Zone A.",
-            "Parking Zone A: Covered Parking",
-            "What is the daily parking rate for Covered Parking in Zone A?",
-            "Parking Zone B and Zone G: Open Parking",
-            "What are the hourly parking rates for Open Parking Zone B and Zone G?",
-            "What is the maximum charge per day for Open Parking?",
-            "How are parking rates calculated?",
-            # "What should I ensure before entering and exiting the parking with an APCard?",
-            "Is the daily parking rate applicable for Covered Parking?",
-            "What type of parking rates does Open Space Parking (Zone B and Zone G) offer for students?",
-            "How are parking fees transactions conducted?",
-            "parking fee",
-            "parking rate",
-            "car park fee",
-            'car park rate'
-            # "Reminder:",
-            # "How can I avoid being charged twice for parking fees?",
-            # "Safety Notice of parking",
-            # "Safety Notice",
-            # "What responsibility does the management take for injuries or loss of property within the car park?"
-        ],
-        ###### Logistics & Operations - parking FAQ
-        "In order to avoid \"Invalid Status\", it is very important to not tailgate the vehicle that is trying to enter or exit the premise. Do ensure that the barricade is fully lowered before attempting to enter/exit and ensure that the card reader shows a valid message before proceeding.":[
-            "Invalid parking"
-            "parking error"
-            "How do I avoid getting 'Invalid Status' upon exit or entry to the parking?",
-            "Prevent 'Invalid Status' during parking entry and exit",
-            "What steps can I take to avoid 'Invalid Status' when entering or exiting parking?",
-            "Avoiding 'Invalid Status' at parking entry and exit",
-            "Tips for preventing 'Invalid Status' during parking access",
-            "How to ensure a valid status during parking entry and exit?",
-            "What causes 'Invalid Status' during parking, and how to avoid it?",
-            "Procedures to sidestep 'Invalid Status' during parking access",
-            "Ensuring a smooth entry and exit without 'Invalid Status' in parking",
-            "How can I secure a valid status for parking entry and exit?",
-            "Troubleshooting 'Invalid Status' during parking and prevention steps",
-        ],
-        ###### Logistics & Operations - parking FAQ
-        "The charges incurred are for the number of days the vehicle has been parked in the parking area. Thus, the balance you have will not cover for the extra days involved due to insufficient balance.":[
-            "I am not able to exit the parking. The reader shows 'Please Top Up' although I have sufficient balance for one-day entry. Why does this happen?",
-            "Please Top Up",
-            "Trouble exiting parking with 'Please Top Up' message",
-            "Unable to leave parking despite having enough balance",
-            "Parking exit issue with 'Please Top Up' display",
-            "Experiencing problems exiting parking even with sufficient funds",
-            "Facing challenges leaving parking due to 'Please Top Up' prompt",
-            "Issue at parking exit, 'Please Top Up' message displayed incorrectly",
-            "Encountering 'Please Top Up' error upon parking departure",
-            "Troubleshoot 'Please Top Up' error during parking exit",
-            "Insufficient balance error at parking exit, 'Please Top Up' displayed",
-            "Parking exit dilemma: 'Please Top Up' despite having funds",
-        ],
-        ###### Logistics & Operations - parking FAQ
-        "It means either the APCard is not active or there was an improper exit done by the driver before. An improper exit refers to exiting by tailgating too closely to the car in front, and as a result, failing to register the entry/exit on the reader.\n\nWhat should I do? \nPlease visit APU cashier counter and report your issue.":[
-            "parking invalid status",
-            "I am not able to enter/exit the parking. The reader shows “Invalid Status”. What does it mean and what should I do?",
-            "Issue entering/exiting parking with 'Invalid Status' displayed",
-            "Unable to access parking due to 'Invalid Status' message",
-            "Parking entry/exit problem: 'Invalid Status' on the reader",
-            "Encountering 'Invalid Status' when trying to enter/exit parking",
-            "Trouble with parking access: 'Invalid Status' on the reader",
-            "Getting 'Invalid Status' at parking entry/exit – what does it indicate?",
-            "Parking reader shows 'Invalid Status' – need assistance",
-            "Seeking help for 'Invalid Status' issue at parking entry/exit",
-            "Understanding and resolving 'Invalid Status' during parking access",
-            "Parking entry/exit trouble: 'Invalid Status' explanation and solution",
-        ],
-
-       # Parking location
-        "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus. \
-            \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
-            \nThe **APIIT Open Space Parking** (Zone G) is located next to the APPIT campus\
-            \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
-                "Where parking",
-                "how to find parking",
-                "where is parking zone",
-                "Where is zone A",
-                "Where is Zone B",
-                "Where is Zone G",
-                "Where is APIIT parking",
-                "Tell me about parking in Zone G at APIIT.",
-                "Guide to parking in Zone G at APIIT.",
-                "Parking location in Zone A at APIIT.",
-                "Parking location in Zone B at APIIT.",
-                "APU car location",
-                "APU parking location",
-                "APU motorcycle location",
-                "APIIT car space",
-                "APIIT car location",
-                "APIIT parking location",
-                "APIIT motorcycle location",
-                "APIIT car space",
-                "outdoor parking locstion",
-                "indoor parking location",
-                "parking location",
-                "How to find Covered Parking at APU Campus?",
-                "Tell me about the location of Zone A parking at APU.",
-                "Guide to finding parking at APU near Block E.",
-                "Where can I find Open Space Parking at APU Campus?",
-                "What is the location of Zone B parking at APU?",
-                "Where is Zone G located at APU Campus?",
-                "Guide to parking in Zone G at APU.",
-                "Where can I find parking at APIIT?",
-                "Tell me about parking locations at APU Campus.",
-                "Where is the APU car parking located?",
-                "Where is the APU motorcycle parking located?",
-                "Where can I find parking at APIIT for cars?",
-                "Where is the APIIT motorcycle parking located?",
-                "Where is the outdoor parking located at APU Campus?",
-                "Where is the indoor parking located at APU Campus?",
-                "Guide to parking locations at APU and APIIT.",
-        ],
-        
-        # Where to wait bus
-        "If you would like to take the shuttle service from APU to any location, please take the glass elevator to **APU Campus Connect Lounge** at **Level 1M**, near main entrance":[
-            "Where to wait bus at APU",
-            "wait bus at apu",
-            "wait shuttle at apu",
-            "take bus at APU",
-            "take shuttle at APU",
-            "bus depart at APU",
-            "bus arrive at APU"
-        ],
-
-        "If you are taking the shuttle service from LRT to APU, please wait the vehicle at **Grab A** point, **Bukit Jalil LRT station**.":[
-            "Where to wait bus at LRT",
-            "wait bus at LRT",
-            "wait shuttle at LRT",
-            "take bus at LRT",
-            "take shuttle at LRT",
-            "bus depart at LRT",
-            "bus arrive at LRT"
-        ],
+        ],        
     }
+
+    # Car Park algorithm
+    if [i for i in ["car", "park", "parking", "zone"] if i in str(inp).lower()]:
+        add_park = {
+            ###### Logistics & Operations - APU and APIIT Car Parking Rates
+            "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[
+                "APU parking",
+                "APU parking fees",
+                "APU park",
+                "APU car",
+                "APU motorcycle",
+                "campus parking",
+                "campus parking fees",
+                "campus park",
+                "campus car",
+                "campus motorcycle",
+                "university parking",
+                "university parking fees",
+                "university park",
+                "university car",
+                "university motorcycle",
+                "college parking",
+                "college parking fees",
+                "college park",
+                "college car",
+                "college motorcycle",
+                "school parking",
+                "school parking fees",
+                "school park",
+                "school car",
+                "school motorcycle",
+                "Zone A and Zone B",
+                "Compare Zone A and Zone B",
+                "Distinguish between Zone A and Zone B",
+                "Tell me the distinctions of Zone A and Zone B",
+                "What sets Zone A apart from Zone B?",
+                "Contrast Zone A and Zone B",
+                "Explain the variations between Zone A and Zone B",
+                "Outline the differences of Zone A and Zone B",
+                "Elaborate on the disparities between Zone A and Zone B",
+                "What characteristics differentiate Zone A and Zone B?",
+                "Enumerate the dissimilarities between Zone A and Zone B",
+                "Underground parking",
+                "Covered parking",
+                "Tell me about Parking Zone A.",
+                "What is the category of Parking Zone A?",
+                "How much is the daily parking rate for Zone A?",
+                "Daily parking rate for Covered Parking Zone A.",
+                "Parking Zone A: Covered Parking",
+                "What is the daily parking rate for Covered Parking in Zone A?",
+                "Parking Zone B and Zone G: Open Parking",
+                "What are the hourly parking rates for Open Parking Zone B and Zone G?",
+                "What is the maximum charge per day for Open Parking?",
+                "How are parking rates calculated?",
+                # "What should I ensure before entering and exiting the parking with an APCard?",
+                "Is the daily parking rate applicable for Covered Parking?",
+                "What type of parking rates does Open Space Parking (Zone B and Zone G) offer for students?",
+                "How are parking fees transactions conducted?",
+                "parking fee",
+                "parking rate",
+                "car park fee",
+                'car park rate'
+            ],
+            ###### Logistics & Operations - parking FAQ
+            "In order to avoid \"Invalid Status\", it is very important to not tailgate the vehicle that is trying to enter or exit the premise. Do ensure that the barricade is fully lowered before attempting to enter/exit and ensure that the card reader shows a valid message before proceeding.":[
+                "Invalid parking"
+                "parking error"
+                "How do I avoid getting 'Invalid Status' upon exit or entry to the parking?",
+                "Prevent 'Invalid Status' during parking entry and exit",
+                "What steps can I take to avoid 'Invalid Status' when entering or exiting parking?",
+                "Avoiding 'Invalid Status' at parking entry and exit",
+                "Tips for preventing 'Invalid Status' during parking access",
+                "How to ensure a valid status during parking entry and exit?",
+                "What causes 'Invalid Status' during parking, and how to avoid it?",
+                "Procedures to sidestep 'Invalid Status' during parking access",
+                "Ensuring a smooth entry and exit without 'Invalid Status' in parking",
+                "How can I secure a valid status for parking entry and exit?",
+                "Troubleshooting 'Invalid Status' during parking and prevention steps",
+            ],
+            ###### Logistics & Operations - parking FAQ
+            "The charges incurred are for the number of days the vehicle has been parked in the parking area. Thus, the balance you have will not cover for the extra days involved due to insufficient balance.":[
+                "I am not able to exit the parking. The reader shows 'Please Top Up' although I have sufficient balance for one-day entry. Why does this happen?",
+                "Please Top Up",
+                "Trouble exiting parking with 'Please Top Up' message",
+                "Unable to leave parking despite having enough balance",
+                "Parking exit issue with 'Please Top Up' display",
+                "Experiencing problems exiting parking even with sufficient funds",
+                "Facing challenges leaving parking due to 'Please Top Up' prompt",
+                "Issue at parking exit, 'Please Top Up' message displayed incorrectly",
+                "Encountering 'Please Top Up' error upon parking departure",
+                "Troubleshoot 'Please Top Up' error during parking exit",
+                "Insufficient balance error at parking exit, 'Please Top Up' displayed",
+                "Parking exit dilemma: 'Please Top Up' despite having funds",
+            ],
+            ###### Logistics & Operations - parking FAQ
+            "It means either the APCard is not active or there was an improper exit done by the driver before. An improper exit refers to exiting by tailgating too closely to the car in front, and as a result, failing to register the entry/exit on the reader.\n\nWhat should I do? \nPlease visit APU cashier counter and report your issue.":[
+                "parking invalid status",
+                "I am not able to enter/exit the parking. The reader shows “Invalid Status”. What does it mean and what should I do?",
+                "Issue entering/exiting parking with 'Invalid Status' displayed",
+                "Unable to access parking due to 'Invalid Status' message",
+                "Parking entry/exit problem: 'Invalid Status' on the reader",
+                "Encountering 'Invalid Status' when trying to enter/exit parking",
+                "Trouble with parking access: 'Invalid Status' on the reader",
+                "Getting 'Invalid Status' at parking entry/exit – what does it indicate?",
+                "Parking reader shows 'Invalid Status' – need assistance",
+                "Seeking help for 'Invalid Status' issue at parking entry/exit",
+                "Understanding and resolving 'Invalid Status' during parking access",
+                "Parking entry/exit trouble: 'Invalid Status' explanation and solution",
+            ],
+
+            # Parking location
+            "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus. \
+                \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
+                \nThe **APIIT Open Space Parking** (Zone G) is located next to the APPIT campus\
+                \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
+                    "Where parking",
+                    "how to find parking",
+                    "where is parking zone",
+                    "Where is zone A",
+                    "Where is Zone B",
+                    "Where is Zone G",
+                    "Where is APIIT parking",
+                    "Tell me about parking in Zone G at APIIT.",
+                    "Guide to parking in Zone G at APIIT.",
+                    "Parking location in Zone A at APIIT.",
+                    "Parking location in Zone B at APIIT.",
+                    "APU car location",
+                    "APU parking location",
+                    "APU motorcycle location",
+                    "APIIT car space",
+                    "APIIT car location",
+                    "APIIT parking location",
+                    "APIIT motorcycle location",
+                    "APIIT car space",
+                    "outdoor parking locstion",
+                    "indoor parking location",
+                    "parking location",
+                    "How to find Covered Parking at APU Campus?",
+                    "Tell me about the location of Zone A parking at APU.",
+                    "Guide to finding parking at APU near Block E.",
+                    "Where can I find Open Space Parking at APU Campus?",
+                    "What is the location of Zone B parking at APU?",
+                    "Where is Zone G located at APU Campus?",
+                    "Guide to parking in Zone G at APU.",
+                    "Where can I find parking at APIIT?",
+                    "Tell me about parking locations at APU Campus.",
+                    "Where is the APU car parking located?",
+                    "Where is the APU motorcycle parking located?",
+                    "Where can I find parking at APIIT for cars?",
+                    "Where is the APIIT motorcycle parking located?",
+                    "Where is the outdoor parking located at APU Campus?",
+                    "Where is the indoor parking located at APU Campus?",
+                    "Guide to parking locations at APU and APIIT.",
+            ],
+        }
+        qa.update(add_park)
 
     # Bus schedule algorithm
     if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses", "travel"] if i in str(inp).lower()]:
@@ -1804,5 +1659,28 @@ async def get_qa(inp):
                 "bus fee",
                 "bus fees"
             ]
+        add_qa = {
+            # Where to wait bus
+            "If you would like to take the shuttle service from APU to any location, please take the glass elevator to **APU Campus Connect Lounge** at **Level 1M**, near main entrance":[
+                "Where to wait bus at APU",
+                "wait bus at apu",
+                "wait shuttle at apu",
+                "take bus at APU",
+                "take shuttle at APU",
+                "bus depart at APU",
+                "bus arrive at APU"
+            ],
+
+            "If you are taking the shuttle service from LRT to APU, please wait the vehicle at **Grab A** point, **Bukit Jalil LRT station**.":[
+                "Where to wait bus at LRT",
+                "wait bus at LRT",
+                "wait shuttle at LRT",
+                "take bus at LRT",
+                "take shuttle at LRT",
+                "bus depart at LRT",
+                "bus arrive at LRT"
+            ],
+        }
+        qa.update(add_qa)
         
     return qa

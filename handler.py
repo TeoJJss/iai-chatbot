@@ -1,7 +1,6 @@
 import discord
 from responses import reply
 import os
-import speech_recognition as sr
 
 if os.path.isfile("config_sensitive.py"):
     from config_sensitive import TOKEN, ID
@@ -36,30 +35,9 @@ def bot_launch():
             if message.author.id == client.user.id:
                 return
             username = str(message.author)
-            if message.attachments:
-                attachment = message.attachments[0]
-                voice_message = await attachment.read()
-
-                audio_data = sr.AudioData(voice_message, sample_rate=48000, sample_width=2)
-
-                text = convert_voice_to_text(audio_data)
-
-                # print(f"User {username} message to {client.user}:", text)
-                user_msg = text
-            else:
-                user_msg = str(message.content)
-
-            # print(f"User {username} message to {client.user}:", user_msg)
+            
+            user_msg = str(message.content)
 
             await send_msg(message, user_msg, False)
-
-    def convert_voice_to_text(audio_data):
-        recognizer = sr.Recognizer()
-        try:
-            text = recognizer.recognize_google(audio_data)
-            return text
-        except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
-            return ""
 
     client.run(TOKEN)

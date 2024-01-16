@@ -1,8 +1,10 @@
 import requests, datetime
 from copy import deepcopy
+from autocorrect import Speller
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
+spell = Speller(lang='en')
 
 # Bus Schedule API
 try:
@@ -105,7 +107,8 @@ async def get_qa(inp):
             "give me the location of the campus",
             "go APU",
             "give me the location of the APU",
-            "Where APU"
+            "Where APU",
+            "where campus"
         ],
         holidays_str : [
             "When is the next holiday",
@@ -159,63 +162,6 @@ async def get_qa(inp):
             "How do I get to the APU library?",
             "How do I get to the APIIT library?",
             "where library"
-        ],
-
-        # Library(Operating hours)
-        "**Operating hour of APU library**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.,\nSaturday : 9:00 a.m. - 1:00 p.m.,\nSunday / Public Holidays: Closed\
-         \n\n**Operating hour of APIIT library**\nMonday – Friday: 8:30 a.m. – 6:00 p.m.,\nSaturday / Sunday / Public Holidays: Closed ": [
-            "What is the operating hours of library",
-            "Operating hour of APU library",
-            "Operating hour of APIIT library",
-            "Operation hour of library",
-            "Operation hour of APU library",
-            "Operation hour of APIIT library",
-            "When does the library open?",
-            "When does the APU library open?",
-            "When does the APIIT library open?",
-            "What time does the library open",
-            "What time does the APU library open",
-            "What time does the APIIT library open",
-            "What time does the library open on weekdays?",
-            "What time does the APU library open on weekdays?",
-            "What time does the APIIT library open on weekdays?",
-            "Is the library open on weekends?"
-            "Is the APU library open on weekends?"
-            "Is the APIIT library open on weekends?"
-            "Is the library open on Saturdays?",
-            "Can I visit the library on public holidays?",
-            "Is the library closed on public holidays?",
-            "What is the schedule for the library?",
-            "Library open hours",
-            "APU Library open hours",
-            "APIIT Library open hours",
-            "Library open time",
-            "APU Library open time",
-            "APIIT Library open time",
-            "When does the library open and close?",
-            "When does the APU library open and close?",
-            "When does the APIIT library open and close?",
-            "When can I visit the library during the week?",
-        ],
-    
-        # Library(contact)
-        "Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
-            "How to contact library",
-            "What is the contacts of library",
-            "What is the email of library",
-            "How should I contact library",
-            "How to email library",
-            "How to call library",
-            "email library",
-            "call library",
-            "contact library",
-            "talk to library",
-            "I need to email library",
-            "I need to call library",
-            "I need to contact library",
-            "I want to contact library",
-            "I want to email library",
-            "I want to call library",
         ],
     
         # Library(am I allowed to bring food/drinks)
@@ -441,7 +387,7 @@ async def get_qa(inp):
         ],
 
         # Library(How do I collect my library deposit?)
-        "1)Login to APSpace.\n2) Go to `Collaboration & Information Resources` and select `e-Forms`. Your browser will open a new tab with the `Exit Application` form at the bottom.\
+        "1) Login to APSpace.\n2) Go to `Collaboration & Information Resources` and select `e-Forms`. Your browser will open a new tab with the `Exit Application` form at the bottom.\
         \n3) Complete the form by providing the required details and wait for confirmation. You can check the status in the E-forms.\n4) Collect the library deposit from the cashier.": [
             "collect library deposit",
             "collect my library deposit",
@@ -535,7 +481,7 @@ async def get_qa(inp):
             "How do I pay my library fines?",
             "Can I pay my library fines in cash?",
             "What is the procedure to pay my library fines?",
-            "Where to pay my linrary fines",
+            "Where to pay my library fines",
             "Methods to pay library fines",
             "Can I use “My Library Account” to pay my fines online?",
             "How to check my library fines?",
@@ -590,103 +536,6 @@ async def get_qa(inp):
             "Can I replace a damaged book instead of paying?",
             "Will I be fined for damaging a library book?",
             "Replace or pay for a damaged book?",
-        ],
-    
-        # Library(Which referencing style is used in APU?)
-        "At APU, we use `APA referencing style` in our academic writing. \
-        \nAPA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association. \
-        \nFor more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
-        \nhttps://apastyle.apa.org/style-grammar-guidelines/references\
-        \nhttps://dif7uuh3zqcps.cloudfront.net/wp-content/uploads/sites/91/2021/07/12102004/Quick-APA-Referencing-Guide-2021.pdf.": [
-            "meaning of referencing?",
-            "What is referencing",
-            "What is include in referencing",
-            "What is the purpose of referencing?",
-            "What are the two main components of referencing?",
-            "Can you explain the difference between citation (in-text referencing) and reference list (end-text referencing)?",
-            "What is the difference between in-text referencing and end-text referencing?",
-            "Why is it necessary to include both citation and reference list in academic writing?",
-            "Why is referencing used in academic writing?",
-            "Which referencing style is used in APU?",
-            "What referencing style does APU use?",
-            "What referencing style is use in APU?",
-            "What is the preferred referencing style for academic writing at APU?",
-            "What resources does APU provide for learning the APA referencing style?",
-            "Guides of APU referencing",
-            "What referencing style does APU use?",
-            "Where can I learn APA referencing at APU?",
-            "What APA guides does APU library provide?",
-            "What is the standard referencing style at APU?",
-            "What are the recommended APA guides at APU?",
-            "Where can I find APA Style Guidelines?",
-            "Does APU recommend any specific APA guides for referencing?",
-            "APA style",
-            "What is APA?",
-            "What is APA style?",
-            "Why use APA style?",
-            "What does APA style format?",
-            "What is APA referencing style?",
-            "Definition of APA referencing style",
-            "What is the purpose of the APA referencing style?",
-            "Can you describe the APA referencing style?",
-            "How does APA style help in writing?",
-        ],
-    
-        # Library(What is the format of APA in-text citation?)
-        "There are two different formats of in-text citation, `parenthetical and narrative`. Both formats require two elements: `Author's name and Year of publication`\
-        \nParenthetical citations are the more commonly seen form of in-text citations for academic work. Both required reference elements are presented at the end of the sentence in parentheses. E.g. (Belafonte, 2008).\
-        \nIn narrative citations, the author's name will be separated from the date. The date must appear immediately after the author's name but in parenthesis. E.g. Belafonte (2008).": [
-            "format of APA in-text citation"
-            "What is the format of APA in-text citation?",
-            "APA in-text citation format",
-            "format of APA in-text citation",
-            "How many format of APA in-text citation are there?",
-            "What are the two different formats of in-text citation?",
-            "What are the two formats of in-text citation in APA style?",
-            "What is parenthetical citation?",
-            "What is narrative citation?",
-            "Can you provide an example of a parenthetical citation?",
-            "Can you provide an example of a narrative citation?"
-            "How does a narrative citation differ from a parenthetical citation?",
-            "Explain the difference between parenthetical and narrative citations in APA?",
-        ],
-    
-        # Library(How to write the APA reference list?)
-        "1) Begin the reference list on a new page after the text.\n2) Place the section label `References` in bold at the top of the page, centered.\
-        \n3) Double-space the reference list, both within and between references. Do not add extra lines between references.\n4) Order references alphabetically, usually by the first letter of the first author's last name.\
-        \n5) Include the authors' first and middle initials (if they have them). Do not write out first or middle names.\n6)Write author names in the inverted format so that the last name comes first, followed by a comma and the initials. Place a period and a space after each initial.\
-        \n7) Apply a hanging indent for all references using the paragraph-formatting function of your word processing program: The first line is flush left, and all subsequent lines are indented 0.5 inches.\
-        \nYou may refer https://library.apiit.edu.my/apa-referencing/": [
-            "How to write the APA reference list?",
-            "Ways to write APA reference list",
-            "How are author names ordered in APA?",
-            "How is the References section formatted in APA?",
-            "How are references ordered in APA?",
-            "How should the authors names be written in an APA reference list?",
-            "How is spacing applied in APA references?",
-            "What is the indentation style in APA references?",
-            "What is the author name format in APA references?",
-            "How to format the References section in APA?",
-            "What is the APA style for reference indentation?",
-            "How to apply spacing in APA references?",
-            "Where to start the reference list in APA?",
-            "What is the order of references in APA?",
-        ],
-    
-        # Library(How to write an end-text referencing using APA Style?)
-        "APA referencing style required four basic information: WHO: Author's name,WHEN: Date of publication,WHAT: Title of work and WHERE: Source data\
-        \nFor more information how to write an end-text referencing using APA style,please go to this link: https://apiit.atlassian.net/wiki/spaces/LIB/pages/1968767097/How+to+write+an+end-text+referencing+using+APA+Style\
-        \n\n__Important notes__\n-Primary title should be written in italic.\n-For the journal article, the journal title should be written in Italic while the article title will be written in a normal text.\nResources that are available online, please use the DOI or URL as their source of data.": [
-            "How to write an end-text referencing using APA Style?",
-            "end-text referencing using APA Style",
-            "Ways to write an end-text referencing using APA Style",
-            "What are the four components needed for APA referencing?",
-            "How should the primary title be presented in APA end-text referencing?",
-            "Where can I find more details on writing end-text referencing in APA style?",
-            "How should online resources be cited in APA",
-            "Which title is italicized in a journal article citation, and which one is in normal text?",
-            "How should the primary title be presented in APA end-text referencing?",
-            "How to cite online resources in APA style?",
         ],
 
         # Library(How do I check the print collection availability in the Library?)
@@ -1067,7 +916,7 @@ async def get_qa(inp):
         ],
     
         # Library(I have a problem with library facilities/services. Where should I report to?)
-        "You may raise a helpdesk request from our Library Helpdesk, and we will assist you as soon as possible.": [
+        "You may raise a helpdesk request from our Library Helpdesk, and we will assist you as soon as possible.\nhttps://apiit.atlassian.net/servicedesk/customer/portal/14.": [
             "I have a problem with library facilities",
             "Report library facilities issues",
             "Report library services issues",
@@ -1096,73 +945,6 @@ async def get_qa(inp):
             "I am experiencing issues with the library facilities/services. Who can I contact for help?",
             "There is a problem with the library services. Could you guide me on where to report this?",
             "I need to report an issue with the library facilities",
-        ],
-
-        
-        #Bursary (Payment details)
-        "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \
-        \nRemember to email the payment receipt with student name and ID to __bursary@apu.edu.my__": [
-            "How to make payment",
-            "How to pay course fee",
-            "How to pay resit fee",
-            "How to pay for accomodation fee",
-            "What is the bank account details of APU",
-            "I need to pay",
-            "I need to make payment",
-            "Payment Method",
-            "Payment"
-        ],
-
-        #Bursary (How to check fee payment on APspace)
-        "**Step 1** - Open your APSpace app or web browser.\
-        \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
-        \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
-        \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.\
-        \nYou may also click this link to proceed: https://apspace.apu.edu.my/fees.":[
-            "Fee payment",
-            "Fee payment details",
-            "Fee payment status",
-            "Fee payment history",
-            "Fee payment summary",
-            "How to check fee payment?",
-            "How to check my fee payment details?",
-            "What are the steps to view my fee payment details?",
-            "What are the steps to check my fee payment details?"
-            "Can you guide me on how to find my fee payment details?",
-            "Where to check fee payment details?",
-            "Where can I find details about my fee payment?",
-            "How can I see my fee payment history ?",
-            "Where to check fee payment?",
-            "Steps to check fee payment",
-            "How can I view my fees on APspace?",
-            "How to check my fee pay payment status?",
-            "How to find payment information on APspace?",
-            "Paid fee details",
-            "Paid fee history",
-            "Steps to check paid fee",
-            "What are my paid fee?",
-            "How to check paid fee?",
-            "How can I check my paid fee details?",
-            "Where can I find information about my Paid fees?",
-            "What are the steps to check my Paid fee details?",
-            "How to know if I have paid my fee successfully?",
-            "Outstanding fee details",
-            "Steps to check outstanding fee",
-            "What are my outstanding fee?",
-            "How to check outstanding fee?",
-            "How can I check my Outstanding fee details?",
-            "Where can I find information about my Outstanding fees?",
-            "What steps should I follow to check my Outstanding fee details?",
-            "How much is my outstanding fee?",
-            "Overdue fee details",
-            "Overdue fee sumary",
-            "Steps to check overdue fee",
-            "What are my overdue fee?",
-            "How to check overdue fee",
-            "How can I check my Overdue fee details?",
-            "Where can I find information about my Overdue fees?",
-            "What steps should I follow to check my Overdue fee details?",
-            "How much is my ovedue fee?",
         ],
 
         #Bursary (Bank details-Maybank APU & APIIT)
@@ -1276,7 +1058,7 @@ async def get_qa(inp):
             "APU Flywire",
             "pay flywire"
         ],
-    
+
         # Bursary (APU/APIIT International Student Fees & Refund Policy)
         "- International Students are required to pay all fees due prior to arrival by the respective due dates.\
          \n- The International Student Application Fee and International Student Registration Fee will not be refunded.\
@@ -1321,28 +1103,6 @@ async def get_qa(inp):
             "refund policy"
         ],
         
-        # Bursary Contact
-        "Email: __bursary@apu.edu.my__\nYou may also call __+603 8992 5228__":[
-            "How to contact bursary",
-            "What is the contacts of bursary",
-            "What is the email of bursary",
-            "How should I contact bursary",
-            "How to email bursary",
-            "How to call bursary",
-            "email bursary",
-            "call bursary",
-            "contact bursary",
-            "talk to bursary",
-            "I need to email bursary", 
-            "I need to call bursary",
-            "I need to contact bursary",
-            "I want to contact bursary",
-            "I want to email bursary",
-            "I want to call bursary",
-            "cashier contact",
-            "cashier email"
-        ],
-
         # Bursary Late Payment
         "**Late Payment Penalties**\
             \nStudents will cease to enjoy all rights and privileges of a student of APU, after 7 days from the payment due date.\
@@ -1403,46 +1163,357 @@ async def get_qa(inp):
             "What is the purpose of the APU Shuttle Bus?",
             "How does the Bus Shuttle service work?",
             "Can you provide information about Arrival and Departure for Bus Shuttle.",
-        ],
-        "**Operational Hours of APU Campus Connect Lounge:**\n Monday – Friday: 8.00am – 10.00pm":[
-            "Open time APU Campus Connect Lounge",
-            "Close time APU Campus Connect Lounge",
-            "When does APU Campus Connect Lounge operate?",
-            "What are the lounge's opening hours",
-            "When does the lounge close",
-            "Tell me the operational hours of APU Campus Connect Lounge.",
-            "When is APU Campus Connect Lounge open on weekdays?",
-            "What time does the lounge close on weekdays?",
-            "What are the operating hours of APU Campus Lounge?",
-            "Operating hours of APU Campus Connect Lounge?",
-            "Apu campus connect lounge operational hours?",
-            "When does APU Lounge operate?",
-            "What are the lounge hours on weekdays?",
-            "When does the lounge close?",
-            "Tell me the hours of APU Connect Lounge.",
-            "When is APU Lounge open on weekdays?",
-            "What time does the lounge close?",
-            "What are the operating hours of APU Campus Connect Lounge?",
-            "Operating hours of APU Connect Lounge?",
-            "Apu campus lounge operational hours?",
-            "When is the APU Campus Connect Lounge operating?",
-            "What are the lounge's opening hours on the weekdays?",
-            "When does the lounge closes on weekdays?",
-            "Tell me the operational hours for APU Campus Connect Lounge.",
-            "What time does the lounge closes on weekdays?",
-            "What are the operational hours for APU Campus Lounge?",
-            "Operating hours for APU Campus Connect Lounge?",
-            "Apu campus connect lounge operation hours?",
-            "When does APU Connect Lounge open and close?",
-            "Tell me about the operating schedule of APU Lounge.",
-            "What are the hours of APU Campus Connect Lounge?",
-            "When is APU Campus Lounge accessible on weekdays?",
-            "Apu campus connect lounge hours?",
         ],        
     }
 
+    # General payment details
+    if [i for i in ["fee", "pay", "paid", "bank"] if i in str(inp).lower()]:
+        print("bank alg")
+        add_qa = {
+            #Bursary (Payment details)
+            "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \
+            \nRemember to email the payment receipt with student name and ID to __bursary@apu.edu.my__": [
+                "How to make payment",
+                "How to pay course fee",
+                "How to pay resit fee",
+                "How to pay for accomodation fee",
+                "What is the bank account details of APU",
+                "I need to pay",
+                "I need to make payment",
+                "Payment Method",
+                "Payment"
+            ],
+
+            #Bursary (How to check fee payment on APspace)
+            "**Step 1** - Open your APSpace app or web browser.\
+            \n**Step 2** - Scroll down to the Financial widget to get quick overview of your fee payment. In the Financial widget, you can filter and hide by tapping on the color-code.\
+            \n**Step 3** - If you want to have a detail information/history of fee payment transaction; you can search for **“Fees”** or click **“More”** and scroll down to Finance section.\
+            \n**Step 4** - In Finance page, you can see **Summary** and **Details** of your fee payment.\
+            \nYou may also click this link to proceed: https://apspace.apu.edu.my/fees.":[
+                "Fee payment",
+                "Fee payment details",
+                "Fee payment status",
+                "Fee payment history",
+                "Fee payment summary",
+                "How to check fee payment?",
+                "How to check my fee payment details?",
+                "What are the steps to view my fee payment details?",
+                "What are the steps to check my fee payment details?"
+                "Can you guide me on how to find my fee payment details?",
+                "Where to check fee payment details?",
+                "Where can I find details about my fee payment?",
+                "How can I see my fee payment history ?",
+                "Where to check fee payment?",
+                "Steps to check fee payment",
+                "How can I view my fees on APspace?",
+                "How to check my fee pay payment status?",
+                "How to find payment information on APspace?",
+                "Paid fee details",
+                "Paid fee history",
+                "Steps to check paid fee",
+                "What are my paid fee?",
+                "How to check paid fee?",
+                "How can I check my paid fee details?",
+                "Where can I find information about my Paid fees?",
+                "What are the steps to check my Paid fee details?",
+                "How to know if I have paid my fee successfully?",
+                "Outstanding fee details",
+                "Steps to check outstanding fee",
+                "What are my outstanding fee?",
+                "How to check outstanding fee?",
+                "How can I check my Outstanding fee details?",
+                "Where can I find information about my Outstanding fees?",
+                "What steps should I follow to check my Outstanding fee details?",
+                "How much is my outstanding fee?",
+                "Overdue fee details",
+                "Overdue fee sumary",
+                "Steps to check overdue fee",
+                "What are my overdue fee?",
+                "How to check overdue fee",
+                "How can I check my Overdue fee details?",
+                "Where can I find information about my Overdue fees?",
+                "What steps should I follow to check my Overdue fee details?",
+                "How much is my ovedue fee?",
+            ],
+        }
+        qa.update(add_qa)
+
+    # Operation hour
+    if [i for i in ["operat", "hour", "time", "open", "close"] if i in str(inp).lower()]:
+        print("operation hour alg")
+        add_qa = {
+            "**Operational Hours of APU Campus Connect Lounge:**\n Monday – Friday: 8.00am – 10.00pm":[
+                "Open time APU Campus Connect Lounge",
+                "Close time APU Campus Connect Lounge",
+                "When does APU Campus Connect Lounge operate?",
+                "What are the lounge's opening hours",
+                "When does the lounge close",
+                "Tell me the operational hours of APU Campus Connect Lounge.",
+                "When is APU Campus Connect Lounge open on weekdays?",
+                "What time does the lounge close on weekdays?",
+                "What are the operating hours of APU Campus Lounge?",
+                "Operating hours of APU Campus Connect Lounge?",
+                "Apu campus connect lounge operational hours?",
+                "When does APU Lounge operate?",
+                "What are the lounge hours on weekdays?",
+                "When does the lounge close?",
+                "Tell me the hours of APU Connect Lounge.",
+                "When is APU Lounge open on weekdays?",
+                "What time does the lounge close?",
+                "What are the operating hours of APU Campus Connect Lounge?",
+                "Operating hours of APU Connect Lounge?",
+                "Apu campus lounge operational hours?",
+                "When is the APU Campus Connect Lounge operating?",
+                "What are the lounge's opening hours on the weekdays?",
+                "When does the lounge closes on weekdays?",
+                "Tell me the operational hours for APU Campus Connect Lounge.",
+                "What time does the lounge closes on weekdays?",
+                "What are the operational hours for APU Campus Lounge?",
+                "Operating hours for APU Campus Connect Lounge?",
+                "Apu campus connect lounge operation hours?",
+                "When does APU Connect Lounge open and close?",
+                "Tell me about the operating schedule of APU Lounge.",
+                "What are the hours of APU Campus Connect Lounge?",
+                "When is APU Campus Lounge accessible on weekdays?",
+                "Apu campus connect lounge hours?",
+            ],
+
+            # Library(Operating hours)
+            "**Operating hour of APU library**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.,\nSaturday : 9:00 a.m. - 1:00 p.m.,\nSunday / Public Holidays: Closed\
+            \n\n**Operating hour of APIIT library**\nMonday – Friday: 8:30 a.m. – 6:00 p.m.,\nSaturday / Sunday / Public Holidays: Closed ": [
+                "What is the operating hours of library",
+                "Operating hour of APU library",
+                "Operating hour of APIIT library",
+                "Operation hour of library",
+                "Operation hour of APU library",
+                "Operation hour of APIIT library",
+                "When does the library open?",
+                "When does the APU library open?",
+                "When does the APIIT library open?",
+                "What time does the library open",
+                "What time does the APU library open",
+                "What time does the APIIT library open",
+                "What time does the library open on weekdays?",
+                "What time does the APU library open on weekdays?",
+                "What time does the APIIT library open on weekdays?",
+                "Is the library open on weekends?"
+                "Is the APU library open on weekends?"
+                "Is the APIIT library open on weekends?"
+                "Is the library open on Saturdays?",
+                "Can I visit the library on public holidays?",
+                "Is the library closed on public holidays?",
+                "What is the schedule for the library?",
+                "Library open hours",
+                "APU Library open hours",
+                "APIIT Library open hours",
+                "Library open time",
+                "APU Library open time",
+                "APIIT Library open time",
+                "When does the library open and close?",
+                "When does the APU library open and close?",
+                "When does the APIIT library open and close?",
+                "When can I visit the library during the week?",
+            ],
+        }
+        qa.update(add_qa)
+
+    # Contacts algorithm
+    if [i for i in ["contact", "call", "phone", "email"] if i in str(inp).lower()]:
+        print("contacts alg")
+        add_qa = {
+            # Library(contact)
+            "Library Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
+                "How to contact library",
+                "What is the contacts of library",
+                "What is the email of library",
+                "How should I contact library",
+                "How to email library",
+                "How to call library",
+                "email library",
+                "call library",
+                "contact library",
+                "talk to library",
+                "I need to email library",
+                "I need to call library",
+                "I need to contact library",
+                "I want to contact library",
+                "I want to email library",
+                "I want to call library",
+            ],
+
+            # Bursary Contact
+            "Bursary Email: __bursary@apu.edu.my__\nYou may also call __+603 8992 5228__":[
+                "How to contact bursary",
+                "What is the contacts of bursary",
+                "What is the email of bursary",
+                "How should I contact bursary",
+                "How to email bursary",
+                "How to call bursary",
+                "email bursary",
+                "call bursary",
+                "contact bursary",
+                "talk to bursary",
+                "I need to email bursary", 
+                "I need to call bursary",
+                "I need to contact bursary",
+                "I want to contact bursary",
+                "I want to email bursary",
+                "I want to call bursary",
+                "cashier contact",
+                "cashier email"
+            ],
+
+            # TechCentre Contact
+            "IT Helpdesk Email: __assist@apu.edu.my__\nYou may also call __+603 8992 5050__":[
+                "How to contact techcentre",
+                "What is the contacts of techcentre",
+                "What is the email of techcentre",
+                "How should I contact techcentre",
+                "How to email techcentre",
+                "How to call techcentre",
+                "email techcentre",
+                "call techcentre",
+                "contact techcentre",
+                "talk to techcentre",
+                "I need to email techcentre", 
+                "I need to call techcentre",
+                "I need to contact techcentre",
+                "I want to contact it helpdesk",
+                "I want to email it helpdesk",
+                "I want to call it helpdesk",
+                "it helpdesk contact",
+                "it helpdesk email"
+            ],
+
+            # Admin Contact
+            "Admin Email: __admin@apu.edu.my__\nYou may also call __+603 8992 5250__":[
+                "How to contact admin",
+                "What is the contacts of admin",
+                "What is the email of admin",
+                "How should I contact admin",
+                "How to email admin",
+                "How to call admin",
+                "email admin",
+                "call admin",
+                "contact admin",
+                "talk to admin",
+                "I need to email admin",
+                "I need to call admin",
+                "I need to contact admin",
+                "I want to contact admin",
+                "I want to email admin",
+                "I want to call admin",
+            ]
+        }
+        qa.update(add_qa)
+
+    # References algorithm
+    if [i for i in ["apa", "reference", "references", "referencing", "citation", "citations", "style", "text"] if i in str(inp).lower()]:
+        print("citation alg")
+        add_qa = {
+            # Library(Which referencing style is used in APU?)
+            "At APU, we use `APA referencing style` in our academic writing. \
+            \nAPA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association. \
+            \nFor more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
+            \nhttps://apastyle.apa.org/style-grammar-guidelines/references\
+            \nhttps://dif7uuh3zqcps.cloudfront.net/wp-content/uploads/sites/91/2021/07/12102004/Quick-APA-Referencing-Guide-2021.pdf.": [
+                "meaning of referencing?",
+                "apu referencing",
+                "What is referencing",
+                "What is include in referencing",
+                "What is the purpose of referencing?",
+                "What are the two main components of referencing?",
+                "Can you explain the difference between citation (in-text referencing) and reference list (end-text referencing)?",
+                "What is the difference between in-text referencing and end-text referencing?",
+                "Why is it necessary to include both citation and reference list in academic writing?",
+                "Why is referencing used in academic writing?",
+                "Which referencing style is used in APU?",
+                "What referencing style does APU use?",
+                "What referencing style is use in APU?",
+                "What is the preferred referencing style for academic writing at APU?",
+                "What resources does APU provide for learning the APA referencing style?",
+                "Guides of APU referencing",
+                "What referencing style does APU use?",
+                "Where can I learn APA referencing at APU?",
+                "What APA guides does APU library provide?",
+                "What is the standard referencing style at APU?",
+                "What are the recommended APA guides at APU?",
+                "Where can I find APA Style Guidelines?",
+                "Does APU recommend any specific APA guides for referencing?",
+                "APA style",
+                "What is APA?",
+                "What is APA style?",
+                "Why use APA style?",
+                "What does APA style format?",
+                "What is APA referencing style?",
+                "Definition of APA referencing style",
+                "What is the purpose of the APA referencing style?",
+                "Can you describe the APA referencing style?",
+                "How does APA style help in writing?",
+            ],
+        
+            # Library(What is the format of APA in-text citation?)
+            "There are two different formats of in-text citation, `parenthetical and narrative`. Both formats require two elements: `Author's name and Year of publication`\
+            \nParenthetical citations are the more commonly seen form of in-text citations for academic work. Both required reference elements are presented at the end of the sentence in parentheses. E.g. (Belafonte, 2008).\
+            \nIn narrative citations, the author's name will be separated from the date. The date must appear immediately after the author's name but in parenthesis. E.g. Belafonte (2008).": [
+                "format of APA in-text citation"
+                "What is the format of APA in-text citation?",
+                "APA in-text citation format",
+                "format of APA in-text citation",
+                "How many format of APA in-text citation are there?",
+                "What are the two different formats of in-text citation?",
+                "What are the two formats of in-text citation in APA style?",
+                "What is parenthetical citation?",
+                "What is narrative citation?",
+                "Can you provide an example of a parenthetical citation?",
+                "Can you provide an example of a narrative citation?"
+                "How does a narrative citation differ from a parenthetical citation?",
+                "Explain the difference between parenthetical and narrative citations in APA?",
+            ],
+        
+            # Library(How to write the APA reference list?)
+            "1) Begin the reference list on a new page after the text.\n2) Place the section label `References` in bold at the top of the page, centered.\
+            \n3) Double-space the reference list, both within and between references. Do not add extra lines between references.\n4) Order references alphabetically, usually by the first letter of the first author's last name.\
+            \n5) Include the authors' first and middle initials (if they have them). Do not write out first or middle names.\n6)Write author names in the inverted format so that the last name comes first, followed by a comma and the initials. Place a period and a space after each initial.\
+            \n7) Apply a hanging indent for all references using the paragraph-formatting function of your word processing program: The first line is flush left, and all subsequent lines are indented 0.5 inches.\
+            \nYou may refer https://library.apiit.edu.my/apa-referencing/": [
+                "How to write the APA reference list?",
+                "Ways to write APA reference list",
+                "How are author names ordered in APA?",
+                "How is the References section formatted in APA?",
+                "How are references ordered in APA?",
+                "How should the authors names be written in an APA reference list?",
+                "How is spacing applied in APA references?",
+                "What is the indentation style in APA references?",
+                "What is the author name format in APA references?",
+                "How to format the References section in APA?",
+                "What is the APA style for reference indentation?",
+                "How to apply spacing in APA references?",
+                "Where to start the reference list in APA?",
+                "What is the order of references in APA?",
+            ],
+        
+            # Library(How to write an end-text referencing using APA Style?)
+            "APA referencing style required four basic information: WHO: Author's name,WHEN: Date of publication,WHAT: Title of work and WHERE: Source data\
+            \nFor more information how to write an end-text referencing using APA style,please go to this link: https://apiit.atlassian.net/wiki/spaces/LIB/pages/1968767097/How+to+write+an+end-text+referencing+using+APA+Style\
+            \n\n__Important notes__\n-Primary title should be written in italic.\n-For the journal article, the journal title should be written in Italic while the article title will be written in a normal text.\nResources that are available online, please use the DOI or URL as their source of data.": [
+                "How to write an end-text referencing using APA Style?",
+                "end-text referencing using APA Style",
+                "Ways to write an end-text referencing using APA Style",
+                "What are the four components needed for APA referencing?",
+                "How should the primary title be presented in APA end-text referencing?",
+                "Where can I find more details on writing end-text referencing in APA style?",
+                "How should online resources be cited in APA",
+                "Which title is italicized in a journal article citation, and which one is in normal text?",
+                "How should the primary title be presented in APA end-text referencing?",
+                "How to cite online resources in APA style?",
+            ],
+        }
+        qa.update(add_qa)
+
     # Car Park algorithm
     if [i for i in ["car", "park", "parking", "zone"] if i in str(inp).lower()]:
+        print("parking alg")
         add_park = {
             ###### Logistics & Operations - APU and APIIT Car Parking Rates
             "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[

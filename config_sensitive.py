@@ -1132,38 +1132,7 @@ async def get_qa(inp):
             "payment counter",
             "bursary location", 
             "cashier location"
-        ],  
-
-        ######Logistics & Operations - APU Campus Connect Lounge
-        "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
-            "Connect Lounge",
-            "Campus Connect Lounge purpose?",
-            "How do I access APU Connect Lounge?",
-            "What is the purpose of Block E lounge?",
-            "Where can I find the Level 1 lounge?",
-            "How does APU Shuttle Bus service operate?",
-            "What is the purpose of APU Shuttle Bus?",
-            "Provide info about Arrival and Departure for APU Shuttle Bus.",
-            "How does APU Campus Connect Lounge bus service operate?",
-            "Where's the departure lounge for APU bus?",
-            "Where to wait for shuttle bus APU?",
-            "How to access APU Connect Lounge?",
-            "What is the location of APU Connect Lounge?",
-            "How is APU Connect Lounge accessed?",
-            "What is the purpose of the lounge in Block E?",
-            "Where is the Level 1 lounge located?",
-            "How are APU Shuttle Buses operated?",
-            "How is the APU Shuttle Bus service operated?",
-            "What is the purpose of APU Shuttle Bus?",
-            "How is APU Connect Lounge accessed?",
-            "What is the location of APU Connect Lounge?",
-            "Tell me about the APU Shuttle Buses.",
-            "Tell me about the APU Shuttle Bus.",
-            "How does the APU Shuttle Buses service work?",
-            "What is the purpose of the APU Shuttle Bus?",
-            "How does the Bus Shuttle service work?",
-            "Can you provide information about Arrival and Departure for Bus Shuttle.",
-        ],        
+        ],          
     }
 
     # General payment details
@@ -1670,6 +1639,8 @@ async def get_qa(inp):
 
     # Bus schedule algorithm
     if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses", "travel"] if i in str(inp).lower()]:
+        if [i for i in ["shuttle", "bus"] if i in str(inp).lower()]:
+            qa = dict()
         added_set = set()
         count = 0
         if schedules: # If schedules from API not empty
@@ -1751,7 +1722,39 @@ async def get_qa(inp):
                 "bus depart at LRT",
                 "bus arrive at LRT"
             ],
+            ######Logistics & Operations - APU Campus Connect Lounge
+            "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
+                "Connect Lounge",
+                "Campus Connect Lounge purpose?",
+                "How do I access APU Connect Lounge?",
+                "What is the purpose of Block E lounge?",
+                "Where can I find the Level 1 lounge?",
+                "How does APU Shuttle Bus service operate?",
+                "What is the purpose of APU Shuttle Bus?",
+                "Provide info about Arrival and Departure for APU Shuttle Bus.",
+                "How does APU Campus Connect Lounge bus service operate?",
+                "Where's the departure lounge for APU bus?",
+                "Where to wait for shuttle bus APU?",
+                "How to access APU Connect Lounge?",
+                "What is the location of APU Connect Lounge?",
+                "How is APU Connect Lounge accessed?",
+                "What is the purpose of the lounge in Block E?",
+                "Where is the Level 1 lounge located?",
+                "How are APU Shuttle Buses operated?",
+                "How is the APU Shuttle Bus service operated?",
+                "What is the purpose of APU Shuttle Bus?",
+                "How is APU Connect Lounge accessed?",
+                "What is the location of APU Connect Lounge?",
+                "Tell me about the APU Shuttle Buses.",
+                "Tell me about the APU Shuttle Bus.",
+                "How does the APU Shuttle Buses service work?",
+                "What is the purpose of the APU Shuttle Bus?",
+                "How does the Bus Shuttle service work?",
+                "Can you provide information about Arrival and Departure for Bus Shuttle.",
+            ],
         }
+
         qa.update(add_qa)
-        
+    
+    print(qa)
     return qa

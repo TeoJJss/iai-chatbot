@@ -157,6 +157,7 @@ async def get_qa(inp):
             "How to borrow a book?",
             "How do I borrow books from the library?",
             "How to borrow items from the library?",
+            "I want to borrow a book",
             "How can I borrow book from the library?",
             "What is the process to borrow a book from the library?",
             "What steps should I follow to borrow a book from the library?",

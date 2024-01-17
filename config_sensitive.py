@@ -124,117 +124,6 @@ async def get_qa(inp):
             "school holidays"
         ],
 
-        # General knowledge(Course fees)
-        "Please check your course fees at APSpace > More > Fees.\nYou may also access the page through https://apspace.apu.edu.my/fees.":[
-            "How to check course fee",
-            "How do I check course fees",
-            "How much is my course fees",
-            "How much I need to pay"
-        ],
-        
-        # Library (Location of APU and APIIT)
-        "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
-        \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
-            "library",
-            "library location",
-            "APU library",
-            "APIIT library",
-            "APU library location",
-            "APIIT library location",
-            "How to go to the library",
-            "How to go library",
-            "How to go to library",
-            "Where is library",
-            "Where is APU library",
-            "Where is APIIT library",
-            "Where is the library located?",
-            "How do I get to the library?",
-            "What is the address of the library?",
-            "How to go to the APU library",
-            "How to go to the APIIT library",
-            "How to go APU library",
-            "How to go APIIT library",
-            "How to go to library at APU",
-            "How to go to library at APIIT",
-            "go library",
-            "go APU library",
-            "go APIIT library",
-            "How do I get to the APU library?",
-            "How do I get to the APIIT library?",
-            "where library"
-        ],
-    
-        # Library(am I allowed to bring food/drinks)
-        "Food and canned drinks are strictly not allowed in the library. Drinking water in bottles and spill-proof containers are permitted. ": [
-            "Can I bring food to library?",
-            "Can I bring food into the library?",
-            "Can I bring drink to library?",
-            "Can I bring drink into the library?",
-            "Can I eat in the library?",
-            "Can I drink in the library?",
-            "Can I drink anything other than water in the library?",
-            "Can I bring my own water bottle to the library?",
-            "Library food rules?",
-            "Is food allowed in the library?",
-            "What is the policy on eating in the library?",
-            "What is the policy on drinking in the library?",
-            "Are bottled drinks allowed in the library?",
-            "Are outside beverages allowed in the library?",
-        ],
-
-        # Library(can I sleep)
-        "Sleeping is strictly not allowed in the library as we want to maintain a professional ambience and a pleasant environment of the library.\
-        \nHowever, you are welcome to relax by listening to music, chatting with friends, and doing other activities that don't disrupt the library's atmosphere.": [
-            "Can I sleep in the library?",
-            "What happens if I fall asleep in the library?",
-            "Can I take a nap in the library",
-            "Is it okay to sleep in the library?",
-            "Can I use the library for a short nap?",
-            "Is sleeping allowed in the library?",
-            "Can I lie down in the library?",
-            "Can I sleep in the library if I am tired?",
-            "Can I sleep on the couch in the library?",
-            "Is it ok to sleep in the library?",
-            "Is it fine to take a nap in the library?",
-            "Can I have a quick nap in the library?",
-        ],
-
-        # Library(How to apply for library job vacancies)
-        "You will have to submit the online job application form, which will be available once the recruitment advertisement is published on the APSpace and library website.The application form must be submitted along with: **`Cover Letter,Curriculum Vitae (CV),Passport-sized photograph.`**\
-        \nYou'll be interviewed if shortlisted. Applicants who were rejected would be contacted by email.": [
-            "How to apply for library job vacancies?"
-            "How can I apply for a job at the library?",
-            "What is the procedure to apply for a job in the library?",
-            "What is the process to apply for a library job?",
-            "What is the requirement to apply for a library job?",
-            "What are the steps to apply for a library job?",
-            "I am interested in working at the library",
-            "I would like to apply for a job in the library",
-            "I am thinking of working in the library",
-            "How to apply for a library position?",
-            "I want to work in the library",
-            "I want to apply for a library job",
-            "I wish to apply for a library position.",
-            "How to apply to be a librarian",
-            "How do I submit an application for a library job?",
-            "How can I work part time in a library?",
-            "How to get a part time job in a library",
-            "How to work as a part time in a library",
-            "How to work part-time in a library"
-            "I wish to work at the library",
-            "How to apply for a position in the library?",
-            "How do I apply for a position at the library?",
-            "I am interested in a library job",
-            "I am looking to work in the library.",
-            "Where can I find the application for library vacancies?",
-            "What steps do I need to take to apply for a job at the library?",
-            "Is there an online application portal for library job opportunities?",
-            "What documentation do I need to prepare for my library job application?",
-            "What should I include in my resume for a library job application?",
-            "What documents do I need to attach when submitting my library job application?",
-            "How to apply job in library?",
-        ],
-
         # Library(how to search printed books?)
         "1) Access the OPAC portal using this link: https://opac.apiit.edu.my/ \n2) Search for the book and click “Go“. Select keyword, ISSN, and Subject from the drop-down menu adjacent to the search bar to change search details.\
             \n3) Choose the book that you want and click the title.\n4) Search for the book on the shelf using the call number and also take note of the library's location.\
@@ -385,34 +274,6 @@ async def get_qa(inp):
             "What steps should I follow to return a borrowed book at the library?",
             "Where should I return a book after borrowing it?",
         ],
-
-        # Library(How do I collect my library deposit?)
-        "1) Login to APSpace.\n2) Go to `Collaboration & Information Resources` and select `e-Forms`. Your browser will open a new tab with the `Exit Application` form at the bottom.\
-        \n3) Complete the form by providing the required details and wait for confirmation. You can check the status in the E-forms.\n4) Collect the library deposit from the cashier.": [
-            "collect library deposit",
-            "collect my library deposit",
-            "How to get back my library deposit?",
-            "library deposit",
-            "How do I collect my library deposit?",
-            "What are the steps to retrieve my library deposit?",
-            "how to get back my library deposit?",
-            "How to get library deposit back?",
-            "claim library deposit",
-            "How to claim library deposit?",
-            "Method to retrieve library deposit?",
-            "What is the process to collect my library deposit?",
-            "How to collect my library deposit?",
-            "I want to collect my library deposit",
-            "How to retrieve library deposit?",
-            "How to retrieve my library deposit?",
-            "Steps to get library deposit back?",
-            "Procedure for library deposit collection?",
-            "Where and how can I collect my library deposit?",
-            "How do I withdraw my library deposit?",
-            "How can I reclaim my library deposit easily?",
-            "Method to receive my library deposit",
-            "How to retrieve my library deposit",
-        ],
     
         # Library(Can I borrow FYP/theses/dissertation?)
         "The hard bound FYP / Theses / Dissertation belongs to the library's `Reference Collection`. Any materials belong to this category can only be used within the library and not available for borrowing. However, you may visit the APU’s Institutional Repository (APres) to access hundreds of selected copies of FYPs / Theses/ Dissertation.": [
@@ -472,22 +333,6 @@ async def get_qa(inp):
             "How long can I borrow a general circulation item?",
             "Can academic staff renew green-labeled items?",
             "Is there a time restriction for items with no colored label?",
-        ],
-    
-        # Library(How do I pay my library fines?)
-        "You need to come to the library counter and pay your fines by cash. Please ensure to login to your “My Library Account” to check your total outstanding fines and prepare the exact cash to make payment at the library counter.": [
-            "pay my library fines",
-            "How to pay library fines?",
-            "How do I pay my library fines?",
-            "Can I pay my library fines in cash?",
-            "What is the procedure to pay my library fines?",
-            "Where to pay my library fines",
-            "Methods to pay library fines",
-            "Can I use “My Library Account” to pay my fines online?",
-            "How to check my library fines?",
-            "Where do I need to go to pay my library fines?",
-            "Can I pay my fines with a credit card, or is cash the only option?",
-            "Can I pay my fines online, or is it only accepted at the library?",
         ],
     
         # Library(What should I do if I lost a book?)
@@ -719,144 +564,6 @@ async def get_qa(inp):
             "APres login for accessing FYPs and theses?",
         ],
     
-        # Library(How to check Turnitin similarity report before the official module submission)
-        "1) From your Moodle Dashboard, search \"Turnitin\".\n2) Click on the \"Try view similarity…\" link.\n3) Click on Enrol Me.\
-        \n4) Click on the following link to open the submission portal.\n5) Click on Add Submission.\n\nOnce done, the status will be set to \"Queued\" wait a little while for your similarity report.": [
-            "Access Turnitin",
-            "How do I access Turnitin?",
-            "How to access Turnitin?",
-            "What is the process for entering Turnitin?",
-            "How can I reach Turnitin's interface?",
-            "Is there a way to log in to Turnitin?",
-            "What steps should I take to access Turnitin?",
-            "Can you guide me on entering Turnitin?",
-            "How do I get to Turnitin?",
-            "What's the procedure for logging into Turnitin?",
-            "Is there a way to access Turnitin through Moodle?",
-            "How can I reach Turnitin's features?",
-            "What is the method for logging in to Turnitin via Moodle?",
-            "What are the steps to access Turnitin?",
-            "Can you guide me on how to use Turnitin?",
-            "What’s the process for accessing Turnitin?",
-            "How do I navigate to Turnitin?",
-            "What is the method to use Turnitin?",
-            "How can I log into Turnitin?",
-            "How do I open Turnitin?",
-            "How can I start using Turnitin?",
-            "How to check Turnitin similarity report before the official module submission",
-            "I want to check Turnitin similarity report",
-            "How to preview Turnitin similarity report before submitting?",
-            "Steps to check Turnitin report before official submission?",
-            "How to check Turnitin similarity pre-submission?",
-            "Steps for Turnitin preview before submission?",
-            "How to view Turnitin report before submitting?",
-            "Guide me on viewing Turnitin report before submission.",
-            "How to check Turnitin similarity before module submission?",
-            "Preview Turnitin similarity report",
-            "Preview Turnitin report before submitting?",
-            "Check Turnitin similarity report",
-            "Steps to check Turnitin similarity report",
-            "Steps for previewing Turnitin report before official submission?",
-            "Can I check Turnitin similarity before submitting the module?",
-            "Can I check Turnitin similarity before submitting?",
-            "How can I preview the Turnitin similarity report prior to the module submission?",
-            "Is there a way to view the Turnitin similarity report before the official submission of my module?",
-            "What steps should I take to check the Turnitin similarity report before submitting my module officially?",
-            "Can you guide me on accessing the Turnitin similarity report before the official module submission?",
-            "How do I review the Turnitin similarity report before I officially submit my module?",
-            "Is it possible to check the Turnitin similarity report in advance of the module submission?",
-            "What are the steps to view the Turnitin similarity report prior to the official module submission?",
-            "Can you guide me on how to access the Turnitin similarity report before submitting the official module?",
-            "How can I review the Turnitin similarity report before the final module submission?",
-            "What is the procedure to check the Turnitin similarity report before the official module is submitted?",
-            "Could you explain how to inspect the Turnitin similarity report before the official module hand-in?",
-        ],
-    
-        # Library(I want to remove/delete a paper from Turnitin. What should I do?)
-        "Submit a paper deletion request via Library Helpdesk by providing the Turnitin submission ID of the paper you wish to be removed. The deletion is permanent and papers cannot be retrieved for any reason once it's deleted.": [
-            "I want to remove a paper from Turnitin",
-            "Remove a paper from Turnitin",
-            "Delete a paper from Turnitin",
-            "How do I delete a paper from Turnitin?",
-            "How to delete a paper from Turnitin?",
-            "Steps to remove a paper from Turnitin?"
-            "Delete a paper from Turnitin: how?",
-            "Guide me on removing a Turnitin paper.",
-            "Can I delete a paper from Turnitin?",
-            "Process for removing a paper from Turnitin?",
-            "What is the procedure for Turnitin paper deletion?",
-            "Is there a way to remove a paper from Turnitin?",
-            "What should I do to delete a paper from Turnitin?",
-            "Can you explain the process of removing a paper from Turnitin?",
-            "How can I request the deletion of a paper from Turnitin?",
-            "What steps should I follow to delete a paper from Turnitin?",
-            "Guide me on removing a paper from Turnitin.",
-            "Is it possible to delete a paper from Turnitin?",
-            "How do I initiate the removal of a paper from Turnitin?",
-            "What's the process for requesting the deletion of a paper from Turnitin?",
-            "What steps should I take to delete a paper from Turnitin?",
-            "How can I erase my paper from Turnitin?",
-            "What is the procedure to remove a document from Turnitin?",
-            "I need to delete a submission from Turnitin. How do I go about it?",
-            "Can you guide me on how to remove a paper from Turnitin?",
-            "What is the method to delete a paper from Turnitin?",
-            "How do I go about removing a paper from Turnitin?",
-            "What should I do if I want to delete a paper from Turnitin?",
-            "What is the process for deleting a paper from Turnitin?",
-            "Can you tell me how to delete a paper from Turnitin?",
-        ],
-    
-        # Library(How to download Turnitin assignment with feedback comments?)
-        "1) Navigate to the specific assignment and open up the graded paper in the document viewer.\n2) Click on the assignment submitted to open the Turnitin page.\
-        \n3) You must select the view you wish to see in your download. If you wish to see your grades and feedback in the downloaded file, ensure you click the text comment button to view the feedback.\n4) Click on the download button.\
-        \n\nYour assignment will likely be downloaded into your downloads folder (this is dependent on your browser settings but the default is normally the downloads folder). Open your downloaded file and scroll to the end of the document to find your feedback comments and matches.\
-        \n\nIf you select Digital receipt – this is a copy of the submission receipt, which students also received by email.\nIf you select Originally submitted – this is the exact file that you uploaded without any additions.": [
-            "How to download Turnitin assignment with feedback comments?",
-            "Method to download Turnitin assignment",
-            "Download Turnitin assignment",
-            "How to download Turnitin assignment with feedback?",
-            "Steps for getting Turnitin assignment with feedback?",
-            "Download Turnitin assignment with grades and comments."
-            "How can I download Turnitin assignment with feedback?",
-            "Steps for accessing Turnitin assignment and feedback download?",
-            "What is the process for Turnitin assignment download with feedback?",
-            "How to get Turnitin feedback?",
-            "Steps to download Turnitin feedback?",
-            "Downloading Turnitin assignment feedback?",
-            "Procedure for Turnitin feedback download?",
-            "Guide to download Turnitin comments?",
-            "How to access Turnitin feedback?",
-            "Turnitin assignment feedback download?",
-            "Retrieving feedback from Turnitin?",
-            "Turnitin feedback download steps?",
-            "Getting feedback from Turnitin?",
-        ],
-    
-        # Library(How can I find my Turntin Submission ID?)
-        "To ensure your paper deletion request is fulfilled successfully, **Turnitin ID or Submission ID** must be provided along with your request. Turnitin Support Team will not process any deletion request without IDs.\
-        \nEach work you submit to Turnitin will generate an automated Digital Receipt (refer to the image below) which contains all the necessary information about the submission you made including the ID.This will be sent to your official APU email and you can check for the ID by retrieving your Digital Receipt from your email.": [
-            "How can I find my Turntin Submission ID?",
-            "What's the process for locating my Turnitin Submission ID?",
-            "How can I find the ID for my Turnitin submission?",
-            "Is there a way to retrieve my Turnitin Submission ID?",
-            "What steps should I take to get my Turnitin ID or Submission ID?",
-            "Can you guide me on locating my Turnitin Submission ID?",
-            "Can you guide me on how to retrieve my Submission ID for Turnitin?",
-            "How do I check for my Turnitin Submission ID?",
-            "What is the procedure for finding the ID for my Turnitin submission?",
-            "Is it possible to get my Turnitin ID or Submission ID from a previous submission?",
-            "How to obtain the ID for my Turnitin submission?",
-            "Guide me on retrieving my Turnitin Submission ID from the Digital Receipt.",
-            "What is the method to locate my Turnitin Submission ID?",
-            "What steps should I follow to find my Turnitin Submission ID?",
-            "Where can I find the Submission ID for my Turnitin assignment?",
-            "How do I get my Submission ID from Turnitin?",
-            "How to find my Turnitin Submission ID?",
-            "Steps to get my Turnitin ID?",     
-            "How to retrieve Turnitin Submission ID?",
-            "How to get my Turnitin Submission ID?",
-        ],
-    
         # Library(How long does the paper deletion request takes?)
         "By default, all Turnitin deletion requests are treated as urgent. Generally, it takes from 24 hours to 2 weeks for the Turnitin Support Team to fulfill your deletion request depending on the request queue.\
         \nAs the support team are based in the UK, US, India & Australia, the time difference between them and Malaysia is also a contributing factor in determining the speed of response. Therefore, it is highly recommended for you to send your deletion request at least 3 weeks prior to your submission deadline.": [
@@ -913,38 +620,6 @@ async def get_qa(inp):
             "Is it possible to reserve a discussion room at the Library?",
             "Guide me on securing a discussion room in the Library.",
             "Could you tell me how to secure a discussion room in the Library?",
-        ],
-    
-        # Library(I have a problem with library facilities/services. Where should I report to?)
-        "You may raise a helpdesk request from our Library Helpdesk, and we will assist you as soon as possible.\nhttps://apiit.atlassian.net/servicedesk/customer/portal/14.": [
-            "I have a problem with library facilities",
-            "Report library facilities issues",
-            "Report library services issues",
-            "Where do I report problems with library services?",
-            "Where to report library facility issues?",
-            "How to report issues with library services?",
-            "Where to seek help for library problems?",
-            "How to report problems with library services?",
-            "Where to report library facility concerns?",
-            "What to do if I have library service issues?",
-            "Where to report library issues?",
-            "Who to contact for library problems?",
-            "Where to raise library concerns?",
-            "Who handles library service issues?",
-            "Where to report library service problems?",
-            "Where to submit library complaints?",
-            "Who to notify about library issues?",
-            "Where to report problems with the library?",
-            "Who to reach out to for library difficulties?",
-            "Where to voice library service complaints?",
-            "Who to inform about library troubles?",
-            "Where to lodge library service issues?",
-            "Who to alert about library problems?",
-            "Where to communicate library concerns?",
-            "Who to advise about library issues?",
-            "I am experiencing issues with the library facilities/services. Who can I contact for help?",
-            "There is a problem with the library services. Could you guide me on where to report this?",
-            "I need to report an issue with the library facilities",
         ],
 
         #Bursary (Bank details-Maybank APU & APIIT)
@@ -1165,7 +840,7 @@ async def get_qa(inp):
             "Can you provide information about Arrival and Departure for Bus Shuttle.",
         ], 
 
-                           ###### Academic Administration - Student Handbook 
+        ###### Academic Administration - Student Handbook 
         "You may download the handbock through the link \n <https://apiit.atlassian.net/wiki/x/CQCARw>":[
             "APU Student Handbook",
             "Campus Handbook",
@@ -1443,6 +1118,7 @@ async def get_qa(inp):
     # Contacts algorithm
     if [i for i in ["contact", "call", "phone", "email"] if i in str(inp).lower()]:
         print("contacts alg")
+        qa = dict()
         add_qa = {
             # Library(contact)
             "Library Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
@@ -1911,5 +1587,328 @@ async def get_qa(inp):
 
         qa.update(add_qa)
     
-    print(qa)
+    # Library algorithm
+    if "library" in str(inp).lower():
+        add_qa = {
+            # Library (Location of APU and APIIT)
+            "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
+            \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
+                "library",
+                "library location",
+                "APU library",
+                "APIIT library",
+                "APU library location",
+                "APIIT library location",
+                "How to go to the library",
+                "How to go library",
+                "How to go to library",
+                "Where is library",
+                "Where is APU library",
+                "Where is APIIT library",
+                "Where is the library located?",
+                "How do I get to the library?",
+                "What is the address of the library?",
+                "How to go to the APU library",
+                "How to go to the APIIT library",
+                "How to go APU library",
+                "How to go APIIT library",
+                "How to go to library at APU",
+                "How to go to library at APIIT",
+                "go library",
+                "go APU library",
+                "go APIIT library",
+                "How do I get to the APU library?",
+                "How do I get to the APIIT library?",
+                "where library"
+            ],
+        
+            # Library(am I allowed to bring food/drinks)
+            "Food and canned drinks are strictly not allowed in the library. Drinking water in bottles and spill-proof containers are permitted. ": [
+                "Can I bring food to library?",
+                "Can I bring food into the library?",
+                "Can I bring drink to library?",
+                "Can I bring drink into the library?",
+                "Can I eat in the library?",
+                "Can I drink in the library?",
+                "Can I drink anything other than water in the library?",
+                "Can I bring my own water bottle to the library?",
+                "Library food rules?",
+                "Is food allowed in the library?",
+                "What is the policy on eating in the library?",
+                "What is the policy on drinking in the library?",
+                "Are bottled drinks allowed in the library?",
+                "Are outside beverages allowed in the library?",
+            ],
+
+            # Library(can I sleep)
+            "Sleeping is strictly not allowed in the library as we want to maintain a professional ambience and a pleasant environment of the library.\
+            \nHowever, you are welcome to relax by listening to music, chatting with friends, and doing other activities that don't disrupt the library's atmosphere.": [
+                "Can I sleep in the library?",
+                "What happens if I fall asleep in the library?",
+                "Can I take a nap in the library",
+                "Is it okay to sleep in the library?",
+                "Can I use the library for a short nap?",
+                "Is sleeping allowed in the library?",
+                "Can I lie down in the library?",
+                "Can I sleep in the library if I am tired?",
+                "Can I sleep on the couch in the library?",
+                "Is it ok to sleep in the library?",
+                "Is it fine to take a nap in the library?",
+                "Can I have a quick nap in the library?",
+            ],
+
+            # Library(How to apply for library job vacancies)
+            "You will have to submit the online job application form, which will be available once the recruitment advertisement is published on the APSpace and library website.The application form must be submitted along with: **`Cover Letter,Curriculum Vitae (CV),Passport-sized photograph.`**\
+            \nYou'll be interviewed if shortlisted. Applicants who were rejected would be contacted by email.": [
+                "How to apply for library job vacancies?"
+                "How can I apply for a job at the library?",
+                "What is the procedure to apply for a job in the library?",
+                "What is the process to apply for a library job?",
+                "What is the requirement to apply for a library job?",
+                "What are the steps to apply for a library job?",
+                "I am interested in working at the library",
+                "I would like to apply for a job in the library",
+                "I am thinking of working in the library",
+                "How to apply for a library position?",
+                "I want to work in the library",
+                "I want to apply for a library job",
+                "I wish to apply for a library position.",
+                "How to apply to be a librarian",
+                "How do I submit an application for a library job?",
+                "How can I work part time in a library?",
+                "How to get a part time job in a library",
+                "How to work as a part time in a library",
+                "How to work part-time in a library"
+                "I wish to work at the library",
+                "How to apply for a position in the library?",
+                "How do I apply for a position at the library?",
+                "I am interested in a library job",
+                "I am looking to work in the library.",
+                "Where can I find the application for library vacancies?",
+                "What steps do I need to take to apply for a job at the library?",
+                "Is there an online application portal for library job opportunities?",
+                "What documentation do I need to prepare for my library job application?",
+                "What should I include in my resume for a library job application?",
+                "What documents do I need to attach when submitting my library job application?",
+                "How to apply job in library?",
+            ],
+            # Library(How do I collect my library deposit?)
+            "1) Login to APSpace.\n2) Go to `Collaboration & Information Resources` and select `e-Forms`. Your browser will open a new tab with the `Exit Application` form at the bottom.\
+            \n3) Complete the form by providing the required details and wait for confirmation. You can check the status in the E-forms.\n4) Collect the library deposit from the cashier.": [
+                "collect library deposit",
+                "collect my library deposit",
+                "How to get back my library deposit?",
+                "library deposit",
+                "How do I collect my library deposit?",
+                "What are the steps to retrieve my library deposit?",
+                "how to get back my library deposit?",
+                "How to get library deposit back?",
+                "claim library deposit",
+                "How to claim library deposit?",
+                "Method to retrieve library deposit?",
+                "What is the process to collect my library deposit?",
+                "How to collect my library deposit?",
+                "I want to collect my library deposit",
+                "How to retrieve library deposit?",
+                "How to retrieve my library deposit?",
+                "Steps to get library deposit back?",
+                "Procedure for library deposit collection?",
+                "Where and how can I collect my library deposit?",
+                "How do I withdraw my library deposit?",
+                "How can I reclaim my library deposit easily?",
+                "Method to receive my library deposit",
+                "How to retrieve my library deposit",
+            ],
+            # Library(How do I pay my library fines?)
+            "You need to come to the library counter and pay your fines by cash. Please ensure to login to your “My Library Account” to check your total outstanding fines and prepare the exact cash to make payment at the library counter.": [
+                "pay my library fines",
+                "How to pay library fines?",
+                "How do I pay my library fines?",
+                "Can I pay my library fines in cash?",
+                "What is the procedure to pay my library fines?",
+                "Where to pay my library fines",
+                "Methods to pay library fines",
+                "Can I use “My Library Account” to pay my fines online?",
+                "How to check my library fines?",
+                "Where do I need to go to pay my library fines?",
+                "Can I pay my library fines with a credit card, or is cash the only option?",
+                "Can I pay my fines online, or is it only accepted at the library?",
+            ],
+            # Library(I have a problem with library facilities/services. Where should I report to?)
+            "You may raise a helpdesk request from our Library Helpdesk, and we will assist you as soon as possible.\nhttps://apiit.atlassian.net/servicedesk/customer/portal/14.": [
+                "I have a problem with library facilities",
+                "Report library facilities issues",
+                "Report library services issues",
+                "Where do I report problems with library services?",
+                "Where to report library facility issues?",
+                "How to report issues with library services?",
+                "Where to seek help for library problems?",
+                "How to report problems with library services?",
+                "Where to report library facility concerns?",
+                "What to do if I have library service issues?",
+                "Where to report library issues?",
+                "Who to contact for library problems?",
+                "Where to raise library concerns?",
+                "Who handles library service issues?",
+                "Where to report library service problems?",
+                "Where to submit library complaints?",
+                "Who to notify about library issues?",
+                "Where to report problems with the library?",
+                "Who to reach out to for library difficulties?",
+                "Where to voice library service complaints?",
+                "Who to inform about library troubles?",
+                "Where to lodge library service issues?",
+                "Who to alert about library problems?",
+                "Where to communicate library concerns?",
+                "Who to advise about library issues?",
+                "I am experiencing issues with the library facilities/services. Who can I contact for help?",
+                "There is a problem with the library services. Could you guide me on where to report this?",
+                "I need to report an issue with the library facilities",
+            ],
+        }
+        qa.update(add_qa)
+    
+    # Turnitin algorithm
+    if "turnitin" in str(inp).lower():
+        add_qa = {
+            # Library(How to check Turnitin similarity report before the official module submission)
+            "1) From your Moodle Dashboard, search \"Turnitin\".\n2) Click on the \"Try view similarity…\" link.\n3) Click on Enrol Me.\
+            \n4) Click on the following link to open the submission portal.\n5) Click on Add Submission.\n\nOnce done, the status will be set to \"Queued\" wait a little while for your similarity report.": [
+                "Access Turnitin",
+                "How do I access Turnitin?",
+                "How to access Turnitin?",
+                "What is the process for entering Turnitin?",
+                "How can I reach Turnitin's interface?",
+                "Is there a way to log in to Turnitin?",
+                "What steps should I take to access Turnitin?",
+                "Can you guide me on entering Turnitin?",
+                "How do I get to Turnitin?",
+                "What's the procedure for logging into Turnitin?",
+                "Is there a way to access Turnitin through Moodle?",
+                "How can I reach Turnitin's features?",
+                "What is the method for logging in to Turnitin via Moodle?",
+                "What are the steps to access Turnitin?",
+                "Can you guide me on how to use Turnitin?",
+                "What’s the process for accessing Turnitin?",
+                "How do I navigate to Turnitin?",
+                "What is the method to use Turnitin?",
+                "How can I log into Turnitin?",
+                "How do I open Turnitin?",
+                "How can I start using Turnitin?",
+                "How to check Turnitin similarity report before the official module submission",
+                "I want to check Turnitin similarity report",
+                "How to preview Turnitin similarity report before submitting?",
+                "Steps to check Turnitin report before official submission?",
+                "How to check Turnitin similarity pre-submission?",
+                "Steps for Turnitin preview before submission?",
+                "How to view Turnitin report before submitting?",
+                "Guide me on viewing Turnitin report before submission.",
+                "How to check Turnitin similarity before module submission?",
+                "Preview Turnitin similarity report",
+                "Preview Turnitin report before submitting?",
+                "Check Turnitin similarity report",
+                "Steps to check Turnitin similarity report",
+                "Steps for previewing Turnitin report before official submission?",
+                "Can I check Turnitin similarity before submitting the module?",
+                "Can I check Turnitin similarity before submitting?",
+                "How can I preview the Turnitin similarity report prior to the module submission?",
+                "Is there a way to view the Turnitin similarity report before the official submission of my module?",
+                "What steps should I take to check the Turnitin similarity report before submitting my module officially?",
+                "Can you guide me on accessing the Turnitin similarity report before the official module submission?",
+                "How do I review the Turnitin similarity report before I officially submit my module?",
+                "Is it possible to check the Turnitin similarity report in advance of the module submission?",
+                "What are the steps to view the Turnitin similarity report prior to the official module submission?",
+                "Can you guide me on how to access the Turnitin similarity report before submitting the official module?",
+                "How can I review the Turnitin similarity report before the final module submission?",
+                "What is the procedure to check the Turnitin similarity report before the official module is submitted?",
+                "Could you explain how to inspect the Turnitin similarity report before the official module hand-in?",
+            ],
+        
+            # Library(I want to remove/delete a paper from Turnitin. What should I do?)
+            "Submit a paper deletion request via Library Helpdesk by providing the Turnitin submission ID of the paper you wish to be removed. The deletion is permanent and papers cannot be retrieved for any reason once it's deleted.": [
+                "I want to remove a paper from Turnitin",
+                "Remove a paper from Turnitin",
+                "Delete a paper from Turnitin",
+                "How do I delete a paper from Turnitin?",
+                "How to delete a paper from Turnitin?",
+                "Steps to remove a paper from Turnitin?"
+                "Delete a paper from Turnitin: how?",
+                "Guide me on removing a Turnitin paper.",
+                "Can I delete a paper from Turnitin?",
+                "Process for removing a paper from Turnitin?",
+                "What is the procedure for Turnitin paper deletion?",
+                "Is there a way to remove a paper from Turnitin?",
+                "What should I do to delete a paper from Turnitin?",
+                "Can you explain the process of removing a paper from Turnitin?",
+                "How can I request the deletion of a paper from Turnitin?",
+                "What steps should I follow to delete a paper from Turnitin?",
+                "Guide me on removing a paper from Turnitin.",
+                "Is it possible to delete a paper from Turnitin?",
+                "How do I initiate the removal of a paper from Turnitin?",
+                "What's the process for requesting the deletion of a paper from Turnitin?",
+                "What steps should I take to delete a paper from Turnitin?",
+                "How can I erase my paper from Turnitin?",
+                "What is the procedure to remove a document from Turnitin?",
+                "I need to delete a submission from Turnitin. How do I go about it?",
+                "Can you guide me on how to remove a paper from Turnitin?",
+                "What is the method to delete a paper from Turnitin?",
+                "How do I go about removing a paper from Turnitin?",
+                "What should I do if I want to delete a paper from Turnitin?",
+                "What is the process for deleting a paper from Turnitin?",
+                "Can you tell me how to delete a paper from Turnitin?",
+            ],
+        
+            # Library(How to download Turnitin assignment with feedback comments?)
+            "1) Navigate to the specific assignment and open up the graded paper in the document viewer.\n2) Click on the assignment submitted to open the Turnitin page.\
+            \n3) You must select the view you wish to see in your download. If you wish to see your grades and feedback in the downloaded file, ensure you click the text comment button to view the feedback.\n4) Click on the download button.\
+            \n\nYour assignment will likely be downloaded into your downloads folder (this is dependent on your browser settings but the default is normally the downloads folder). Open your downloaded file and scroll to the end of the document to find your feedback comments and matches.\
+            \n\nIf you select Digital receipt – this is a copy of the submission receipt, which students also received by email.\nIf you select Originally submitted – this is the exact file that you uploaded without any additions.": [
+                "How to download Turnitin assignment with feedback comments?",
+                "Method to download Turnitin assignment",
+                "Download Turnitin assignment",
+                "How to download Turnitin assignment with feedback?",
+                "Steps for getting Turnitin assignment with feedback?",
+                "Download Turnitin assignment with grades and comments."
+                "How can I download Turnitin assignment with feedback?",
+                "Steps for accessing Turnitin assignment and feedback download?",
+                "What is the process for Turnitin assignment download with feedback?",
+                "How to get Turnitin feedback?",
+                "Steps to download Turnitin feedback?",
+                "Downloading Turnitin assignment feedback?",
+                "Procedure for Turnitin feedback download?",
+                "Guide to download Turnitin comments?",
+                "How to access Turnitin feedback?",
+                "Turnitin assignment feedback download?",
+                "Retrieving feedback from Turnitin?",
+                "Turnitin feedback download steps?",
+                "Getting feedback from Turnitin?",
+            ],
+        
+            # Library(How can I find my Turntin Submission ID?)
+            "To ensure your paper deletion request is fulfilled successfully, **Turnitin ID or Submission ID** must be provided along with your request. Turnitin Support Team will not process any deletion request without IDs.\
+            \nEach work you submit to Turnitin will generate an automated Digital Receipt (refer to the image below) which contains all the necessary information about the submission you made including the ID.This will be sent to your official APU email and you can check for the ID by retrieving your Digital Receipt from your email.": [
+                "How can I find my Turnitin Submission ID?",
+                "What's the process for locating my Turnitin Submission ID?",
+                "How can I find the ID for my Turnitin submission?",
+                "Is there a way to retrieve my Turnitin Submission ID?",
+                "What steps should I take to get my Turnitin ID or Submission ID?",
+                "Can you guide me on locating my Turnitin Submission ID?",
+                "Can you guide me on how to retrieve my Submission ID for Turnitin?",
+                "How do I check for my Turnitin Submission ID?",
+                "What is the procedure for finding the ID for my Turnitin submission?",
+                "Is it possible to get my Turnitin ID or Submission ID from a previous submission?",
+                "How to obtain the ID for my Turnitin submission?",
+                "Guide me on retrieving my Turnitin Submission ID from the Digital Receipt.",
+                "What is the method to locate my Turnitin Submission ID?",
+                "What steps should I follow to find my Turnitin Submission ID?",
+                "Where can I find the Submission ID for my Turnitin assignment?",
+                "How do I get my Submission ID from Turnitin?",
+                "How to find my Turnitin Submission ID?",
+                "Steps to get my Turnitin ID?",     
+                "How to retrieve Turnitin Submission ID?",
+                "How to get my Turnitin Submission ID?",
+            ],
+        }
+        qa.update(add_qa)
+
     return qa

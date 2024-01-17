@@ -1391,6 +1391,8 @@ async def get_qa(inp):
     # Car Park algorithm
     if [i for i in ["car", "park", "parking", "zone"] if i in str(inp).lower()]:
         print("parking alg")
+        if "park" in str(inp).lower():
+            qa=dict()
         add_park = {
             ###### Logistics & Operations - APU and APIIT Car Parking Rates
             "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[
@@ -1541,7 +1543,9 @@ async def get_qa(inp):
                     "Where is the outdoor parking located at APU Campus?",
                     "Where is the indoor parking located at APU Campus?",
                     "Guide to parking locations at APU and APIIT.",
-                    "how to go parking"
+                    "how to go parking",
+                    "where to park car",
+                    "where park car"
             ],
  
         }

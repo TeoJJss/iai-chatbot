@@ -1163,7 +1163,130 @@ async def get_qa(inp):
             "What is the purpose of the APU Shuttle Bus?",
             "How does the Bus Shuttle service work?",
             "Can you provide information about Arrival and Departure for Bus Shuttle.",
-        ],        
+        ], 
+
+                           ###### Academic Administration - Student Handbook 
+        "You may download the handbock through the link \n <https://apiit.atlassian.net/wiki/x/CQCARw>":[
+            "APU Student Handbook",
+            "Campus Handbook",
+            "University Guidebook",
+            "APU Regulations",
+            "Student Policies Guide",
+            "APIIT Student Handbook", 
+            "Institute Handbook",
+            "APIIT Rules Book",
+            "Engineering Student Supplementary Document",
+            "Student Reference Guide",
+            "Engineering Handbook"
+        ],
+
+        ##### Academic Administration (General) - New Class Code Structure
+        "This new structure was rolled out in early 2021 \n Bellow are the structure\n\n\
+        ```yaml Cluster ``` ___ ```css ModuleCode-ClassType ``` ___ ```diff ClassStartDate```\n\
+        ```yaml APP ```___```css CT042-3-1-IDB-LAB-1 ```___```diff 2020-06-14 ``` ":[
+            "New Class Code Structure",
+            "Class Code Structure",
+            "example Class Code",
+            "What is the new class code structure?",
+            "Tell me about the class code format.",
+            "What does the class code APP stand for?",
+            "Explain the structure Cluster ___ ModuleCode-ClassType ___ ClassStartDate.",
+            "What information does the class code APP___CT042-3-1-IDB-LAB-1___2020-06-14 convey?",
+            "Guide to understanding the new class code structure.",
+            "What is the significance of each component in the class code?",
+            "How can I interpret the Cluster, ModuleCode, ClassType, and ClassStartDate in the class code?",
+            "Tell me about the class code APP___CT042-3-1-IDB-LAB-1___2020-06-14.",
+            "What does CT042 represent in the class code?",
+            "How is the ClassType determined in the class code?",
+            "When does the class with the code APP___CT042-3-1-IDB-LAB-1 start?",
+        ],
+
+        "Benefits for Lecturers\n\
+        1. Automatic Class Code Detection in Attendix (no manual selection required)\n\
+        2. Different Class Code for LAB and Tutorial (no manual selection required)\n\
+        3. Future report to understand how many class codes have been taught during the year(LAB-16). ":[
+            "Benefits for Lecturers with New Class Code Structure",
+            "Benefits for Teachers with New Class Code Structure",
+            "What are the benefits for lecturers with the new class code structure?",
+            "How does the new class code structure benefit lecturers?",
+            "Tell me about the advantages of the new class code structure for lecturers.",
+            "Explain the automatic class code detection in Attendix for lecturers.",
+            "How does the new class code structure eliminate the need for manual code selection in Attendix?",
+            "What is the significance of having different class codes for LAB and Tutorial?",
+            "How does the new class code structure eliminate the manual selection requirement for LAB and Tutorial codes?",
+            "Can you elaborate on the future reporting feature for lecturers using class codes (LAB-16)?",
+            "How does the new class code structure facilitate future reporting for lecturers?",
+            "Guide to understanding the benefits of the new class code structure for lecturers.",
+            "Tell me about the automatic detection feature in Attendix related to class codes.",
+            "How does the new structure enhance the reporting capabilities for lecturers?",
+            "What advantages does the new class code structure bring to lecturers regarding attendance tracking?",
+        ],
+
+        "Benefits for Academic Administration\n\
+        1. Automatic Class Code Generation.\n\
+        2. Automatic Class Creation in SIS (no more event list). \n\
+        3. Automatic Student Enrollment to the Classes.\n\
+        4. Automatic Intake Grouping of the Students.  \n\
+        5. Sending Notification to Students.":[
+            "advantage new class code structure for for academic admin",
+            "What are the benefits for academic administration with the new class code structure?",
+            "How does the new class code structure benefit academic administration?",
+            "Tell me about the advantages of the new class code structure for academic administration.",
+            "Explain the process of automatic class code generation.",
+            "How does the new class code structure eliminate the need for manual code generation in academic administration?",
+            "Describe the automatic class creation feature in SIS for academic administration.",
+            "How does the new class code structure eliminate the use of the event list for academic administration?",
+            "Explain the automatic student enrollment process in classes for academic administration.",
+            "What is the significance of automatic intake grouping of students with the new class code structure?",
+            "How does the new class code structure facilitate automatic intake grouping of students for academic administration?",
+            "Tell me about the process of sending notifications to students with the new class code structure.",
+            "How does the new class code structure streamline the notification process for academic administration?",
+            "Guide to understanding the benefits of the new class code structure for academic administration.",
+            "What advantages does the new class code structure bring to academic administration in terms of efficiency?",
+            "Can you elaborate on how automatic processes improve administrative tasks with the new class code structure?",
+        ],
+
+        "**Why cluster code has been added to the class code?**\n\
+        'Because the same module being taught at the exact start date can carry the same lecture, tutorial, or lab class number. As so, the cluster is at the beginning of the code to ensure there are no duplicate codes created in GIMS.' ":[
+            "Reason for Adding Cluster Code to Class Code",
+            "Why was the cluster code added to the class code?",
+            "What is the purpose of including the cluster code in the class code?",
+            "Can you explain why the cluster code is part of the class code?",
+            "Tell me about the reason behind adding the cluster code to the class code.",
+            "Why is the cluster code placed at the beginning of the class code?",
+            "What problem does the cluster code solve in GIMS?",
+            "How does adding the cluster code prevent duplicate codes in GIMS?",
+            "Guide to understanding the rationale behind including the cluster code in the class code.",
+            "How does the presence of the cluster code ensure unique class codes in GIMS?",
+            "What role does the cluster code play in avoiding code duplications for the same module?",
+            "Explaining the importance of the cluster code in ensuring unique class codes in GIMS.",
+        ],
+
+        "**Why haven't we added the intakes to the class code?**\n\
+         1. Merging intakes / separating intakes until week 3 or 4:\n\ ```As we are aware the numbers of the students may change in a class and therefore the classes may need separating or merging meaning the above class code may need to change on week 3 or 4 to \n APP___CT042-3-1-IDB-LAB-1___2020-06-14___CT \n APP___CT042-3-1-IDB-LAB-1___2020-06-14___SE  \n But sometimes the class codes are used across different systems  and the first requirements of the class codes are to be unique (Moodle, APSpace, Appendix, Feedback and etc) it had to have some level of stability.``` \n\n\
+        2. The class codes needed to be short: \n\ ``` Some modules are general like MPU or IMT modules which are offered across the schools. These modules may have lecturers with around 30 to 40 intakes in a class the length of the class code would be out of hand. See example below\n Intakes: UC2F2102BM, APD1F2103CE.... \n Module Code: MPU3173-MLY3(FS)-L-2 ```":[
+            "Reason for Not Adding Intakes to Class Code",
+            "Why haven't intakes been added to the class code?",
+            "What is the rationale behind excluding intakes from the class code?",
+            "Can you explain the decision to not include intakes in the class code?",
+            "Tell me about the reasons for avoiding the addition of intakes to the class code.",
+            "How does the potential merging or separating of intakes impact the decision?",
+            "Why is it important for class codes to remain stable across different systems?",
+            "How does stability play a role in the uniqueness of class codes for various systems?",
+            "Guide to understanding the considerations for keeping class codes short.",
+            "What challenges arise with longer class codes, especially for general modules with multiple intakes?",
+            "How do general modules with numerous intakes affect the length of class codes?",
+        ],
+        "**Please click the link to view the operation:\n <https://apiit.atlassian.net/wiki/spaces/AA/pages/1626997180/New+Class+Code+Structure#How-Can-Lecturers-Take-Attendance-Easily-without-Knowing-the-Cohorts%3F> ":[
+            "Taking Attendance Easily without Knowing Cohorts",
+            "How can lecturers take attendance without knowing the cohorts?",
+            "What is the process for lecturers to easily take attendance without being aware of the cohorts?",
+            "Why is it easy for lecturers to manage attendance with unique and system-generated class codes?",
+            "Guide to understanding the role of class codes in simplifying attendance for lecturers.",
+            "How does the attendance platform utilize unique class codes to assist lecturers?",
+            "How does the uniqueness of class codes contribute to the efficiency of attendance tracking?",
+            "lecturers take attendance",
+        ],       
     }
 
     # General payment details
@@ -1665,127 +1788,7 @@ async def get_qa(inp):
                     "Where is the indoor parking located at APU Campus?",
                     "Guide to parking locations at APU and APIIT.",
             ],
-                    ###### Academic Administration - Student Handbook 
-        "You may download the handbock through the link \n <https://apiit.atlassian.net/wiki/x/CQCARw>":[
-            "APU Student Handbook",
-            "Campus Handbook",
-            "University Guidebook",
-            "APU Regulations",
-            "Student Policies Guide",
-            "APIIT Student Handbook", 
-            "Institute Handbook",
-            "APIIT Rules Book",
-            "Engineering Student Supplementary Document",
-            "Student Reference Guide",
-            "Engineering Handbook"
-        ],
-
-        ##### Academic Administration (General) - New Class Code Structure
-        "This new structure was rolled out in early 2021 \n Bellow are the structure\n\n\
-        ```yaml Cluster ``` ___ ```css ModuleCode-ClassType ``` ___ ```diff ClassStartDate```\n\
-        ```yaml APP ```___```css CT042-3-1-IDB-LAB-1 ```___```diff 2020-06-14 ``` ":[
-            "New Class Code Structure",
-            "Class Code Structure",
-            "example Class Code",
-            "What is the new class code structure?",
-            "Tell me about the class code format.",
-            "What does the class code APP stand for?",
-            "Explain the structure Cluster ___ ModuleCode-ClassType ___ ClassStartDate.",
-            "What information does the class code APP___CT042-3-1-IDB-LAB-1___2020-06-14 convey?",
-            "Guide to understanding the new class code structure.",
-            "What is the significance of each component in the class code?",
-            "How can I interpret the Cluster, ModuleCode, ClassType, and ClassStartDate in the class code?",
-            "Tell me about the class code APP___CT042-3-1-IDB-LAB-1___2020-06-14.",
-            "What does CT042 represent in the class code?",
-            "How is the ClassType determined in the class code?",
-            "When does the class with the code APP___CT042-3-1-IDB-LAB-1 start?",
-        ],
-
-        "Benefits for Lecturers\n\
-        1. Automatic Class Code Detection in Attendix (no manual selection required)\n\
-        2. Different Class Code for LAB and Tutorial (no manual selection required)\n\
-        3. Future report to understand how many class codes have been taught during the year(LAB-16). ":[
-            "Benefits for Lecturers with New Class Code Structure",
-            "Benefits for Teachers with New Class Code Structure",
-            "What are the benefits for lecturers with the new class code structure?",
-            "How does the new class code structure benefit lecturers?",
-            "Tell me about the advantages of the new class code structure for lecturers.",
-            "Explain the automatic class code detection in Attendix for lecturers.",
-            "How does the new class code structure eliminate the need for manual code selection in Attendix?",
-            "What is the significance of having different class codes for LAB and Tutorial?",
-            "How does the new class code structure eliminate the manual selection requirement for LAB and Tutorial codes?",
-            "Can you elaborate on the future reporting feature for lecturers using class codes (LAB-16)?",
-            "How does the new class code structure facilitate future reporting for lecturers?",
-            "Guide to understanding the benefits of the new class code structure for lecturers.",
-            "Tell me about the automatic detection feature in Attendix related to class codes.",
-            "How does the new structure enhance the reporting capabilities for lecturers?",
-            "What advantages does the new class code structure bring to lecturers regarding attendance tracking?",
-        ],
-
-        "Benefits for Academic Administration\n\
-        1. Automatic Class Code Generation.\n\
-        2. Automatic Class Creation in SIS (no more event list). \n\
-        3. Automatic Student Enrollment to the Classes.\n\
-        4. Automatic Intake Grouping of the Students.  \n\
-        5. Sending Notification to Students.":[
-            "advantage new class code structure for for academic admin",
-            "What are the benefits for academic administration with the new class code structure?",
-            "How does the new class code structure benefit academic administration?",
-            "Tell me about the advantages of the new class code structure for academic administration.",
-            "Explain the process of automatic class code generation.",
-            "How does the new class code structure eliminate the need for manual code generation in academic administration?",
-            "Describe the automatic class creation feature in SIS for academic administration.",
-            "How does the new class code structure eliminate the use of the event list for academic administration?",
-            "Explain the automatic student enrollment process in classes for academic administration.",
-            "What is the significance of automatic intake grouping of students with the new class code structure?",
-            "How does the new class code structure facilitate automatic intake grouping of students for academic administration?",
-            "Tell me about the process of sending notifications to students with the new class code structure.",
-            "How does the new class code structure streamline the notification process for academic administration?",
-            "Guide to understanding the benefits of the new class code structure for academic administration.",
-            "What advantages does the new class code structure bring to academic administration in terms of efficiency?",
-            "Can you elaborate on how automatic processes improve administrative tasks with the new class code structure?",
-        ],
-
-        "**Why cluster code has been added to the class code?**\n\
-        'Because the same module being taught at the exact start date can carry the same lecture, tutorial, or lab class number. As so, the cluster is at the beginning of the code to ensure there are no duplicate codes created in GIMS.' ":[
-            "Reason for Adding Cluster Code to Class Code",
-            "Why was the cluster code added to the class code?",
-            "What is the purpose of including the cluster code in the class code?",
-            "Can you explain why the cluster code is part of the class code?",
-            "Tell me about the reason behind adding the cluster code to the class code.",
-            "Why is the cluster code placed at the beginning of the class code?",
-            "What problem does the cluster code solve in GIMS?",
-            "How does adding the cluster code prevent duplicate codes in GIMS?",
-            "Guide to understanding the rationale behind including the cluster code in the class code.",
-            "How does the presence of the cluster code ensure unique class codes in GIMS?",
-            "What role does the cluster code play in avoiding code duplications for the same module?",
-            "Explaining the importance of the cluster code in ensuring unique class codes in GIMS.",
-        ],
-
-        "**Why haven't we added the intakes to the class code?**\n\
-         1. Merging intakes / separating intakes until week 3 or 4:\n\ ```As we are aware the numbers of the students may change in a class and therefore the classes may need separating or merging meaning the above class code may need to change on week 3 or 4 to \n APP___CT042-3-1-IDB-LAB-1___2020-06-14___CT \n APP___CT042-3-1-IDB-LAB-1___2020-06-14___SE  \n But sometimes the class codes are used across different systems  and the first requirements of the class codes are to be unique (Moodle, APSpace, Appendix, Feedback and etc) it had to have some level of stability.``` \n\n\
-        2. The class codes needed to be short: \n\ ``` Some modules are general like MPU or IMT modules which are offered across the schools. These modules may have lecturers with around 30 to 40 intakes in a class the length of the class code would be out of hand. See example below\n Intakes: UC2F2102BM, APD1F2103CE.... \n Module Code: MPU3173-MLY3(FS)-L-2 ```":[
-            "Reason for Not Adding Intakes to Class Code",
-            "Why haven't intakes been added to the class code?",
-            "What is the rationale behind excluding intakes from the class code?",
-            "Can you explain the decision to not include intakes in the class code?",
-            "Tell me about the reasons for avoiding the addition of intakes to the class code.",
-            "How does the potential merging or separating of intakes impact the decision?",
-            "Why is it important for class codes to remain stable across different systems?",
-            "How does stability play a role in the uniqueness of class codes for various systems?",
-            "Guide to understanding the considerations for keeping class codes short.",
-            "What challenges arise with longer class codes, especially for general modules with multiple intakes?",
-            "How do general modules with numerous intakes affect the length of class codes?",
-        ],
-        "**Please click the link to view the operation:\n <https://apiit.atlassian.net/wiki/spaces/AA/pages/1626997180/New+Class+Code+Structure#How-Can-Lecturers-Take-Attendance-Easily-without-Knowing-the-Cohorts%3F> ":[
-            "Taking Attendance Easily without Knowing Cohorts",
-            "How can lecturers take attendance without knowing the cohorts?",
-            "What is the process for lecturers to easily take attendance without being aware of the cohorts?",
-            "Why is it easy for lecturers to manage attendance with unique and system-generated class codes?",
-            "Guide to understanding the role of class codes in simplifying attendance for lecturers.",
-            "How does the attendance platform utilize unique class codes to assist lecturers?",
-            "How does the uniqueness of class codes contribute to the efficiency of attendance tracking?",
-        ],
+ 
         }
         qa.update(add_park)
 

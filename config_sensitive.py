@@ -965,6 +965,83 @@ async def get_qa(inp):
         ],       
     }
 
+
+    ###!!! OPTIMIZING ALGORITHMS !!!###
+    # How-to-go algorithm
+    if [i for i in ["how go", "how to go"] if i in str(inp).lower()]:
+        qa = dict()
+        add_qa = {
+            # Library (Location of APU and APIIT)
+            "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
+            \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
+                "library",
+                "library location",
+                "APU library",
+                "APIIT library",
+                "APU library location",
+                "APIIT library location",
+                "How to go to the library",
+                "How to go library",
+                "How to go to library",
+                "Where is library",
+                "Where is APU library",
+                "Where is APIIT library",
+                "Where is the library located?",
+                "How do I get to the library?",
+                "What is the address of the library?",
+                "How to go to the APU library",
+                "How to go to the APIIT library",
+                "How to go APU library",
+                "How to go APIIT library",
+                "How to go to library at APU",
+                "How to go to library at APIIT",
+                "go library",
+                "go APU library",
+                "go APIIT library",
+                "How do I get to the APU library?",
+                "How do I get to the APIIT library?",
+                "where library"
+            ],
+            # Bursary location
+            "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
+                "Where is cashier",
+                "where cashier",
+                "where is bursary",
+                'where bursary',
+                "where to pay",
+                "how to go cashier",
+                "how to go bursary",
+                "where to pay cheque",
+                "cashier counter",
+                "payment counter",
+                "bursary location", 
+                "cashier location"
+            ],  
+            # Campus
+            "APU campus is located at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
+                \nAPIIT campus is located at Jalan Inovasi 1, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
+                \nShuttle Services are provided to the campuses, send me `bus schedule`.": [
+                "campus",
+                "How to go to the campus",
+                "How to go campus",
+                "How to go APU",
+                "Where is campus",
+                "Where is APU",
+                "Where is APU campus",
+                "How do I get to the campus?",
+                "How do I get to the APU?",
+                "What is the address of the campus?",
+                "What is the address of the APU?",
+                "go campus",
+                "give me the location of the campus",
+                "go APU",
+                "give me the location of the APU",
+                "Where APU",
+                "where campus"
+            ],
+        }
+        qa.update(add_qa)
+    
     # General payment details
     if [i for i in ["fee", "pay", "paid", "bank"] if i in str(inp).lower()]:
         print("bank alg")
@@ -1117,7 +1194,7 @@ async def get_qa(inp):
         qa.update(add_qa)
 
     # Contacts algorithm
-    if [i for i in ["contact", "call", "phone", "email"] if i in str(inp).lower()]:
+    if [i for i in ["contact", "call", "phone", "email", "talk"] if i in str(inp).lower()]:
         print("contacts alg")
         qa = dict()
         add_qa = {
@@ -1464,13 +1541,14 @@ async def get_qa(inp):
                     "Where is the outdoor parking located at APU Campus?",
                     "Where is the indoor parking located at APU Campus?",
                     "Guide to parking locations at APU and APIIT.",
+                    "how to go parking"
             ],
  
         }
         qa.update(add_park)
 
     # Bus schedule algorithm
-    if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "trips", "buses", "travel"] if i in str(inp).lower()]:
+    if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "travel"] if i in str(inp).lower()]:
         if [i for i in ["shuttle", "bus"] if i in str(inp).lower()]:
             qa = dict()
         added_set = set()

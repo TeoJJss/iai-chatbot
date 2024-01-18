@@ -1793,7 +1793,7 @@ async def get_qa(inp):
 
     # Bus schedule algorithm
     if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "travel"] if i in str(inp).lower()]:
-        if [i for i in ["shuttle", "bus"] if i in str(inp).lower()]:
+        if [i for i in ["shuttle", "bus", "travel pass"] if i in str(inp).lower()]:
             qa = dict()
         added_set = set()
         count = 0
@@ -1853,7 +1853,8 @@ async def get_qa(inp):
                 "payment bus",
                 "payment shuttle",
                 "bus fee",
-                "bus fees"
+                "bus fees",
+                "travel pass for apu bus"
             ]
         add_qa = {
             # Where to wait bus

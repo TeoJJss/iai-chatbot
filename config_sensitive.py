@@ -1024,12 +1024,12 @@ async def get_qa(inp):
             "Eligibility for reference letter",
         ],
         #Lost Student ID Card
-        "**Yes, you can request for a new Student ID card.** \n\
-            1.Go to Cashier Counter, Level 3 @ APU New Campus, and inform them you have lost your Student ID card and need a new one.\n\
-            2.Pay RM50 for new Student ID card\n\
-            3.Take your receipt to Submission Counter Level 4 @ APU New Campus\n\
-            4. Inform the staff at Submission Counter and show them the payment receipt.\n\
-            5.The staff will provide you a new Student ID Card.":[
+        "**Yes, you can request for a new Student ID card.** \
+            \n1. Go to Cashier Counter, Level 3 @ APU New Campus, and inform them you have lost your Student ID card and need a new one.\
+            \n2. Pay RM50 for new Student ID card\
+            \n3. Take your receipt to Submission Counter Level 4 @ APU New Campus\
+            \n4. Inform the staff at Submission Counter and show them the payment receipt.\
+            \n5. The staff will provide you a new Student ID Card.":[
             "APU Card",
             "Appit Card",
             "campus Card",
@@ -1043,6 +1043,7 @@ async def get_qa(inp):
             "Getting a new student card",
             "Lost my APU student ID",
             "Request replacement ID",
+            "lost card"
         ],
         #Medical Insurance Card
         "Please proceed to Visa Counter Level 3 @ APU New Campus and collect it over there, from Ms. Elizabeth or Ms. Ivy.":[
@@ -1098,9 +1099,8 @@ async def get_qa(inp):
             "Account restriction inquiry",
         ],
         #apu club
-        "Please proceed to Student Services Level 3 @ APU New Campus and meet Ms. Shana or Mr. Illangovan. \n\
-        or\n\
-        <https://studentaffairold.sites.apiit.edu.my/club-and-society/>":[
+        "Please proceed to Student Services Level 3 @ APU New Campus and meet Ms. Shana or Mr. Illangovan.\
+        \nor <https://studentaffairold.sites.apiit.edu.my/club-and-society/>":[
             "apu club",
             "campus club",
             "appit club",

@@ -88,7 +88,6 @@ async def holidays():
 
 # convo list
 async def get_qa(inp):
-    holidays_str = await holidays()
     qa = {
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
@@ -109,19 +108,6 @@ async def get_qa(inp):
             "give me the location of the APU",
             "Where APU",
             "where campus"
-        ],
-        holidays_str : [
-            "When is the next holiday",
-            "holidays", 
-            "holiday",
-            "holiday schedule",
-            "do we have holiday",
-            "APU holiday",
-            "upcoming holidays",
-            "next holiday",
-            "when no class",
-            "malaysia holiday",
-            "school holidays"
         ],
 
         # Library(how to search printed books?)
@@ -596,8 +582,8 @@ async def get_qa(inp):
         \n\n1) Proceed to the library counter on the day that you want to use.\n2) Check the availability of room from the staff on duty.\
         \n3) Confirm the booking.\n4) Pass the student/staff ID to the staff on duty before entering the room.\n5) Collect the ID after leaving the room.": [
             "How can I reserve a discussion room in the Library",
-            "Reserve a disccusion room in the Library",
-            "Reserve a disccusion room",
+            "Reserve a discussion room in the Library",
+            "Reserve a discussion room",
             "Steps to reserve a room for discussions?",
             "Can I book a discussion room at the Library",
             "Guide me on booking a discussion room in the Library.",
@@ -642,6 +628,7 @@ async def get_qa(inp):
             "Maybank",
             "APU Maybank",
             "APU Jompay",
+            "pay maybank",
             "Jompay",
             "APIIT Maybank",
             "APIIT JomPay"
@@ -1204,11 +1191,15 @@ async def get_qa(inp):
             "My attendance wasn't recorded",
         ],
         ##changing password
-        "To change your password:\n1) Click on this link, https://cas.apiit.edu.my/cas/login. \n2)Check the 'Change Password' box and fill in your login details.\n3)Enter your new password and click save.":
+        "To change your password:\
+            \n1) Click on this link, https://cas.apiit.edu.my/cas/login. \
+            \n2) Check the 'Change Password' box and fill in your login details.\
+            \n3) Enter your new password and click save.":
         [
             "How to change account password?",
             "change password",
-            "changing password"
+            "changing password",
+            "reset password"
         ],
         ##finding APKey
         "For these problems related to the APKey, please contact the service desk at TechCentre @ Room10, 6th Floor of APU Campus or the Helpdesk @ Level 3, APIIT Campus":
@@ -1240,7 +1231,8 @@ async def get_qa(inp):
             "top up money",
         ],
         ##Payment cashless/no ap card
-        "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\nIf you don't have an APCArd, you could purchase a pre-paid cashless card from the Finance Service Counter at Level 3.":
+        "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\
+            \nIf you don't have an APCArd, you could purchase a pre-paid cashless card from the Finance Service Counter at Level 3.":
         [
             "Can i make payment without APCard",
             "pay with cash",
@@ -1254,11 +1246,12 @@ async def get_qa(inp):
             "tng",
             "grabpay",
             "payment without APcard", 
-            "paying without APcard",      
+            "paying without APcard",
+            "ewallet"      
         ],
         "You may proceed to the Financial Service Counter at APU Level 3 and report this issue to the cashier on duty.":
         [
-            "my balance doesnt increase after top up",
+            "my balance doesn't increase after top up",
             "apspace does not show increase in my balance",
             "after top up, my balance dont tally up",
             "top up money not loaded into APCard",
@@ -1279,7 +1272,9 @@ async def get_qa(inp):
             "laundry APSpace",
             "how do i access the laundry",],
         
-        "APFace is a procedure within APU where Facial Recognition Technology is required at selected entrances.\nTo register for APFace, students are required to head to enrol for APFace at the APFace Enrolment counter, Tech Centre at Level 6 of APU Campus that is available during the weekdays from 10am to 5pm.":
+        "APFace is a procedure within APU where Facial Recognition Technology is required at selected entrances.\
+            \nTo register for APFace, students are required to head to enrol for APFace at the APFace Enrolment counter, Tech Centre at Level 6 of APU Campus that is available during weekdays from 10am to 5pm.\
+            \nYou may opt to self-enroll to APFace via online procedures too, please refer to https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1786019845/APFace. ":
         [
             "APface",
             "what is apface",
@@ -1292,7 +1287,7 @@ async def get_qa(inp):
             "apface sign up",
             "apface register",
         ],
-    "APRescue allows users to receive assistance as fast as they could from APU's technical support team whenver facing issues. It is usually done by reporting to the Virtual Help Desk Centre where the responding admin on duty shall assist you to your problems and provide remote support to users. ":
+        "APRescue allows users to receive assistance as fast as they could from APU's technical support team whenver facing issues. It is usually done by reporting to the Virtual Help Desk Centre where the responding admin on duty shall assist you to your problems and provide remote support to users. ":
         [
             "What is APRescue",
             "remote rescue",
@@ -1396,7 +1391,8 @@ async def get_qa(inp):
             "how do you delete attendance",
             "how do you modify the attendance"
         ],
-        "To set your availability for consultation, select a date, tiume and location. ":
+        "You can set your availability and unavailability on the “My Consultation Hour” page. \
+            \nTo set your availability for consultation, select a date, time and location.":
         [
             "setting availability for consultation hours",
             "available for consultation",
@@ -1425,7 +1421,7 @@ async def get_qa(inp):
             "I cannot download apspace on my phone",
             "download APspace",
             "how to download apspace",
-            "download apsapce on huawei",
+            "download apspace on huawei",
             "downloading apspace",
             "apspace apk",
         ],
@@ -1441,7 +1437,9 @@ async def get_qa(inp):
             "what happens if i can't see my subject in moodle",
             "what happens if i can't find my subject in moodle",
         ],
-        "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\n1)Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576\n2)Click 'INSTALL NOW'":
+        "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\
+            \n1) Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576. \
+            \n2) Click 'INSTALL NOW'.":
         [
             "install lockdown browser",
             "exam browser",
@@ -1467,7 +1465,10 @@ async def get_qa(inp):
             "installation failed for lockdown browser",
             "cannot install lockdown browser"
         ],
-        "To Connect to the Projector in the classrooms, you may follow the steps as below:\n1)Download EasyMP Network Projection Software at the TechCentre located at level 6.\n2)Open the application and click on Set Options > Edit Profile > OK.\n3)Following the link below, it will provide a guide on connecting to the projector, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2434760808/Using+classroom+projectors+at+the+APU+Campus":
+        "To Connect to the Projector in the classrooms, you may follow the steps as below:\
+            \n1) Download EasyMP Network Projection Software at the TechCentre located at level 6.\
+            \n2) Open the application and click on Set Options > Edit Profile > OK.\
+            \n3) Following the link below, it will provide a guide on connecting to the projector, <https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2434760808/Using+classroom+projectors+at+the+APU+Campus>":
         [
             "connect to projector",
             "link computer to classroom projector",
@@ -1476,7 +1477,7 @@ async def get_qa(inp):
             "how to connect to the projector",
             "linking to projector",
         ],
-        "APU and APIIT both provide printing services at a fixed fee. You may head to TechCentre at Level 6 Spine Area at APU Campus, or to the TechCentre at Level 3 in the Technology Lab area within the APIIT Campus.":
+        "APU and APIIT both provide printing services at a fixed fee. \nYou may head to TechCentre at Level 6 Spine Area at APU Campus, or to the TechCentre at Level 3 in the Technology Lab area within the APIIT Campus.":
         [
             "printing",
             "i want to print documents",
@@ -1487,7 +1488,7 @@ async def get_qa(inp):
             "APU Printing",
             "where can i go to print my documents",
         ],
-        "For the Policies and Practices within APU, please refer to the following link for more information:https://apiit.atlassian.net/wiki/spaces/ITSM/pages/229998790/IT+Policies ":
+        "For the IT Policies and Practices within APU, please refer to the following link for more information:https://apiit.atlassian.net/wiki/spaces/ITSM/pages/229998790/IT+Policies ":
         [
             "APU Policies",
             "APU Practices",
@@ -1512,6 +1513,27 @@ async def get_qa(inp):
 
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
+    # Holiday algorithm
+    if [i for i in ["holiday", "break ", "no class "] if i in str(inp).lower()]: 
+        holidays_str = await holidays()
+        qa = dict()
+        add_qa = {
+            holidays_str : [
+                "When is the next holiday",
+                "holidays", 
+                "holiday",
+                "holiday schedule",
+                "do we have holiday",
+                "APU holiday",
+                "upcoming holidays",
+                "next holiday",
+                "when no class",
+                "malaysia holiday",
+                "school holidays"
+            ],
+        }
+        qa.update(add_qa)
+
     # How-to-go algorithm
     if [i for i in ["how go", "how to go"] if i in str(inp).lower()]:
         qa = dict()

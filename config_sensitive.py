@@ -1203,6 +1203,311 @@ async def get_qa(inp):
             "How to report missing attendance?",
             "My attendance wasn't recorded",
         ],
+        ##changing password
+        "To change your password:\n1) Click on this link, https://cas.apiit.edu.my/cas/login. \n2)Check the 'Change Password' box and fill in your login details.\n3)Enter your new password and click save.":
+        [
+            "How to change account password?",
+            "change password",
+            "changing password"
+        ],
+        ##finding APKey
+        "For these problems related to the APKey, please contact the service desk at TechCentre @ Room10, 6th Floor of APU Campus or the Helpdesk @ Level 3, APIIT Campus":
+        [
+            "Where do I get my APKey?",
+            "AP Account",
+            "what is my school account",
+            "how do i know my APkey",
+            "APkey problems",
+            "where to find apkey",
+            "how do i get my apkey",
+            "what is my apkey",
+        ],
+        ##Payment w APCARD
+        "You can make payment with the APCard by topping money up at the kiosk adjacent to the ATM machine at level 3.":
+        [
+            "How do i make payment within the campus",
+            "how to pay",
+            "on-campus payment",
+            "payment in school",
+            "Paying for food",
+            "Payment at the convenience store",
+            "payment for cafeteria",
+            "where do i top up my apcard",
+            "where can i top up my apcard",
+            "top up apcard",
+            "top up money to apcard",
+            "how do i top up my apcard",
+            "top up money",
+        ],
+        ##Payment cashless/no ap card
+        "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\nIf you don't have an APCArd, you could purchase a pre-paid cashless card from the Finance Service Counter at Level 3.":
+        [
+            "Can i make payment without APCard",
+            "pay with cash",
+            "payment with cash",
+            "can i make payment with cash",
+            "can i make payment with credit card",
+            "Can i make payment with debit card",
+            "can i make payment with tng",
+            "can i make payment with touch n go",
+            "touch n go",
+            "tng",
+            "grabpay",
+            "payment without APcard", 
+            "paying without APcard",      
+        ],
+        "You may proceed to the Financial Service Counter at APU Level 3 and report this issue to the cashier on duty.":
+        [
+            "my balance doesnt increase after top up",
+            "apspace does not show increase in my balance",
+            "after top up, my balance dont tally up",
+            "top up money not loaded into APCard",
+            "Top up not working",
+            "no changes in my APcard balance after top up",
+            "balance not updated",
+            "money not added into my APCard after top up",
+        ],
+        "To find the Laundry in APSpace,\n1) Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":
+        [
+            "where do i find the laundry section",
+            "how do i go to the laundry section in APSpace",
+            "how do i go to the laundry section",
+            "laundry",
+            "laundry APU",
+            "where is the laundry",
+            "where is the laundry section",
+            "laundry APSpace",
+            "how do i access the laundry",],
+        
+        "APFace is a procedure within APU where Facial Recognition Technology is required at selected entrances.\nTo register for APFace, students are required to head to enrol for APFace at the APFace Enrolment counter, Tech Centre at Level 6 of APU Campus that is available during the weekdays from 10am to 5pm.":
+        [
+            "APface",
+            "what is apface",
+            "how do i sign up for apface",
+            "do apface",
+            "register for apface",
+            "where can i get apface done",
+            "where to go for apface",
+            "apface location",
+            "apface sign up",
+            "apface register",
+        ],
+    "APRescue allows users to receive assistance as fast as they could from APU's technical support team whenver facing issues. It is usually done by reporting to the Virtual Help Desk Centre where the responding admin on duty shall assist you to your problems and provide remote support to users. ":
+        [
+            "What is APRescue",
+            "remote rescue",
+            "remote support",
+            "i need technical help",
+            "technical support",
+            "i need technical support",
+            "help",
+            "i am facing technical issues",
+        ],
+        "For applications that student are required to install, you may click on this link: \nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/993492993/APSoftware to locate the applications available and download the respective applications you require based on the procedures provided in the website ":
+        [
+            "Downloading applications",
+            "download software",
+            "download apps",
+            "download",
+            "how to download",
+            "downloading softwares",
+            "downloading apps",
+            "NetSim Academic",
+            "UBS Software",
+            "SQL Accounting",
+            "sql payroll",
+            "IBM SPSS Statistics",
+            "IBM SPSS Amos",
+            "MathWorks MATLAB Online",
+            "MathWorks MATLAB",
+            "ABB RobotStudio",
+            "SolidWorks Education Edition",
+            "ANYSYS 2021 R2",
+            "CMG - Reservoir Simulation",
+            "Keyshot 11",
+            "Houdini",
+            "ZBrush",
+            "Adobe Creative Cloud",
+            "Microsoft Office 365 App",
+            "Microsoft Visio",
+            "Microsoft Project",
+            "Azure Dev Tools for Teaching",
+            "Visual Studio Subscription"
+        ],
+        "To book consultation hour with lecture, proceed with the steps as below:\n1) From APSpace's Dashboard, click on 'Collaboration and Information Resources' then choose 'iConsult'.\n2)Search for the staff member you would like to book a consultation with and click 'Book Consultation'.\n3)Select the time you wish to consult and click on 'Book', then confirm the booking.":
+        [
+            "Book Consultation Hours",
+            "Booking consultation",
+            "consulting lecturer",
+            "consultation with lecturer",
+            "How do i book consultation hours with lecturer",
+            "Booking time with lecturer",
+            "book time with teacher",
+            "consulting my lecturer",
+            "consulting my teacher",
+        ],
+        "To cancel the upcoming booking with your lecturer,\n1) Head to APSpace > More > Collaboration and Information Resources > iConsult\n2) Clcik on the 'view details' then the 'Cancel' button.\n3)Provide your cancellation reason.":
+        [
+            "Cancel Booking",
+            "cancel upcoming booking with lecturer",
+            "cancel upcoming booking",
+            "cancel consultation",
+            "cancel consultation booking",
+            "cancel consultation booking with lecturer",
+            "cancel consultation with lectuerer",
+            "how do i cancel my consultation with the lecturer",
+        ],
+        "To view your results, follow the steps as below:\n1)In APSpace, Click on 'More' from the top navigation bar\n2)Click on Academic & Enrolment > Results > Survey\n3)Select your intake and complete all the surveys in both survey types\n4)Direct back to Results page to view your results.":
+        [
+            "Results",
+            "check results",
+            "view results",
+            "exam results",
+            "semester results",
+            "how to check results",
+            "where to check results",
+            "viewing results",
+            "checking results",
+            "checking for results",
+        ],
+        "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
+        [
+            "download interim transcript",
+            "interim transcript",
+            "get interm transcript",
+            "print interim transcript",
+            "interim transcript",
+            "collect interim transcript",
+            "view interim transcript",
+            "where do i find my interim transcript",
+            "how to get my interim transcript",
+            "how to collect my interim transcript",
+        ],
+        "For the Attendance issue for staffs, you may kindly access this link to find the relevant answers for the issues you face:https://apiit.atlassian.net/wiki/spaces/ITSM/pages/221217995/AttendiX+Staff":
+        [
+            "staff changing attendance",
+            "changing attendance",
+            "editing attendance",
+            "delete attendance",
+            "marking attendance",
+            "giving attendance",
+            "how do you change attendance record",
+            "how do you give attendance",
+            "how do you delete attendance",
+            "how do you modify the attendance"
+        ],
+        "To set your availability for consultation, select a date, tiume and location. ":
+        [
+            "setting availability for consultation hours",
+            "available for consultation",
+            "available for consulting",
+            "set consultation hours as availble",
+            "setting consultation hours as a staff",
+            "setting consultation hours with students",
+            "how do you set up a free slot in consultation hours",
+            "free slot for consultation",
+            "set a free slot for consultation with students"
+        ],
+        "To view the lecturer class report, you may follow the steps below:\n1)Click on More > My Reports Panel > Library, then 'Views Lists' under 'Reports.\n2)Select 'Lecturer Class Report' then choose the preferred date range.":
+        [
+            "view lecturer class report",
+            "lecturer class report",
+            "check lecturer class report",
+            "where can i find the lecturer class report",
+            "how can i find the lecturer class report",
+            "find lecturer class report",
+        ],
+        "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users":
+
+        [
+            "How to download APSpace",
+            "I cannot download APspace",
+            "I cannot download apspace on my phone",
+            "download APspace",
+            "how to download apspace",
+            "download apsapce on huawei",
+            "downloading apspace",
+            "apspace apk",
+        ],
+        "If you cannot see your module folder in your dashboard, try:\n1)Changing the course filter to 'In Progress', or \n2)You have not been enrolled in the module, so please contact the Virtual Help Centre at https://apiit.atlassian.net/servicedesk/customer/portals, or Visit the Academic Administration Office at Level 4 of the APU Campus":
+        [
+            "cannot see my courses in moodle",
+            "cannot see my subjects in moodle",
+            "moodle dont show me my subject",
+            "i cant see my subjects in moodle",
+            "i cant find my courses in moodle",
+            "moodle doesnt show me my subjects",
+            "what do i do if i cannot find my subject in moodle",
+            "what happens if i can't see my subject in moodle",
+            "what happens if i can't find my subject in moodle",
+        ],
+        "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\n1)Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576\n2)Click 'INSTALL NOW'":
+        [
+            "install lockdown browser",
+            "exam browser",
+            "download lockdown browser",
+            "how do i install the lockdown browser",
+            "how do i acquire the loackdown browser",
+            "how to download lockdopwn browser",
+            "downloading lockdown browser",
+            "download exam browser",
+            "downloading exam browser",
+        ],
+        "For troubleshooting the Respondus Lockdown Browser, you may click on this link for more assistance,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2229108760/Respondus+Lockdown+Browser+FAQ+and+Installation+Guide#Troubleshooting ":
+        [
+            "blank quiz after launchin lockdown broser",
+            "exam tabs keep loading",
+            "exam tab cannot load",
+            "problem with lockdown browser",
+            "lockdown browser cannot work",
+            "Blocked Application Detected",
+            "Yikes! A VM has been detected",
+            "InstallShield Setup launched but seems to jave closed without finishing",
+            "lockdown browser keep updating",
+            "installation failed for lockdown browser",
+            "cannot install lockdown browser"
+        ],
+        "To Connect to the Projector in the classrooms, you may follow the steps as below:\n1)Download EasyMP Network Projection Software at the TechCentre located at level 6.\n2)Open the application and click on Set Options > Edit Profile > OK.\n3)Following the link below, it will provide a guide on connecting to the projector, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2434760808/Using+classroom+projectors+at+the+APU+Campus":
+        [
+            "connect to projector",
+            "link computer to classroom projector",
+            "computer projector",
+            "connect projector",
+            "how to connect to the projector",
+            "linking to projector",
+        ],
+        "APU and APIIT both provide printing services at a fixed fee. You may head to TechCentre at Level 6 Spine Area at APU Campus, or to the TechCentre at Level 3 in the Technology Lab area within the APIIT Campus.":
+        [
+            "printing",
+            "i want to print documents",
+            "printing services",
+            "where can i print my documents",
+            "where should i go for printing services",
+            "how can i print my documents on campus",
+            "APU Printing",
+            "where can i go to print my documents",
+        ],
+        "For the Policies and Practices within APU, please refer to the following link for more information:https://apiit.atlassian.net/wiki/spaces/ITSM/pages/229998790/IT+Policies ":
+        [
+            "APU Policies",
+            "APU Practices",
+            "APU Wireless Policy",
+            "Official Student Email Policy",
+            "May I know more about APU's Policies?",
+            "Password and Digital Credentials Policy",
+            "Password Policy",
+            "student email policy",
+            "Service Level Agreement",
+            "APU's Service Level Agreement",
+            "Service Level Agreement of APU",
+            "API Documentation",
+            "API User Authentication using CAS",
+            "Development Practices for APU APPs",
+            "Information Security",
+            "APU's information security",
+            "APU's Practices",
+            "where can i find more about apu's policies",
+        ]
     }
 
 

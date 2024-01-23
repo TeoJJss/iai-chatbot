@@ -2040,6 +2040,26 @@ async def get_qa(inp):
                 "I want to email admin",
                 "I want to call admin",
             ],
+            # Student services contact
+            "Student Services Email: __admin@apu.edu.my__\nYou may also call __+603 8992 5211__ or __+603 8992 5212__": [
+                "How to contact Student Services",
+                "What is the contacts of Student Services",
+                "What is the email of Student Services",
+                "How should I contact Student Services",
+                "How to email Student Services",
+                "How to call Student Services",
+                "email Student Services",
+                "call Student Services",
+                "contact Student Services",
+                "talk to Student Services",
+                "I need to email Student Services",
+                "I need to call Student Services",
+                "I need to contact Student Services",
+                "I want to contact Student Services",
+                "I want to email Student Services",
+                "I want to call Student Services",
+                "Who to contact for course inquiry"
+            ],
             # Library(contact)
             "Library Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
                 "How to contact library",

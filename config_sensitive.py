@@ -1508,7 +1508,133 @@ async def get_qa(inp):
             "APU's information security",
             "APU's Practices",
             "where can i find more about apu's policies",
-        ]
+        ],
+        #Exam regulations
+        "The physical exam hall presents in the APIIT Exam Hall,\n Asia Pacific Institute of Information Technology (APIIT) \n Taman Teknologi Malaysia, \n 57000, Wilayah Persekutuan Kuala Lumpur, \n Malaysia.":[
+            "Where is the APU Exam Hall?",
+            "What is the specific location of the APIIT Exam Hall?",
+            "Where is the exact location of the APIIT Exam Hall?",
+            "Could you provide the specific address or coordinates for the APIIT Exam Hall?",
+            "What is the precise location of the APIIT Exam Hall?",
+            "Where can one find the APIIT Exam Hall specifically?",
+            "Can you give detailed directions to the APIIT Exam Hall?",
+            "Where is the physical exam hall?" ,
+            "Where is the exam hall?" ,
+            "Where is the APU Exam Hall located?",
+            "What is the address of the APU Exam Hall?",
+            "Exam Hall?",
+            "APIIT Hall?",
+            "What is the street address of the APU Exam Hall?",
+            "go exam hall?",
+            "go APU exam hall?",
+            "go APIIT exam Hall?"
+        ],
+
+        "Students should prepare their student ID, wear formal to the exam hall, and their photos registered in the APU System (you can go to the level 6 IT helpdesk department to register), and then they will be allowed in the Exam Hall. In the Exam Hall, students are required to bring in ONLY their laptop device along with its charger and the stationery for answering the exam.":[
+            "What should be prepared for the physical exam?",
+            "What preparations are necessary for the physical exam",
+            "Could you outline the essential preparations for a physical examination?",
+            "What should one do to get ready for a physical exam?",
+            "Can you provide a checklist of things to prepare for a physical examination?",
+            "What are the recommended preparations before undergoing a physical exam?",
+            "What should be prepared for exam?" ,
+            "What should I bring to a physical exam?",
+            "What is the purpose of a physical exam?",
+            "What should I wear to a physical exam?",
+            "what exam need to prepare",
+            "what things i need to take to exam",
+            "what i need to bring to the exam",
+            "what i need to prepare for exam",
+            "prepare exam needed",
+            "exam needed",
+        ],
+
+        "In the Examination Hall \nStudents must place their bags and belongings in the area designated by the invigilator. Any material notes or items on the student’s desk or chair will be deemed to be in the student’s possession. All mobile phones, smart devices, and fitness watches must be switched off and placed in the zip lock bag provided. Students are not permitted to use any mobile phone or any other smart device during the exam. All students are required to sign the Attendance sheet given by the invigilator and display their Student ID on their desks for verification purposes. Students should log into Moodle on their laptop device and download Lockdown Browser. Please ensure that you do not have any unauthorized material on your desk, or written on any part of your body, should you have brought it in by mistake please hand it over to the invigilators. Students are not allowed to leave the Exam Hall during the first 30 minutes after the exam has started and the last 15 minutes before the exam ends unless for a medical reason. Students are discouraged from using the washroom during the examination. If you need to go to the washroom, you must obtain permission from the invigilator, and only one student is allowed at one time.":[
+            "What regulations need to be followed in the examination hall?",
+            "What are the regulations for behavior in the examination hall?",
+            "Could you provide details on the rules to be followed in the examination hall?",
+            "What guidelines must be adhered to during examinations in the examination hall?",
+            "Can you outline the regulations governing conduct in the examination hall?",
+            "What specific rules apply to students within the examination hall?",
+            "What is the rules for exam?" ,
+            "What is the regulation in examination hall?",
+            "What is the rules in examination hall?",
+            "Rules for examination?",
+            "in exam hall?",
+            "in examination hall?",
+        ],
+
+        #General Regulations
+        "General Rules and Regulations\n1.	Attendance Regulations\n2.	Breaches of Assessment Regulations\n3.	Submission and Late Submission of Coursework Regulations\n4.	Appeals Against an Examination Board Decision Regulations\n5.	Extenuating Circumstances Regulations":[
+            "Rules regulations",
+            "Rules in course" ,
+            "Rules",
+            "Regulations",
+            "Campus Regulations",
+            "Course Regulations",
+            "School Rules",
+            "What is the rules for campus?",
+            "What is the regulations for campus?",
+            "General Regulations",
+            "General Rules"
+        ],
+        #attendance
+        "Attendance Regulations\nParticipating students must attend all module classes. Lectures, seminars, tutorials, and presentations are tutor-led. Do not confuse “sessions” with “weeks”. Attend your assigned small group sessions with a module cohort subset.\nMissing four consecutive classes in a semester, including lectures, tutorials, seminars, and labs, without written permission may result in class withdrawal and registration cancellation. Teaching, exams, and module/award assessment may be prohibited. You must request permission to restart the same or a different module.\nStudents receive poor attendance letters if module attendance falls below 80%. APU will monitor foreign students' attendance to comply with the Malaysian Immigration Department and other requirements.":[            "What are the attendance regulations that must be followed on all courses?",
+            "What are the mandatory attendance rules for all courses?",
+            "Could you outline the attendance requirements applicable to all courses?",
+            "Are there uniform attendance guidelines that apply to all courses?",
+            "Can you provide details on the attendance policies that are consistent across all courses?",
+            "Rules for Attendance",
+            "Regulations for Attendance",
+            "Attendance rules",
+            "Attendance regulations",
+
+        ],
+
+        #Breaches of Assessment Regulations - Academic Dishonesty
+        "Breaches of Assessment Regulations - Academic Dishonesty\nAny form of cheating or plagiarism will be taken seriously. Cheating is any unfair attempt to pass an exam. Plagiarism is submitting someone else's work as your own without proper citation for assessment. Allowing another student to copy your work is plagiarism.":[
+            "What are the Breaches of Assessment regulations that must be followed on all courses?",
+            "What are the violations of assessment regulations that apply to all courses?",
+            "Are there uniform consequences for violating assessment guidelines in all courses?",
+            "Breaches of Assessment",
+            "Rules for Assessment",
+            "Assessment rules",
+            "Breaches of Assessment Regulations",
+
+        ],
+
+        #Submission and Late Submission of Coursework
+        "Submission and Late Submission of Coursework\nThere is a deadline for each module's assessment. Failure to do so may cause module failure. Each module's assessment will have a submission date. You must know and follow your submission dates.\nNon-submission and a Grade Point 0 will result from missing this deadline. Valid extenuating circumstances are the only exceptions to these rules.":[
+            "What are the submission and late submission of coursework regulations?",
+            "What are the violations of assessment regulations that apply to all courses?",
+            "What are the guidelines for submitting coursework and late submissions?",
+            "Submission rules",
+            "regulations for Submission",
+            "Submission and Late Submission of Coursework",
+            "Submission regulations",
+        ],
+
+        #Appeals Against an Examination Board Decision
+        "Appeals Against an Examination Board Decision\nAfter the Award Board confirms the results, you can request an assessment review. You cannot appeal academic judgment, but you can request a review of the Examination board decision if you believe a material error was made.\nIf there is evidence of extenuating circumstances that the Examination Board did not consider, you can request a review.":[
+            "What are the Appeals against the Examination Board Decision regulations?",
+            "What are the regulations for appealing against an Examination Board Decision?",
+            "What are the guidelines for challenging Examination Board Decisions?",
+            "Rules for Examination Board Decisions",
+            "Examination Board Decisions Rules",
+            "Regulations for Examination Board Decisions",
+            "Appeals Against an Examination Board Decision",
+            "Examination Board Decisions",
+        ],
+
+         #Extenuating Circumstances
+        "Extenuating Circumstances\nIf you believe that unforeseen and unavoidable circumstances (e.g. illness) have prevented you from learning or demonstrating your skills in one or more modules, submit an Extenuating Circumstances form with full details and supporting evidence.\nIf an extenuating circumstances claim is upheld, the Exam Board may take one of the following actions:\na) Verify grade b) Exceptionally raise grade based on performance elsewhere\nYou may accept the grade or request further assessment in the module (or components of it) alleged to have been affected by extenuating circumstances.\nIf you submit further assessments in the module (or components of that module) upheld to have been affected by extenuating circumstances and receive a higher grade, the higher grade will be recorded. The original grade will be recorded if you get a lower grade.\nIf the claim for extenuating circumstances is upheld against several modules (or components of modules), you must decide which ones to submit for further assessment.":[
+            "What are the Extenuating circumstances regulations?",
+            "What are the rules governing extenuating circumstances in academic contexts?",
+            "Rules for Extenuating circumstances",
+            "Extenuating circumstances Rules",
+            "Regulations for Extenuating circumstances",
+            "Extenuating circumstances",
+        ],
     }
 
 

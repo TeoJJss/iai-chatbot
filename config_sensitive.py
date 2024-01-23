@@ -800,6 +800,7 @@ async def get_qa(inp):
         ######Logistics & Operations - APU Campus Connect Lounge
         "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
             "Connect Lounge",
+            "How to go campus connect lounge",
             "Campus Connect Lounge purpose?",
             "How do I access APU Connect Lounge?",
             "What is the purpose of Block E lounge?",
@@ -1146,7 +1147,7 @@ async def get_qa(inp):
             "unlimited hotspot",
         ],
         #grouping list
-        "Please click the bellow link:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/819920897/Grouping+List#Foundation-November-2023-intake":[
+        "Please click the bellow link:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/819920897/Grouping+List":[
             "apu list",
             "student list",
             "intake list",
@@ -1260,8 +1261,7 @@ async def get_qa(inp):
             "balance not updated",
             "money not added into my APCard after top up",
         ],
-        "To find the Laundry in APSpace,\n1) Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":
-        [
+        "To find the Laundry in APSpace,\n1) Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":[
             "where do i find the laundry section",
             "how do i go to the laundry section in APSpace",
             "how do i go to the laundry section",
@@ -1270,7 +1270,8 @@ async def get_qa(inp):
             "where is the laundry",
             "where is the laundry section",
             "laundry APSpace",
-            "how do i access the laundry",],
+            "how do i access the laundry",
+            ],
         
         "APFace is a procedure within APU where Facial Recognition Technology is required at selected entrances.\
             \nTo register for APFace, students are required to head to enrol for APFace at the APFace Enrolment counter, Tech Centre at Level 6 of APU Campus that is available during weekdays from 10am to 5pm.\
@@ -1424,6 +1425,7 @@ async def get_qa(inp):
             "download apspace on huawei",
             "downloading apspace",
             "apspace apk",
+            "install apspace"
         ],
         "If you cannot see your module folder in your dashboard, try:\n1)Changing the course filter to 'In Progress', or \n2)You have not been enrolled in the module, so please contact the Virtual Help Centre at https://apiit.atlassian.net/servicedesk/customer/portals, or Visit the Academic Administration Office at Level 4 of the APU Campus":
         [
@@ -1446,7 +1448,7 @@ async def get_qa(inp):
             "download lockdown browser",
             "how do i install the lockdown browser",
             "how do i acquire the loackdown browser",
-            "how to download lockdopwn browser",
+            "how to download lockdown browser",
             "downloading lockdown browser",
             "download exam browser",
             "downloading exam browser",
@@ -1626,7 +1628,7 @@ async def get_qa(inp):
             "Examination Board Decisions",
         ],
 
-         #Extenuating Circumstances
+        #Extenuating Circumstances
         "Extenuating Circumstances\nIf you believe that unforeseen and unavoidable circumstances (e.g. illness) have prevented you from learning or demonstrating your skills in one or more modules, submit an Extenuating Circumstances form with full details and supporting evidence.\nIf an extenuating circumstances claim is upheld, the Exam Board may take one of the following actions:\na) Verify grade b) Exceptionally raise grade based on performance elsewhere\nYou may accept the grade or request further assessment in the module (or components of it) alleged to have been affected by extenuating circumstances.\nIf you submit further assessments in the module (or components of that module) upheld to have been affected by extenuating circumstances and receive a higher grade, the higher grade will be recorded. The original grade will be recorded if you get a lower grade.\nIf the claim for extenuating circumstances is upheld against several modules (or components of modules), you must decide which ones to submit for further assessment.":[
             "What are the Extenuating circumstances regulations?",
             "What are the rules governing extenuating circumstances in academic contexts?",
@@ -1635,8 +1637,29 @@ async def get_qa(inp):
             "Regulations for Extenuating circumstances",
             "Extenuating circumstances",
         ],
-    }
 
+        # Clinic Location
+        "Klinik Oceania is located at level 4, Block E, APU Campus. It is located next to the admin office.\
+            \nYou may take the elevator or stair at Block E to reach there.":[
+                "where is clinic",
+                "where clinic",
+                "how to go clinic",
+                "klinik oceania",
+                "clinic location", 
+                "apu clinic",
+                "oceania",
+                "how go klinik oceania"
+            ],
+        # Admin Location
+        "The Administrative Office is located at level 4, Block D of APU Campus.":[
+            "admin office",
+            "where is admin",
+            "how to go admin office",
+            "how to go admin",
+            "how go admin",
+            "where is admin office"
+        ],
+    }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
     # Holiday algorithm
@@ -1661,9 +1684,71 @@ async def get_qa(inp):
         qa.update(add_qa)
 
     # How-to-go algorithm
-    if [i for i in ["how go", "how to go"] if i in str(inp).lower()]:
+    if [i for i in ["how go", "how to go", "where is", "location"] if i in str(inp).lower()]:
         qa = dict()
         add_qa = {
+            # Library(Where do I return the borrowed book?)
+            "You can either return the borrowed items through the book return kiosk or at the library counter. Refer to the Book Return Kiosk Guide if you are returning the items using the kiosk. \nAlternatively, you can follow the on-screen instructions displayed in the kiosk screen.": [
+                "return book",
+                "Where do I return the borrowed book?",
+                "How do I return the book?",
+                "How can I give back borrowed books?",
+                "Do I return books at the counter or kiosk?",
+                "How do I use the return kiosk?",
+                "Where should I go to return the book I borrowed?",
+                "Where is the book return kiosk located?",
+                "Can I return the borrowed book at the library counter?",
+                "Is there a guide I can refer to for using the book return kiosk?",
+                "How do I use the book return kiosk to return my borrowed book?",
+                "What is the process for returning a borrowed book?",
+                "What is the procedure to return a book using the kiosk?",
+                "What are the steps for returning books through the kiosk?",
+                "Can you guide me on how to return a book at the library?",
+                "What are the instructions for returning a book through the kiosk?",
+                "What steps should I follow to return a borrowed book at the library?",
+                "Where should I return a book after borrowing it?",
+            ],
+            "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
+                "Connect Lounge",
+                "How to go campus connect lounge",
+                "Campus Connect Lounge purpose?",
+                "How do I access APU Connect Lounge?",
+                "What is the purpose of Block E lounge?",
+                "Where can I find the Level 1 lounge?",
+                "How does APU Shuttle Bus service operate?",
+                "What is the purpose of APU Shuttle Bus?",
+                "Provide info about Arrival and Departure for APU Shuttle Bus.",
+                "How does APU Campus Connect Lounge bus service operate?",
+                "Where's the departure lounge for APU bus?",
+                "Where to wait for shuttle bus APU?",
+                "How to access APU Connect Lounge?",
+                "What is the location of APU Connect Lounge?",
+                "How is APU Connect Lounge accessed?",
+                "What is the purpose of the lounge in Block E?",
+                "Where is the Level 1 lounge located?",
+                "How are APU Shuttle Buses operated?",
+                "How is the APU Shuttle Bus service operated?",
+                "What is the purpose of APU Shuttle Bus?",
+                "How is APU Connect Lounge accessed?",
+                "What is the location of APU Connect Lounge?",
+                "Tell me about the APU Shuttle Buses.",
+                "Tell me about the APU Shuttle Bus.",
+                "How does the APU Shuttle Buses service work?",
+                "What is the purpose of the APU Shuttle Bus?",
+                "How does the Bus Shuttle service work?",
+                "Can you provide information about Arrival and Departure for Bus Shuttle.",
+            ], 
+            "To find the Laundry in APSpace,\n1) Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":[
+                "where do i find the laundry section",
+                "how do i go to the laundry section in APSpace",
+                "how do i go to the laundry section",
+                "laundry",
+                "laundry APU",
+                "where is the laundry",
+                "where is the laundry section",
+                "laundry APSpace",
+                "how do i access the laundry",
+            ],
             #Exam regulations
             "The physical exam hall presents in the APIIT Exam Hall,\n Asia Pacific Institute of Information Technology (APIIT) \n Taman Teknologi Malaysia, \n 57000, Wilayah Persekutuan Kuala Lumpur, \n Malaysia.":[
                 "Where is the APU Exam Hall?",
@@ -1753,6 +1838,29 @@ async def get_qa(inp):
                 "give me the location of the APU",
                 "Where APU",
                 "where campus"
+            ],
+            # Clinic Location
+            "Klinik Oceania is located at level 4, Block E of APU Campus. It is located next to the admin office.\
+                \nYou may take the elevator or stair at Block E to reach there.":[
+                    "where is clinic",
+                    "where clinic",
+                    "how to go clinic",
+                    "klinik oceania",
+                    "clinic location", 
+                    "apu clinic",
+                    "oceania",
+                    "how go klinik oceania"
+                ],
+
+            # Admin Location
+            "The Administrative Office is located at level 4, Block D of APU Campus.":[
+                "admin office",
+                "where is admin",
+                "how to go admin office",
+                "how to go admin",
+                "how go admin",
+                "where is admin office",
+                "administrative office"
             ],
         }
         qa.update(add_qa)
@@ -1913,6 +2021,25 @@ async def get_qa(inp):
         print("contacts alg")
         qa = dict()
         add_qa = {
+            # Admin contact
+            "Admin Email: __admin@apu.edu.my__\nYou may also call __+603 8992 5250__": [
+                "How to contact admin",
+                "What is the contacts of admin",
+                "What is the email of admin",
+                "How should I contact admin",
+                "How to email admin",
+                "How to call admin",
+                "email admin",
+                "call admin",
+                "contact admin",
+                "talk to admin",
+                "I need to email admin",
+                "I need to call admin",
+                "I need to contact admin",
+                "I want to contact admin",
+                "I want to email admin",
+                "I want to call admin",
+            ],
             # Library(contact)
             "Library Email: __library@apu.edu.my__\nYou may also call __+603 8992 5207__ (Library Counter) and __+603 8992 5209__ (Reference Desk)": [
                 "How to contact library",

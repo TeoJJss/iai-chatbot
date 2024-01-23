@@ -1664,6 +1664,28 @@ async def get_qa(inp):
     if [i for i in ["how go", "how to go"] if i in str(inp).lower()]:
         qa = dict()
         add_qa = {
+            #Exam regulations
+            "The physical exam hall presents in the APIIT Exam Hall,\n Asia Pacific Institute of Information Technology (APIIT) \n Taman Teknologi Malaysia, \n 57000, Wilayah Persekutuan Kuala Lumpur, \n Malaysia.":[
+                "Where is the APU Exam Hall?",
+                "What is the specific location of the APIIT Exam Hall?",
+                "Where is the exact location of the APIIT Exam Hall?",
+                "Could you provide the specific address or coordinates for the APIIT Exam Hall?",
+                "What is the precise location of the APIIT Exam Hall?",
+                "Where can one find the APIIT Exam Hall specifically?",
+                "Can you give detailed directions to the APIIT Exam Hall?",
+                "Where is the physical exam hall?" ,
+                "Where is the exam hall?" ,
+                "Where is the APU Exam Hall located?",
+                "What is the address of the APU Exam Hall?",
+                "Exam Hall?",
+                "APIIT Hall?",
+                "What is the street address of the APU Exam Hall?",
+                "go exam hall?",
+                "go APU exam hall?",
+                "go APIIT exam Hall?",
+                "how go exam hall",
+                "how to go exam hall"
+            ],
             # Library (Location of APU and APIIT)
             "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
             \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [

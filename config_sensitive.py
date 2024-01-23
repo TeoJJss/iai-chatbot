@@ -1835,9 +1835,17 @@ async def get_qa(inp):
                 "go campus",
                 "give me the location of the campus",
                 "go APU",
+                "go apiit",
                 "give me the location of the APU",
                 "Where APU",
-                "where campus"
+                "where campus",
+                "where apiit",
+                "where is apiit",
+                "where is apiit campus",
+                "how to go apiit",
+                "how to go apiit campus",
+                "how go apiit",
+                "apiit location"
             ],
             # Clinic Location
             "Klinik Oceania is located at level 4, Block E of APU Campus. It is located next to the admin office.\

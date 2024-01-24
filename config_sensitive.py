@@ -1659,6 +1659,201 @@ async def get_qa(inp):
             "how go admin",
             "where is admin office"
         ],
+
+                #Extenuating Circumstance (EC)
+        "These could be defined as either: \nUnforeseeable e.g. you suffered a broken arm just prior to an examination and could not write, or\n 1.Unpreventable e.g. you did everything in your power to ensure the safety of your work, by keeping back up discs, but a house fire destroyed everything \n or \nyou are required to leave the local area for medical treatment which cannot be postponed or need to  return to your local area for visa requirements.":[
+            "What are Extenuating Circumstances?",
+            "Meaning of EC in academics",
+            "What does EC mean?",
+            "Purpose of Extenuating Circumstances",
+            "EC clarification"
+        ],
+        #Extenuating Circumstance (EC) - How do I submit EC
+        "You can submit EC Online from the following link within 3 working days \n <https://apiit.atlassian.net/wiki/spaces/AA/pages/221152223/How+do+I+submit+EC>":[
+            "How do I submit EC?",
+            "Find the EC Submission Interface",
+            "EC Submit date",
+            "EC Submit time",
+            "EC Submit duration",
+            "EC Submit progress",
+            "guideline EC Submit ",
+        ]; 
+        #Extenuating Circumstance (EC) - What are the documents needed to support my EC?
+        "The EC must be independent authority. \n <https://apiit.atlassian.net/wiki/x/2IMuDQ>":[
+            "document EC",
+            "evidence EC",
+            "authority EC",
+            "What are the documents needed to support my EC?",
+            "Illness evidence", 
+            "Death evidence", 
+            "Accident evidence", 
+            "Robbery evidence", 
+            "evidence Visa Issues",
+        ],
+        #Extenuating Circumstance (EC) - How to fix Intake Codes not appearing in Extenuating Circumstance (EC)?
+        "Please click the link to view solution: \n <https://apiit.atlassian.net/wiki/spaces/AA/pages/1460207638/How+to+fix+Intake+Codes+not+appearing+in+Extenuating+Circumstance+EC#Solution>":[
+            "How to fix Intake Codes not appearing in Extenuating Circumstance (EC)?",  
+            "issue EC",
+            "issue EC application",
+            "problem EC",
+            "problem EC application",
+            "EC application “Please press the button”",
+        ],
+        #Extenuating Circumstance (EC) - How to print Extenuating Circumstance (EC)?
+        "Click the link bellow: \n\
+            1. clicking on the “Status”.\n\
+            2.choose “Print” option.\n\
+            3.click on “Apply” button\n\
+            <https://forms.sites.apiit.edu.my/>":[
+            "paper EC",
+            "print EC",
+            "Print in Bulk",
+            "Print Individual EC",
+            "print Extenuating Circumstance",
+            "How to print Extenuating Circumstance (EC)?"
+        ],
+        #Extenuating Circumstance (EC) - I would like to check on my EC status
+        "You may check the status of your application after two (2) weeks from the date of the submission.\n<https://forms.sites.apiit.edu.my/> ":[
+            "check EC status",
+            "check Extenuating Circumstance status",
+        ],
+        #Extenuating Circumstance (EC) - missed my dissertation
+        "If you had missed your dissertation, you will need to submit EC Online.\n<https://forms.sites.apiit.edu.my/>":[
+            "miss dissertation", 
+            "join next dissertation",
+            "I have missed my dissertation. Can I join the next dissertation?"
+        ],
+        #Extenuating Circumstance (EC) - postpone or reschedule the date of the exam?
+        "Please submit EC Online with the company offer letter as supporting document attached. \n\
+        Once you received the EC decision as approved, you can walk into the Administration Office to register for the next scheduled exam.\n <https://forms.sites.apiit.edu.my/>":[
+            "postpone exam date",
+            "reschedule exam date",
+            "not able to go referral exam",
+            "cannot referral exam",
+            "unable referral exam",
+        ],
+        #Extenuating Circumstance (EC) - error uploading my files in the Extenuating Circumstances (EC)
+        "While you are submitting EC you may need to upload your files in the form for supporting purposes.":[
+            "Why am I getting error while uploading my files in the Extenuating Circumstances (EC) system?",
+            "Extenuating Circumstances (EC) error",
+            "error upload ec",
+            "issue upload ec",
+            "error upload Extenuating Circumstances",
+            "issue upload Extenuating Circumstances",
+        ],
+        #Extenuating Circumstance (EC) - What happens when IT equipment fails?
+        "Solve IT equipment failure: \n<https://apiit.atlassian.net/wiki/x/UwDgh>":[
+            "IT equipment fails",
+            "IT issue",
+            "IT problem",
+            "hardware problem",
+            "hardware issue",
+            "software problem",
+            "software issue",
+            "Failure of your personal computer or laptop",
+            "Failure of network connection",
+            "Failure to provide appropriate software",
+            "Insufficient computers in the lab for the class size",
+            "Failure affecting a large number of systems at assignment deadline time",
+            "Theft of home computer or laptop",
+            "Insufficient computers/printers to do the work",
+            "APU/APIIT’s systems incompatible with home computer/laptop",
+            "Failure of the computer resulting in an inability to save work",
+            "The computer labs closed earlier than expected",
+            "Failure of a Backup Device",
+            "Failure of both main disk and back up device",
+        ],
+        #Referral Exam & Retake
+        "Click this link to check your result:\n<http://webresult.s3-website-ap-southeast-1.amazonaws.com/>":[
+            "find result",
+            "exam result",
+            "find faild subject",
+            "find module result",
+            "find referral subject",
+            "find referral module",
+            "Check my grades",
+            "See my module results",
+            "Did I pass module?",
+            "Did I pass exam?",
+            "Show my academic results",
+            "See my failed courses",
+            "Get my score for module",
+            "I would like to know about my module which I failed and need to do referral?",
+        ],
+        #Referral Exam & Retake - What should I do If I fail a module?
+        "You will be auto-registered to the next referral exam/incourse* and you will receive an auto email of the exam/incourse information. \nYou will scheduled for a referral within 6-8 weeks from the result date.":[
+            "fail module",
+            "fail subject",
+            "What should I do if I fail a module?",
+            "Help, I didn't pass, now what?",
+            "Can I retake a failed module?",
+            "Is there anything I can do if I flunked subject?"
+        ],
+        #Referral Exam & Retake - pending modules due to visa issue? Ans arrangement for the test and exam?
+        "Please contact your Programme Administrator by writing to admin@apu.edu.my.":[
+            "I would like to register my pending modules due to visa issue?",
+            "Register pending modules (visa issue)",
+            "Need help with incomplete modules (visa delay)",
+            "Pending study due to visa - register modules",
+            "Visa delay - need to register modules",
+            "Register unfinished modules - visa problem",
+            "Help! Visa issue - need to register for modules",
+            "Special test/exam arrangements?",
+            "When's the special testing for",
+            "I need special arrangements for exams",
+            "Check schedule for special testing",
+            "Get me details on exam adjustments",
+        ],
+        #Referral Exam & Retake - my lecturer's name for the test
+        'We will be sending auto email after your referral is auto-registered. \nThe email will contain all the test/exam details including lecturer’s name.':[
+            "I would like to know my lecturer's name for the test/exam that I am registered?",
+            "Lecturer for exam",
+            "Need [test/exam] lecturer name",
+            "Help me find my [test/exam] teacher",
+            "Show test lecturer for subject name",
+        ],
+        #Referral Exam & Retake - register retake a few modules.
+        "If you are currently in a fresh semester class and wanted to retake modules from the previous semester. Please consult your Programme Leader first.":[
+            "I need to retake a few modules. Can you please help me to register?",
+            "retake registration",
+            "Need to retake modules - guide me through",
+            "Help me sign up for module retakes",
+            "Retake registration assistance", 
+        ],
+        #Referral Exam & Retake - resit fees
+        "Please click the link to view each subject resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
+            "Resit & Retake Fees",
+            "Resit fees cost?",
+            "How much for module retake?",
+            "How much for module resit?",
+            "Fees for retaking exams",
+            "Fees for resit exams",
+            "Check resit exam charges",
+            "Check retake exam charges",
+            "What's the price for repeating a test?",
+            "Find out how much resitting exams cost", 
+            "Check if I need to pay for failed modules",
+        ],
+        #Referral Exam & Retake - referral exam which I could not attend earlier.
+        "Please submit online EC (Extenuating Circumstance) with supporting documents and once approved, please write to admin@apu.edu.my ":[
+            "I want to register for my referral exam which I could not attend earlier.",
+            "Register for missed referral exam",
+            "Late for referral exam",
+            "Reschedule referral exam registration",
+            "Couldn't attend [subject] referral earlier - register now?",
+            "Missed referral exam signup due to [reason] - what to do?",
+        ],
+        #Referral Exam & Retake - Fail module compensation
+        "It will be based on these criteria:\n\
+        1.Module grade is D.\n\
+        2.There has been a referral attempt for all failed components.\n\
+        3. Maximum of two modules can be considered for compensation at each Level.\n\
+        4.Overall CGPA must be 2.0 and above for that Level that the module wants to be considered for compensation.":[
+            "Do I need to apply for compensation for the modules that I fail?",
+            "Fail module compensation?",
+            "Need to claim for failed modules?",
+            "Are there any financial resources available for students who fail modules?",
+        ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###

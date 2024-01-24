@@ -1854,6 +1854,85 @@ async def get_qa(inp):
             "Need to claim for failed modules?",
             "Are there any financial resources available for students who fail modules?",
         ],
+
+        #Result, Transcripts & Certificate -unable to check result
+        "This could be due to you having an outstanding fee or not completing the course appraisal. \n\
+        Please settle the **pending fees** or **complete your course appraisal** and try checking your result again. \n\
+        If both are cleared and you still not able to view your result, please screenshot the error and email to admin@apu.edu.my. ":[
+            "Why I am unable to check result?",
+            "Can't see my results?",
+            "Results not available?",
+            "Accessing results issue",
+            "Stuck on result page",
+            "My results don't seem to be showing up anywhere.",
+            "result error",
+            "result issue",
+        ],
+        #Result, Transcripts & Certificate - print Interim transcript
+        "You can print yourself from <https://apspace.apu.edu.my/results>":[
+            "Print Interim transcript",
+            "Access Interim transcript printout",
+            "Get hard copy of Interim transcript",
+            "Download and print Interim transcript",
+            "How do I print my Interim transcript?",
+            "Can I download and print my latest results?",
+            "How do I get a printout of my grades?",
+        ],
+        #Result, Transcripts & Certificate - remark exam paper
+        "1.Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+        2.After your Programme Leader signed, proceed to the Administration office with the form for the Admin staff to invoice RM70 to your account.\n\
+        3.You will receive an appeal decision in two weeks.\n\
+        4. If there is a change of a better result, we will refund the RM70.":[
+            "I want to remark on my exam paper. I am not satisfied with my results.",
+            'Request exam paper review',
+            "Unsatisfied with exam result - remark?",
+            "Dispute exam grading",
+            "Inquiry about paper re-evaluation",
+            "I'd like to request a review of my [exam name] paper. I believe my score may be inaccurate.",
+            "I think there may be an error in the grading of my [exam name] paper. Is it possible to get it reviewed?",
+            "I'm not satisfied with my recent exam result. What are the options for re-evaluation?",
+        ],
+        #Result, Transcripts & Certificate - collect official certificate and transcript
+        "You can collect the official certificate and transcript from **Administration Office Level 4 @ APU Campus** ":[
+            "Collect official certificate/transcript",
+            "Pickup graduation documents",
+            "Where to get diploma and transcript?",
+            "Retrieving official academic paperwork",
+        ],
+
+        #Result, Transcripts & Certificate - Pick up friend's certificate/transcript
+        "Yes, but your friend will need to email to admin@apu.edu.my and inform us that he/she had given authorization for you":[
+            "Pick up friend's certificate/transcript",
+            "Collect document for someone else",
+            "Graduation document retrieval for friend",
+            "Proxy pickup for academic papers",
+        ],
+        #Result, Transcripts & Certificate - collect official certificate and transcript
+        "Please make your own copies from the original and submit it to the Administration Office front counter and please allow 3 working days before collecting it back.":[
+            "How do I certify a true copy of my certificate?",
+            "Get certificate copy certified",
+            "Need transcript copy verification",
+            "Official document true copy validation",
+            "Where to certify academic paperwork",
+        ],
+        #Result, Transcripts & Certificate -Certificate and transcript wait time
+        "The official certificate and transcripts are only issued after each External Moderation Board which will happen **3 times a year in Feb/March, June/July and October.** \n\
+        Students will receive email from Programme Leader, ":[
+            "I have completed my programme. Can I know how long I need to wait for my official certificate and final transcript?",
+            "Certificate and transcript wait time",
+            "How long for graduation documents?",
+            "When can I get my diploma and transcript?",
+            "Graduation document processing timeframe",
+        ],
+        #Result, Transcripts & Certificate -certify my IC/ STPM /IELTS results?
+        "The University can only certify for Interim transcripts for APU/APIIT only.":[
+            "Certify IC/ STPM /IELTS results?",
+            " IC, STPM, or IELTS results",
+        ],
+        #Result, Transcripts & Certificate -equest a letter from the University to confirm my study completion
+        "Please follow the below steps:\nAPSpace -> E-Forms -> COMPLETION / ATTENDED LETTER":[
+            "I have completed my study and want to request a letter from the University to confirm my study completion while waiting for certificate issuance",
+        ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###

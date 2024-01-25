@@ -1934,6 +1934,145 @@ async def get_qa(inp):
         "Please follow the below steps:\nAPSpace -> E-Forms -> COMPLETION / ATTENDED LETTER":[
             "I have completed my study and want to request a letter from the University to confirm my study completion while waiting for certificate issuance",
         ],
+        
+        #Change Programme, Deferment & Withdrawal - change my Tutorial Group?
+        "Yes, but only if you can find a partner to swap in the other Tutorial Group. \n\
+        You need to email your Programme Leader or admin@apu.edu.my.":[
+            "Change tutorial group?",
+            "Request tutorial group switch",
+            "Need to join different tutorial group",
+            "Can I move to another tutorial?",
+        ],
+        #Change Programme, Deferment & Withdrawal - change my programme
+        "1. Please download the ‘Change of Programme Form’:<http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+        2.Fill up the form and get the Programme Leader for the course that you would like to enroll to sign for approval.\n\
+        3. Submit the form to the Administration office together with a consent letter from your parents. \n\
+        4.There will be RM200 fee charged for change of programme.":[
+            "Change program help",
+            "change my programme",
+            "Switch study program info",
+            "Exploring program change options",
+            "Need guidance on changing majors",
+            "Is it possible to move to a different program? What does it involve?",
+            "changing my academic path",
+            " fee charged for change of programme",
+            "Cost of program change",
+            "Fees for switching course",
+            "Budget for changing major",
+            "Financial implications of moving to different program",  
+        ],
+
+        #Change Programme, Deferment & Withdrawal -defer my semester/intake?
+        "Please submit Extenuating Circumstances (EC) Online with consent letter from parents.\n<https://cas.apiit.edu.my/cas/login?service=http://forms.sites.apiit.edu.my/>":[
+            "Defer semester/intake request",
+            "Need to postpone study start",
+            "delay study start",
+            "Delaying my next program intake",
+            "Looking to defer my studies",
+            "I need to delay my next program intake. How should I proceed?",
+        ],
+        #Change Programme, Deferment & Withdrawal -submit the Exit Application Form
+        "Submit the Exit Application form to here:\n <http://forms.sites.apiit.edu.my/>\n\
+            Please attach documents listed below – \n\
+                1.Parent’s consent letter withdraw approval\n\
+                2.Flight Ticket":[
+            "Submit Exit Application Form",
+            "Leaving university - form submission",
+            "Withdraw from program - application process",
+            "How to exit my program?",
+            "How do I officially withdraw from my current program?",
+            "Filling Exit Application Form (completed studies)",
+            "Help with Exit Application after graduation",
+            "Guide for completing withdrawal form",
+            "Submitting exit form after finishing program",
+            "Withdraw from university - application process",
+            "How to officially withdraw from program",
+        ],
+        #Mathematics Open Consultation Hours
+        "Please click the link to view the Mathematics Consultation Hours: \n\
+        <https://apiit.atlassian.net/wiki/x/GgB4Rg>":[
+            "Mathematics Consultation Hours",
+            "Math help hours",
+            "Need math tutoring",
+            "When is math support available?",
+            "Talk to a math tutor",
+            "Find math consultation hours",
+            "Need to talk to someone about a math problem, who can I contact?",
+            "I'm struggling with math, are there any support sessions available?",
+            "bad math",
+            "worst math",
+            "ask math",
+        ],
+        #Academic Appeal Application
+        "Click the link bellow to view the Academic Appeal Application detail steps:\n\
+        <https://apiit.atlassian.net/wiki/x/EQBKbw>":[
+            "Academic Appeal Application",
+            "Appeal academic decision",
+            "Need help with academic appeal",
+            "Challenge academic outcome",
+            "File an academic appeal form",
+            "I need to challenge my grade in [subject name]. How do I start an appeal?",
+            'Feeling unfairly treated by teacher - appeal process?',
+            "Concerns about [teaching style/facilities] - appeal options?",
+            "Disagree with professor's decision - how to appeal?",
+            "bad lecturer",
+            "worst teacher",
+            "bad teaching",
+            "worst teaching",
+        ],
+        #Vice Chancellor's List for Academic Excellence - What is Vice Chancellor’s (VC’s)
+        "This is an honour roll for students who have achieved an average grade point of 3.70 or higher for that academic year.":[
+            "What is Vice Chancellor’s (VC’s) List for academic excellence?",
+            "Academic excellence recognition program",
+            "meaning of vc",
+            "meaning of Vice Chancellor",
+            "meaning of academic excellence",
+            "Top student award at APU",
+            "Top student award at APPIT",
+        ],
+        #Vice Chancellor's List for Academic Excellence -qualify for the VC’s List?
+        "1.Achieved an average grade point of 3.70 or higher in modules taken for that academic year.\n\
+        2.Enrolled in Degree programmes.\n\
+        3.Must have passed all modules, including MPU and Internship/Industrial Placement modules.":[
+            "VC's List requirements",
+            "How do I qualify for the VC’s List?",
+            "Am I eligible if there is pending grade for modules?",
+            "Eligibility for VC's List",
+            "Getting on the VC's List criteria",
+            "Achieving VC's List distinction",
+            "How to earn the VC's List award",
+            "I'm aiming for academic excellence. What does it take to reach the VC's List level?",
+            "Interested in the VC's List. What criteria do I need to meet?",
+            "Check eligibility with pending grade VC's List",
+            "Pending grade impact on VC's List qualification",
+        ],
+        #Vice Chancellor's List for Academic Excellence - How frequent will the VC’s List be announced?
+        "Depending on the number of intakes, this list will be generated 3 to 4 times per academic year.":[
+            "How frequent will the VC’s List be announced?",
+            "VC's List announcement schedule",
+            "How often is VC's List released?",
+            "When to expect next VC's List announcement",
+            "Frequency of VC's List recognition",
+        ],
+        #Vice Chancellor's List for Academic Excellence -Do I need to apply for VC’s List?
+        "No, you need not apply to be on the VC’s List. ":[
+            "Do I need to apply for VC’s List?",
+            "Do I need to take action for VC's List?",
+        ],
+        #Vice Chancellor's List for Academic Excellence -Where can I collect the VC’s list certificate?
+        "Details of the collection venue will be provided in the email notification.":[
+            "Where can I collect the VC’s list certificate?",
+            "Pick up VC's List recognition award",
+            "Where to claim VC's List honor certificate",
+            "Receiving the VC's List award",                 
+        ],
+        #Vice Chancellor's List for Academic Excellence -  What is the benefit as a member of the VC’s List?
+        "Recipients of the VC’s List will be given a certificate recognizing the achievement.":[
+            "What is the benefit as a member of the VC’s List?",
+            "VC's List benefits",
+            "Advantages of being on VC's List",
+            "Perks of VC's List recognition",
+        ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###

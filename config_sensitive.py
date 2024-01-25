@@ -1677,7 +1677,8 @@ async def get_qa(inp):
             "EC Submit duration",
             "EC Submit progress",
             "guideline EC Submit ",
-        ]; 
+            "how to submit EC"
+        ],
         #Extenuating Circumstance (EC) - What are the documents needed to support my EC?
         "The EC must be independent authority. \n <https://apiit.atlassian.net/wiki/x/2IMuDQ>":[
             "document EC",

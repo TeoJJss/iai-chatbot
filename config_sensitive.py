@@ -674,7 +674,8 @@ async def get_qa(inp):
                 "pay with banker draft",
                 "pay cheque",
                 "payment cheque",
-                "pay fee cheque"
+                "pay fee cheque",
+                "apu cheque"
         ],
 
         #Bursary (How to make payment via Flywire?)

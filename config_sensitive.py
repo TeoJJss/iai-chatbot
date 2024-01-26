@@ -557,20 +557,6 @@ async def get_qa(inp):
             "How long does the paper deletion request takes?",
             "Deletion request duration?",
             "Time needed for paper deletion request",
-            "Turnitin deletion request duration?",
-            "Timeframe for Turnitin deletion requests?",
-            "Expected time for Turnitin deletion requests?",
-            "Turnitin response time for deletion requests?",
-            "Turnitin deletion request time estimate?",
-            "How much time for Turnitin deletion?",
-            "How much time does the paper deletion request takes?",
-            "How long for Turnitin to process deletion requests?",
-            "How long does it usually take for Turnitin to process deletion requests?",
-            "What is the typical duration for Turnitin to fulfill a deletion request?",
-            "Can you provide an estimate on the time it takes for Turnitin to process deletion requests?",
-            "What's the expected timeframe for Turnitin to handle a paper deletion request?",
-            "How much time does it usually take for Turnitin to complete a deletion request?",
-            "What is the average processing time for Turnitin paper deletion requests?",
             "What is the expected time frame for a paper deletion request?",
             "Can you tell me the duration for a paper deletion request to be processed?",
             "How much time does it usually take for a paper deletion request to be completed?",
@@ -1427,18 +1413,7 @@ async def get_qa(inp):
             "apspace apk",
             "install apspace"
         ],
-        "If you cannot see your module folder in your dashboard, try:\n1)Changing the course filter to 'In Progress', or \n2)You have not been enrolled in the module, so please contact the Virtual Help Centre at https://apiit.atlassian.net/servicedesk/customer/portals, or Visit the Academic Administration Office at Level 4 of the APU Campus":
-        [
-            "cannot see my courses in moodle",
-            "cannot see my subjects in moodle",
-            "moodle dont show me my subject",
-            "i cant see my subjects in moodle",
-            "i cant find my courses in moodle",
-            "moodle doesnt show me my subjects",
-            "what do i do if i cannot find my subject in moodle",
-            "what happens if i can't see my subject in moodle",
-            "what happens if i can't find my subject in moodle",
-        ],
+        
         "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\
             \n1) Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576. \
             \n2) Click 'INSTALL NOW'.":
@@ -2286,7 +2261,7 @@ async def get_qa(inp):
             "changing students gpa",
             "changing students module marks",
         ],
-        "Here are the basics of useing JasperSoft:\n1)Go to URL: https://report.apu.edu.my/jasperserver-pro on your browser and log in with your APKEY Single Sign-Sign-On (CAS) credential to authenticate.\n2)Once you log in, you will see a dashboard, then click on Library which is on the upper right menu.\n3)You then type for the report that you want on the search box to be able to see the report as illustrated below.\n4)To export and print personal export, click on the export button.":
+        "Here are the basics of using JasperSoft:\n1)Go to URL: https://report.apu.edu.my/jasperserver-pro on your browser and log in with your APKEY Single Sign-Sign-On (CAS) credential to authenticate.\n2)Once you log in, you will see a dashboard, then click on Library which is on the upper right menu.\n3)You then type for the report that you want on the search box to be able to see the report as illustrated below.\n4)To export and print personal export, click on the export button.":
         [
             "how to use jaspersoft",
             "basics of jaspersoft",
@@ -2331,44 +2306,22 @@ async def get_qa(inp):
             "grading student's assignment",
             "grading assignments",
             "grade assignments",
-            "moodle grading assignments",
             "annotate student's assignment",
             "how do i annotate student's assignment",
-            "can i annotate on student's assignment",
-            "grading assignments on moodle"
+            "can i annotate on student's assignment",# Other questions in optimizing algorithms
         ],
         "Here is how to check on student's course participation in a particular activity on moodle:\n1)Select the gear icon in moodle then click on 'more'\n2)Select Reports.\n3)Click on Course Participation.\n4)This section operates as a search, set your preferred filters and then click GO to display the search results.\n5)The students matching your search criteria will appear in a list, tick the boxes of students you want to communicate with.\n6)Click on With selected users and choose Send a message.\n7)Type out your message(alternatively you can prepare your message in a separate platform i.e Microsoft Word, Notepad or any text editor then, copy and paste it into the box.":
         [
             "check for student's course participation",
             "check student's participation in course",
-            "check students course participation in moodle",
-            "check student's participation in moodle",
-            "how to check student's course participation in moodle",
             "how to check student's participation in a course",
-            "check on student's particiation level",
+            "check on student's particiation level",# Other questions in optimizing algorithms
         ],
         "To enable the activity completion function within moodle, you may click on this link for further details.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/1681096768/Enable+activity+completion":
         [
-            "enable activity complete in moodle",
-            "how to enable activity completion in moodle",
             "enable activity completion",
             "show activity completion",
-            "activity completion on moodle"
-        ],
-        "To adding students to exclusive group, you may follow the steps as below:\n1)Open the assignment you want to edit, click on the gear icon and click on edit settings.\n2)Set Group mode (under Common module settings) to Separate groups. You may also first try directly proceeding to step 5 as this setting should be the default already.\n3)Scroll down to Restrict Access.\n4)Click on Add restriction and select Group.\n5)Select the group you wish to give exclusive access to.\n6)Click Save and return to course or Save and display.":
-        [
-            "Set different groups in moodle",
-            "exclusive access to students in moodle",
-            "changing a group's access to a course in moodle",
-            "changing course access to selected groups in moodle"
-        ],
-        "Here is how to add students to different groups within moodle:\n1)Click the participants page.\n2)In the Participants page, click on the gear icon and select Groups\n3)On the Groups page, click Create Group.\n4)Click Svae changes after adding in the details of this particular group.":
-        [
-            "how to add students to groups in moodles",
-            "adding students to groups in moodle",
-            "moodle put students into groups",
-            "grouping students in moodle",
-            "group students in moodle",
+            # Other questions in optimizing algorithms
         ],
         "If a student faces an issue in their exam, lecturers are able to provide a second attempt for the student by utilizing an override. More details can be found in this link, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1297055770/How+do+I+allow+a+single+student+to+continue+their+existing+quiz+exam+attempt":
         [
@@ -2381,62 +2334,30 @@ async def get_qa(inp):
             "student to retake exam individually",
             "continue exam attempt",
             "allow student to retake exam",
-            "retake exam for student",
-            "second attempt of exam for student in moodle",
-            "second attempt for exam in moodle",
-            "how to let students continue thier exam attempt in moodle",
+            "retake exam for student"# Other questions in optimizing algorithms
         ],
         "To change assignment submission file size, you may follow the following steps to do so:\n1)Click the gear icon and the top-right of the page and select edit settings.\n2)Click Edit on the assignment or activity that you want to amend then  click on Edit settings from the drop-down list.\n3)Scroll down until Submission types and click on it.\n4)Click on the Maximum submission size drop-down to change the file size to be uploaded in this activity or assignment.\n5)Click Save and return to course or Save and display.":
         [
             "change assignment file submission size",
-            "file submission size for assignment in moodle",
-            "change file size for assignment submission in moodle",
             "i want to change the file size for assignment submission",
-            "file size submission",
-            "moodle file size submission"
+            "file size submission"
+            # Other questions in optimizing algorithms
         ],
         "For any relevant information regarding creating a course to editing incourse materials in moodle, you may kindly click on the attached link for more information, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/221055835/How+to+Create+a+Course+in+Moodle.":
         [
             "create course",
-            "adding a new course in moodle",
             "add new course",
             "creating new course",
-            "adding topics in moodle",
-            "how do i create a course in moodle",
-            "how do i add a course in moodle",
-            "how to create course in moodle",
-            "how to create a quiz in moodle",
-            "creating quiz in moodle",
-            "Creating exam paper in moodle",
-            "how to upload contents to moodle",
-            "creating content page",
-            "how to create content page in mooodle",
-            "uploading resources in moodle",
-            "how to upload class resources in moodle",
-
+            "creating content page" # Other questions in optimizing algorithms
         ],
         "To download your Turnitin assignment with feedback comments, you may proceed with the steps as below:\n1)Navigate to the specific assignment and open up the graded paper in the document viewer.\n2)Click on the assignment submitted to open the Turnitin page.\n3)Important step! You must select the view you wish to see in your download. If you wish to see your grades and feedback in the downloaded file, ensure you click the text comment button to view the feedback.\n4)Click on the download button.":
         [
-            "how to download turnitin assignments",
-            "download turnitin feedback",
-            "download turnitin assignment with feedback",
             "download feedbacks from assignment",
             "download feedback",
-            "download feedback from turnitin assignment",
             "download assignments with feedbacks",
             "downloading assignment with feednback",
             "how do i download my assignment with feedbacks",
 
-        ],
-        "To enrol students into a module in Moodle, kindly refer to the steps as listed below:\n1)Navigate the module in which you would like to enroll the students or other lectuerer.\n2)Click on Participants from the top-left of the menu.\n3)Click on either Enrol Users buttons.\n4)Type the user name or ID in search box then select.\n5)Choose role as student for student, non-editing lecturer or lecturer role and click  Enrol users  to complete enrollment.":
-        [
-            "enrolling students into moodle module",
-            "adding students into moodle module",
-            "add students to moodle course",
-            "add students to moodle module",
-            "enrol students to moodle module",
-            "add students to module in moodle",
-            "enroll student to a module in moodle",
         ],
         "You may import contents from other courses by following the steps as below:\n1)Navigate to the module that you would like to import resources to.\n2)Click the Actions menu (gears icon) at the top right.\n3)Select Import.\n4)The Course selection page will appear. Select the module from which you would like to import from, you may find the required module by scrolling or by typing your module’s short name (see below). Once the module is chosen, click Continue.\n5)n the Initial settings page, select what to include and what to exclude, then click Next.\n6)You will then see the Schema settings page that shows all of the files in your module. Uncheck any files that you do not wish to transfer and then click Next.\n7)On the Confirmation and review page you can see everything that will be transferred. If there are any mistakes, you may correct them now by clicking Previous and returning to the previous pages. Otherwise, click Perform Import to complete the import.\n8)Click Continue you will be redirected to the page where your materials have been imported.":
         [
@@ -2444,71 +2365,24 @@ async def get_qa(inp):
             "transfer old module contents to a new one",
             "transferring contents to new module",
             "import contents to new module",
-            "importing contents in moodle",
             "importing contents from an old module to new",
             "how can i transfer content from an old module to a new module",
             "making a replica of contents from previous module",
-            "replicating contents of a module to another one in moodle",
-            "import contents from other courses in moodle",
-            "importing contents from other modules in moodle",
         ],
         "Lecturers can export student's assesment marks from Moodle to OBE System by following the steps as below:\n1)Search for and click class specific module in Moodle.\n2)Click on  Grades from the left menu.\n3)Choose Export tab.\n4)Click on OBE export tab.\n5)Choose the class code from the drop-down list.\n6)Select only the assessment activities that you used for the chosen class code.\n7)Expand to view history of mark saving action in OBE (Class code, Lecturer name and saving date).\n8)Click Next to show assessment activities and components mapping page.\n9)Select each assessment activity with the belong component: you can select same assessment activity across multiple components and vice versa.\n10)Click on the subcomponents button to do mapping for OBE subcomponents with Moodle subcomponents for each assessment activity.\n11)Choose the desired OBE subcomponents from the drop down list for each Moodle subcomponents from each assessment activity.\n12)Once you click on button 'Step 1 - save marks in OBE'  then the marks will be exported from Moodle to OBE system according to the mapped subcomponents.\n13}Once you click on button 'Step 2 - Click here to finalize the marks will be exported and finalized in OBE system.":
         [
-            "export students grade from moodle to obe",
-            "export students grade to obe from moodle",
             "exporting student grades to obe",
             "export grades to obe",
             "students grades export to obe",
-            "send students grade from moodle to obe",
-            "send students grade to obe",
-            "transfer students grade from moodle to obe",
-            "moodle to obe",
-            "integration of moodle and obe",
-            "moodle and obe integration",
-            "how to export grades from moodle to obe",
-            "how to export student's marks from moodle to obe"
+            "send students grade to obe"# Other questions in optimizing algorithms
         ],
         "When facing issues with exporting marks from Moodle to OBE, you may refer to this link for troubleshooting depending on the different scenarios listed,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2027585540/Moodle-OBE+integration+troubleshooting. ":
         [
-            "moodle to obe problem",
-            "troubleshoot moodle to obe",
-            "troubleshoot integration from moodle to obe",
-            "i cannot export marks from moodle to obe",
-            "why i cant i export marks from moodle to obe",
-            "i cannot export student's marks from mooodle to obe",
-            "i cannot export student's marks to obe",
-            "troubleshooting moodle to obe exporting",
-            "troubleshoot exporting marks to obe"
-            "how to fix the problem of not being able to export students grades from moodle to obe",
-            "there is a problem with moodle and obe integration",
-            "moodle to obe integration troubleshooting"
+            "i cannot export student's marks to obe" # Other questions in optimizing algorithms
         ],
         "Lecturers are able to grade student's assignment offline by following this link for more information,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1647083521/Offline+Marking+for+Moodle+Assignment+Submissions. ":
         [
-            "mark students assignment offline in mooodle",
-            "offline grading in moodle",
-            "can i grade students assignment offline in moodle",
-            "offline marking for moodle assignment submissions",
-            "offline marking in moodle",
-            "can i mark students assignment submissions offline in moodle",
-            "marking offline in moodle",
-            "grading students in moodle while being offline",
-            "offline grading",
-            "how do i grade students assignment submission offline in moodle",
-            "how can i enable offline grading in moodle"
-        ],
-        "If you are new to using moodle as a lecturer, kindly click on this link for the 15-Minute Guide for Teachers to Learn How to Use Moodle,  https://apiit.atlassian.net/wiki/spaces/ITSM/pages/221218343/The+15-Minute+Guide+for+Teachers+on+Getting+Started+with+Moodle":
-        [
-            "how to use moodle",
-            "moodle basics",
-            "how does moodle work",
-            "what can moodle do",
-            "im new and would need some guidance on how to use moodle",
-            "first time using moodle",
-            "show me the basics of moodle",
-            "basics of how to use moodle as a lecturer",
-            "using moodle as a lecturer",
-            "how to use moodle as a lecturer",
+            "offline grading" # Other questions in optimizing algorithms
         ],
         "To change module version in OBE, go the 'Mark Input' page, and at the top header right side click OPEN CONTROL PANEL. In the control panel page, you can select module version (VD1 1099) and click button SWITCH. Once complete the page will auto refresh.":
         [
@@ -3639,6 +3513,7 @@ async def get_qa(inp):
     
     # Turnitin algorithm
     if "turnitin" in str(inp).lower():
+        qa = dict()
         add_qa = {
             # Library(How to check Turnitin similarity report before the official module submission)
             "1) From your Moodle Dashboard, search \"Turnitin\".\n2) Click on the \"Try view similarity…\" link.\n3) Click on Enrol Me.\
@@ -3780,4 +3655,194 @@ async def get_qa(inp):
         }
         qa.update(add_qa)
 
+    # Moodle algorithm
+    if [i for i in ["moodle", "noodle"] if i in str(inp).lower()]:
+        qa = dict()
+        add_qa = {
+            "If you cannot see your module folder in your dashboard, try:\n1)Changing the course filter to 'In Progress', or \n2)You have not been enrolled in the module, so please contact the Virtual Help Centre at https://apiit.atlassian.net/servicedesk/customer/portals, or Visit the Academic Administration Office at Level 4 of the APU Campus":
+            [
+                "cannot see my courses in moodle",
+                "cannot see my subjects in moodle",
+                "moodle dont show me my subject",
+                "i cant see my subjects in moodle",
+                "i cant find my courses in moodle",
+                "moodle doesnt show me my subjects",
+                "what do i do if i cannot find my subject in moodle",
+                "what happens if i can't see my subject in moodle",
+                "what happens if i can't find my subject in moodle",
+            ],
+            "If you are new to using moodle as a lecturer, kindly click on this link for the 15-Minute Guide for Teachers to Learn How to Use Moodle,  https://apiit.atlassian.net/wiki/spaces/ITSM/pages/221218343/The+15-Minute+Guide+for+Teachers+on+Getting+Started+with+Moodle":
+            [
+                "how to use moodle",
+                "moodle basics",
+                "how does moodle work",
+                "what can moodle do",
+                "im new and would need some guidance on how to use moodle",
+                "first time using moodle",
+                "show me the basics of moodle",
+                "basics of how to use moodle as a lecturer",
+                "using moodle as a lecturer",
+                "how to use moodle as a lecturer",
+            ],
+            "Lecturers are able to grade student's assignment offline by following this link for more information,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1647083521/Offline+Marking+for+Moodle+Assignment+Submissions. ":
+            [
+                "mark students assignment offline in moodle",
+                "offline grading in moodle",
+                "can i grade students assignment offline in moodle",
+                "offline marking for moodle assignment submissions",
+                "offline marking in moodle",
+                "can i mark students assignment submissions offline in moodle",
+                "marking offline in moodle",
+                "grading students in moodle while being offline",
+                "offline grading",
+                "how do i grade students assignment submission offline in moodle",
+                "how can i enable offline grading in moodle"
+            ],
+            "When facing issues with exporting marks from Moodle to OBE, you may refer to this link for troubleshooting depending on the different scenarios listed,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2027585540/Moodle-OBE+integration+troubleshooting. ":
+            [
+                "moodle to obe problem",
+                "troubleshoot moodle to obe",
+                "troubleshoot integration from moodle to obe",
+                "i cannot export marks from moodle to obe",
+                "why i cant i export marks from moodle to obe",
+                "i cannot export student's marks from moodle to obe",
+                "i cannot export student's marks to obe",
+                "troubleshooting moodle to obe exporting",
+                "troubleshoot exporting marks to obe"
+                "how to fix the problem of not being able to export students grades from moodle to obe",
+                "there is a problem with moodle and obe integration",
+                "moodle to obe integration troubleshooting"
+            ],
+            "Lecturers can export student's assesment marks from Moodle to OBE System by following the steps as below:\n1)Search for and click class specific module in Moodle.\n2)Click on  Grades from the left menu.\n3)Choose Export tab.\n4)Click on OBE export tab.\n5)Choose the class code from the drop-down list.\n6)Select only the assessment activities that you used for the chosen class code.\n7)Expand to view history of mark saving action in OBE (Class code, Lecturer name and saving date).\n8)Click Next to show assessment activities and components mapping page.\n9)Select each assessment activity with the belong component: you can select same assessment activity across multiple components and vice versa.\n10)Click on the subcomponents button to do mapping for OBE subcomponents with Moodle subcomponents for each assessment activity.\n11)Choose the desired OBE subcomponents from the drop down list for each Moodle subcomponents from each assessment activity.\n12)Once you click on button 'Step 1 - save marks in OBE'  then the marks will be exported from Moodle to OBE system according to the mapped subcomponents.\n13}Once you click on button 'Step 2 - Click here to finalize the marks will be exported and finalized in OBE system.":
+            [
+                "export students grade from moodle to obe",
+                "export students grade to obe from moodle",
+                "exporting student grades to obe",
+                "export grades to obe",
+                "students grades export to obe",
+                "send students grade from moodle to obe",
+                "send students grade to obe",
+                "transfer students grade from moodle to obe",
+                "moodle to obe",
+                "integration of moodle and obe",
+                "moodle and obe integration",
+                "how to export grades from moodle to obe",
+                "how to export student's marks from moodle to obe"
+            ],
+            "To enrol students into a module in Moodle, kindly refer to the steps as listed below:\n1)Navigate the module in which you would like to enroll the students or other lectuerer.\n2)Click on Participants from the top-left of the menu.\n3)Click on either Enrol Users buttons.\n4)Type the user name or ID in search box then select.\n5)Choose role as student for student, non-editing lecturer or lecturer role and click  Enrol users  to complete enrollment.":
+            [
+                "enrolling students into moodle module",
+                "adding students into moodle module",
+                "add students to moodle course",
+                "add students to moodle module",
+                "enrol students to moodle module",
+                "add students to module in moodle",
+                "enroll student to a module in moodle",
+            ],
+            "You may import contents from other courses by following the steps as below:\n1)Navigate to the module that you would like to import resources to.\n2)Click the Actions menu (gears icon) at the top right.\n3)Select Import.\n4)The Course selection page will appear. Select the module from which you would like to import from, you may find the required module by scrolling or by typing your module’s short name (see below). Once the module is chosen, click Continue.\n5)n the Initial settings page, select what to include and what to exclude, then click Next.\n6)You will then see the Schema settings page that shows all of the files in your module. Uncheck any files that you do not wish to transfer and then click Next.\n7)On the Confirmation and review page you can see everything that will be transferred. If there are any mistakes, you may correct them now by clicking Previous and returning to the previous pages. Otherwise, click Perform Import to complete the import.\n8)Click Continue you will be redirected to the page where your materials have been imported.":
+            [
+                "importing contents from other module to a new module",
+                "transfer old module contents to a new one",
+                "transferring contents to new module",
+                "import contents to new module",
+                "importing contents in moodle",
+                "importing contents from an old module to new",
+                "how can i transfer content from an old module to a new module",
+                "making a replica of contents from previous module",
+                "replicating contents of a module to another one in moodle",
+                "import contents from other courses in moodle",
+                "importing contents from other modules in moodle",
+            ],
+            "Here are the steps on how you can annotate and grade student's assignment:\n1)From the module page, click on the assignment you want to grade.\n2)Click on View all submissions.\n3)Select the student you want to grade by clicking on the Grade button adjacent to their details.\n4)Annotate parts of the assignment using the tool bar located at the top of the page and leave a grade and comment on the right side of the page.\n5)Click on Save Changes or Save ands how next to grade the next student in the list.":
+            [
+                "how to grade student's assignment",
+                "grading student's assignment",
+                "grading assignments",
+                "grade assignments",
+                "moodle grading assignments",
+                "annotate student's assignment",
+                "how do i annotate student's assignment",
+                "can i annotate on student's assignment",
+                "grading assignments on moodle"
+            ],
+            "Here is how to check on student's course participation in a particular activity on moodle:\n1)Select the gear icon in moodle then click on 'more'\n2)Select Reports.\n3)Click on Course Participation.\n4)This section operates as a search, set your preferred filters and then click GO to display the search results.\n5)The students matching your search criteria will appear in a list, tick the boxes of students you want to communicate with.\n6)Click on With selected users and choose Send a message.\n7)Type out your message(alternatively you can prepare your message in a separate platform i.e Microsoft Word, Notepad or any text editor then, copy and paste it into the box.":
+            [
+                "check for student's course participation",
+                "check student's participation in course",
+                "check students course participation in moodle",
+                "check student's participation in moodle",
+                "how to check student's course participation in moodle",
+                "how to check student's participation in a course",
+                "check on student's particiation level",
+            ],
+            "To enable the activity completion function within moodle, you may click on this link for further details.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/1681096768/Enable+activity+completion":
+            [
+                "enable activity complete in moodle",
+                "how to enable activity completion in moodle",
+                "enable activity completion",
+                "show activity completion",
+                "activity completion on moodle"
+            ],
+            "To adding students to exclusive group, you may follow the steps as below:\n1)Open the assignment you want to edit, click on the gear icon and click on edit settings.\n2)Set Group mode (under Common module settings) to Separate groups. You may also first try directly proceeding to step 5 as this setting should be the default already.\n3)Scroll down to Restrict Access.\n4)Click on Add restriction and select Group.\n5)Select the group you wish to give exclusive access to.\n6)Click Save and return to course or Save and display.":
+            [
+                "Set different groups in moodle",
+                "exclusive access to students in moodle",
+                "changing a group's access to a course in moodle",
+                "changing course access to selected groups in moodle"
+            ],
+            "Here is how to add students to different groups within moodle:\n1)Click the participants page.\n2)In the Participants page, click on the gear icon and select Groups\n3)On the Groups page, click Create Group.\n4)Click Svae changes after adding in the details of this particular group.":
+            [
+                "how to add students to groups in moodles",
+                "adding students to groups in moodle",
+                "moodle put students into groups",
+                "grouping students in moodle",
+                "group students in moodle",
+            ],
+            "If a student faces an issue in their exam, lecturers are able to provide a second attempt for the student by utilizing an override. More details can be found in this link, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1297055770/How+do+I+allow+a+single+student+to+continue+their+existing+quiz+exam+attempt":
+            [
+                "how do i allow a single student to continue their exisiting quiz attempt",
+                "letting a student retake an exam",
+                "allowing student to continue thier exam attempt",
+                "providing second attempt for student to continue thier exam",
+                "second attempt of exam",
+                "exam second attempt",
+                "student to retake exam individually",
+                "continue exam attempt",
+                "allow student to retake exam",
+                "retake exam for student",
+                "second attempt of exam for student in moodle",
+                "second attempt for exam in moodle",
+                "how to let students continue thier exam attempt in moodle",
+            ],
+            "To change assignment submission file size, you may follow the following steps to do so:\n1)Click the gear icon and the top-right of the page and select edit settings.\n2)Click Edit on the assignment or activity that you want to amend then  click on Edit settings from the drop-down list.\n3)Scroll down until Submission types and click on it.\n4)Click on the Maximum submission size drop-down to change the file size to be uploaded in this activity or assignment.\n5)Click Save and return to course or Save and display.":
+            [
+                "change assignment file submission size",
+                "file submission size for assignment in moodle",
+                "change file size for assignment submission in moodle",
+                "i want to change the file size for assignment submission",
+                "file size submission",
+                "moodle file size submission"
+            ],
+            "For any relevant information regarding creating a course to editing incourse materials in moodle, you may kindly click on the attached link for more information, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/221055835/How+to+Create+a+Course+in+Moodle.":
+            [
+                "create course",
+                "adding a new course in moodle",
+                "add new course",
+                "creating new course",
+                "adding topics in moodle",
+                "how do i create a course in moodle",
+                "how do i add a course in moodle",
+                "how to create course in moodle",
+                "how to create a quiz in moodle",
+                "creating quiz in moodle",
+                "Creating exam paper in moodle",
+                "how to upload contents to moodle",
+                "creating content page",
+                "how to create content page in moodle",
+                "uploading resources in moodle",
+                "how to upload class resources in moodle",
+            ],
+        }
+        qa.update(add_qa)
+    
     return qa

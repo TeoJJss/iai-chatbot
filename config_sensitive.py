@@ -2409,22 +2409,6 @@ async def get_qa(inp):
             "How do i access OBE",
             "how do i log in to OBE"
         ],
-        "To check all the tickets you have created in the Virtual Help Centre, you may login to Virtual Help Centre and click on the Requests button next to the profile icon on the top right of Virtual Help Centre page. Then, select 'Created by me' from the drop-down list.":
-        [
-            "how to view all my sent tickets in virtual help centre",
-            "check all my tickets in virtual help centre",
-            "where can i find all my tickets sent in virtual help centre",
-            "list of tickets sent in virtual help centre",
-        ],
-        "If you are unable to view or access your ticket in Virtual Help Centre, kindly refer to this link for help, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1308393483/No+Access+to+View+Ticket":
-        [
-            "why cant i access my ticket in virtual help centre",
-            "cannot access my ticket in virtual help centre",
-            "cannot access ticket in virtual help centre",
-            "i cannot view my ticket in virtual help centre",
-            "cannot view ticket in virutal help centre",
-            "cannot access ticket in virtual help cenrtre",
-        ],
         "Attached to this link are the guidelines to send a broadcast message using the DingDong System: https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2351661220/Guidelines+on+how+to+send+emails+and+notification+using+DingDong+system":
         [
             "how to send braodcast messages",
@@ -3845,4 +3829,36 @@ async def get_qa(inp):
         }
         qa.update(add_qa)
     
+    # Virtual Help Centre algorithm
+    if [i for i in ["help centre", "ticket"] if i in str(inp).lower()]:
+        qa = dict()
+        add_qa = {
+            "To check all the tickets you have created in the Virtual Help Centre, you may login to Virtual Help Centre and click on the Requests button next to the profile icon on the top right of Virtual Help Centre page. Then, select 'Created by me' from the drop-down list.":
+            [
+                "how to view all my sent tickets in virtual help centre",
+                "check all my tickets in virtual help centre",
+                "where can i find all my tickets sent in virtual help centre",
+                "list of tickets sent in virtual help centre",
+                "view ticket"
+            ],
+            "If you are unable to view or access your ticket in Virtual Help Centre, kindly refer to this link for help, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1308393483/No+Access+to+View+Ticket":
+            [
+                "why cant i access my ticket in virtual help centre",
+                "cannot access my ticket in virtual help centre",
+                "cannot access ticket in virtual help centre",
+                "i cannot view my ticket in virtual help centre",
+                "cannot view ticket in virtual help centre",
+                "cannot access ticket in virtual help centre",
+            ],
+            "Refer to the guide below for guide to open a support ticket at Virtual Help Centre:\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/596082980/How+to+open+a+ticket+on+Virtual+Help+Centre.":[
+                "virtual help centre",
+                "how to open support ticket in virtual help centre",
+                "support ticket",
+                "create ticket",
+                "how to create ticket",
+                "guide to create ticket",
+                "virtual help centre guide"
+            ]
+        }
+        qa.update(add_qa)
     return qa

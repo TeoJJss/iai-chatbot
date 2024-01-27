@@ -40,10 +40,10 @@ async def bus_schedule(start, end):
             schedule_ind += 1
                 
         # No schedule found        
-        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
+        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
     except:
         # API response error
-        return "Sorry, the shuttle schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."
+        return "Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
 
 # Holidays Schedule API
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()

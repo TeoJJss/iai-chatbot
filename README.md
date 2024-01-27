@@ -21,8 +21,12 @@ Then, you can run the following command to launch the bot:
 ```
 python main.py
 ```
-You should be able to see the bot with "Online" status in Discord, if the bot's token is correctly defined in `config.py` or `config_sensitive.py`. After that, it can respond to messages. 
+You should be able to see the bot with "Online" status in Discord, if the bot's token is correctly defined in `config.py` or `config_sensitive.py`. After that, it can respond to messages.  
 
+This chatbot supports Streamlit too. You may launch the bot in Streamlit through the following commands:  
+```
+streamlit run main_st.py
+```
 <h2>Credits</h2>
 - <a href="https://github.com/TeoJJss">Teo Jun Jia</a><br>
 - <a href="https://github.com/shengyaosiew">Siew Sheng Yao</a><br>

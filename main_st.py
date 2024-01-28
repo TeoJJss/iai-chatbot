@@ -30,3 +30,4 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 bot_image = Image.open("images/apu_map.jpeg")
                 st.image(bot_image, caption="APU Map", use_column_width=True)
     message = {"role": "assistant", "content": response}
+    st.session_state.messages.append(message)

@@ -10,10 +10,10 @@ if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU."}]
 
 for message in st.session_state.messages:
-    with st.chat_message(message["role"], avatar="images/bot_pic.png"):
+    with st.chat_message(message["role"], avatar="images/bot_pic.png" if message["role"] == "assistant" else None):
         st.markdown(message["content"], unsafe_allow_html=True)
 
-if user_input := st.chat_input():
+if user_input := st.chat_input(placeholder="Ask anything about APU"):
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.write(user_input)

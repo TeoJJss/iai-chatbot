@@ -25,9 +25,11 @@ async def bus_schedule(start, end):
                 break
             # Skip the "friday only" schedules if it's not Friday
             if schedule['day'] == "friday only" and now.weekday() != 4:
+                schedule_ind += 1
                 continue
             time = schedule["time"]
             if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(now.strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
+                schedule_ind += 1
                 continue
             # "Mon-Fri" schedule
             if start in schedule["trip_from"]["name"]:

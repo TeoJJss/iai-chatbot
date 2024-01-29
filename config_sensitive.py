@@ -7,14 +7,10 @@ ID = ["1185519671873638501", "1185517094385745962"]
 spell = Speller(lang='en')
 
 # Bus Schedule API
-try:
+async def bus_schedule(start, end):
     schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
     schedules = schedules.json()
     tmp_schedules = schedules['trips'].copy()
-except:
-    pass
-
-async def bus_schedule(start, end):
     now = datetime.datetime.now()
     try:
         schedule_ind = 0
@@ -25,11 +21,9 @@ async def bus_schedule(start, end):
                 break
             # Skip the "friday only" schedules if it's not Friday
             if schedule['day'] == "friday only" and now.weekday() != 4:
-                tmp_schedules.remove(schedule)
                 continue
             time = schedule["time"]
             if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(now.strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
-                tmp_schedules.remove(schedule)
                 continue
             # "Mon-Fri" schedule
             if start in schedule["trip_from"]["name"]:

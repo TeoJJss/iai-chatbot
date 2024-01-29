@@ -1224,6 +1224,8 @@ async def get_qa(inp):
             "top up money to apcard",
             "how do i top up my apcard",
             "top up money",
+            "payment with apcard",
+            "pay with apcard"
         ],
         ##Payment cashless/no ap card
         "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\

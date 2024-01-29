@@ -513,22 +513,16 @@ async def get_qa(inp):
         "E- journals/e-books are usually in `HTML, PDF, or ePUB format`. PDF and ePUB resources require PDF readers and Adobe Digital Edition software, respectively. Format availability is determined by publishers.The availability of the formats are determined by the publishers.\
         \n\nMost of the electronic materials we subscribed to are downloadable and printed, however publishers may limit the quantity of pages/content. Publishers have different restrictions.": [
             "How do I view or search for e-journals and e-books?",
-            "How can I download or print e-journals",
             "How to search for e-journals?",
             "How to search for e-books?",
-            "How can I download or print e-books ",
-            "How can I access or find e-journals and e-books? And is it possible to download or print them?",
             "How do I find or view e-journals and e-books?",
             "Is it possible to access or search for e-journals and e-books?",
             "What steps should I take to view or search for e-journals and e-books?",
             "Can you explain the process for viewing and searching e-journals and e-books?",
-            "What are the options for downloading or printing e-journals and e-books?", 
             "How can I access or find e-journals and e-books?",
             "Can you explain the process for viewing and searching e-journals and e-books?",
             "What are the steps to find and view e-journals and e-books",
-            "Can I download or print e-journals and e-books?",
             "What is the procedure to search for and view e-journals and e-books?",
-            "s it possible to download or print  e-journals and e-books?",
         ],
     
         # Library(How can I access online final year projects (FYP) or theses (APres)?)
@@ -1295,13 +1289,6 @@ async def get_qa(inp):
         ],
         "For applications that student are required to install, you may click on this link: \nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/993492993/APSoftware to locate the applications available and download the respective applications you require based on the procedures provided in the website ":
         [
-            "Downloading applications",
-            "download software",
-            "download apps",
-            "download",
-            "how to download",
-            "downloading softwares",
-            "downloading apps",
             "NetSim Academic",
             "UBS Software",
             "SQL Accounting",
@@ -1362,7 +1349,6 @@ async def get_qa(inp):
         ],
         "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
         [
-            "download interim transcript",
             "interim transcript",
             "get interm transcript",
             "print interim transcript",
@@ -1411,13 +1397,6 @@ async def get_qa(inp):
         "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users":
 
         [
-            "How to download APSpace",
-            "I cannot download APspace",
-            "I cannot download apspace on my phone",
-            "download APspace",
-            "how to download apspace",
-            "download apspace on huawei",
-            "downloading apspace",
             "apspace apk",
             "install apspace"
         ],
@@ -1428,13 +1407,8 @@ async def get_qa(inp):
         [
             "install lockdown browser",
             "exam browser",
-            "download lockdown browser",
             "how do i install the lockdown browser",
             "how do i acquire the loackdown browser",
-            "how to download lockdown browser",
-            "downloading lockdown browser",
-            "download exam browser",
-            "downloading exam browser",
         ],
         "For troubleshooting the Respondus Lockdown Browser, you may click on this link for more assistance,https://apiit.atlassian.net/wiki/spaces/ITSM/pages/2229108760/Respondus+Lockdown+Browser+FAQ+and+Installation+Guide#Troubleshooting ":
         [
@@ -1857,9 +1831,7 @@ async def get_qa(inp):
             "Print Interim transcript",
             "Access Interim transcript printout",
             "Get hard copy of Interim transcript",
-            "Download and print Interim transcript",
             "How do I print my Interim transcript?",
-            "Can I download and print my latest results?",
             "How do I get a printout of my grades?",
         ],
         #Result, Transcripts & Certificate - remark exam paper
@@ -2225,8 +2197,6 @@ async def get_qa(inp):
             "how to install aws workspace",
             "install aws workspace",
             "installing aws workspace",
-            "how to download aws workspace",
-            "download aws workspace",
             "downaloading aws workspace",
         ],
         "Here is what you can do to export to Excel in GIMS:\n1)Ig GIMS hand, please closee all GIMS and re-login\n2)Open Student Statistic\n3)Open a new excel blank workbook\n4)Try export again":
@@ -2289,7 +2259,6 @@ async def get_qa(inp):
         "To view and download attendance summary for staffs, you may proceed with the steps as stated below:\n1)Open APSpace and click on the 'More' tab.\n2)Find the item “My Reports Panel” and click on it.\n3)Click on the menu item Library.\n4)Search or find the report Attendance Summary from the list.\n5)Select the class code from the options pane and click on Apply button.\n6)Export Supported File Formats.":
         [
             "view attendance summary",
-            "download attendance summary",
             "check attendance summary",
             "how to view attendance summary",
             "how to check student's attendance summary",
@@ -2357,15 +2326,6 @@ async def get_qa(inp):
             "add new course",
             "creating new course",
             "creating content page" # Other questions in optimizing algorithms
-        ],
-        "To download your Turnitin assignment with feedback comments, you may proceed with the steps as below:\n1)Navigate to the specific assignment and open up the graded paper in the document viewer.\n2)Click on the assignment submitted to open the Turnitin page.\n3)Important step! You must select the view you wish to see in your download. If you wish to see your grades and feedback in the downloaded file, ensure you click the text comment button to view the feedback.\n4)Click on the download button.":
-        [
-            "download feedbacks from assignment",
-            "download feedback",
-            "download assignments with feedbacks",
-            "downloading assignment with feednback",
-            "how do i download my assignment with feedbacks",
-
         ],
         "You may import contents from other courses by following the steps as below:\n1)Navigate to the module that you would like to import resources to.\n2)Click the Actions menu (gears icon) at the top right.\n3)Select Import.\n4)The Course selection page will appear. Select the module from which you would like to import from, you may find the required module by scrolling or by typing your module’s short name (see below). Once the module is chosen, click Continue.\n5)n the Initial settings page, select what to include and what to exclude, then click Next.\n6)You will then see the Schema settings page that shows all of the files in your module. Uncheck any files that you do not wish to transfer and then click Next.\n7)On the Confirmation and review page you can see everything that will be transferred. If there are any mistakes, you may correct them now by clicking Previous and returning to the previous pages. Otherwise, click Perform Import to complete the import.\n8)Click Continue you will be redirected to the page where your materials have been imported.":
         [
@@ -3869,4 +3829,75 @@ async def get_qa(inp):
             ]
         }
         qa.update(add_qa)
+    
+    if "download" in str(inp).lower():
+        qa = dict()
+        add_qa={
+                "To download your Turnitin assignment with feedback comments, you may proceed with the steps as below:\n1)Navigate to the specific assignment and open up the graded paper in the document viewer.\n2)Click on the assignment submitted to open the Turnitin page.\n3)Important step! You must select the view you wish to see in your download. If you wish to see your grades and feedback in the downloaded file, ensure you click the text comment button to view the feedback.\n4)Click on the download button.":
+                [
+                    "download feedbacks from assignment",
+                    "download feedback",
+                    "download assignments with feedbacks",
+                    "downloading assignment with feednback",
+                    "how do i download my assignment with feedbacks"
+                ],
+                "To access AWS Workspace, please follow the steps as listed below:\n1)Download AWS Workspace from the internet via https://clients.amazonworkspaces.com/\n2)Once you have successfully installed AWS Workspace, please enter the following Registration Code:  wssin+Q3KR3J\n3)Please enter your staff APKey (similar to APSPACE) credentials on the AWS Workspace Login page.\n4)Once logged in, Launch the GIMS icon on the desktop and enter the credentials provided to you by our CTI department (Separate Email).":
+                [
+                    "how to download aws workspace",
+                    "download aws workspace"
+                ],
+                #Result, Transcripts & Certificate - print Interim transcript
+                "You can print yourself from <https://apspace.apu.edu.my/results>":[
+                    "Download and print Interim transcript",
+                    "Can I download and print my latest results?",
+                ],
+                "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users":
+
+            [
+                "How to download APSpace",
+                "I cannot download APspace",
+                "I cannot download apspace on my phone",
+                "download APspace",
+                "how to download apspace",
+                "download apspace on huawei",
+                "downloading apspace"
+            ],
+            
+            "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\
+                \n1) Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576. \
+                \n2) Click 'INSTALL NOW'.":
+            [
+                "download lockdown browser",
+                "how to download lockdown browser",
+                "downloading lockdown browser",
+                "download exam browser",
+                "downloading exam browser",
+            ],
+            "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
+            [
+                "download interim transcript"
+            ],
+            "For applications that student are required to install, you may click on this link: \nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/993492993/APSoftware to locate the applications available and download the respective applications you require based on the procedures provided in the website ":
+            [
+                "Downloading applications",
+                "download software",
+                "download apps",
+                "download",
+                "how to download",
+                "downloading softwares",
+                "downloading apps",
+            ],
+            # Library(How do I view or search for e-journals and e-books? What about downloading or printing?)
+            "E- journals/e-books are usually in `HTML, PDF, or ePUB format`. PDF and ePUB resources require PDF readers and Adobe Digital Edition software, respectively. Format availability is determined by publishers.The availability of the formats are determined by the publishers.\
+            \n\nMost of the electronic materials we subscribed to are downloadable and printed, however publishers may limit the quantity of pages/content. Publishers have different restrictions.": [
+                "How can I download or print e-journals",
+                "How can I download or print e-books ",
+                "How can I access or find e-journals and e-books? And is it possible to download or print them?",
+                "What are the options for downloading or printing e-journals and e-books?", 
+                "Can I download or print e-journals and e-books?",
+                "s it possible to download or print  e-journals and e-books?",
+            ]
+        }
+        qa.update(add_qa)
+    
     return qa

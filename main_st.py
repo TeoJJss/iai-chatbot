@@ -2,7 +2,6 @@ import streamlit as st
 from responses import reply
 import asyncio
 from PIL import Image
-import handler
 
 st.set_page_config(page_title="APU Live Chatbot", page_icon="images/bot_pic.png")
 st.title("APU Knowledge Live Assistant")

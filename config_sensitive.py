@@ -7,10 +7,14 @@ ID = ["1185519671873638501", "1185517094385745962"]
 spell = Speller(lang='en')
 
 # Bus Schedule API
-async def bus_schedule(start, end):
+try:
     schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
     schedules = schedules.json()
     tmp_schedules = schedules['trips'].copy()
+except:
+    pass
+
+async def bus_schedule(start, end):
     now = datetime.datetime.now()
     try:
         schedule_ind = 0

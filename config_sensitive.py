@@ -3853,52 +3853,52 @@ async def get_qa(inp):
                     "Download and print Interim transcript",
                     "Can I download and print my latest results?",
                 ],
-                "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users":
-
-            [
-                "How to download APSpace",
-                "I cannot download APspace",
-                "I cannot download apspace on my phone",
-                "download APspace",
-                "how to download apspace",
-                "download apspace on huawei",
-                "downloading apspace"
-            ],
-            
-            "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\
-                \n1) Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576. \
-                \n2) Click 'INSTALL NOW'.":
-            [
-                "download lockdown browser",
-                "how to download lockdown browser",
-                "downloading lockdown browser",
-                "download exam browser",
-                "downloading exam browser",
-            ],
-            "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
-            [
-                "download interim transcript"
-            ],
-            "For applications that student are required to install, you may click on this link: \nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/993492993/APSoftware to locate the applications available and download the respective applications you require based on the procedures provided in the website ":
-            [
-                "Downloading applications",
-                "download software",
-                "download apps",
-                "download",
-                "how to download",
-                "downloading softwares",
-                "downloading apps",
-            ],
-            # Library(How do I view or search for e-journals and e-books? What about downloading or printing?)
-            "E- journals/e-books are usually in `HTML, PDF, or ePUB format`. PDF and ePUB resources require PDF readers and Adobe Digital Edition software, respectively. Format availability is determined by publishers.The availability of the formats are determined by the publishers.\
-            \n\nMost of the electronic materials we subscribed to are downloadable and printed, however publishers may limit the quantity of pages/content. Publishers have different restrictions.": [
-                "How can I download or print e-journals",
-                "How can I download or print e-books ",
-                "How can I access or find e-journals and e-books? And is it possible to download or print them?",
-                "What are the options for downloading or printing e-journals and e-books?", 
-                "Can I download or print e-journals and e-books?",
-                "s it possible to download or print  e-journals and e-books?",
-            ]
+                "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users \
+                    \nAlternatively, you may also download APSpace in Google Play Store and Apple App Store, if any is available in your device.":
+                [
+                    "How to download APSpace",
+                    "I cannot download APspace",
+                    "I cannot download apspace on my phone",
+                    "download APspace",
+                    "how to download apspace",
+                    "download apspace on huawei",
+                    "downloading apspace"
+                ],
+                
+                "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\
+                    \n1) Click on this link to access the download link, https://download.respondus.com/lockdown/download.php?id=553146576. \
+                    \n2) Click 'INSTALL NOW'.":
+                [
+                    "download lockdown browser",
+                    "how to download lockdown browser",
+                    "downloading lockdown browser",
+                    "download exam browser",
+                    "downloading exam browser",
+                ],
+                "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
+                [
+                    "download interim transcript"
+                ],
+                "For applications that student are required to install, you may click on this link: \nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/993492993/APSoftware to locate the applications available and download the respective applications you require based on the procedures provided in the website ":
+                [
+                    "Downloading applications",
+                    "download software",
+                    "download apps",
+                    "download",
+                    "how to download",
+                    "downloading softwares",
+                    "downloading apps",
+                ],
+                # Library(How do I view or search for e-journals and e-books? What about downloading or printing?)
+                "E- journals/e-books are usually in `HTML, PDF, or ePUB format`. PDF and ePUB resources require PDF readers and Adobe Digital Edition software, respectively. Format availability is determined by publishers.The availability of the formats are determined by the publishers.\
+                \n\nMost of the electronic materials we subscribed to are downloadable and printed, however publishers may limit the quantity of pages/content. Publishers have different restrictions.": [
+                    "How can I download or print e-journals",
+                    "How can I download or print e-books ",
+                    "How can I access or find e-journals and e-books? And is it possible to download or print them?",
+                    "What are the options for downloading or printing e-journals and e-books?", 
+                    "Can I download or print e-journals and e-books?",
+                    "s it possible to download or print  e-journals and e-books?",
+                ]
         }
         qa.update(add_qa)
     

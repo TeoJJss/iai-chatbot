@@ -1,6 +1,7 @@
 import requests, datetime
 from copy import deepcopy
 from autocorrect import Speller
+import pytz
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
@@ -15,10 +16,15 @@ except:
     pass
 
 async def bus_schedule(start, end):
-    now = datetime.datetime.now()
+    now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
+    now_utc = datetime.datetime.utcnow().replace(tzinfo=pytz.utc)
+    now_kl = now_utc.astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
+
+    formatted_time = now_kl.strftime('%Y-%m-%dT%H:%M:%S')
+    formatted_time_with_offset = formatted_time + "+0800"
     try:
         schedule_ind = 0
-        while schedule_ind in range(len(tmp_schedules)):
+        while schedule_ind < len(tmp_schedules):
             schedule = tmp_schedules[schedule_ind]
             # No bus on weekend
             if now.weekday() > 4:
@@ -28,7 +34,7 @@ async def bus_schedule(start, end):
                 schedule_ind += 1
                 continue
             time = schedule["time"]
-            if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(now.strftime('%Y-%m-%dT%H:%M:%S%z')+"+08:00", '%Y-%m-%dT%H:%M:%S%z'):
+            if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(formatted_time_with_offset, '%Y-%m-%dT%H:%M:%S%z'):
                 schedule_ind += 1
                 continue
             # "Mon-Fri" schedule
@@ -41,7 +47,8 @@ async def bus_schedule(start, end):
                 
         # No schedule found        
         return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
-    except:
+    except Exception as e:
+        print(e)
         # API response error
         return "Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
 

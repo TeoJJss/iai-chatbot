@@ -8,13 +8,6 @@ ID = ["1185519671873638501", "1185517094385745962"]
 spell = Speller(lang='en')
 
 # Bus Schedule API
-try:
-    schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-    schedules = schedules.json()
-    tmp_schedules = schedules['trips'].copy()
-except:
-    pass
-
 async def bus_schedule(start, end):
     now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
     now_utc = datetime.datetime.utcnow().replace(tzinfo=pytz.utc)
@@ -23,6 +16,9 @@ async def bus_schedule(start, end):
     formatted_time = now_kl.strftime('%Y-%m-%dT%H:%M:%S')
     formatted_time_with_offset = formatted_time + "+0800"
     try:
+        schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+        schedules = schedules.json()
+        tmp_schedules = schedules['trips'].copy()
         schedule_ind = 0
         while schedule_ind < len(tmp_schedules):
             schedule = tmp_schedules[schedule_ind]

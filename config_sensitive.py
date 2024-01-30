@@ -17,10 +17,8 @@ except:
 
 async def bus_schedule(start, end):
     now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
-    now_utc = datetime.datetime.utcnow().replace(tzinfo=pytz.utc)
-    now_kl = now_utc.astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
 
-    formatted_time = now_kl.strftime('%Y-%m-%dT%H:%M:%S')
+    formatted_time = now.strftime('%Y-%m-%dT%H:%M:%S')
     formatted_time_with_offset = formatted_time + "+0800"
     try:
         schedule_ind = 0
@@ -46,7 +44,8 @@ async def bus_schedule(start, end):
             schedule_ind += 1
                 
         # No schedule found        
-        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
+        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect.\
+            \nNow: {now}, schedules: {len(tmp_schedules)}, ind: {schedule_ind}"
     except Exception as e:
         print(e)
         # API response error
@@ -56,7 +55,7 @@ async def bus_schedule(start, end):
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
 holidays_ls = deepcopy(holiday_res)
 async def holidays():
-    today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    today = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur')).replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
     count = 0
     for holiday_list in holidays_ls:
@@ -66,8 +65,8 @@ async def holidays():
             if count > 2:
                 break
             holiday = holiday_ls[holiday_ind]
-            holiday_startdate = datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z")
-            holiday_enddate = datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z")
+            holiday_startdate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z"))
+            holiday_enddate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z"))
             holiday_startdate_str = holiday_startdate.strftime('%d %b %Y (%a)')
             holiday_enddate_str = holiday_enddate.strftime("%d %b %Y (%a)")
             if today > holiday_enddate:

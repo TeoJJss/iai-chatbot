@@ -18,7 +18,7 @@ async def reply(usr_inp):
     spell = Speller(lang='en')
     tmp_inp = str(usr_inp).lower().strip().translate(str.maketrans("", "", string.punctuation))
     inp = spell(tmp_inp)
-    qa=await get_qa(inp)
+    qa=await get_qa(inp, tmp_inp)
     print("input",inp, time.time()-t)
     if str(inp) in ["hi", "hello", "greetings", "hey"]:
         response = "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU. "

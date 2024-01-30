@@ -7,50 +7,6 @@ TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi
 ID = ["1185519671873638501", "1185517094385745962"]
 spell = Speller(lang='en')
 
-# Bus Schedule API
-try:
-    schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-    schedules = schedules.json()
-    tmp_schedules = schedules['trips'].copy()
-except:
-    pass
-
-async def bus_schedule(start, end):
-    now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
-
-    formatted_time = now.strftime('%Y-%m-%dT%H:%M:%S')
-    formatted_time_with_offset = formatted_time + "+0800"
-    try:
-        schedule_ind = 0
-        while schedule_ind < len(tmp_schedules):
-            schedule = tmp_schedules[schedule_ind]
-            # No bus on weekend
-            if now.weekday() > 4:
-                break
-            # Skip the "friday only" schedules if it's not Friday
-            if schedule['day'] == "friday only" and now.weekday() != 4:
-                schedule_ind += 1
-                continue
-            time = schedule["time"]
-            if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z') < datetime.datetime.strptime(formatted_time_with_offset, '%Y-%m-%dT%H:%M:%S%z'):
-                schedule_ind += 1
-                continue
-            # "Mon-Fri" schedule
-            if start in schedule["trip_from"]["name"]:
-                if end in schedule["trip_to"]["name"]:
-                    bus = schedule["bus_assigned"] if schedule["bus_assigned"] else "Unknown"
-                    time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
-                    return f"Next shuttle `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
-            schedule_ind += 1
-                
-        # No schedule found        
-        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect.\
-            \nNow: {now}, schedules: {len(tmp_schedules)}, ind: {schedule_ind}"
-    except Exception as e:
-        print(e)
-        # API response error
-        return "Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
-
 # Holidays Schedule API
 holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
 holidays_ls = deepcopy(holiday_res)
@@ -92,8 +48,69 @@ async def holidays():
             res = "No Upcoming Holidays"
     return res
 
+def chk_tdy_holiday():
+    today = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur')).replace(hour=0, minute=0, second=0, microsecond=0)
+    for holiday_list in holidays_ls:
+        holiday_ls = holiday_list['holidays']
+        holiday_ind = 0
+        while holiday_ind < len(holiday_ls):
+            holiday = holiday_ls[holiday_ind]
+            holiday_startdate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z"))
+            holiday_enddate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z"))
+            if today > holiday_enddate:
+                holiday_ls.remove(holiday)
+                continue
+
+            if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
+                return True
+            holiday_ind+=1
+    return False
+
+# Bus Schedule API
+try:
+    schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+    schedules = schedules.json()
+    tmp_schedules = schedules['trips'].copy()
+except:
+    pass
+
+async def bus_schedule(start, end):
+    now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
+
+    formatted_time = now.strftime('%Y-%m-%dT%H:%M:%S')
+    formatted_time_with_offset = formatted_time + "+0800"
+    try:
+        schedule_ind = 0
+        while schedule_ind < len(tmp_schedules):
+            schedule = tmp_schedules[schedule_ind]
+            # No bus on weekend
+            if now.weekday() > 4:
+                break
+            # Skip the "friday only" schedules if it's not Friday
+            if schedule['day'] == "friday only" and now.weekday() != 4:
+                schedule_ind += 1
+                continue
+            time = schedule["time"]
+            if datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').time() < datetime.datetime.strptime(formatted_time_with_offset, '%Y-%m-%dT%H:%M:%S%z').time():
+                schedule_ind += 1
+                continue
+            # "Mon-Fri" schedule
+            if start in schedule["trip_from"]["name"]:
+                if end in schedule["trip_to"]["name"]:
+                    bus = schedule["bus_assigned"] if schedule["bus_assigned"] else "Unknown"
+                    time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
+                    return f"Next shuttle `{bus}` will depart **from {start} to {end}** at **{time}**" # Found schedule
+            schedule_ind += 1
+                
+        # No schedule found        
+        return f"NO SHUTTTLE SERVICE SCHEDULE available at this moment for **{start} to {end}**. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
+    except Exception as e:
+        print(e)
+        # API response error
+        return "Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
+
 # convo list
-async def get_qa(inp):
+async def get_qa(inp, ori_inp):
     qa = {
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
@@ -341,19 +358,15 @@ async def get_qa(inp):
             "What are my responsibilities if I lose a library book?",
             "What happens if I can't find a book I borrowed from the library?",
             "What do I do if I lose a library book?",
-            "How can I report a lost library book?",
             "Will I get fine if I lost a book?",
-            "Will fines continue if I don't report a lost book?",
             "How long is the grace period for finding a lost book?",
             "Will my account get suspended if I lost a book",
             "What are my options if I can't find the lost book?",
             "I can't find thr book I borrowed",
-            "How do I report a lost item to the library?",
             "Is my account suspended for a lost library item?",
             "How long do I have to find a lost book without fines?",
             "Can I replace a lost book",
             "Options if I can't find the lost book?",
-            "How do I report a lost item to the library?",
             "I accidentally lost a book",
             "What action I need to take if I lost a borrowed book?",
         ],
@@ -361,19 +374,12 @@ async def get_qa(inp):
         # Library(Do I have to pay if damaged a book?)
         "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
         \nFor minor damages, the cost of repairing the book would be **RM 12** for soft-cover books and **RM 15** for hardcover titles.": [
-            "Do I have to pay if damaged a book?",
-            "Do I have to pay for damaging a library book?",
-            "What is the fee for damaging a library item?",
             "What should I do if I damage a library book?",
             "How much does it cost to repair a damaged soft-cover book?",
             "How much does it cost to repair a damaged hard-cover book?",
             "What is the cost of repairing a book if damaged",
-            "Will I be fined if I don't report a damaged item?",
             "What happens if I damage a library book?",
-            "Do I need to report if I damage a library book?",
-            "Can I replace a damaged book instead of paying?",
             "Will I be fined for damaging a library book?",
-            "Replace or pay for a damaged book?",
         ],
 
         # Library(How do I check the print collection availability in the Library?)
@@ -609,17 +615,10 @@ async def get_qa(inp):
             "Maybank Acc of APU",
             "Maybank Acc of APIIT",
             "Maybank Acc of the school",
-            "Make payment with Maybank",
-            "Pay with Maybank",
             "Maybank",
             "APU Maybank",
-            "APU Jompay",
-            "pay maybank",
-            "Jompay",
             "APIIT Maybank",
-            "APIIT JomPay"
             "Maybank account detais",
-            "Pay with Maybank",
             "Maybank",
         ],
 
@@ -633,80 +632,33 @@ async def get_qa(inp):
             "CIMB Acc of APU",
             "CIMB Acc of APIIT",
             "CIMB Acc of the school",
-            "Make payment with CIMB",
             "CIMB account details",
-            "Pay with CIMB",
             "CIMB",
             "APU CIMB",
             "APIIT CIMB"
         ],
 
         #Bursary (How does international students make payment)
-        "**Flywire**\nPayments can be made at http://apu-my.flywire.com/. \nAPU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, visit https://www.flywire.com/support.": [
-            "overseas payment",
-            "How to pay from overseas?",
-            "How do I make an international payment?",
-            "Ways to make payment from overseas",
-            "How does international student make payment?",
-            "What are the payment methods for international students?",
-            "Are international payments via credit card accepted?",
-            "How can international students make payment?",
-            "Can international students pay online?",
-            "Can international students pay through bank transfer?",
-            "Can international students pay in their home currency?",
-            "Can international payments be made online?",
-            "What are my options for international payments to Malaysia?",
-            "Options for overseas payments?",
-            "How to pay fees from abroad?",
-            "How can I pay for my tuition from abroad?",
-            "How do I pay my tuition from another country?",
-            "Is it possible for me to pay online from abroad?",
-        ],
+        # Moved to optimizing alg
 
         # Bursary (pay with cheque)
         "**Cheque or Banker's Draft Payment**\
             \nPayable: ASIA PACIFIC UNIVERSITY SDN BHD \
             \n*You may handover the document to the bursary counter at Level 3 Spine, APU Campus*":[
-                "How to pay cheque",
-                "How to pay banker's draft",
-                "How to pay fee with cheque",
-                "pay with cheque",
-                "pay with banker draft",
-                "pay cheque",
-                "payment cheque",
-                "pay fee cheque",
                 "apu cheque"
         ],
 
         #Bursary (How to make payment via Flywire?)
         "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
         \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
-            "How to make payment with Flywire",
-            "How to make payment using Flywire",
-            "How to make payment through Flywire",
-            "How to pay with Flywire",
-            "How to pay through Flywire",
-            "How to pay using FLywire",
-            "How to pay fees using Flywire",
-            "How to use Flywire to make payment?",
             "How to transfer money through Flywire",
             "How do I make a transaction using Flywire",
             "Steps to transfer money through Flywire",
-            "Procedure to make payment with Flywire",
-            "Instructions to make payment with Flywire",
             "How do I use Flywire?",
             "How to send money through Flywire?",
-            "How does payment work on Flywire?",
             "How do I make a transfer with Flywire?",
-            "Steps to pay with Flywire",
-            "How can I make payment using FLywire",
-            "Guide me how to use Flywire to make payment",
-            "Explain how to use Flywire for payments",
-            "What are the instructions for Flywire payments",
-            "How to use Flywire to make payment",
             "Flywire",
             "APU Flywire",
-            "pay flywire"
         ],
 
         # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -716,17 +668,10 @@ async def get_qa(inp):
          \n- Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
          \n- A late payment charge is imposed on all overdue fees.\
          \n- Semester Payment is due at the commencement of each semester.": [
-            "What are the International Student Fees & Refund Policy?",
             "Refund policy for International Student",
-            "Student Fees for International Student",
-            "Explain the fees and refund policy for International Student",
-            "How does the fee payment and refund process work for International Student?",
-            "How does university refund policy and fees for International Student?",
             "Can International Student get a refund if they withdraw from the course?",
-            "What happens if International Student pay late?",
             "What is the process for International Student to apply for a refund?",
-            "How can International Student apply for a refund?,"
-            "What are the penalties for late payment for International Students?",
+            "How can International Student apply for a refund?"
         ],
 
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -739,17 +684,10 @@ async def get_qa(inp):
         \n- A late payment charge is imposed on all overdue fees.\
         \n- Semester Payment is due at the commencement of each semester.\
         \n\n*Please refer to the bursary department of APU for details.*": [
-            "What are the Malaysian Student Fees & Refund Policy? ",
             "Refund policy for Malaysian Student",
-            "Student Fees for Malaysian Student",
-            "Explain the fees and refund policy for Malaysian Student",
-            "How does the fee payment and refund process work for Malaysian Student?",
-            "How does university refund policy and fees for Malaysian Student?",
             "Can Malaysian Student get a refund if they withdraw from the course?"
-            "What happens if Malaysian Student pay late?",
             "What is the process for Malaysian Student to apply for a refund?",
             "How can Malaysian Student apply for a refund?",
-            "What are the penalties for late payment for Malaysian Student?",
             "refund policy"
         ],
         
@@ -759,13 +697,10 @@ async def get_qa(inp):
             \nBesides, late charges will be applied to the student.\
             \nYou are advised to check APSpace for outstanding payments and settle the payments at least 3 working days earlier.\
             \nFor more details, please check the APU Student Handbook, https://apiit.atlassian.net/wiki/spaces/AA/pages/1199570953/Student+Handbook.":[
-                "late payment",
                 "late charges",
                 "late penalties",
                 "late penalty",
-                "late pay",
                 "late charge",
-                "late payments",
         ],
         
         # Bursary location
@@ -774,12 +709,9 @@ async def get_qa(inp):
             "where cashier",
             "where is bursary",
             'where bursary',
-            "where to pay",
             "how to go cashier",
             "how to go bursary",
-            "where to pay cheque",
             "cashier counter",
-            "payment counter",
             "bursary location", 
             "cashier location"
         ],  
@@ -865,11 +797,8 @@ async def get_qa(inp):
             "How does the new class code structure eliminate the need for manual code selection in Attendix?",
             "What is the significance of having different class codes for LAB and Tutorial?",
             "How does the new class code structure eliminate the manual selection requirement for LAB and Tutorial codes?",
-            "Can you elaborate on the future reporting feature for lecturers using class codes (LAB-16)?",
-            "How does the new class code structure facilitate future reporting for lecturers?",
             "Guide to understanding the benefits of the new class code structure for lecturers.",
             "Tell me about the automatic detection feature in Attendix related to class codes.",
-            "How does the new structure enhance the reporting capabilities for lecturers?",
             "What advantages does the new class code structure bring to lecturers regarding attendance tracking?",
         ],
 
@@ -993,7 +922,6 @@ async def get_qa(inp):
         #Issue reference letter
         "Reference Letter will not be issued if you have any overdue fees, invalid or expired student Visa or you are not registered to any active intake.":[
             "Issue reference letter",
-            "Can I get a reference letter if I have overdue fees?",
             "Applying for reference letter with expired student Visa",
             "Concession card letter during active intake registration",
             "Eligibility for reference letter",
@@ -1037,23 +965,11 @@ async def get_qa(inp):
         ],
         #Next semester fees
         "Please check from the fee statement on APSpace. The fees will appear after you are registered to the next year of study.  ":[
-            "Apu fees",
-            "appit fees",
-            "school fees",
-            "campus fees",
-            "Next Fees",
             "Next Money",
-            "Next Intake Fees Inquiry",
-            "Fees for next intake",
             "Money for next intake",
             "Next semester charges",
-            "How much is the next intake fees?",
-            "Tuition fees for upcoming term",
             "Cost for the next semester",
-            "Fee details for the next intake",
             "Next intake charges",
-            "What are the fees for the upcoming term?",
-            "Semester fees for the next intake",
             "Upcoming term tuition costs",
         ], 
         #webspace account locked
@@ -1175,7 +1091,6 @@ async def get_qa(inp):
             "Missing attendance record",
             "Lecturer didn't mark me present",
             "Issue with class attendance marking",
-            "How to report missing attendance?",
             "My attendance wasn't recorded",
         ],
         ##changing password
@@ -1204,39 +1119,19 @@ async def get_qa(inp):
         ##Payment w APCARD
         "You can make payment with the APCard by topping money up at the kiosk adjacent to the ATM machine at level 3.":
         [
-            "How do i make payment within the campus",
-            "how to pay",
-            "on-campus payment",
-            "payment in school",
-            "Paying for food",
-            "Payment at the convenience store",
-            "payment for cafeteria",
             "where do i top up my apcard",
             "where can i top up my apcard",
             "top up apcard",
             "top up money to apcard",
             "how do i top up my apcard",
             "top up money",
-            "payment with apcard",
-            "pay with apcard"
         ],
         ##Payment cashless/no ap card
         "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\
             \nIf you don't have an APCArd, you could purchase a pre-paid cashless card from the Finance Service Counter at Level 3.":
         [
-            "Can i make payment without APCard",
-            "pay with cash",
-            "payment with cash",
-            "can i make payment with cash",
-            "can i make payment with credit card",
-            "Can i make payment with debit card",
-            "can i make payment with tng",
-            "can i make payment with touch n go",
             "touch n go",
             "tng",
-            "grabpay",
-            "payment without APcard", 
-            "paying without APcard",
             "ewallet"      
         ],
         "You may proceed to the Financial Service Counter at APU Level 3 and report this issue to the cashier on duty.":
@@ -1385,15 +1280,6 @@ async def get_qa(inp):
             "how do you set up a free slot in consultation hours",
             "free slot for consultation",
             "set a free slot for consultation with students"
-        ],
-        "To view the lecturer class report, you may follow the steps below:\n1)Click on More > My Reports Panel > Library, then 'Views Lists' under 'Reports.\n2)Select 'Lecturer Class Report' then choose the preferred date range.":
-        [
-            "view lecturer class report",
-            "lecturer class report",
-            "check lecturer class report",
-            "where can i find the lecturer class report",
-            "how can i find the lecturer class report",
-            "find lecturer class report",
         ],
         "You can download APSpace by clicking on this link which directs you to download the APSpace APK.\nhttps://apiit.atlassian.net/wiki/spaces/ITSM/pages/2435579992/Installation+Guide+for+Huawei+Smartphone+users":
 
@@ -1781,17 +1667,12 @@ async def get_qa(inp):
         ],
         #Referral Exam & Retake - resit fees
         "Please click the link to view each subject resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
-            "Resit & Retake Fees",
-            "Resit fees cost?",
             "How much for module retake?",
             "How much for module resit?",
-            "Fees for retaking exams",
-            "Fees for resit exams",
             "Check resit exam charges",
             "Check retake exam charges",
             "What's the price for repeating a test?",
             "Find out how much resitting exams cost", 
-            "Check if I need to pay for failed modules",
         ],
         #Referral Exam & Retake - referral exam which I could not attend earlier.
         "Please submit online EC (Extenuating Circumstance) with supporting documents and once approved, please write to admin@apu.edu.my ":[
@@ -1911,9 +1792,7 @@ async def get_qa(inp):
             "Need guidance on changing majors",
             "Is it possible to move to a different program? What does it involve?",
             "changing my academic path",
-            " fee charged for change of programme",
             "Cost of program change",
-            "Fees for switching course",
             "Budget for changing major",
             "Financial implications of moving to different program",  
         ],
@@ -1967,7 +1846,7 @@ async def get_qa(inp):
             "Need help with academic appeal",
             "Challenge academic outcome",
             "File an academic appeal form",
-            "I need to challenge my grade in [subject name]. How do I start an appeal?",
+            "I need to challenge my grade. How do I start an appeal?",
             'Feeling unfairly treated by teacher - appeal process?',
             "Concerns about [teaching style/facilities] - appeal options?",
             "Disagree with professor's decision - how to appeal?",
@@ -2148,10 +2027,6 @@ async def get_qa(inp):
             "maintenance request form",
             "what should i do if i need maintenance help",
             "where can i find the maintenance request form?",
-            "where should i submit a maintenance report",
-            "Report for maintenance",
-            "report for fixing",
-            "report for broken facilities",
             "request for maintenance"
         ],
         "To View or Approve Workflow Enquiries, you may follow the steps listed below:\n1)Open your browser and enter this URL: forms.sites.apiit.edu.my\n2)Once the website is loaded, you are able to see the inbox logo. Click on the Inbox logo.\n3)In your Inbox page, you will see pending tasks and if you are not assigned to any task, the system will show 'No Pending Tasks'.\n4)Click on the application that you are assigned to it. once you click, the application will be shown in details to you.\n5)On the right side of the screen you can see a box called 'WORKFLOW' which has two options ('Approve','Reject'). You can simply review and approve or reject the application but before rejecting, you need to fill up the field called 'Note' in order to let the user know what is the reason of rejection.\n6)Once you Approve or Reject you will not see the application in your inbox anymore.":
@@ -2170,24 +2045,6 @@ async def get_qa(inp):
             "how do i access workflow enquiries",
             "accessing workflow enquiries",
             "how do i approve workflow enquiries"
-        ],
-        "To submit a feedback form, kindly follow the steps as below:\n1)Go to APSpace > Search then type for 'Feedback'. Click on the 'Feedback' word that appears in the list.\n2)The user will be redirected to the Anonymous Feedback System, and user just have to click on the 'Add New Feedback' button to get started\n3)Fill in all the information required as shown in the form and click 'Submit'.\n4)Once you submitted the form, you will receive an e-mail.\n5)Next, you will redirect to this page once click “here” as mentioned in step 4. On this page, the latest submitted feedback form record will be sorted at the top. You can search other entries by Feedback No or Purpose of Request.\n6)Your feedback will be reviewed and responded to by the person in charge. Once the process is done, you will receive an email as shown in the image below.":
-        [
-            "feedback",
-            "send feedback",
-            "send feedback request",
-            "send feedback anonymously",
-            "feedback for Apu",
-            "How to send feedback to apu",
-            "how to send feedback",
-            "sending feedback",
-            "where to find the feedback form",
-            "where can i send feedback",
-            "sending feedback to APU",
-            "i want to send a feedback",
-            "feedback form",
-            "where can i find the feedback form"
-            "sending feedback"
         ],
         "To access AWS Workspace, please follow the steps as listed below:\n1)Download AWS Workspace from the internet via https://clients.amazonworkspaces.com/\n2)Once you have successfully installed AWS Workspace, please enter the following Registration Code:  wssin+Q3KR3J\n3)Please enter your staff APKey (similar to APSPACE) credentials on the AWS Workspace Login page.\n4)Once logged in, Launch the GIMS icon on the desktop and enter the credentials provided to you by our CTI department (Separate Email).":
         [
@@ -2211,10 +2068,8 @@ async def get_qa(inp):
         ],
         "Here is what you can do when your GIMS Report is not working:\n1)Force close all GIMS-related process using Task Manager; right-click on the Workspace taskbar > Task Manager > Select GIMS > End Task. Repeat for Report Background Engine and other GIMS if you open more than 1.\n2)Login to GIMS again and run an alternative report to trigger the Report Background Engine. Here shown, we run one of the Academic Report.\n3)Close the Academic Report, leave the Reports Background Engine.\n4)Run the Moderation Report.\n5)Might need to try with other report if Academic Report is also not working. Other report that might always works is Print Student Result in Student Data.":
         [
-            "GIMS report not working",
             "GIMS not working",
             "How to fix my GIMS",
-            'fixing GIMS Report',
             "fixing GIMS",
             "GIMS keeps freezing screen",
             "GIMS keeps force shut down",
@@ -2247,15 +2102,6 @@ async def get_qa(inp):
             "jaspersoft usage",
             "jaspersoft basics",
 
-        ],
-        "Here is how you can access student survey in Jaspersoft:\n1)Login to APSpace,\n2)Search for “My Reports Panel” in APSpace and click on My Reports Panel.\n3)You will be redirected to Report Panel in Jaspersoft Reporting and search for 'Survey'.\n4)All related reports to Survey will be display.":
-        [
-            "where can i find students survey reports",
-            "how to access students survey's report",
-            "where to find students survey's report",
-            "students survey report for staffs",
-            "where can i access the students survey reports",
-            "accessing students survey report",
         ],
         "To view and download attendance summary for staffs, you may proceed with the steps as stated below:\n1)Open APSpace and click on the 'More' tab.\n2)Find the item “My Reports Panel” and click on it.\n3)Click on the menu item Library.\n4)Search or find the report Attendance Summary from the list.\n5)Select the class code from the options pane and click on Apply button.\n6)Export Supported File Formats.":
         [
@@ -2405,7 +2251,7 @@ async def get_qa(inp):
     ###!!! OPTIMIZING ALGORITHMS !!!###
     # Holiday algorithm
     if [i for i in ["holiday", "break ", "no class "] if i in str(inp).lower()]: 
-        holidays_str = await holidays()
+        holidays_str = await holidays() + "\n*For a complete list of holidays, please refer https://new.apu.edu.my/apu-holiday-schedule.*"
         qa = dict()
         add_qa = {
             holidays_str : [
@@ -2419,7 +2265,9 @@ async def get_qa(inp):
                 "next holiday",
                 "when no class",
                 "malaysia holiday",
-                "school holidays"
+                "school holidays",
+                "when is the break",
+                "when no class"
             ],
         }
         qa.update(add_qa)
@@ -2549,12 +2397,9 @@ async def get_qa(inp):
                 "where cashier",
                 "where is bursary",
                 'where bursary',
-                "where to pay",
                 "how to go cashier",
                 "how to go bursary",
-                "where to pay cheque",
                 "cashier counter",
-                "payment counter",
                 "bursary location", 
                 "cashier location"
             ],  
@@ -2616,8 +2461,305 @@ async def get_qa(inp):
     
     # General payment details
     if [i for i in ["fee", "pay", "paid", "bank"] if i in str(inp).lower()]:
-        print("bank alg")
+        print("pay alg")
+        qa=dict()
         add_qa = {
+            "**Travel Pass from/to APU & APIIT**\
+                \nLRT : Free\
+                \nAPU ⇄ APIIT : Free \
+                \nMosque *(Friday only)*: Free \
+                \nFortune Park : RM50/month\
+                \nM Vertica : RM140/month \
+                \n\n*For paid travel pass, please make payment at the Bursary Office, Level 3 APU Campus.\
+                \nHint: You may ask me `bus schedule`.*":[
+                    "pay bus",
+                    "pay shuttle",
+                    "how much to pay for shuttle",
+                    "payment bus",
+                    "payment shuttle",
+                    "bus fee",
+                    "bus fees"
+                ],
+            #Referral Exam & Retake - resit fees
+            "Please click the link to view each subject resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
+                "How much for module retake?",
+                "How much for module resit?",
+                "Check resit exam charges",
+                "Check retake exam charges",
+                "What's the price for repeating a test?",
+                "Find out how much resitting exams cost", 
+                "Check if I need to pay for failed modules",
+            ],
+            ##Payment w APCARD
+            "You can make payment with the APCard by topping money up at the kiosk adjacent to the ATM machine at level 3.":
+            [
+                "How do i make payment within the campus",
+                "how to pay",
+                "on-campus payment",
+                "payment in school",
+                "Paying for food",
+                "Payment at the convenience store",
+                "payment for cafeteria",
+                "where do i top up my apcard",
+                "where can i top up my apcard",
+                "top up apcard",
+                "top up money to apcard",
+                "how do i top up my apcard",
+                "top up money",
+                "payment with apcard",
+                "pay with apcard"
+            ],
+            ##Payment cashless/no ap card
+            "You can only make payments within the campus using APCard. Transactions can only be made using the APCard.\
+                \nIf you don't have an APCArd, you could purchase a pre-paid cashless card from the Finance Service Counter at Level 3.":
+            [
+                "Can i make payment without APCard",
+                "pay with cash",
+                "payment with cash",
+                "can i make payment with cash",
+                "can i make payment with credit card",
+                "Can i make payment with debit card",
+                "can i make payment with tng",
+                "can i make payment with touch n go",
+                "touch n go",
+                "tng",
+                "grabpay",
+                "payment without APcard", 
+                "paying without APcard",
+                "ewallet"      
+            ],
+            "To submit a feedback form, kindly follow the steps as below:\n1)Go to APSpace > Search then type for 'Feedback'. Click on the 'Feedback' word that appears in the list.\n2)The user will be redirected to the Anonymous Feedback System, and user just have to click on the 'Add New Feedback' button to get started\n3)Fill in all the information required as shown in the form and click 'Submit'.\n4)Once you submitted the form, you will receive an e-mail.\n5)Next, you will redirect to this page once click “here” as mentioned in step 4. On this page, the latest submitted feedback form record will be sorted at the top. You can search other entries by Feedback No or Purpose of Request.\n6)Your feedback will be reviewed and responded to by the person in charge. Once the process is done, you will receive an email as shown in the image below.":
+            [
+                "feedback",
+                "send feedback",
+                "send feedback request",
+                "send feedback anonymously",
+                "feedback for Apu",
+                "How to send feedback to apu",
+                "how to send feedback",
+                "sending feedback",
+                "where to find the feedback form",
+                "where can i send feedback",
+                "sending feedback to APU",
+                "i want to send a feedback",
+                "feedback form",
+                "where can i find the feedback form"
+                "sending feedback"
+            ],
+            #Change Programme, Deferment & Withdrawal - change my programme
+            "1. Please download the ‘Change of Programme Form’:<http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+            2.Fill up the form and get the Programme Leader for the course that you would like to enroll to sign for approval.\n\
+            3. Submit the form to the Administration office together with a consent letter from your parents. \n\
+            4.There will be RM200 fee charged for change of programme.":[
+                " fee charged for change of programme",
+                "Fees for switching course"
+            ],
+            #Referral Exam & Retake - resit fees
+            "Please click the link to view each subject resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
+                "Resit & Retake Fees",
+                "Resit fees cost?",
+                "Fees for retaking exams",
+                "Fees for resit exams",
+            ],
+            #Next semester fees
+            "Please check from the fee statement on APSpace. The fees will appear after you are registered to the next year of study.  ":[
+                "Apu fees",
+                "appit fees",
+                "school fees",
+                "campus fees",
+                "Next Fees",
+                "Next Intake Fees Inquiry",
+                "Fees for next intake",
+                "How much is the next intake fees?",
+                "Tuition fees for upcoming term",
+                "Fee details for the next intake",
+                "What are the fees for the upcoming term?",
+                "Semester fees for the next intake",
+            ], 
+            #Issue reference letter
+            "Reference Letter will not be issued if you have any overdue fees, invalid or expired student Visa or you are not registered to any active intake.":[
+                "Can I get a reference letter if I have overdue fees?"
+            ],
+            # Bursary (APU/APIIT International Student Fees & Refund Policy)
+            "- International Students are required to pay all fees due prior to arrival by the respective due dates.\
+            \n- The International Student Application Fee and International Student Registration Fee will not be refunded.\
+            \n- Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+            \n- Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+            \n- A late payment charge is imposed on all overdue fees.\
+            \n- Semester Payment is due at the commencement of each semester.": [
+                "What are the International Student Fees & Refund Policy?",
+                "Refund policy for International Student",
+                "Student Fees for International Student",
+                "Explain the fees and refund policy for International Student",
+                "How does university refund policy and fees for International Student?",
+                "Can International Student get a refund if they withdraw from the course?",
+                "What is the process for International Student to apply for a refund?",
+                "How can International Student apply for a refund?"
+            ],
+
+            # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
+            "**APU/APIIT Malaysian Student Fees & Refund Policy** \
+            \n- APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
+            \n- A charge of 50% of the initial payment will apply for cancellation made 14 days or less before course commencement.\
+            \n- An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
+            \n- NO REFUND will be entertained after a course has commenced.\
+            \n- Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
+            \n- A late payment charge is imposed on all overdue fees.\
+            \n- Semester Payment is due at the commencement of each semester.\
+            \n\n*Please refer to the bursary department of APU for details.*": [
+                "What are the Malaysian Student Fees & Refund Policy? ",
+                "Refund policy for Malaysian Student",
+                "Student Fees for Malaysian Student",
+                "Explain the fees and refund policy for Malaysian Student",
+                "How does university refund policy and fees for Malaysian Student?",
+                "Can Malaysian Student get a refund if they withdraw from the course?"
+                "What is the process for Malaysian Student to apply for a refund?",
+                "How can Malaysian Student apply for a refund?",
+                "refund policy"
+            ],
+            # Library(Do I have to pay if damaged a book?)
+            "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
+            \nFor minor damages, the cost of repairing the book would be **RM 12** for soft-cover books and **RM 15** for hardcover titles.": [
+                "What is the fee for damaging a library item?"
+            ],
+            #Bursary (Bank details-CIMB APU & APIIT)
+            "**CIMB Account of APU**\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nA/C Number (MYR): 8602647663\n\
+            \n`******************************************************************************************************************************`\n\
+            \n**CIMB Account of APIIT**\nA/C Name: APIIT SDN BHD\nA/C Number (MYR): 8603504063\n\
+            \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
+                "Make payment with CIMB",
+                "Pay with CIMB",
+            ],
+
+            #Bursary (How does international students make payment)
+            "**Flywire**\nPayments can be made at http://apu-my.flywire.com/. \nAPU has partnered with Flywire, to provide international students with an easy and secure method of paying from overseas.To learn more, visit https://www.flywire.com/support.": [
+                "overseas payment",
+                "How to pay from overseas?",
+                "How do I make an international payment?",
+                "Ways to make payment from overseas",
+                "How does international student make payment?",
+                "What are the payment methods for international students?",
+                "Are international payments via credit card accepted?",
+                "How can international students make payment?",
+                "Can international students pay online?",
+                "Can international students pay through bank transfer?",
+                "Can international students pay in their home currency?",
+                "Can international payments be made online?",
+                "What are my options for international payments to Malaysia?",
+                "Options for overseas payments?",
+                "How to pay fees from abroad?",
+                "How can I pay for my tuition from abroad?",
+                "How do I pay my tuition from another country?",
+                "Is it possible for me to pay online from abroad?",
+            ],
+
+            # Bursary (pay with cheque)
+            "**Cheque or Banker's Draft Payment**\
+                \nPayable: ASIA PACIFIC UNIVERSITY SDN BHD \
+                \n*You may handover the document to the bursary counter at Level 3 Spine, APU Campus*":[
+                    "How to pay cheque",
+                    "How to pay banker's draft",
+                    "How to pay fee with cheque",
+                    "pay with cheque",
+                    "pay with banker draft",
+                    "pay cheque",
+                    "payment cheque",
+                    "pay fee cheque",
+            ],
+
+            #Bursary (How to make payment via Flywire?)
+            "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
+            \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
+                "How to make payment with Flywire",
+                "How to make payment using Flywire",
+                "How to make payment through Flywire",
+                "How to pay with Flywire",
+                "How to pay through Flywire",
+                "How to pay using FLywire",
+                "How to pay fees using Flywire",
+                "How to use Flywire to make payment?",
+                "Procedure to make payment with Flywire",
+                "Instructions to make payment with Flywire",
+                "How does payment work on Flywire?",
+                "How do I make a transfer with Flywire?",
+                "Steps to pay with Flywire",
+                "How can I make payment using FLywire",
+                "Guide me how to use Flywire to make payment",
+                "Explain how to use Flywire for payments",
+                "What are the instructions for Flywire payments",
+                "How to use Flywire to make payment",
+                "pay flywire"
+            ],
+
+            # Bursary (APU/APIIT International Student Fees & Refund Policy)
+            "- International Students are required to pay all fees due prior to arrival by the respective due dates.\
+            \n- The International Student Application Fee and International Student Registration Fee will not be refunded.\
+            \n- Course fee payments made are **NON-REFUNDABLE** except if the student visa is refused by EMGS/ Immigration. All Fees paid are **NON-REFUNDABLE** under any circumstances once the visa is approved or after the student has commenced studies at any level, including `Intensive English, Diploma, Certificate, Foundation Programme, and Bachelor’s Degree Programmes.` This includes students who do not qualify for enrolment into the course approved in the Visa Approval Letter (VAL) due to not achieving the required English competency.\
+            \n- Students will not be permitted to check-in into our University-managed accommodation without the payment of all required fees and associated deposits as indicated above.\
+            \n- A late payment charge is imposed on all overdue fees.\
+            \n- Semester Payment is due at the commencement of each semester.": [
+                "How does the fee payment and refund process work for International Student?",
+                "What happens if International Student pay late?",
+                "What are the penalties for late payment for International Students?",
+            ],
+
+            # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
+            "**APU/APIIT Malaysian Student Fees & Refund Policy** \
+            \n- APU/APIIT will provide a refund to cancellations notified and received more than 14 days before the commencement of a course.\
+            \n- A charge of 50% of the initial payment will apply for cancellation made 14 days or less before course commencement.\
+            \n- An Administrative Fee of RM 200.00 will be charged for any transfer of registration prior and after course commencement, including changes in course specialization.\
+            \n- NO REFUND will be entertained after a course has commenced.\
+            \n- Applicants who intend to apply for withdrawals from EPF or other approved study loans (including PTPTN, MARA) are required to pay the fee on the monthly installment basis until the loan is disbursed.\
+            \n- A late payment charge is imposed on all overdue fees.\
+            \n- Semester Payment is due at the commencement of each semester.\
+            \n\n*Please refer to the bursary department of APU for details.*": [
+                "How does the fee payment and refund process work for Malaysian Student?",
+                "What happens if Malaysian Student pay late?",
+                "What are the penalties for late payment for Malaysian Student?",
+            ],
+            
+            # Bursary Late Payment
+            "**Late Payment Penalties**\
+                \nStudents will cease to enjoy all rights and privileges of a student of APU, after 7 days from the payment due date.\
+                \nBesides, late charges will be applied to the student.\
+                \nYou are advised to check APSpace for outstanding payments and settle the payments at least 3 working days earlier.\
+                \nFor more details, please check the APU Student Handbook, https://apiit.atlassian.net/wiki/spaces/AA/pages/1199570953/Student+Handbook.":[
+                    "late payment",
+                    "late pay",
+                    "late payments",
+            ],
+            
+            # Bursary location
+            "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
+                "where to pay",
+                "where to pay cheque",
+                "payment counter",
+            ],  
+            #Bursary (Bank details-Maybank APU & APIIT)
+            "**Maybank Account of APU**\n\
+            \nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nA/C Number (MYR): 514413500658\nA/C Number (USD): 714413000532\nSwift Code: MBBEMYKL\n\
+            \nYou may also pay with **JomPay**\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
+            \n`******************************************************************************************************************************`\n\
+            \n**Maybank Account of APIIT**\n\
+            \nA/C Name: APIIT SDN BHD\nA/C Number (MYR): 514413500575\nA/C Number (USD): 714413000518\nSwift Code: MBBEMYKL\n\
+            \nYou may also pay with **JomPay**\nBiller Code: 26070\nRef 1: Student ID or NRIC or Passport No\n\
+            \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
+                "Make payment with Maybank",
+                "Pay with Maybank",
+                "APU Jompay",
+                "pay maybank",
+                "Jompay",
+                "APIIT JomPay",
+                "Pay with Maybank"
+            ],
+            # Library(Do I have to pay if damaged a book?)
+            "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
+            \nFor minor damages, the cost of repairing the book would be **RM 12** for soft-cover books and **RM 15** for hardcover titles.": [
+                "Do I have to pay if damaged a book?",
+                "Do I have to pay for damaging a library book?",
+                "Can I replace a damaged book instead of paying?",
+                "Replace or pay for a damaged book?",
+            ],
             #Bursary (Payment details)
             "Please find the payment details at https://www.apu.edu.my/life-apu/student-services/apu-apiit-bursary-details \
             \nRemember to email the payment receipt with student name and ID to __bursary@apu.edu.my__": [
@@ -3173,6 +3315,9 @@ async def get_qa(inp):
             for schedule in schedules['trips']:
                 start = str(schedule["trip_from"]["name"]).strip()
                 end = str(schedule["trip_to"]["name"]).strip()
+                if (f"{start} to {end}".lower() in str(ori_inp).lower()) or (str(ori_inp).lower() in f"{start} to {end}".lower()): # Condition to clear qa
+                    print("clear")
+                    qa = dict()
                 if (start, end) in added_set:
                     continue
                 else:
@@ -3901,4 +4046,67 @@ async def get_qa(inp):
         }
         qa.update(add_qa)
     
+    if "report" in str(inp).lower():
+        qa=dict()
+        add_qa = {
+            # Library(What should I do if I lost a book?)
+            "Please report to us immediately once you realize the borrowed item(s)/book(s) is lost by providing the details of the lost item(s) / book(s) `(e.g., name of the item, book title, barcode, date that you borrow, etc.)`. If you fail to report to us, the fines will continue to accrue. Once reported, your library account will be suspended temporarily. The library will allow a grace period of two weeks for you to search for the book(s)/item(s).\
+            \n\nYou will not be charged with fines for **two weeks**. If the item is not found after the grace period, we will contact you to discuss one of the following possible options (but not limited to) to resolve the issue.\
+            \n`- Replace the lost book with a new copy of the same edition or the latest edition.`\n`- Pay the replacement costs, including the book price and overdue fines owing on the item.`\
+            \n\nLibrary staff will fill out the `Missing / Lost Book` form. You will receive the discussion's final verdict via email to guide your future steps. After you clean your account based on the final decision, we will reinstate your library account.": [
+                "How can I report a lost library book?",
+                "Will fines continue if I don't report a lost book?",
+                "How do I report a lost item to the library?",
+            ],
+
+            # Library(Do I have to pay if damaged a book?)
+            "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
+            \nFor minor damages, the cost of repairing the book would be **RM 12** for soft-cover books and **RM 15** for hardcover titles.": [
+                "Will I be fined if I don't report a damaged item?",
+                "Do I need to report if I damage a library book?",
+            ],
+            "Benefits for Lecturers\n\
+            1. Automatic Class Code Detection in Attendix (no manual selection required)\n\
+            2. Different Class Code for LAB and Tutorial (no manual selection required)\n\
+            3. Future report to understand how many class codes have been taught during the year(LAB-16). ":[
+                "Can you elaborate on the future reporting feature for lecturers using class codes (LAB-16)?",
+                "How does the new class code structure facilitate future reporting for lecturers?",
+                "How does the new structure enhance the reporting capabilities for lecturers?"
+            ],
+            #Not in attendance list
+            "Please contact your Programme Administrator by writing to admin@apu.edu.my. This is probably due to late registration and your name is not loaded into system with the earlier batch.":[
+                "How to report missing attendance?",
+            ],
+            "To view the lecturer class report, you may follow the steps below:\n1)Click on More > My Reports Panel > Library, then 'Views Lists' under 'Reports.\n2)Select 'Lecturer Class Report' then choose the preferred date range.":
+            [
+                "view lecturer class report",
+                "lecturer class report",
+                "check lecturer class report",
+                "where can i find the lecturer class report",
+                "how can i find the lecturer class report",
+                "find lecturer class report",
+            ],
+            "Maintenance Request Form can be found at this website 'http://forms.sites.apiit.edu.my/'. From this website, click on 'Maintenace Request' and fill in the form.\nIn the last section, which is called 'Approval Type', if you already have approval for the requested maintenance, you can choose one of the option in the dropdown box and upload the attachment of the approval. If you do not have the approval and you want to get the approval you are supposed choose approval needed option. Then you may click the submit button.\nThe workflow of this form can be found here in this link attached, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/229998747/How+to+submit+maintenance+request+Form":
+            [
+                "where should i submit a maintenance report",
+                "Report for maintenance",
+                "report for fixing",
+                "report for broken facilities"
+            ],
+            "Here is what you can do when your GIMS Report is not working:\n1)Force close all GIMS-related process using Task Manager; right-click on the Workspace taskbar > Task Manager > Select GIMS > End Task. Repeat for Report Background Engine and other GIMS if you open more than 1.\n2)Login to GIMS again and run an alternative report to trigger the Report Background Engine. Here shown, we run one of the Academic Report.\n3)Close the Academic Report, leave the Reports Background Engine.\n4)Run the Moderation Report.\n5)Might need to try with other report if Academic Report is also not working. Other report that might always works is Print Student Result in Student Data.":
+            [
+                "GIMS report not working",
+                'fixing GIMS Report',
+            ],
+            "Here is how you can access student survey in Jaspersoft:\n1)Login to APSpace,\n2)Search for “My Reports Panel” in APSpace and click on My Reports Panel.\n3)You will be redirected to Report Panel in Jaspersoft Reporting and search for 'Survey'.\n4)All related reports to Survey will be display.":
+            [
+                "where can i find students survey reports",
+                "how to access students survey's report",
+                "where to find students survey's report",
+                "students survey report for staffs",
+                "where can i access the students survey reports",
+                "accessing students survey report",
+            ],
+        }
+
     return qa

@@ -1,6 +1,7 @@
 import discord
 from responses import reply
 import os
+from config_sensitive import chk_tdy_holiday
 
 if os.path.isfile("config_sensitive.py"):
     from config_sensitive import TOKEN, ID
@@ -16,6 +17,10 @@ async def send_msg(msg: str, user_msg: str, is_private: bool):
             await msg.channel.send(file=discord.File("images/hi.gif"))
         if "parking rates" in resp.lower():
             await msg.channel.send(file=discord.File("images/apu_map.jpeg"))
+        if "next shuttle" in resp.lower():
+            if chk_tdy_holiday():
+                await msg.channel.send("As today is holiday, please take note that the shuttle schedule may be revised.\
+                                       \nPlease refer to APSpace or https://new.apu.edu.my/apu-holiday-schedule.")
     except Exception as error:
         print(error)
         return "Something went wrong! Please try again. "

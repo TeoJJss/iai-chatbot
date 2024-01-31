@@ -1,4 +1,4 @@
-import discord
+import discord,time
 from responses import reply
 import os
 from config_sensitive import chk_tdy_holiday
@@ -19,6 +19,7 @@ async def send_msg(msg: str, user_msg: str, is_private: bool):
             await msg.channel.send(file=discord.File("images/apu_map.jpeg"))
         if "next shuttle" in resp.lower():
             if chk_tdy_holiday():
+                time.sleep(3)
                 await msg.channel.send("As today is holiday, please take note that the shuttle schedule may be revised.\
                                        \nPlease refer to APSpace or https://new.apu.edu.my/apu-holiday-schedule.")
     except Exception as error:

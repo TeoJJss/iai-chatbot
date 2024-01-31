@@ -25,17 +25,17 @@ async def holidays():
             holiday_enddate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z"))
             holiday_startdate_str = holiday_startdate.strftime('%d %b %Y (%a)')
             holiday_enddate_str = holiday_enddate.strftime("%d %b %Y (%a)")
-            if today > holiday_enddate:
+            if today.date() > holiday_enddate.date():
                 holiday_ls.remove(holiday)
                 continue
 
-            if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
+            if holiday_startdate.date() <= today.date() and holiday_enddate.date() >= today.date(): # Ongoing holiday
                 res += "We are in **" + holiday["holiday_description"] + "** now, "
                 if holiday_startdate_str == holiday_enddate_str:
                     res += f"on {holiday_startdate_str}.\n"
                 else:
                     res += f"from {holiday_startdate_str} to {holiday_enddate_str}.\n"
-            elif today < holiday_startdate: # upcoming holiday
+            elif today.date() < holiday_startdate.date(): # upcoming holiday
                 if "Upcoming holidays" not in res:
                     res += "\n**Upcoming holidays**\n"
                 if holiday_startdate_str != holiday_enddate_str:
@@ -57,11 +57,11 @@ def chk_tdy_holiday():
             holiday = holiday_ls[holiday_ind]
             holiday_startdate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_start_date"], "%a, %d %b %Y %H:%M:%S %Z"))
             holiday_enddate = pytz.utc.localize(datetime.datetime.strptime(holiday["holiday_end_date"], "%a, %d %b %Y %H:%M:%S %Z"))
-            if today > holiday_enddate:
+            if today.date() > holiday_enddate.date():
                 holiday_ls.remove(holiday)
                 continue
 
-            if holiday_startdate <= today and holiday_enddate >= today: # Ongoing holiday
+            if holiday_startdate.date() <= today.date() and holiday_enddate.date() >= today.date(): # Ongoing holiday
                 return True
             holiday_ind+=1
     return False

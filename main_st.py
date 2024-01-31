@@ -1,7 +1,8 @@
 import streamlit as st
 from responses import reply
-import asyncio
+import asyncio, time
 from PIL import Image
+from config_sensitive import chk_tdy_holiday
 
 st.set_page_config(page_title="APU Live Chatbot", page_icon="images/bot_pic.png")
 st.title("APU Knowledge Live Assistant")
@@ -29,5 +30,10 @@ if st.session_state.messages[-1]["role"] != "assistant":
             if "parking rate" in response.lower():
                 bot_image = Image.open("images/apu_map.jpeg")
                 st.image(bot_image, caption="APU Map", use_column_width=True)
+            if "next shuttle" in response.lower():
+                if chk_tdy_holiday():
+                    time.sleep(3)
+                    st.write("As today is holiday, please take note that the shuttle schedule may be revised.\
+                                        \nPlease refer to APSpace or https://new.apu.edu.my/apu-holiday-schedule.")
     message = {"role": "assistant", "content": response}
     st.session_state.messages.append(message)

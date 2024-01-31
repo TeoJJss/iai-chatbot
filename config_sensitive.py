@@ -115,12 +115,6 @@ async def get_qa(inp, ori_inp):
         # Campus
         "APU campus is at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur": [
             "campus",
-            "How to go to the campus",
-            "How to go campus",
-            "How to go APU",
-            "Where is campus",
-            "Where is APU",
-            "Where is APU campus",
             "How do I get to the campus?",
             "How do I get to the APU?",
             "What is the address of the campus?",
@@ -602,64 +596,19 @@ async def get_qa(inp, ori_inp):
         ],
 
         #Bursary (Bank details-Maybank APU & APIIT)
-        "**Maybank Account of APU**\n\
-        \nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nA/C Number (MYR): 514413500658\nA/C Number (USD): 714413000532\nSwift Code: MBBEMYKL\n\
-        \nYou may also pay with **JomPay**\nBiller Code: 67223\nRef 1: Student ID or NRIC or Passport No\n\
-        \n`******************************************************************************************************************************`\n\
-        \n**Maybank Account of APIIT**\n\
-        \nA/C Name: APIIT SDN BHD\nA/C Number (MYR): 514413500575\nA/C Number (USD): 714413000518\nSwift Code: MBBEMYKL\n\
-        \nYou may also pay with **JomPay**\nBiller Code: 26070\nRef 1: Student ID or NRIC or Passport No\n\
-        \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
-            "What is the Maybank account of APU",
-            "What is the Maybank account of APIIT",
-            "Maybank Acc of APU",
-            "Maybank Acc of APIIT",
-            "Maybank Acc of the school",
-            "Maybank",
-            "APU Maybank",
-            "APIIT Maybank",
-            "Maybank account detais",
-            "Maybank",
-        ],
+        # Moved to optimizing alg
 
         #Bursary (Bank details-CIMB APU & APIIT)
-        "**CIMB Account of APU**\nA/C Name: ASIA PACIFIC UNIVERSITY SDN BHD\nA/C Number (MYR): 8602647663\n\
-        \n`******************************************************************************************************************************`\n\
-        \n**CIMB Account of APIIT**\nA/C Name: APIIT SDN BHD\nA/C Number (MYR): 8603504063\n\
-        \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
-            "What is the CIMB account of APU",
-            "What is the CIMB account of APIIT",
-            "CIMB Acc of APU",
-            "CIMB Acc of APIIT",
-            "CIMB Acc of the school",
-            "CIMB account details",
-            "CIMB",
-            "APU CIMB",
-            "APIIT CIMB"
-        ],
+        # Moved to optimizing alg
 
         #Bursary (How does international students make payment)
         # Moved to optimizing alg
 
         # Bursary (pay with cheque)
-        "**Cheque or Banker's Draft Payment**\
-            \nPayable: ASIA PACIFIC UNIVERSITY SDN BHD \
-            \n*You may handover the document to the bursary counter at Level 3 Spine, APU Campus*":[
-                "apu cheque"
-        ],
+        # Moved to optimizing alg
 
         #Bursary (How to make payment via Flywire?)
-        "1) Visit http://apu-my.flywire.com/ to start.\n2) Input your payment amount and where you’re from.\n3) Select your payment method.\n4) Give some basic info to book your payment.\
-        \n5) Follow the steps to transfer funds to Flywire.\n6) Get updates via text and email until your payment reaches your institution. You can also track it anytime by creating a Flywire account.": [
-            "How to transfer money through Flywire",
-            "How do I make a transaction using Flywire",
-            "Steps to transfer money through Flywire",
-            "How do I use Flywire?",
-            "How to send money through Flywire?",
-            "How do I make a transfer with Flywire?",
-            "Flywire",
-            "APU Flywire",
-        ],
+        # Moved to optimizing alg
 
         # Bursary (APU/APIIT International Student Fees & Refund Policy)
         "- International Students are required to pay all fees due prior to arrival by the respective due dates.\
@@ -2460,7 +2409,7 @@ async def get_qa(inp, ori_inp):
         qa.update(add_qa)
     
     # General payment details
-    if [i for i in ["fee", "pay", "paid", "bank"] if i in str(inp).lower()]:
+    if [i for i in ["fee", "pay", "paid", "bank", "maybank", "cimb", "flywire", "jompay", "cheque"] if i in str(inp).lower() or i in str(ori_inp).lower()]:
         print("pay alg")
         qa=dict()
         add_qa = {
@@ -2629,6 +2578,15 @@ async def get_qa(inp, ori_inp):
             \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
                 "Make payment with CIMB",
                 "Pay with CIMB",
+                "What is the CIMB account of APU",
+                "What is the CIMB account of APIIT",
+                "CIMB Acc of APU",
+                "CIMB Acc of APIIT",
+                "CIMB Acc of the school",
+                "CIMB account details",
+                "CIMB",
+                "APU CIMB",
+                "APIIT CIMB"
             ],
 
             #Bursary (How does international students make payment)
@@ -2664,6 +2622,7 @@ async def get_qa(inp, ori_inp):
                     "pay with banker draft",
                     "pay cheque",
                     "payment cheque",
+                    "apu cheque",
                     "pay fee cheque",
             ],
 
@@ -2688,7 +2647,16 @@ async def get_qa(inp, ori_inp):
                 "Explain how to use Flywire for payments",
                 "What are the instructions for Flywire payments",
                 "How to use Flywire to make payment",
-                "pay flywire"
+                "pay flywire", 
+                "How to transfer money through Flywire",
+                "How do I make a transaction using Flywire",
+                "Steps to transfer money through Flywire",
+                "How do I use Flywire?",
+                "pay with flywire",
+                "How to send money through Flywire?",
+                "How do I make a transfer with Flywire?",
+                "Flywire",
+                "APU Flywire",
             ],
 
             # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -2750,7 +2718,17 @@ async def get_qa(inp, ori_inp):
                 "pay maybank",
                 "Jompay",
                 "APIIT JomPay",
-                "Pay with Maybank"
+                "Pay with Maybank",
+                "What is the Maybank account of APU",
+                "What is the Maybank account of APIIT",
+                "Maybank Acc of APU",
+                "Maybank Acc of APIIT",
+                "Maybank Acc of the school",
+                "Maybank",
+                "APU Maybank",
+                "APIIT Maybank",
+                "Maybank account detais",
+                "Maybank",
             ],
             # Library(Do I have to pay if damaged a book?)
             "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\
@@ -2912,6 +2890,11 @@ async def get_qa(inp, ori_inp):
         print("contacts alg")
         qa = dict()
         add_qa = {
+            "You may contact the person in charge of PTPTN by email ptptn@apu.edu.my​":[
+                "contact PTPTN",
+                "email PTPTN",
+                "talk to PTPTN"
+            ],
             # Admin contact
             "Admin Email: __admin@apu.edu.my__\nYou may also call __+603 8992 5250__": [
                 "How to contact admin",
@@ -4109,4 +4092,22 @@ async def get_qa(inp, ori_inp):
             ],
         }
 
+    if "ptptn" in str(ori_inp).lower():
+        qa=dict()
+        add_qa = {
+            "Please refer to https://www.apu.edu.my/ptptninfo for submission schedule and steps to apply PTPTN.\
+                \nYou may also email ptptn@apu.edu.my or walk in to student service office at level 3 for guidance.":[
+                    "PTPTN",
+                    "PTPTN apply",
+                    "PTPTN application",
+                    "PTPTN submission",
+                    "how to apply PTPTN"
+                ],
+            "You may contact the person in charge of PTPTN by email ptptn@apu.edu.my​":[
+                "contact PTPTN",
+                "email PTPTN",
+                "talk to PTPTN"
+            ]
+        }
+        qa.update(add_qa)
     return qa

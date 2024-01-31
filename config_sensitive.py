@@ -4101,7 +4101,8 @@ async def get_qa(inp, ori_inp):
                     "PTPTN apply",
                     "PTPTN application",
                     "PTPTN submission",
-                    "how to apply PTPTN"
+                    "how to apply PTPTN", 
+                    "apu ptptn"
                 ],
             "You may contact the person in charge of PTPTN by email ptptn@apu.edu.my​":[
                 "contact PTPTN",

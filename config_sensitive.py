@@ -673,10 +673,8 @@ async def get_qa(inp, ori_inp):
             "How do I access APU Connect Lounge?",
             "What is the purpose of Block E lounge?",
             "Where can I find the Level 1 lounge?",
-            "How does APU Shuttle Bus service operate?",
             "What is the purpose of APU Shuttle Bus?",
             "Provide info about Arrival and Departure for APU Shuttle Bus.",
-            "How does APU Campus Connect Lounge bus service operate?",
             "Where's the departure lounge for APU bus?",
             "Where to wait for shuttle bus APU?",
             "How to access APU Connect Lounge?",
@@ -684,8 +682,6 @@ async def get_qa(inp, ori_inp):
             "How is APU Connect Lounge accessed?",
             "What is the purpose of the lounge in Block E?",
             "Where is the Level 1 lounge located?",
-            "How are APU Shuttle Buses operated?",
-            "How is the APU Shuttle Bus service operated?",
             "What is the purpose of APU Shuttle Bus?",
             "How is APU Connect Lounge accessed?",
             "What is the location of APU Connect Lounge?",
@@ -883,7 +879,7 @@ async def get_qa(inp, ori_inp):
             \n4. Inform the staff at Submission Counter and show them the payment receipt.\
             \n5. The staff will provide you a new Student ID Card.":[
             "APU Card",
-            "Appit Card",
+            "APIIT Card",
             "campus Card",
             "school Card",
             "Student ID Card",
@@ -943,7 +939,7 @@ async def get_qa(inp, ori_inp):
         \nor <https://studentaffairold.sites.apiit.edu.my/club-and-society/>":[
             "apu club",
             "campus club",
-            "appit club",
+            "apiit club",
             "apit club",
             "school club",
             "Join a club",
@@ -985,7 +981,7 @@ async def get_qa(inp, ori_inp):
             "hotspot campus",
             "hotspot apu",
             "hotspot apit",
-            "hotspot appit",
+            "hotspot apiit",
             "data malaysia",
             "data package"
             "Internet Information",
@@ -1812,7 +1808,7 @@ async def get_qa(inp, ori_inp):
             "meaning of Vice Chancellor",
             "meaning of academic excellence",
             "Top student award at APU",
-            "Top student award at APPIT",
+            "Top student award at APIIT",
         ],
         #Vice Chancellor's List for Academic Excellence -qualify for the VC’s List?
         "1.Achieved an average grade point of 3.70 or higher in modules taken for that academic year.\n\
@@ -2513,7 +2509,7 @@ async def get_qa(inp, ori_inp):
             #Next semester fees
             "Please check from the fee statement on APSpace. The fees will appear after you are registered to the next year of study.  ":[
                 "Apu fees",
-                "appit fees",
+                "apiit fees",
                 "school fees",
                 "campus fees",
                 "Next Fees",
@@ -2809,7 +2805,16 @@ async def get_qa(inp, ori_inp):
     # Operation hour
     if [i for i in ["operat", "hour", "time", "open", "close"] if i in str(inp).lower()]:
         print("operation hour alg")
+        if [i for i in ["operat"] if i in str(inp).lower()]:
+            qa = dict()
         add_qa = {
+            ######Logistics & Operations - APU Campus Connect Lounge
+            "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
+                "How does APU Shuttle Bus service operate?",
+                "How does APU Campus Connect Lounge bus service operate?",
+                "How are APU Shuttle Buses operated?",
+                "How is the APU Shuttle Bus service operated?",
+            ], 
             "**Operational Hours of APU Campus Connect Lounge:**\n Monday – Friday: 8.00am – 10.00pm":[
                 "Open time APU Campus Connect Lounge",
                 "Close time APU Campus Connect Lounge",
@@ -2864,9 +2869,9 @@ async def get_qa(inp, ori_inp):
                 "What time does the library open on weekdays?",
                 "What time does the APU library open on weekdays?",
                 "What time does the APIIT library open on weekdays?",
-                "Is the library open on weekends?"
-                "Is the APU library open on weekends?"
-                "Is the APIIT library open on weekends?"
+                "Is the library open on weekends?",
+                "Is the APU library open on weekends?",
+                "Is the APIIT library open on weekends?",
                 "Is the library open on Saturdays?",
                 "Can I visit the library on public holidays?",
                 "Is the library closed on public holidays?",
@@ -2881,7 +2886,161 @@ async def get_qa(inp, ori_inp):
                 "When does the APU library open and close?",
                 "When does the APIIT library open and close?",
                 "When can I visit the library during the week?",
+                "library operating hour"
             ],
+
+            # Admin (Operating hours)
+            "**Operating hour of Admin Office @ APU**\nMonday – Friday: 8:30 a.m. – 6:00 p.m.\nSaturday / Sunday / Public Holidays: Closed": [
+                "What is the operating hours of admin",
+                "Operating hour of APU admin",
+                "Operation hour of admin",
+                "Operation hour of APU admin",
+                "When does the admin open?",
+                "When does the APU admin open?",
+                "What time does the admin open",
+                "What time does the APU admin open",
+                "What time does the admin open on weekdays?",
+                "What time does the APU admin open on weekdays?",
+                "Is the admin open on weekends?",
+                "Is the APU admin open on weekends?",
+                "Is the admin open on Saturdays?",
+                "Can I visit the admin on public holidays?",
+                "Is the admin closed on public holidays?",
+                "What is the schedule for the admin?",
+                "admin open hours",
+                "APU admin open hours",
+                "admin open time",
+                "APU admin open time",
+                "APIIT admin open time",
+                "When does the admin open and close?",
+                "When does the APU admin open and close?",
+                "When can I visit the admin during the week?",
+                "admin operating hour"
+            ],
+
+            # Bursary
+            "**Operating hour of Bursary Office @ APU**\nMonday – Friday: 9:15 a.m. – 6:00 p.m.\nSaturday / Sunday / Public Holidays: Closed": [
+                "What is the operating hours of bursary cashier",
+                "Operating hour of APU bursary cashier",
+                "Operation hour of bursary cashier",
+                "Operation hour of APU bursary cashier",
+                "When does the bursary cashier open?",
+                "When does the APU bursary cashier open?",
+                "What time does the bursary cashier open",
+                "What time does the APU bursary cashier open",
+                "What time does the bursary cashier open on weekdays?",
+                "What time does the APU bursary cashier open on weekdays?",
+                "Is the bursary cashier open on weekends?",
+                "Is the APU bursary cashier open on weekends?",
+                "Is the bursary cashier open on Saturdays?",
+                "Can I visit the bursary cashier on public holidays?",
+                "Is the bursary cashier closed on public holidays?",
+                "What is the schedule for the bursary cashier?",
+                "Bursary cashier open hours",
+                "APU bursary cashier open hours",
+                "Bursary cashier open time",
+                "APU bursary cashier open time",
+                "APIIT bursary cashier open time",
+                "When does the bursary cashier open and close?",
+                "When does the APU bursary cashier open and close?",
+                "When can I visit the bursary cashier during the week?",
+                "bursary operating hour",
+                "cashier operating hour"
+            ],
+
+            # Clinic
+            "**Operating hour of Klinik Oceania @ APU**\nMonday – Friday: 9 a.m. – 5 p.m.\nSaturday / Sunday / Public Holidays: Closed": [
+                "What is the operating hours of clinic",
+                "Operating hour of APU clinic",
+                "Operating hour of Klinik Oceania",
+                "Operation hour of clinic",
+                "Operation hour of APU clinic",
+                "Operation hour of Klinik Oceania",
+                "When does the clinic open?",
+                "When does the APU clinic open?",
+                "What time does the clinic open",
+                "When does the Klinik Oceania open?",
+                "What time does Klinik Oceania open",
+                "What time does the APU clinic open",
+                "What time does the clinic open on weekdays?",
+                "What time does the Klinik Oceania open on weekdays?",
+                "Is the clinic open on weekends?",
+                "Is the Klinic Oceania open on weekends?",
+                "Is the APU clinic open on weekends?",
+                "Is the clinic open on Saturdays?",
+                "Is Klinik Oceania open on Saturdays?",
+                "Can I visit the clinic on public holidays?",
+                "Is the clinic closed on public holidays?",
+                "Is Klinik Oceania closed on public holidays?",
+                "What is the schedule for the clinic?",
+                "Klinik Oceania open hours",
+                "APU clinic open hours",
+                "Clinic open time",
+                "APU clinic open time",
+                "Klinik Oceania open time",
+                "When does the clinic open and close?",
+                "When does the APU clinic open and close?",
+                "When can I visit the clinic during the week?",
+                "When can I visit Klinik Oceania during the week?",
+                "clinic operating hour",
+                "klinik oceania operating hour"
+            ],
+
+            "**Operating hour of Student Service @ APU**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.\nSaturday: 8:30 a.m. - 1:00 p.m.\nSunday / Public Holidays: Closed": [
+                "What is the operating hours of student service",
+                "Operating hour of APU student service",
+                "Operation hour of student service",
+                "Operation hour of APU student service",
+                "When does the student service open?",
+                "When does the APU student service open?",
+                "What time does the student service open",
+                "What time does the APU student service open",
+                "What time does the student service open on weekdays?",
+                "What time does the APU student service open on weekdays?",
+                "Is the student service open on weekends?",
+                "Is the APU student service open on weekends?",
+                "Is the student service open on Saturdays?",
+                "Can I visit the student service on public holidays?",
+                "Is the student service closed on public holidays?",
+                "What is the schedule for the student service?",
+                "Student service open hours",
+                "APU student service open hours",
+                "Student service open time",
+                "APU student service open time",
+                "APIIT student service open time",
+                "When does the student service open and close?",
+                "When does the APU student service open and close?",
+                "When can I visit the student service during the week?",
+                "Student service operating hour"
+            ],
+
+            "**Operating hour of Technology Services @ APU**\nMonday – Friday: 8:30 a.m. – 7:00 p.m.\nSaturday: 9 a.m. - 1 p.m.\nSunday / Public Holidays: Closed": [
+                "What is the operating hours of technology services",
+                "Operating hour of APU technology services",
+                "Operation hour of technology services",
+                "Operation hour of APU technology services",
+                "When does the technology services open?",
+                "When does the APU technology services open?",
+                "What time does the technology services open",
+                "What time does the APU technology services open",
+                "What time does the technology services open on weekdays?",
+                "What time does the APU technology services open on weekdays?",
+                "Is the technology services open on weekends?",
+                "Is the APU technology services open on weekends?",
+                "Is the technology services open on Saturdays?",
+                "Can I visit the technology services on public holidays?",
+                "Is the technology services closed on public holidays?",
+                "What is the schedule for the technology services?",
+                "Technology services open hours",
+                "APU technology services open hours",
+                "Technology services open time",
+                "APU technology services open time",
+                "APIIT technology services open time",
+                "When does the technology services open and close?",
+                "When does the APU technology services open and close?",
+                "When can I visit the technology services during the week?",
+                "Technology services operating hour"
+            ]    
         }
         qa.update(add_qa)
 
@@ -2890,6 +3049,24 @@ async def get_qa(inp, ori_inp):
         print("contacts alg")
         qa = dict()
         add_qa = {
+            "Accommodation Office Email: __rsvp@apu.edu.my__\nYou may also call __+603 8992 5040__": [
+                "How to contact accommodation office",
+                "What is the contacts of accommodation office",
+                "What is the email of accommodation office",
+                "How should I contact accommodation office",
+                "How to email accommodation office",
+                "How to call accommodation office",
+                "email accommodation office",
+                "call accommodation office",
+                "contact accommodation office",
+                "talk to accommodation office",
+                "I need to email accommodation office",
+                "I need to call accommodation office",
+                "I need to contact accommodation office",
+                "I want to contact accommodation office",
+                "I want to email accommodation office",
+                "I want to call accommodation office",
+            ],
             "You may contact the person in charge of PTPTN by email ptptn@apu.edu.my​":[
                 "contact PTPTN",
                 "email PTPTN",
@@ -2913,6 +3090,26 @@ async def get_qa(inp, ori_inp):
                 "I want to contact admin",
                 "I want to email admin",
                 "I want to call admin",
+            ],
+            # Immigration contact
+            "Immigration Email: __visa@apu.edu.my__\nYou may also call __+603 8992 5237__": [
+                "How to contact immigration office",
+                "What is the contacts of immigration office",
+                "contact for visa",
+                "What is the email of visa immigration office",
+                "How should I contact immigration office",
+                "How to email immigration office",
+                "How to call immigration office",
+                "email immigration office",
+                "call immigration office",
+                "contact immigration office",
+                "talk to immigration office",
+                "I need to email immigration office",
+                "I need to call immigration office",
+                "I need to contact immigration office",
+                "I want to contact immigration office",
+                "I want to email immigration office",
+                "I want to call immigration office",
             ],
             # Student services contact
             "Student Services Email: __admin@apu.edu.my__\nYou may also call __+603 8992 5211__ or __+603 8992 5212__": [
@@ -3240,7 +3437,7 @@ async def get_qa(inp, ori_inp):
             # Parking location
             "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus. \
                 \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
-                \nThe **APIIT Open Space Parking** (Zone G) is located next to the APPIT campus\
+                \nThe **APIIT Open Space Parking** (Zone G) is located next to the APIIT campus\
                 \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
                     "Where parking",
                     "how to find parking",

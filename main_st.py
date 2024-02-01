@@ -25,9 +25,11 @@ if st.session_state.messages[-1]["role"] != "assistant":
             response = str(asyncio.run(reply(user_input))).strip().replace("\n", "<br>")
             st.markdown(response, unsafe_allow_html=True) 
             if "hi" == user_input:
+                time.sleep(2)
                 bot_image = Image.open("images/hi.gif")
                 st.image(bot_image, caption="hi", use_column_width=True)
             if "parking rate" in response.lower():
+                time.sleep(2)
                 bot_image = Image.open("images/apu_map.jpeg")
                 st.image(bot_image, caption="APU Map", use_column_width=True)
             if "next shuttle" in response.lower():

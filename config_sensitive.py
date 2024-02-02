@@ -2721,6 +2721,7 @@ async def get_qa(inp, ori_inp):
             \nYou may also pay with **JomPay**\nBiller Code: 26070\nRef 1: Student ID or NRIC or Passport No\n\
             \n*Remember to email the payment receipt with student name and ID to __bursary@apu.edu.my__*": [
                 "Make payment with Maybank",
+                "Make payment with JomPay",
                 "Pay with Maybank",
                 "APU Jompay",
                 "pay maybank",

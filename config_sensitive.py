@@ -3340,6 +3340,11 @@ async def get_qa(inp, ori_inp):
         add_park = {
             ###### Logistics & Operations - APU and APIIT Car Parking Rates
             "**Parking Zone A (APU)** *(Covered Parking)*:\nDaily Parking Rate: RM 5.60\n*(Pay via APCard)* \n\n**Parking Zone B (APU) and Zone G (APIIT)** *(Open Parking)* \nHourly Parking Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 5.00\n\n**TPM Carpark (MRANTI)**\nHourly Parking Rates *(Pay via Flexi Parking 2.0 Mobile App)*\n1st hour or part thereof: RM 3.18 \nEvery subsequent hour or part thereof: RM 1.06 \nMaximum charge per day: RM 7.42":[
+                "car",
+                "motor",
+                "vehicle",
+                "zone",
+                "Flexi",
                 "APU parking",
                 "APU parking fees",
                 "APU park",

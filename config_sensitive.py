@@ -3232,7 +3232,7 @@ async def get_qa(inp, ori_inp):
         print("citation alg")
         add_qa = {
             # Library(Which referencing style is used in APU?)
-            "At APU, we use `APA referencing style` in our academic writing. \
+            "At APU, we use `APA 7th Edition referencing style` in our academic writing. \
             \nAPA referencing style is a set of guidelines that helps the writers properly present their works precisely and properly. It contains comprehensive guidelines and specific formatting for all kinds of resources, described in the 7th Edition Publication Manual of the American Psychological Association. \
             \nFor more information on creating a correct reference list, see **APA's Style and Grammar Guidelines (References)** and the library's **Quick APA Referencing Guide**. Workshops on APA referencing are available.\
             \nhttps://apastyle.apa.org/style-grammar-guidelines/references\

@@ -2,14 +2,19 @@ import requests, datetime
 from copy import deepcopy
 from autocorrect import Speller
 import pytz
+import asyncio
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
 spell = Speller(lang='en')
 
 # Holidays Schedule API
-holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
-holidays_ls = deepcopy(holiday_res)
+async def holiday_api():
+    global holiday_res
+    global holidays_ls
+    holiday_res = requests.get("https://api.apiit.edu.my/transix-v2/holiday/active").json()
+    holidays_ls = deepcopy(holiday_res)
+
 async def holidays():
     today = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur')).replace(hour=0, minute=0, second=0, microsecond=0)
     res=""
@@ -48,7 +53,8 @@ async def holidays():
             res = "No Upcoming Holidays"
     return res
 
-def chk_tdy_holiday():
+async def chk_tdy_holiday():
+    await holiday_api()
     today = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur')).replace(hour=0, minute=0, second=0, microsecond=0)
     for holiday_list in holidays_ls:
         holiday_ls = holiday_list['holidays']
@@ -67,12 +73,15 @@ def chk_tdy_holiday():
     return False
 
 # Bus Schedule API
-try:
-    schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
-    schedules = schedules.json()
-    tmp_schedules = schedules['trips'].copy()
-except:
-    pass
+async def bus_api():
+    global schedules
+    global tmp_schedules
+    try:
+        schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
+        schedules = schedules.json()
+        tmp_schedules = schedules['trips'].copy()
+    except:
+        pass
 
 async def bus_schedule(start, end):
     now = datetime.datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(pytz.timezone('Asia/Kuala_Lumpur'))
@@ -2196,6 +2205,7 @@ async def get_qa(inp, ori_inp):
     ###!!! OPTIMIZING ALGORITHMS !!!###
     # Holiday algorithm
     if [i for i in ["holiday", "break ", "no class "] if i in str(inp).lower()]: 
+        await holiday_api()
         holidays_str = await holidays() + "\n*For a complete list of holidays, please refer https://new.apu.edu.my/apu-holiday-schedule.*"
         qa = dict()
         add_qa = {
@@ -3489,6 +3499,7 @@ async def get_qa(inp, ori_inp):
     if [i for i in ["shuttle", "bus", "from","to", "trip", "go", "travel"] if i in str(inp).lower()]:
         if [i for i in ["shuttle", "bus", "travel pass"] if i in str(inp).lower()]:
             qa = dict()
+        await bus_api()
         added_set = set()
         count = 0
         if schedules: # If schedules from API not empty

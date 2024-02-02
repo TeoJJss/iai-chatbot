@@ -2206,7 +2206,7 @@ async def get_qa(inp, ori_inp):
     # Holiday algorithm
     if [i for i in ["holiday", "break ", "no class "] if i in str(inp).lower()]: 
         await holiday_api()
-        holidays_str = await holidays() + "\n*For a complete list of holidays, please refer https://new.apu.edu.my/apu-holiday-schedule.*"
+        holidays_str = await holidays() + "\n*For the complete list of holidays, please refer https://new.apu.edu.my/apu-holiday-schedule.*"
         qa = dict()
         add_qa = {
             holidays_str : [
@@ -3576,6 +3576,16 @@ async def get_qa(inp, ori_inp):
                 "bus arrive at APU"
             ],
 
+            "If you would like to take the shuttle service from APIIT to any location, please wait at the main entrance of APIIT campus":[
+                "Where to wait bus at APIIT",
+                "wait bus at APIIT",
+                "wait shuttle at APIIT",
+                "take bus at APIIT",
+                "take shuttle at APIIT",
+                "bus depart at APIIT",
+                "bus arrive at APIIT"
+            ],
+
             "If you are taking the shuttle service from LRT to APU, please wait the vehicle at **Grab A** point, **Bukit Jalil LRT station**.":[
                 "Where to wait bus at LRT",
                 "wait bus at LRT",
@@ -3583,7 +3593,8 @@ async def get_qa(inp, ori_inp):
                 "take bus at LRT",
                 "take shuttle at LRT",
                 "bus depart at LRT",
-                "bus arrive at LRT"
+                "bus arrive at LRT",
+                "where to wait bus"
             ],
             ######Logistics & Operations - APU Campus Connect Lounge
             "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
@@ -3613,7 +3624,7 @@ async def get_qa(inp, ori_inp):
                 "How does the APU Shuttle Buses service work?",
                 "What is the purpose of the APU Shuttle Bus?",
                 "How does the Bus Shuttle service work?",
-                "Can you provide information about Arrival and Departure for Bus Shuttle.",
+                "Can you provide information about Arrival and Departure for Bus Shuttle."
             ],
         }
 

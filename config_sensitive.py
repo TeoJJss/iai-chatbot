@@ -3333,7 +3333,7 @@ async def get_qa(inp, ori_inp):
         qa.update(add_qa)
 
     # Car Park algorithm
-    if [i for i in ["car", "park", "zone", "motor", "vehicle"] if i in str(inp).lower() and "card" not in str(inp).lower()]:
+    if [i for i in ["car", "park", "zone", "motor", "vehicle"] if i in str(inp).lower()]:
         print("parking alg")
         if "park" in str(inp).lower():
             qa=dict()

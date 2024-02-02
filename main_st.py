@@ -33,7 +33,8 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 bot_image = Image.open("images/apu_map.jpeg")
                 st.image(bot_image, caption="APU Map", use_column_width=True)
             if "next shuttle" in response.lower():
-                if chk_tdy_holiday():
+                isHoliday = asyncio.run(chk_tdy_holiday())
+                if isHoliday:
                     time.sleep(3)
                     st.write("As today is holiday, please take note that the shuttle schedule may be revised.\
                                         \nPlease refer to APSpace or https://new.apu.edu.my/apu-holiday-schedule.")

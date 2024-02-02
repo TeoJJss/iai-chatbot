@@ -3454,6 +3454,8 @@ async def get_qa(inp, ori_inp):
                 \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
                 \nThe **APIIT Open Space Parking** (Zone G) is located next to the APIIT campus\
                 \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
+                    "where do my motor park",
+                    "where is my car", 
                     "Where parking",
                     "how to find parking",
                     "where is parking zone",

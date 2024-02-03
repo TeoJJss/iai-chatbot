@@ -2170,7 +2170,17 @@ async def get_qa(inp, ori_inp):
             "where to do survey",
             "how to complete survey",
             "apspace survey",
-        ]
+        ],
+        #Referral Exam & Retake
+            "Click this link to check your result:\n<https://apspace.apu.edu.my/results>. \nTake note that you must settle your course fee and survey before checking results.":[
+                "find failed subject",
+                "Check my grades",
+                "Did I pass module?",
+                "Did I pass exam?",
+                "See my failed courses",
+                "Get my score for module",
+                "check what I fail"
+            ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
@@ -2263,6 +2273,7 @@ async def get_qa(inp, ori_inp):
                 "find result",
                 "exam result",
                 "find faild subject",
+                "failed result",
                 "find module result",
                 "find referral subject",
                 "find referral module",

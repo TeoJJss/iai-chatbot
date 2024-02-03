@@ -117,7 +117,7 @@ async def bus_schedule(start, end):
         print(e)
         # API response error
         return "Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."
-
+    
 # convo list
 async def get_qa(inp, ori_inp):
     qa = {
@@ -1184,19 +1184,7 @@ async def get_qa(inp, ori_inp):
             "cancel consultation with lectuerer",
             "how do i cancel my consultation with the lecturer",
         ],
-        "To view your results, follow the steps as below:\n1)In APSpace, Click on 'More' from the top navigation bar\n2)Click on Academic & Enrolment > Results > Survey\n3)Select your intake and complete all the surveys in both survey types\n4)Direct back to Results page to view your results.":
-        [
-            "Results",
-            "check results",
-            "view results",
-            "exam results",
-            "semester results",
-            "how to check results",
-            "where to check results",
-            "viewing results",
-            "checking results",
-            "checking for results",
-        ],
+        
         "To download your interim transcript, kindly follow the steps as below\n1) Go to More > Reseults in APSpace\n2)Choose your intake then click on 'Interim Transcript":
         [
             "interim transcript",
@@ -1557,13 +1545,13 @@ async def get_qa(inp, ori_inp):
             "Theft of home computer or laptop",
             "Insufficient computers/printers to do the work",
             "APU/APIIT’s systems incompatible with home computer/laptop",
-            "Failure of the computer resulting in an inability to save work",
+            "Failure of the computer inability to save work",
             "The computer labs closed earlier than expected",
             "Failure of a Backup Device",
             "Failure of both main disk and back up device",
         ],
         #Referral Exam & Retake
-        "Click this link to check your result:\n<http://webresult.s3-website-ap-southeast-1.amazonaws.com/>":[
+        "Click this link to check your result:\n<https://apspace.apu.edu.my/results/>":[
             "find result",
             "exam result",
             "find faild subject",
@@ -1621,21 +1609,7 @@ async def get_qa(inp, ori_inp):
         ],
         #Referral Exam & Retake - resit fees
         "Please click the link to view each subject resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
-            "How much for module retake?",
-            "How much for module resit?",
-            "Check resit exam charges",
-            "Check retake exam charges",
             "What's the price for repeating a test?",
-            "Find out how much resitting exams cost", 
-        ],
-        #Referral Exam & Retake - referral exam which I could not attend earlier.
-        "Please submit online EC (Extenuating Circumstance) with supporting documents and once approved, please write to admin@apu.edu.my ":[
-            "I want to register for my referral exam which I could not attend earlier.",
-            "Register for missed referral exam",
-            "Late for referral exam",
-            "Reschedule referral exam registration",
-            "Couldn't attend [subject] referral earlier - register now?",
-            "Missed referral exam signup due to [reason] - what to do?",
         ],
         #Referral Exam & Retake - Fail module compensation
         "It will be based on these criteria:\n\
@@ -1649,19 +1623,6 @@ async def get_qa(inp, ori_inp):
             "Are there any financial resources available for students who fail modules?",
         ],
 
-        #Result, Transcripts & Certificate -unable to check result
-        "This could be due to you having an outstanding fee or not completing the course appraisal. \n\
-        Please settle the **pending fees** or **complete your course appraisal** and try checking your result again. \n\
-        If both are cleared and you still not able to view your result, please screenshot the error and email to admin@apu.edu.my. ":[
-            "Why I am unable to check result?",
-            "Can't see my results?",
-            "Results not available?",
-            "Accessing results issue",
-            "Stuck on result page",
-            "My results don't seem to be showing up anywhere.",
-            "result error",
-            "result issue",
-        ],
         #Result, Transcripts & Certificate - print Interim transcript
         "You can print yourself from <https://apspace.apu.edu.my/results>":[
             "Print Interim transcript",
@@ -2043,7 +2004,7 @@ async def get_qa(inp, ori_inp):
             "module marks does not tally",
             "staff",
             "how to change students cgpa",
-            "how to change students gpa results",
+            "how to change students gpa",
             "how to change students module marks",
             "changing students cgpa",
             "changing students gpa",
@@ -2223,6 +2184,129 @@ async def get_qa(inp, ori_inp):
                 "school holidays",
                 "when is the break",
                 "when no class"
+            ],
+        }
+        qa.update(add_qa)
+
+    # Resit algorithm
+    if [i for i in ["resit", "retak", "referral", "result"] if i in str(ori_inp).lower()]:
+        print("result alg")
+        qa=dict()
+        add_qa = {
+            "You can resit up to 3 times for each module component. You must pass all modules in order to progress to graduation":[
+                "how many times resit retake referral",
+                "how many times can I resit retake referral",
+                "resit",
+                "maximum times of resit retake referral"
+            ],
+            #Referral Exam & Retake - resit fees
+            "Please click the link to view each assessment component's resit fees:\nhttps://apiit.atlassian.net/wiki/spaces/AA/pages/546406415/Resit+Retake+Fees#Resit-Fees>":[
+                "How much for module retake?",
+                "How much for module resit?",
+                "Check resit exam charges",
+                "Check retake exam charges",
+                "What's the price for repeating a test?",
+                "Find out how much resitting exams cost", 
+            ],
+            "If a student faces an issue in their exam, lecturers are able to provide a second attempt for the student by utilizing an override. More details can be found in this link, https://apiit.atlassian.net/wiki/spaces/ITSM/pages/1297055770/How+do+I+allow+a+single+student+to+continue+their+existing+quiz+exam+attempt":
+            [
+                "how do i allow a single student to continue their exisiting quiz attempt",
+                "letting a student retake an exam",
+                "allowing student to continue thier exam attempt",
+                "providing second attempt for student to continue thier exam",
+                "second attempt of exam",
+                "exam second attempt",
+                "student to retake exam individually",
+                "continue exam attempt",
+                "allow student to retake exam",
+                "retake exam for student"# Other questions in optimizing algorithms
+            ],
+            #Extenuating Circumstance (EC) - postpone or reschedule the date of the exam?
+            "Please submit EC Online with the company offer letter as supporting document attached. \n\
+            Once you received the EC decision as approved, you can walk into the Administration Office to register for the next scheduled exam.\n <https://forms.sites.apiit.edu.my/>":[
+                "postpone exam date",
+                "reschedule exam date",
+                "not able to go referral exam",
+                "cannot resit retake referral exam",
+                "unable referral exam",
+            ],
+            #Referral Exam & Retake - register retake a few modules.
+            "If you are currently in a fresh semester class and wanted to retake modules from the previous semester. Please consult your Programme Leader first.":[
+                "I need to retake a few modules. Can you please help me to register?",
+                "retake registration",
+                "Need to retake modules - guide me through",
+                "Help me sign up for module retakes",
+                "Retake registration assistance", 
+                "register resit retake referral"
+            ],
+            #Referral Exam & Retake - referral exam which I could not attend earlier.
+            "Please submit online EC (Extenuating Circumstance) with supporting documents and once approved, please write to admin@apu.edu.my ":[
+                "I want to register for my referral exam which I could not attend earlier.",
+                "Register for missed referral exam",
+                "Late for referral exam",
+                "Reschedule referral exam registration",
+                "Couldn't attend [subject] referral earlier - register now?",
+                "Missed referral exam signup due to [reason] - what to do?",
+            ],
+            #Referral Exam & Retake
+            "Click this link to check your result:\n<https://apspace.apu.edu.my/results>":[
+                "find result",
+                "exam result",
+                "find faild subject",
+                "find module result",
+                "find referral subject",
+                "find referral module",
+                "check result grade",
+                "where how to check result grade",
+                "Check my grades",
+                "See my module results",
+                "Did I pass module?",
+                "Did I pass exam?",
+                "Show my academic results",
+                "See my failed courses",
+                "Get my score for module",
+                "I would like to know about my module which I failed and need to do referral?",
+                "check what need resit retake referral"
+            ],
+            "To view your results, follow the steps as below:\n1)In APSpace, Click on 'More' from the top navigation bar\n2)Click on Academic & Enrolment > Results > Survey\n3)Select your intake and complete all the surveys in both survey types\n4)Direct back to Results page to view your results.":
+            [
+                "Results",
+                "check results",
+                "view results",
+                "exam results",
+                "semester results",
+                "how to check results",
+                "where to check results",
+                "viewing results",
+                "checking results",
+                "checking for results",
+            ],
+            #Result, Transcripts & Certificate -unable to check result
+            "This could be due to you having an outstanding fee or not completing the course appraisal. \n\
+            Please settle the **pending fees** or **complete your course appraisal** and try checking your result again. \n\
+            If both are cleared and you still not able to view your result, please screenshot the error and email to admin@apu.edu.my. ":[
+                "Why I am unable to check result?",
+                "Can't see my results?",
+                "Results not available?",
+                "Accessing results issue",
+                "Stuck on result page",
+                "My results don't seem to be showing up anywhere.",
+                "result error",
+                "result issue",
+            ],
+            #Result, Transcripts & Certificate - remark exam paper
+            "1.Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+            2.After your Programme Leader signed, proceed to the Administration office with the form for the Admin staff to invoice RM70 to your account.\n\
+            3.You will receive an appeal decision in two weeks.\n\
+            4. If there is a change of a better result, we will refund the RM70.":[
+                "I want to remark on my exam paper. I am not satisfied with my results.",
+                'Request exam paper review',
+                "Unsatisfied with exam result - remark?",
+                "Dispute exam grading",
+                "Inquiry about paper re-evaluation",
+                "I'd like to request a review of my [exam name] paper. I believe my score may be inaccurate.",
+                "I think there may be an error in the grading of my [exam name] paper. Is it possible to get it reviewed?",
+                "I'm not satisfied with my recent exam result. What are the options for re-evaluation?",
             ],
         }
         qa.update(add_qa)

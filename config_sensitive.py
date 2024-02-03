@@ -2161,6 +2161,16 @@ async def get_qa(inp, ori_inp):
             "register for edm",
             "register for enterprise device management",
         ],
+        "You may complete your survey at https://apspace.apu.edu.my/student-survey.":[
+            "survey",
+            "course survey",
+            "apraisal",
+            "how to do survey",
+            "where to complete survey",
+            "where to do survey",
+            "how to complete survey",
+            "apspace survey",
+        ]
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
@@ -2249,7 +2259,7 @@ async def get_qa(inp, ori_inp):
                 "Missed referral exam signup due to [reason] - what to do?",
             ],
             #Referral Exam & Retake
-            "Click this link to check your result:\n<https://apspace.apu.edu.my/results>":[
+            "Click this link to check your result:\n<https://apspace.apu.edu.my/results>. \nTake note that you must settle your course fee and survey before checking results.":[
                 "find result",
                 "exam result",
                 "find faild subject",
@@ -2267,9 +2277,6 @@ async def get_qa(inp, ori_inp):
                 "Get my score for module",
                 "I would like to know about my module which I failed and need to do referral?",
                 "check what need resit retake referral"
-            ],
-            "To view your results, follow the steps as below:\n1)In APSpace, Click on 'More' from the top navigation bar\n2)Click on Academic & Enrolment > Results > Survey\n3)Select your intake and complete all the surveys in both survey types\n4)Direct back to Results page to view your results.":
-            [
                 "Results",
                 "check results",
                 "view results",
@@ -2280,6 +2287,8 @@ async def get_qa(inp, ori_inp):
                 "viewing results",
                 "checking results",
                 "checking for results",
+                "how do I check result",
+                "apspace result"
             ],
             #Result, Transcripts & Certificate -unable to check result
             "This could be due to you having an outstanding fee or not completing the course appraisal. \n\

@@ -2233,6 +2233,24 @@ async def get_qa(inp, ori_inp):
         print("result alg")
         qa=dict()
         add_qa = {
+            "Resit will be scheduled within 6-8 weeks after result release. You will be auto-registered for failed modules. \nPlease check your APSpace Result page":[
+                "when resit",
+                "when my resit",
+                "when retake",
+                "when referral",
+                "when is my referral",
+                "when is my resit",
+                "register resit",
+                "register retake",
+                "register referral",
+                "how to register resit",
+                "how to register retake",
+                "how to register referral",
+                "resit date",
+                "referral date",
+                "retake date",
+                "date of referral"
+            ],
             "You can resit up to 3 times for each module component. You must pass all modules in order to progress to graduation":[
                 "how many times resit retake referral",
                 "how many times can I resit retake referral",
@@ -2319,7 +2337,8 @@ async def get_qa(inp, ori_inp):
                 "checking results",
                 "checking for results",
                 "how do I check result",
-                "apspace result"
+                "apspace result",
+                "apspace result page"
             ],
             #Result, Transcripts & Certificate -unable to check result
             "This could be due to you having an outstanding fee or not completing the course appraisal. \n\

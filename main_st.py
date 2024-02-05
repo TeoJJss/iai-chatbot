@@ -32,7 +32,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 time.sleep(2)
                 bot_image = Image.open("images/apu_map.jpeg")
                 st.image(bot_image, caption="APU Map", use_column_width=True)
-            if "holiday" in response.lower():
+            if "upcoming holiday" in response.lower():
                 time.sleep(2)
                 bot_image = Image.open("images/holiday.png")
                 st.image(bot_image, caption="Holiday Schedule (Student)", use_column_width=True)

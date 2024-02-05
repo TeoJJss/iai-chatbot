@@ -3619,7 +3619,7 @@ async def get_qa(inp, ori_inp):
                 "how to go visitor parking",
                 "how to go visitor car park",
             ],
-            "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus.\n\n**Parking Zone A (APU)** *(Covered Parking)*\nDaily Parking Rate: RM 5.60*(Pay via APCard)*":[
+            "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus.\n\n**Parking Zone A (APU)** *(Covered Parking)*\nDaily Parking: RM 5.60*(Pay via APCard)*":[
                 "Where is zone A parking",
                 "Where is zone A car park",
                 "Where is car park",

@@ -1061,6 +1061,12 @@ async def get_qa(inp, ori_inp):
             "how to reset password",
             "how to change password",
             "how to update password",
+            "how can I reset password",
+            "how can I change password",
+            "how can I update password",
+            "how do I reset password",
+            "how do I change password",
+            "how do I update password",
             "reset apkey password",
             "change apkey password",
             "update apkey password",
@@ -1079,6 +1085,7 @@ async def get_qa(inp, ori_inp):
             "where to find apkey",
             "how do i get my apkey",
             "what is my apkey",
+            "how can i know apkey"
         ],
         ##Payment w APCARD
         "You can make payment with the APCard by topping money up at the kiosk adjacent to the ATM machine at level 3.":
@@ -1892,7 +1899,7 @@ async def get_qa(inp, ori_inp):
             "unsubscribe from broadcast messgaes",
             "notifications from APSpace",
         ],
-        "These are the codes available for AWS to solve for errors:\n1)Error\n'[stderr]git@bitbucket.org: Permission denied (publickey).\n[stderr]fatal: Could not read from remote repository.\n[stderr]\n[stderr]Please make sure you have the correct access rights\n[stderr]and the repository exists.\n2)Fix:\nPlease make sure you are placing the ssh public key in the below directory\n'C:\Windows\System32\config\systemprofile\.ssh'\n3)Error:\n '[stderr]error: cannot open .git/FETCH_HEAD: Permission denied'\n4) Fix:\n 'rm -f .git/FETCH_HEAD'.":
+        "These are the codes available for AWS to solve for errors:\n1)Error\n```[stderr]git@bitbucket.org: Permission denied (publickey).\n[stderr]fatal: Could not read from remote repository.\n[stderr]\n[stderr]Please make sure you have the correct access rights\n[stderr]and the repository exists.```\nFix:\nPlease make sure you are placing the ssh public key in the below directory\n`C:\Windows\System32\config\systemprofile\.ssh`\n\n2) Error:\n ```[stderr]error: cannot open .git/FETCH_HEAD: Permission denied```\nFix:\n `rm -f .git/FETCH_HEAD`.":
         [
             "AWS troubleshooting",
             "AWS CodeDeploy",

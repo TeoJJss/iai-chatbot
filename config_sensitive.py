@@ -2437,7 +2437,15 @@ async def get_qa(inp, ori_inp):
                 "go APU exam hall?",
                 "go APIIT exam Hall?",
                 "how go exam hall",
-                "how to go exam hall"
+                "how to go exam hall",
+                "Where is exam hall in APU",
+                "where exam hall in APU",
+                "where is exam hall in APU",
+                'where exam hall in APU',
+                "how to go exam hall in APU",
+                "how to go exam hall in APU",
+                "exam hall location in APU", 
+                "cashier location in APU",
             ],
             # Library (Location of APU and APIIT)
             "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
@@ -2468,7 +2476,11 @@ async def get_qa(inp, ori_inp):
                 "go APIIT library",
                 "How do I get to the APU library?",
                 "How do I get to the APIIT library?",
-                "where library"
+                "where library",
+                "Where is library in APU",
+                "where is library APU",
+                "library location", 
+                "library location",
             ],
             # Bursary location
             "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
@@ -2480,7 +2492,16 @@ async def get_qa(inp, ori_inp):
                 "how to go bursary",
                 "cashier counter",
                 "bursary location", 
-                "cashier location"
+                "cashier location",
+                "Where is cashier in APU",
+                "where cashier in APU",
+                "where is bursary in APU",
+                'where bursary in APU',
+                "how to go cashier in APU",
+                "how to go bursary in APU",
+                "cashier counter in APU",
+                "bursary location in APU", 
+                "cashier location in APU",
             ],  
             # Campus
             "**APU campus** is located at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
@@ -2527,13 +2548,74 @@ async def get_qa(inp, ori_inp):
 
             # Admin Location
             "The **Administrative Office** is located at level 4, Block D of APU Campus.":[
-                "admin office",
+                "admin office of APU",
                 "where is admin",
                 "how to go admin office",
                 "how to go admin",
+                "how do I go admin",
+                "how can I go admin",
                 "how go admin",
                 "where is admin office",
-                "administrative office"
+                "administrative office",
+                "admin location",
+                "admin office of APU",
+                "where is admin in APU",
+                "how to go admin office in APU",
+                "how to go admin in APU",
+                "how do I go admin in APU",
+                "how can I go admin in APU",
+                "how go admin in APU",
+                "where is admin office in APU",
+                "administrative office in APU",
+                "admin location in APU"
+            ],
+
+            # TechCentre Location
+            "The **Techcentre** is located at level 6, opposite of Block D in APU Campus.":[
+                "techcentre of APU",
+                "where is techcentre",
+                "how to go techcentre",
+                "how go techcentre",
+                "how do I go techcentre",
+                "how can I go techcentre",
+                "techcentre office",
+                "where is TA",
+                "how to go TA",
+                "techcentre location",
+                "TA location",
+                "where is techcentre in APU",
+                "how to go techcentre in APU",
+                "how go techcentre in APU",
+                "how do I go techcentre in APU",
+                "how can I go techcentre in APU",
+                "techcentre office in APU",
+                "where is TA in APU",
+                "how to go TA in APU",
+                "techcentre location in APU",
+                "TA location in APU"
+            ],
+
+            # Admin Location
+            "The **Cafeteria** is located at level 3, Atrium of APU Campus.":[
+                "APU cafeteria",
+                "where is cafeteria",
+                "how to go cafeteria",
+                "how to go cafeteria",
+                "how do I go cafeteria",
+                "how can I go cafeteria",
+                "how go cafeteria",
+                "where is cafeteria",
+                "cafeteria",
+                "cafeteria location"
+                "where is cafeteria in APU",
+                "how to go cafeteria in APU",
+                "how to go cafeteria in APU",
+                "how do I go cafeteria in APU",
+                "how can I go cafeteria in APU",
+                "how go cafeteria in APU",
+                "where is cafeteria in APU",
+                "cafeteria in APU",
+                "cafeteria location in APU"
             ],
         }
         qa.update(add_qa)
@@ -3871,7 +3953,11 @@ async def get_qa(inp, ori_inp):
                 "go APIIT library",
                 "How do I get to the APU library?",
                 "How do I get to the APIIT library?",
-                "where library"
+                "where library",
+                "Where is library in APU",
+                "where is library APU",
+                "library location", 
+                "library location",
             ],
         
             # Library(am I allowed to bring food/drinks)

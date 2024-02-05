@@ -76,6 +76,9 @@ def calculate_similarity(query, response):
     query_doc = nlp(query)
     response_doc = nlp(response)
     similarity = query_doc.similarity(response_doc)
+    if query.lower().strip() == response.lower().strip():
+        print("exact match")
+        similarity+=1
     return similarity
 
 async def similarity_worker(args):

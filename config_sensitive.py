@@ -3615,7 +3615,7 @@ async def get_qa(inp, ori_inp):
                 "visitor park",
                 "visitor parking location",
                 "how to go visitor parking",
-                "how to go visitor car park"
+                "how to go visitor car park",
             ],
             "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus.\n\n**Parking Zone A (APU)** *(Covered Parking)* charges RM 5.60 per day\n*(Pay via APCard)*":[
                 "Where is zone A parking",
@@ -3628,11 +3628,16 @@ async def get_qa(inp, ori_inp):
                 "zone A park",
                 "zone A parking location",
                 "Where is zone A",
-                "Parking location in Zone A at APIIT.",
                 "Parking location in Zone A at APU.",
                 "Tell me about the location of Zone A parking at APU.",
                 "how to go parking zone A",
-                "how to go car park zone A"
+                "how to go car park zone A",
+                "parking fee zone A",
+                "parking rate zone A",
+                "parking charge zone A",
+                "car park fee zone A",
+                "car park rate zone A",
+                "car park charge zone A",
             ],
             "The **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance.\n\n**Parking Zone B (APU)** *(Open Parking)* \nHourly Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour: RM 1.06 \nMaximum charge per day: RM 5.00":[
                 "Where is zone B parking",
@@ -3644,11 +3649,16 @@ async def get_qa(inp, ori_inp):
                 "zone B park",
                 "zone B parking location",
                 "Where is zone B",
-                "Parking location in Zone B at APIIT.",
                 "Parking location in Zone B at APU.",
                 "Tell me about the location of Zone B parking at APU.",
                 "how to go parking zone B",
-                "how to go car park zone B"
+                "how to go car park zone B",
+                "parking fee zone B",
+                "parking rate zone B",
+                "parking charge zone B",
+                "car park fee zone B",
+                "car park rate zone B",
+                "car park charge zone B",
             ],
             "The **APIIT Open Space Parking** (Zone G) is located next to the APIIT campus\n\n**Parking Zone G (APIIT)** *(Open Parking)* \nHourly Rates *(Pay via APCard)* \n1st hour or part thereof: RM 1.82 \nEvery subsequent hour: RM 1.06 \nMaximum charge per day: RM 5.00":[
                 "Where is zone G parking",
@@ -3665,6 +3675,12 @@ async def get_qa(inp, ori_inp):
                 "Tell me about the location of Zone G parking at APU.",
                 "how to go parking zone G",
                 "how to go car park zone G", 
+                "parking fee zone G",
+                "parking rate zone G",
+                "parking charge zone G",
+                "car park fee zone G",
+                "car park rate zone G",
+                "car park charge zone G",
             ],
         }
         qa.update(add_park)

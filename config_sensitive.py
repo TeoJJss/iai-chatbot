@@ -3443,8 +3443,10 @@ async def get_qa(inp, ori_inp):
         qa.update(add_qa)
 
     # References algorithm
-    if [i for i in ["apa", "reference", "references", "referencing", "citation", "citations", "style", "text"] if i in str(inp).lower()]:
+    if [i for i in ["apa", "reference", "referencing", "citation", "style", "text"] if i in str(inp).lower()]:
         print("citation alg")
+        if "citation" in str(inp).lower():
+            qa=dict()
         add_qa = {
             # Library(Which referencing style is used in APU?)
             "At APU, we use `APA 7th Edition referencing style` in our academic writing. \

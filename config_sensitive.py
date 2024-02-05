@@ -3566,6 +3566,7 @@ async def get_qa(inp, ori_inp):
             "You may find the entrance of **APU Covered Parking** (Zone A) near Block E, APU Campus. \
                 \nThe **APU Open Space Parking** (Zone B) is located on the opposite of APU main entrance. \
                 \nThe **APIIT Open Space Parking** (Zone G) is located next to the APIIT campus\
+                \n**Visitor Parking** is located next to the main entrance of APU campus\
                 \n\n*Hint: Send 'parking fee' to me, for parking rates information.*":[
                     "where do my motor park",
                     "where is my car", 
@@ -3613,6 +3614,7 @@ async def get_qa(inp, ori_inp):
                 "visitor motor",
                 "visior vehicle",
                 "visitor park",
+                "visitor car park",
                 "visitor parking location",
                 "how to go visitor parking",
                 "how to go visitor car park",

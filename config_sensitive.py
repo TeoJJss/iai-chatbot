@@ -3067,7 +3067,9 @@ async def get_qa(inp, ori_inp):
                 "When does the APU bursary cashier open and close?",
                 "When can I visit the bursary cashier during the week?",
                 "bursary operating hour",
-                "cashier operating hour"
+                "cashier operating hour",
+                "operating hour of bursary",
+                "operating hour of cashier"
             ],
 
             # Clinic

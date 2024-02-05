@@ -1051,12 +1051,22 @@ async def get_qa(inp, ori_inp):
         "To change your password:\
             \n1) Click on this link, https://cas.apiit.edu.my/cas/login. \
             \n2) Check the 'Change Password' box and fill in your login details.\
-            \n3) Enter your new password and click save.":
+            \n3) Enter your new password and click save.\
+            \n\nYour password must contain minimum 8 characters, containing uppercase, lowercase, digit and special characters.":
         [
             "How to change account password?",
             "change password",
             "changing password",
-            "reset password"
+            "reset password",
+            "how to reset password",
+            "how to change password",
+            "how to update password",
+            "reset apkey password",
+            "change apkey password",
+            "update apkey password",
+            "reset apspace password",
+            "change apspace password",
+            "update apspace password"
         ],
         ##finding APKey
         "For these problems related to the APKey, please contact the service desk at TechCentre @ Room10, 6th Floor of APU Campus or the Helpdesk @ Level 3, APIIT Campus":

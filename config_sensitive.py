@@ -2259,7 +2259,10 @@ async def get_qa(inp, ori_inp):
                 "date of referral",
                 "how to check resit",
                 "how to check retake",
-                "how to check referral"
+                "how to check referral",
+                "how to check when is resit",
+                "how to check when is retake",
+                "how to check when is referral"
             ],
             "You can resit up to 3 times for each module component. You must pass all modules in order to progress to graduation":[
                 "how many times resit retake referral",

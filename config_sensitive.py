@@ -2801,7 +2801,8 @@ async def get_qa(inp, ori_inp):
                 "CIMB",
                 "APU CIMB",
                 "APIIT CIMB",
-                "payment CIMB"
+                "payment CIMB",
+                "payment with CIMB"
             ],
 
             #Bursary (How does international students make payment)
@@ -2839,6 +2840,7 @@ async def get_qa(inp, ori_inp):
                     "payment cheque",
                     "apu cheque",
                     "pay fee cheque",
+                    "payment with cheque"
             ],
 
             #Bursary (How to make payment via Flywire?)
@@ -2873,6 +2875,7 @@ async def get_qa(inp, ori_inp):
                 "How do I make a transfer with Flywire?",
                 "Flywire",
                 "APU Flywire",
+                "payment with flywire"
             ],
 
             # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -2947,7 +2950,9 @@ async def get_qa(inp, ori_inp):
                 "Maybank account detais",
                 "Maybank",
                 "payment Maybank",
-                "payment Jompay"
+                "payment Jompay",
+                "payment with maybank",
+                "payment with jompay"
             ],
             # Library(Do I have to pay if damaged a book?)
             "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\

@@ -2481,6 +2481,8 @@ async def get_qa(inp, ori_inp):
                 "where is library APU",
                 "library location", 
                 "library location",
+                "Where is library in APIIT",
+                "where is library APIIT",
             ],
             # Bursary location
             "The Bursary Office is located at Level 3 Spine, APU Campus. ":[

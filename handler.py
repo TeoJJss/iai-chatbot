@@ -19,6 +19,9 @@ async def send_msg(msg: str, user_msg: str, is_private: bool):
         if "parking rates" in resp.lower():
             time.sleep(2)
             await msg.channel.send(file=discord.File("images/apu_map.jpeg"))
+        if "holiday" in resp.lower():
+            time.sleep(2)
+            await msg.channel.send(file=discord.File("images/holiday.png"))
         if "next shuttle" in resp.lower():
             if await chk_tdy_holiday():
                 time.sleep(3)

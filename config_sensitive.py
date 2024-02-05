@@ -2359,7 +2359,7 @@ async def get_qa(inp, ori_inp):
                 "What steps should I follow to return a borrowed book at the library?",
                 "Where should I return a book after borrowing it?",
             ],
-            "APU Campus Connect Lounge will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
+            "**APU Campus Connect Lounge** will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
                 "Connect Lounge",
                 "How to go campus connect lounge",
                 "Campus Connect Lounge purpose?",
@@ -2466,8 +2466,8 @@ async def get_qa(inp, ori_inp):
                 "cashier location"
             ],  
             # Campus
-            "APU campus is located at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
-                \nAPIIT campus is located at Jalan Inovasi 1, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
+            "**APU campus** is located at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
+                \n**APIIT campus** is located at Jalan Inovasi 1, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
                 \nShuttle Services are provided to the campuses, send me `bus schedule`.": [
                 "campus",
                 "How to go to the campus",
@@ -2496,7 +2496,7 @@ async def get_qa(inp, ori_inp):
                 "apiit location"
             ],
             # Clinic Location
-            "Klinik Oceania is located at level 4, Block E of APU Campus. It is located next to the admin office.\
+            "**Klinik Oceania** is located at level 4, Block E of APU Campus. It is located next to the admin office.\
                 \nYou may take the elevator or stair at Block E to reach there.":[
                     "where is clinic",
                     "where clinic",
@@ -2509,7 +2509,7 @@ async def get_qa(inp, ori_inp):
                 ],
 
             # Admin Location
-            "The Administrative Office is located at level 4, Block D of APU Campus.":[
+            "The **Administrative Office** is located at level 4, Block D of APU Campus.":[
                 "admin office",
                 "where is admin",
                 "how to go admin office",

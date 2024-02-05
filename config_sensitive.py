@@ -3958,6 +3958,8 @@ async def get_qa(inp, ori_inp):
                 "where library",
                 "Where is library in APU",
                 "where is library APU",
+                "Where is library in APIIT",
+                "where is library APIIT",
                 "library location", 
                 "library location",
             ],

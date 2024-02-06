@@ -1,12 +1,11 @@
 import requests, datetime
 from copy import deepcopy
-from autocorrect import Speller
+# from autocorrect import Speller
 import pytz
-import asyncio
 
 TOKEN = "MTE4NTQ5MTc1OTQ5Nzc1NjY5Mg.GmDf32.mk_Jiy6oWMa6v_u4aMk_asYr67hDJIfENoqKi8"
 ID = ["1185519671873638501", "1185517094385745962"]
-spell = Speller(lang='en')
+# spell = Speller(lang='en')
 
 # Holidays Schedule API
 async def holiday_api():
@@ -1648,20 +1647,6 @@ async def get_qa(inp, ori_inp):
             "How do I print my Interim transcript?",
             "How do I get a printout of my grades?",
         ],
-        #Result, Transcripts & Certificate - remark exam paper
-        "1.Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
-        2.After your Programme Leader signed, proceed to the Administration office with the form for the Admin staff to invoice RM70 to your account.\n\
-        3.You will receive an appeal decision in two weeks.\n\
-        4. If there is a change of a better result, we will refund the RM70.":[
-            "I want to remark on my exam paper. I am not satisfied with my results.",
-            'Request exam paper review',
-            "Unsatisfied with exam result - remark?",
-            "Dispute exam grading",
-            "Inquiry about paper re-evaluation",
-            "I'd like to request a review of my [exam name] paper. I believe my score may be inaccurate.",
-            "I think there may be an error in the grading of my [exam name] paper. Is it possible to get it reviewed?",
-            "I'm not satisfied with my recent exam result. What are the options for re-evaluation?",
-        ],
         #Result, Transcripts & Certificate - collect official certificate and transcript
         "You can collect the official certificate and transcript from **Administration Office Level 4 @ APU Campus** ":[
             "Collect official certificate/transcript",
@@ -2201,6 +2186,24 @@ async def get_qa(inp, ori_inp):
             "check what pass",
             "how to check grade"
         ],
+        #Result, Transcripts & Certificate - remark exam paper
+        "If you wish to apply for renark for your assessment component:\n1. Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+        2.After your Programme Leader signed, proceed to the Administration office with the form for the Admin staff to invoice RM70 to your account.\n\
+        3.You will receive an appeal decision in two weeks.\n\
+        4. If there is a change of a better result, we will refund the RM70.":[
+            "I want to remark on my exam paper. I am not satisfied with my results.",
+            'Request exam paper review',
+            "Unsatisfied with exam result - remark?",
+            "Dispute exam grading",
+            "Inquiry about paper re-evaluation",
+            "I'd like to request a review of my [exam name] paper. I believe my score may be inaccurate.",
+            "I think there may be an error in the grading of my [exam name] paper. Is it possible to get it reviewed?",
+            "I'm not satisfied with my recent exam result. What are the options for re-evaluation?",
+            "i want to remark",
+            "i want to appeal",
+            "remark exam",
+            "appeal exam"
+        ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
@@ -2229,7 +2232,7 @@ async def get_qa(inp, ori_inp):
         qa.update(add_qa)
 
     # Resit algorithm
-    if [i for i in ["resit", "retak", "referral", "result"] if i in str(ori_inp).lower()]:
+    if [i for i in ["resit", "retak", "referral", "result","remark"] if i in str(ori_inp).lower()]:
         print("result alg")
         qa=dict()
         add_qa = {
@@ -2357,7 +2360,8 @@ async def get_qa(inp, ori_inp):
                 "checking for results",
                 "how do I check result",
                 "apspace result",
-                "apspace result page"
+                "apspace result page",
+                "how should I check result"
             ],
             #Result, Transcripts & Certificate -unable to check result
             "This could be due to you having an outstanding fee or not completing the course appraisal. \n\
@@ -2373,7 +2377,7 @@ async def get_qa(inp, ori_inp):
                 "result issue",
             ],
             #Result, Transcripts & Certificate - remark exam paper
-            "1.Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
+            "If you wish to apply for renark for your assessment component:\n1. Print the appeal form: <http://kb.sites.apiit.edu.my/knowledge-base/documents/>\n\
             2.After your Programme Leader signed, proceed to the Administration office with the form for the Admin staff to invoice RM70 to your account.\n\
             3.You will receive an appeal decision in two weeks.\n\
             4. If there is a change of a better result, we will refund the RM70.":[
@@ -2385,6 +2389,13 @@ async def get_qa(inp, ori_inp):
                 "I'd like to request a review of my [exam name] paper. I believe my score may be inaccurate.",
                 "I think there may be an error in the grading of my [exam name] paper. Is it possible to get it reviewed?",
                 "I'm not satisfied with my recent exam result. What are the options for re-evaluation?",
+                "i want to remark",
+                "i want to appeal",
+                "remark exam",
+                "appeal exam",
+                'appeal for result',
+                "i want to appeal for my result",
+                "i wish to appeal for my result"
             ],
         }
         qa.update(add_qa)

@@ -15,7 +15,6 @@ async def reply(usr_inp):
     response = ""
     possible_answers = set()
 
-    spell = Speller(lang='en')
     tmp_inp = str(usr_inp).lower().strip().translate(str.maketrans("", "", string.punctuation))
     inp = spell(tmp_inp)
     qa=await get_qa(inp, tmp_inp)
@@ -47,7 +46,7 @@ async def reply(usr_inp):
                 elif abs(ele[2]-tmp_similarity) < 0.01:
                     tmp_similarity = ele[2]
                     if ele[1] not in response:
-                        response += ele[1] + "\n"
+                        response += ele[1] + "\n\n"
                 elif ele[2] > tmp_similarity:
                     quest, response, tmp_similarity = ele[0], ele[1], ele[2]
         else:

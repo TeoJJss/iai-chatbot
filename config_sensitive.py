@@ -2865,7 +2865,12 @@ async def get_qa(inp, ori_inp):
                 "how should I make payment via CIMB",
                 "how should I make payment through CIMB",
                 "how should I make payment by CIMB",
-                "how should I make payment with CIMB"
+                "how to make payment with CIMB",
+                "how to make payment using CIMB",
+                "how to make payment via CIMB",
+                "how to make payment through CIMB",
+                "how to make payment by CIMB",
+                "how to make payment with CIMB",
             ],
 
             #Bursary (How does international students make payment)
@@ -2939,6 +2944,11 @@ async def get_qa(inp, ori_inp):
                     "how can I make payment through cheque",
                     "how can I make payment with cheque",
                     "how can I make payment by cheque",
+                    "how to make payment using cheque",
+                    "how to make payment via cheque",
+                    "how to make payment through cheque",
+                    "how to make payment with cheque",
+                    "how to make payment by cheque",
             ],
 
             #Bursary (How to make payment via Flywire?)
@@ -2983,7 +2993,12 @@ async def get_qa(inp, ori_inp):
                 "how can I make payment via Flywire",
                 "how can I make payment through Flywire",
                 "how can I make payment with Flywire",
-                "how can I make payment by Flywire"
+                "how can I make payment by Flywire",
+                "how to make payment using Flywire",
+                "how to make payment via Flywire",
+                "how to make payment through Flywire",
+                "how to make payment with Flywire",
+                "how to make payment by Flywire"
             ],
 
             # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -3132,7 +3147,18 @@ async def get_qa(inp, ori_inp):
                 "how can I make payment through maybank",
                 "how can I make payment through jompay",
                 "how can I make payment with maybank",
-                "how can I make payment with jompay"
+                "how can I make payment with jompay",
+
+                "how to make payment using maybank",
+                "how to make payment using jompay",
+                "how to make payment via maybank",
+                "how to make payment via jompay",
+                "how to make payment by maybank",
+                "how to make payment by jompay",
+                "how to make payment through maybank",
+                "how to make payment through jompay",
+                "how to make payment with maybank",
+                "how to make payment with jompay"
             ],
             # Library(Do I have to pay if damaged a book?)
             "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\

@@ -25,7 +25,7 @@ async def reply(usr_inp):
         questions_inp_pairs = [(question, answer, inp) for answer, questions in qa.items() for question in questions]
         tasks = [similarity_worker(qip) for qip in questions_inp_pairs]
         results = await asyncio.gather(*tasks)
-        possible_answers = {(q, a, s) for (q, a, s) in results if s > 0.7}
+        possible_answers = {(q, a, s) for (q, a, s) in results if s > 0.8}
 
         print(time.time()-t)
         tmp_similarity = 0

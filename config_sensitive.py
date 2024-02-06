@@ -75,6 +75,8 @@ async def chk_tdy_holiday():
 async def bus_api():
     global schedules
     global tmp_schedules
+    schedules={}
+    tmp_schedules={}
     try:
         schedules = requests.get("https://api.apiit.edu.my/transix-v2/schedule/active")
         schedules = schedules.json()
@@ -1471,7 +1473,7 @@ async def get_qa(inp, ori_inp):
             "EC clarification"
         ],
         #Extenuating Circumstance (EC) - How do I submit EC
-        "You can submit EC Online from the following link within 3 working days \n <https://apiit.atlassian.net/wiki/spaces/AA/pages/221152223/How+do+I+submit+EC>":[
+        "You can submit EC Online from the following link within 3 working days from your absence. \n <https://apiit.atlassian.net/wiki/spaces/AA/pages/221152223/How+do+I+submit+EC>":[
             "How do I submit EC?",
             "Find the EC Submission Interface",
             "EC Submit date",
@@ -2856,6 +2858,7 @@ async def get_qa(inp, ori_inp):
                 "How to pay with CIMB",
                 "How to pay through CIMB",
                 "How to pay using CIMB",
+                "How to pay by CIMB",
                 "how can I make payment using CIMB",
                 "how can I make payment through CIMB",
                 "how can I make payment with CIMB",
@@ -2908,6 +2911,8 @@ async def get_qa(inp, ori_inp):
                     "How to pay through banker's draft",
                     "pay with cheque",
                     "pay with banker draft",
+                    "pay by cheque",
+                    "pay by banker draft",
                     "pay cheque",
                     "payment cheque",
                     "apu cheque",
@@ -2998,7 +3003,8 @@ async def get_qa(inp, ori_inp):
                 "how to make payment via Flywire",
                 "how to make payment through Flywire",
                 "how to make payment with Flywire",
-                "how to make payment by Flywire"
+                "how to make payment by Flywire",
+                "how to pay by Flywire"
             ],
 
             # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -3158,7 +3164,9 @@ async def get_qa(inp, ori_inp):
                 "how to make payment through maybank",
                 "how to make payment through jompay",
                 "how to make payment with maybank",
-                "how to make payment with jompay"
+                "how to make payment with jompay",
+                "how to pay by maybank",
+                "how to pay by jompay"
             ],
             # Library(Do I have to pay if damaged a book?)
             "Damaged items should be reported to the library immediately to prevent fines from continuing to accrue. The cost of a damaged book depends on the severity of the damage If a loaned item is severely damaged, the student will have to replace it or pay for it at its current market price.\

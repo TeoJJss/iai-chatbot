@@ -3867,10 +3867,21 @@ async def get_qa(inp, ori_inp):
                 f"next bus to {end} from {start}",
                 f"where bus to {end}",
                 f"bus {start} {end}",
+                f"bus from {start} to {end}",
+                f"shuttle from {start} to {end}",
                 f"trip {start} {end}",
                 f"trips from {start} to {end}",
                 f"{start} {end} bus",
                 f"{start} to {end}"
+                f"What time is the next shuttle from {start} to {end}",
+                f"What time next shuttle from {start} to {end}", 
+                f"What time shuttle {start} to {end}",
+                f"when next shuttle to {start} to {end}",
+                f"{start} to {end} shuttle",
+                f"I am at {end}, going {start}, where shuttle",
+                f"next shuttle to {end} from {start}",
+                f"where shuttle to {end}",
+                f"shuttle {start} {end}",
             ]
             if "Please refer to APSpace or https://www.apu.edu.my/CampusConnect" not in s_str:
                 qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])

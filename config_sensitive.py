@@ -1245,7 +1245,11 @@ async def get_qa(inp, ori_inp):
 
         [
             "apspace apk",
-            "install apspace"
+            "install apspace",
+            "how to install apspace",
+            "how to download apspace",
+            "where to install apspace",
+            "where to download apspace"
         ],
         
         "The Respondus Lockdown Browser is aboslutely required for examination purposes. Please follow the procedures below to download the respective application:\

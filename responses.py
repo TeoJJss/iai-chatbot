@@ -38,7 +38,8 @@ async def reply(usr_inp):
                 if not response.endswith("\n"):
                     response+="\n"
 
-                if "Next shuttle `" in response and [i for i in ['trip', 'bus', 'shuttle'] if i in ele[0]]:
+                if "Next shuttle `" in response and [i for i in ['to apu', 'to apiit', 'to lrt', 'to fortune',
+                                                                 'to m', 'to mosque'] if i in ele[0].lower()]:
                     if ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                 else:

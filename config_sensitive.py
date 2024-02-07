@@ -4069,7 +4069,7 @@ async def get_qa(inp, ori_inp):
                 f"trip {start} {end}",
                 f"trips from {start} to {end}",
                 f"{start} {end} bus",
-                f"{start} to {end}"
+                f"{start} to {end}",
                 f"What time is the next shuttle from {start} to {end}",
                 f"What time next shuttle from {start} to {end}", 
                 f"What time shuttle {start} to {end}",

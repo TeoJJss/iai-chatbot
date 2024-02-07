@@ -38,20 +38,24 @@ async def reply(usr_inp):
                 if not response.endswith("\n"):
                     response+="\n"
 
-                if (int(ele[2]) >= 1):
-                    if not super_high:
-                        super_high=True
-                        response = ""
-                    tmp_similarity = ele[2]
-                    if ele[1] not in response:
-                        quest = ele[0]
-                        response += ele[1] + "\n"
-                elif abs(ele[2]-tmp_similarity) < 0.01:
-                    tmp_similarity = ele[2]
-                    if ele[1] not in response:
-                        response += ele[1] + "\n\n"
-                elif ele[2] > tmp_similarity:
-                    quest, response, tmp_similarity = ele[0], ele[1], ele[2]
+                if "Next shuttle `" in response and [i for i in ['trip', 'bus', 'shuttle'] if i in ele[0]]:
+                    if ele[2] > tmp_similarity:
+                        quest, response, tmp_similarity = ele[0], ele[1], ele[2]
+                else:
+                    if (int(ele[2]) >= 1):
+                        if not super_high:
+                            super_high=True
+                            response = ""
+                        tmp_similarity = ele[2]
+                        if ele[1] not in response:
+                            quest = ele[0]
+                            response += ele[1] + "\n"
+                    elif abs(ele[2]-tmp_similarity) < 0.01:
+                        tmp_similarity = ele[2]
+                        if ele[1] not in response:
+                            response += ele[1] + "\n\n"
+                    elif ele[2] > tmp_similarity:
+                        quest, response, tmp_similarity = ele[0], ele[1], ele[2]
         else:
             response = "Sorry, I don't understand your question. I am still learning.\nPlease try another way to ask or refer to https://apiit.atlassian.net/wiki/spaces/KB/overview?mode=global."
 

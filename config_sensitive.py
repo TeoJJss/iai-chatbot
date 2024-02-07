@@ -2878,6 +2878,7 @@ async def get_qa(inp, ori_inp):
                 "how to make payment through CIMB",
                 "how to make payment by CIMB",
                 "how to make payment with CIMB",
+                "CIMB account details",
             ],
 
             #Bursary (How does international students make payment)
@@ -2958,6 +2959,8 @@ async def get_qa(inp, ori_inp):
                     "how to make payment through cheque",
                     "how to make payment with cheque",
                     "how to make payment by cheque",
+                    "cheque account details",
+                    "banker's draft account details",
             ],
 
             #Bursary (How to make payment via Flywire?)
@@ -3008,7 +3011,8 @@ async def get_qa(inp, ori_inp):
                 "how to make payment through Flywire",
                 "how to make payment with Flywire",
                 "how to make payment by Flywire",
-                "how to pay by Flywire"
+                "how to pay by Flywire",
+                "Flywire account details",
             ],
 
             # Bursary (APU/APIIT International Student Fees & Refund Policy)
@@ -3085,7 +3089,8 @@ async def get_qa(inp, ori_inp):
                 "Maybank",
                 "APU Maybank",
                 "APIIT Maybank",
-                "Maybank account detais",
+                "Maybank account details",
+                "Jompay account details",
                 "Maybank",
                 "payment Maybank",
                 "payment Jompay",
@@ -4047,7 +4052,9 @@ async def get_qa(inp, ori_inp):
                 f"next bus to {end} from {start}",
                 f"where bus to {end}",
                 f"bus {start} {end}",
+                f"bus {start} to {end}",
                 f"bus from {start} to {end}",
+                f"from {start} to {end} bus",
                 f"shuttle from {start} to {end}",
                 f"trip {start} {end}",
                 f"trips from {start} to {end}",

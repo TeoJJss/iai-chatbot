@@ -95,7 +95,7 @@ async def bus_schedule(start, end):
             schedule = tmp_schedules[schedule_ind]
             # No bus on weekend
             if now.weekday() > 4:
-                break
+                raise Exception('weekends')
             # Skip the "friday only" schedules if it's not Friday
             if schedule['day'] == "friday only" and now.weekday() != 4:
                 schedule_ind += 1
@@ -4084,7 +4084,7 @@ async def get_qa(inp, ori_inp):
                 qa[s_str].extend(["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"])
                 count += 1
         if not count:
-            qa["Sorry, the shuttle service schedule is unavailable at the moment. Please refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
+            qa["Sorry, the shuttle schedule is unavailable at the moment. \nPlease refer to APSpace or https://www.apu.edu.my/CampusConnect."] = [
                 "bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule", "bus to", "bus from", "shuttle to", "shuttle from"]
             
         qa[

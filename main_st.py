@@ -8,7 +8,8 @@ st.set_page_config(page_title="APU Live Chatbot", page_icon="images/bot_pic.png"
 st.title("APU Knowledge Live Assistant")
     
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU."}]
+    st.session_state.messages = [{"role": "assistant", "content": "Hi, I am APU Virtual Bot. You may ask me anything about the facilities and services in APU, such as bus schedule, parking fee, etc.\
+                                  \nAs this chatbot is still in testing phase, we would appreciate if you could help us to complete a survey after using: https://forms.gle/7Nq8qCnyZfS6GfXC9"}]
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar="images/bot_pic.png" if message["role"] == "assistant" else None):

@@ -31,7 +31,6 @@ async def reply(usr_inp):
         possible_answers = {(q, a, s) for (q, a, s) in results if s > 0.8}
 
         print(time.time()-t)
-        print(possible_answers)
         tmp_similarity = 0
         super_high = False
         if possible_answers:
@@ -44,6 +43,9 @@ async def reply(usr_inp):
                     if ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                 else:
+                    if (int(ele[2]) >= 2):
+                        quest, response, tmp_similarity = ele[0], ele[1], ele[2]
+                        break
                     if (int(ele[2]) >= 1):
                         if not super_high:
                             super_high=True
@@ -86,7 +88,7 @@ def calculate_similarity(query, response):
     similarity = query_doc.similarity(response_doc)
     if query.lower().strip() == response.lower().strip():
         print("exact match")
-        similarity+=1
+        similarity+=2
     return similarity
 
 async def similarity_worker(args):

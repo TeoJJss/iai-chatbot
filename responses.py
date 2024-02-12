@@ -58,7 +58,7 @@ async def reply(usr_inp):
                     elif ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
         else:
-            response = "Sorry, I don't understand your question. I am still learning.\nPlease try another way to ask or refer to https://apiit.atlassian.net/wiki/spaces/KB/overview?mode=global."
+            response = "Sorry, I don't understand your question or not able to support your request. I am still learning.\nPlease try another way to ask or refer to https://apiit.atlassian.net/wiki/spaces/KB/overview?mode=global."
 
         # Sort if many bus times
         if response.count("\n") > 2 and inp in ["bus schedule", "bus trip", "bus", "trip", "shuttle", "shuttle schedule"]:

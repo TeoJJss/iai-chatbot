@@ -2210,6 +2210,13 @@ async def get_qa(inp, ori_inp):
             "remark exam",
             "appeal exam"
         ],
+
+        "The **Cafeteria** is located at level 3, Atrium of APU Campus.":[
+                "APU cafeteria",
+                "cafeteria in APU",
+                "cafeteria",
+                "canteen"
+            ],
     }
 
     ###!!! OPTIMIZING ALGORITHMS !!!###
@@ -2430,10 +2437,12 @@ async def get_qa(inp, ori_inp):
                 "What are the instructions for returning a book through the kiosk?",
                 "What steps should I follow to return a borrowed book at the library?",
                 "Where should I return a book after borrowing it?",
+                "where is the library",
             ],
             "**APU Campus Connect Lounge** will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
                 "Connect Lounge",
                 "How to go campus connect lounge",
+                "where is the campus connect lounge",
                 "Campus Connect Lounge purpose?",
                 "How do I access APU Connect Lounge?",
                 "What is the purpose of Block E lounge?",
@@ -2493,6 +2502,7 @@ async def get_qa(inp, ori_inp):
                 "go APIIT exam Hall?",
                 "how go exam hall",
                 "how to go exam hall",
+                "where is the exam hall",
                 "Where is exam hall in APU",
                 "where exam hall in APU",
                 "where is exam hall in APU",
@@ -2538,6 +2548,7 @@ async def get_qa(inp, ori_inp):
                 "library location",
                 "Where is library in APIIT",
                 "where is library APIIT",
+                "where is the library",
             ],
             # Bursary location
             "The Bursary Office is located at Level 3 Spine, APU Campus. ":[
@@ -2559,6 +2570,8 @@ async def get_qa(inp, ori_inp):
                 "cashier counter in APU",
                 "bursary location in APU", 
                 "cashier location in APU",
+                "where is the cashier",
+                "where is the bursary",
             ],  
             # Campus
             "**APU campus** is located at Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur.\
@@ -2588,7 +2601,8 @@ async def get_qa(inp, ori_inp):
                 "how to go apiit",
                 "how to go apiit campus",
                 "how go apiit",
-                "apiit location"
+                "apiit location",
+                "where is the campus",
             ],
             # Clinic Location
             "**Klinik Oceania** is located at level 4, Block E of APU Campus. It is located next to the admin office.\
@@ -2600,7 +2614,8 @@ async def get_qa(inp, ori_inp):
                     "clinic location", 
                     "apu clinic",
                     "oceania",
-                    "how go klinik oceania"
+                    "how go klinik oceania",
+                    "where is the clinic",
                 ],
 
             # Admin Location
@@ -2624,7 +2639,8 @@ async def get_qa(inp, ori_inp):
                 "how go admin in APU",
                 "where is admin office in APU",
                 "administrative office in APU",
-                "admin location in APU"
+                "admin location in APU",
+                "where is the admin office",
             ],
 
             # TechCentre Location
@@ -2649,7 +2665,9 @@ async def get_qa(inp, ori_inp):
                 "where is TA in APU",
                 "how to go TA in APU",
                 "techcentre location in APU",
-                "TA location in APU"
+                "TA location in APU",
+                "where is the techcentre",
+                "where is the TA",
             ],
 
             # Admin Location
@@ -2672,7 +2690,12 @@ async def get_qa(inp, ori_inp):
                 "how go cafeteria in APU",
                 "where is cafeteria in APU",
                 "cafeteria in APU",
-                "cafeteria location in APU"
+                "cafeteria location in APU",
+                "where is the cafeteria",
+                "where is canteen",
+                "where is the canteen",
+                "where is canteen in APU",
+                "how to go canteen in APU"
             ],
         }
         qa.update(add_qa)

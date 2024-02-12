@@ -2478,6 +2478,7 @@ async def get_qa(inp, ori_inp):
                 "laundry APU",
                 "where is the laundry",
                 "where is the laundry section",
+                "where is laundry",
                 "laundry APSpace",
                 "how do i access the laundry",
             ],

@@ -2693,7 +2693,15 @@ async def get_qa(inp, ori_inp):
                 "where is canteen",
                 "where is the canteen",
                 "where is canteen in APU",
-                "how to go canteen in APU"
+                "how to go canteen in APU",
+                "How do I get to the cafeteria?",
+                "How do I get to the canteen?",
+                "go cafeteria",
+                "give me the location of the cafeteria",
+                "go cafeteria",
+                "give me the location of the cafeteria",
+                "Where cafeteria",
+                "where cafeteria"
             ],
         }
         qa.update(add_qa)

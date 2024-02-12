@@ -2436,8 +2436,7 @@ async def get_qa(inp, ori_inp):
                 "Can you guide me on how to return a book at the library?",
                 "What are the instructions for returning a book through the kiosk?",
                 "What steps should I follow to return a borrowed book at the library?",
-                "Where should I return a book after borrowing it?",
-                "where is the library",
+                "Where should I return a book after borrowing it?"
             ],
             "**APU Campus Connect Lounge** will serve the purposes for Arrival and Departure for all APU Shuttle Buses. \nIt is located at Level 1M near main entrance, accessible via the glass elevator. \n**Operational Hours:** Monday – Friday: 8.00am – 10.00pm.":[
                 "Connect Lounge",
@@ -2470,7 +2469,7 @@ async def get_qa(inp, ori_inp):
                 "How does the Bus Shuttle service work?",
                 "Can you provide information about Arrival and Departure for Bus Shuttle.",
             ], 
-            "To find the Laundry in APSpace,\n1) Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":[
+            "To find the Laundry in APSpace, Click on 'More' from the top navigation bar, and under Campus Life, select 'Laundry'.":[
                 "where do i find the laundry section",
                 "how do i go to the laundry section in APSpace",
                 "how do i go to the laundry section",

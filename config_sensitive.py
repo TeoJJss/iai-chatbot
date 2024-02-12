@@ -2516,7 +2516,6 @@ async def get_qa(inp, ori_inp):
             "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
             \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
                 "library",
-                "library location",
                 "APU library",
                 "APIIT library",
                 "APU library location",
@@ -2545,7 +2544,6 @@ async def get_qa(inp, ori_inp):
                 "Where is library in APU",
                 "where is library APU",
                 "library location", 
-                "library location",
                 "Where is library in APIIT",
                 "where is library APIIT",
                 "where is the library",
@@ -4206,7 +4204,6 @@ async def get_qa(inp, ori_inp):
             "**__APU Library__**\nYou can go to the library by taking the stairs or elevator to Level 4, APU\
             \n\n**__APIIT Library__**\nYou can go to the library by taking the stairs or elevator to Level 2, APIIT": [
                 "library",
-                "library location",
                 "APU library",
                 "APIIT library",
                 "APU library location",
@@ -4234,10 +4231,10 @@ async def get_qa(inp, ori_inp):
                 "where library",
                 "Where is library in APU",
                 "where is library APU",
+                "library location", 
                 "Where is library in APIIT",
                 "where is library APIIT",
-                "library location", 
-                "library location",
+                "where is the library",
             ],
         
             # Library(am I allowed to bring food/drinks)

@@ -31,6 +31,7 @@ async def reply(usr_inp):
         possible_answers = {(q, a, s) for (q, a, s) in results if s > 0.8}
 
         print(time.time()-t)
+        print(possible_answers)
         tmp_similarity = 0
         super_high = False
         if possible_answers:

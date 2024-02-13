@@ -4137,7 +4137,9 @@ async def get_qa(inp, ori_inp):
                 "payment shuttle",
                 "bus fee",
                 "bus fees",
-                "travel pass for apu bus"
+                "travel pass for apu bus",
+                "travel pass fee",
+                "travel pass of bus"
             ]
         add_qa = {
             # Where to wait bus

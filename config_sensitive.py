@@ -1485,7 +1485,15 @@ async def get_qa(inp, ori_inp):
             "EC Submit duration",
             "EC Submit progress",
             "guideline EC Submit ",
-            "how to submit EC"
+            "how to submit EC",
+            "how to submit my EC",
+            "how to submit the EC",
+            "how to submit Extenuating Circumstances",
+            "how to submit my Extenuating Circumstances",
+            "how to submit the Extenuating Circumstances",
+            "How do I submit Extenuating Circumstances",
+            "EC",
+            "Extenuating Circumstances"
         ],
         #Extenuating Circumstance (EC) - What are the documents needed to support my EC?
         "The EC must be independent authority. \n <https://apiit.atlassian.net/wiki/x/2IMuDQ>":[
@@ -1506,7 +1514,7 @@ async def get_qa(inp, ori_inp):
             "issue EC application",
             "problem EC",
             "problem EC application",
-            "EC application “Please press the button”",
+            "EC application Please press the button",
         ],
         #Extenuating Circumstance (EC) - How to print Extenuating Circumstance (EC)?
         "Click the link bellow: \n\

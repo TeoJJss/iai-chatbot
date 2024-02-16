@@ -629,10 +629,12 @@ async def get_qa(inp, ori_inp):
          \n- A late payment charge is imposed on all overdue fees.\
          \n- Semester Payment is due at the commencement of each semester.": [
             "Refund policy for International Student",
-            "Can International Student get a refund if they withdraw from the course?",
+            "Can International Student get a refund if they withdraw from the course",
             "What is the process for International Student to apply for a refund?",
-            "How can International Student apply for a refund?"
+            "How can International Student apply for a refund"
             "APU/APIIT International Student  Fees & Refund Policy",
+            "What is the refund policy for international students",
+            "What is the student fees policy for international students",
         ],
 
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -650,6 +652,8 @@ async def get_qa(inp, ori_inp):
             "What is the process for Malaysian Student to apply for a refund?",
             "How can Malaysian Student apply for a refund?",
             "APU/APIIT Malaysian Student Fees & Refund Policy",
+            "What is the refund policy for Malaysian students",
+            "What is the student fees policy for Malaysian students",
         ],
         
         # Bursary Late Payment

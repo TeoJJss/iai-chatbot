@@ -2980,6 +2980,8 @@ async def get_qa(inp, ori_inp):
                     "What are the instructions for cheque payments",
                     "pay cheque", 
                     "How to transfer money through cheque",
+                    "How to pay fees online",
+                    "How to transfer money online",
                     "How do I make a transaction using cheque",
                     "Steps to transfer money through cheque",
                     "How do I use cheque?",

@@ -3260,6 +3260,7 @@ async def get_qa(inp, ori_inp):
                 "Fee payment summary",
                 "How to check fee payment?",
                 "How to check my fee payment details?",
+                "How to check my fee payment details on APSpace?",
                 "What are the steps to view my fee payment details?",
                 "What are the steps to check my fee payment details?"
                 "Can you guide me on how to find my fee payment details?",

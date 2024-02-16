@@ -16,7 +16,8 @@ async def reply(usr_inp):
     possible_answers = set()
 
     tmp_inp = str(usr_inp).lower().strip().translate(str.maketrans("", "", string.punctuation))
-    if [i for i in ["maybank", "cimb", "flywire","apiit", "apu", "jompay", "moodle", "apspace", "apkey", "jaspersoft", "gims", "aws"] if i in tmp_inp.lower()]: # No autocorrect if special keywords found
+    if [i for i in ["maybank", "cimb", "flywire","apiit", "apu", "jompay", "moodle", "bursary", "apspace", "apkey", 
+                    "jaspersoft", "gims", "aws"] if i in tmp_inp.lower()]: # No autocorrect if special keywords found
         inp = tmp_inp
     else:
         inp = spell(tmp_inp)

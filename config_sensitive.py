@@ -634,7 +634,7 @@ async def get_qa(inp, ori_inp):
             "How can International Student apply for a refund"
             "APU/APIIT International Student  Fees & Refund Policy",
             "What is the refund policy for international students",
-            "What is the student fees policy for international students",
+            "What is the fees policy for international students",
         ],
 
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -653,7 +653,7 @@ async def get_qa(inp, ori_inp):
             "How can Malaysian Student apply for a refund?",
             "APU/APIIT Malaysian Student Fees & Refund Policy",
             "What is the refund policy for Malaysian students",
-            "What is the student fees policy for Malaysian students",
+            "What is the fees policy for Malaysian students",
         ],
         
         # Bursary Late Payment

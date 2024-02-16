@@ -580,6 +580,7 @@ async def get_qa(inp, ori_inp):
             "How can I reserve a discussion room in the Library",
             "Reserve a discussion room in the Library",
             "Reserve a discussion room",
+            "Reserve discussion room",
             "Steps to reserve a room for discussions?",
             "Can I book a discussion room at the Library",
             "Guide me on booking a discussion room in the Library.",

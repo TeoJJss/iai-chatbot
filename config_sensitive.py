@@ -632,6 +632,7 @@ async def get_qa(inp, ori_inp):
             "Can International Student get a refund if they withdraw from the course?",
             "What is the process for International Student to apply for a refund?",
             "How can International Student apply for a refund?"
+            "APU/APIIT International Student  Fees & Refund Policy",
         ],
 
         # Bursary (APU/APIIT Malaysian Student Fees & Refund Policy)
@@ -648,7 +649,7 @@ async def get_qa(inp, ori_inp):
             "Can Malaysian Student get a refund if they withdraw from the course?"
             "What is the process for Malaysian Student to apply for a refund?",
             "How can Malaysian Student apply for a refund?",
-            "refund policy"
+            "APU/APIIT Malaysian Student Fees & Refund Policy",
         ],
         
         # Bursary Late Payment

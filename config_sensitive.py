@@ -325,6 +325,7 @@ async def get_qa(inp, ori_inp):
         \nFinal year projects and Theses - Only to be used in the library as a reference\nCD ROMs / DVDs - can be borrowed with the same privileges as the book.\
         \nAPU Wacom Tablet – 1 day\nAPU Lightpad – 1 day": [
             "How long can borrow an item?",
+            "How long can I borrow a book?",
             "How many days can I borrow an item?",
             "What is the loan period for an item?",
             "What is the borrowing period for items with a yellow-colored label?",

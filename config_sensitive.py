@@ -1,6 +1,5 @@
 import requests, datetime
 from copy import deepcopy
-# from autocorrect import Speller
 import pytz
 
 TOKEN = "" # Discord Token, ignore if using Streamlit

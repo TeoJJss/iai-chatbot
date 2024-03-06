@@ -39,12 +39,12 @@ async def reply(usr_inp):
                 if not response.endswith("\n"):
                     response+="\n"
 
-                if "Next shuttle `" in response and [i for i in ['to apu', 'to apiit', 'to lrt', 'to fortune',
+                if "Next shuttle `" in ele[1] and [i for i in ['to apu', 'to apiit', 'to lrt', 'to fortune',
                                                                  'to m', 'to mosque'] if i in tmp_inp.lower()]:
                     if ele[2] > tmp_similarity:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                 else:
-                    if (int(ele[2]) >= 2) and "Next shuttle `" not in response:
+                    if (int(ele[2]) >= 2) and "Next shuttle `" not in ele[1]:
                         quest, response, tmp_similarity = ele[0], ele[1], ele[2]
                         break
                     if (int(ele[2]) >= 1):

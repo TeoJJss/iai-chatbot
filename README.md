@@ -1,4 +1,4 @@
-<h1>APU Knowledge Discord Chatbot</h1>
+<h1>APU Knowledge Base Chatbot</h1>
 <h2>Introduction</h2>
 This is a chatbot that will provide information about the campus facilities and services in Asia Pacific University of Technology & Innovation (APU).  
 
@@ -28,7 +28,7 @@ Run the following command to launch the bot in Discord:
 ```
 python main.py
 ```
-You should be able to see the bot with "Online" status in Discord, if the bot's token is correctly defined in `config.py` or `config_sensitive.py`. After that, it can respond to messages in the allowed channels.  
+You should be able to see the bot with "Online" status in Discord, if the bot's token is correctly specified in `config.py` or `config_sensitive.py`. After that, it can respond to messages in the allowed channels.  
 
 <h3>Option 2: Hosting with Streamlit</h3>
 
@@ -37,6 +37,26 @@ This chatbot supports Streamlit too. You may launch the bot in Streamlit through
 streamlit run main_st.py
 ```
 You will be redirected to a localhost website, where Streamlit is hosted on. 
+
+<h3>Option 3: Try with Cloud Version</h3>
+
+This chatbot is hosted in Streamlit Cloud, you may access it with https://iai-chatbot-15.streamlit.app/  
+Due to the limitation on system resources provided by Streamlit Cloud, the chatbot might have lower performance compared to running it locally.  
+
+<h2>Sample questions to the chatbot</h2>
+
+Below is the list of sample queries you may ask to the Chatbot. Nevertheless, you may ask questions which are not listed. 
+1. LRT/APU/APIIT to LRT/APU/APIIT bus
+2. Where is parking/library/campus/cashier
+3. Where to wait bus at LRT/APU/APIIT
+4. Travel pass cost 
+5. Parking rate zone A/B/G
+6. Holiday schedule
+7. How to top up APCard
+8. Operating hour of admin/library
+9. APU citation style
+10. Payment with Maybank/JomPay/CIMB/Cheque
+11. How to check result
 
 <h2>Credits</h2>
 - <a href="https://github.com/TeoJJss">Teo Jun Jia</a><br>
